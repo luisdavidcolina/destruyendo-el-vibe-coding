@@ -28,7 +28,7 @@
 
        Los hitos salen del CV, con los años de inicio de cada etapa: Veconinter
        2017, BDB Soluciones 2018, IntelliPOS 2019, King Code 2021, DreamJob
-       2022, y desde 2023 Workforce.com y Diamond Hotel, que son las dos que
+       2022, y desde 2023 Workforce.com y Diamond Partner, que son las dos que
        siguen. El eje va de 2017 a 2026 y cada hito cae en su año, no a
        espacios iguales, para que las distancias digan la verdad.
 
@@ -84,7 +84,7 @@ window.DECK.push(
         <img src="assets/logos/github-mark-blanco.svg" alt="GitHub">
         <div class="ev-tx">
           <b>DEV DAYS 2026</b>
-          <span>Auditorio Manuel Bemporad, 2 de octubre, 11:00 AM</span>
+          <span>Auditorio Manuel Bemporad, 2 de octubre, 2026</span>
         </div>
       </div>
 
@@ -186,7 +186,7 @@ window.DECK.push(
         <li class="tr-hito" style="--x:22.2%"><span class="tr-a">2019</span><span class="tr-n">IntelliPOS</span></li>
         <li class="tr-hito" style="--x:44.4%"><span class="tr-a">2021</span><span class="tr-n">King Code</span></li>
         <li class="tr-hito" style="--x:55.6%"><span class="tr-a">2022</span><span class="tr-n">DreamJob</span></li>
-        <li class="tr-hito" style="--x:66.7%"><span class="tr-a">2023</span><span class="tr-n">Workforce.com y Diamond Hotel</span></li>
+        <li class="tr-hito" style="--x:66.7%"><span class="tr-a">2023</span><span class="tr-n">Workforce.com y Diamond Partner</span></li>
         <li class="tr-hito fin" style="--x:100%"><span class="tr-a">2026</span><span class="tr-n">hoy</span></li>
       </ol>
     </div>

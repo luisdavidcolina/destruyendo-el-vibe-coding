@@ -44,7 +44,6 @@ El tema tambien se fuerza por URL, con `index.html?tema=oscuro`.
 
 ```
 index.html              la presentacion
-REGLAS.md               los criterios con los que se arma, heredados de la expo de IoT
 assets/css/             base, components, motion y fuentes
 assets/js/deck.js       navegacion, cronometro y exportacion a PDF
 assets/js/slides/       el contenido, un archivo por bloque
@@ -92,8 +91,12 @@ se vuelve ilegible desde la tercera fila. Las laminas de corte si van oscuras, a
 
 ---
 
+## El guion y las reglas
+
+No estan en este repositorio. Viven aparte porque citan el proyecto de un cliente. Lo que se
+proyecta es publico, lo que se dice no.
+
 ## Antes de dar una lamina por buena
 
-Se revisa contra `REGLAS.md`. Lo mas facil de olvidar: una sola idea por lamina, nada de tuteo,
-nada de titulos de dos tiempos contrastados, y el guion en el mismo orden y con los mismos
-titulos que lo proyectado.
+Una sola idea por lamina, cincuenta palabras como tope, el titular dice algo en lugar de nombrar un
+tema, y ninguna animacion que no aclare nada.

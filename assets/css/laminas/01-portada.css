@@ -10,6 +10,45 @@
    Tres momentos y ninguno se pisa con otro: se escribe, cambia de lado, se
    escribe la que la sustituye. Los tiempos viven en variables para poder
    ajustarlos en un solo sitio.
+
+   ── El color es el de GitHub, no uno inventado ──────────────────────────
+   Las dos lineas usan exactamente el par con el que GitHub pinta un diff en
+   tema oscuro, que ya vive en components.css como .ad y .rm: texto verde
+   #7EE787 sobre un tinte rgba(46,160,67,0.15), y texto salmon #FFA198 sobre
+   rgba(248,81,73,0.15). Antes iban bandas opacas saturadas, #11502B y
+   #8E1519, con texto casi blanco. Se cambio por dos razones:
+
+   1. Ya no era un diff. Nadie ha visto un pull request con franjas de color
+      macizo. El tinte translucido con el texto coloreado es lo que reconoce
+      cualquiera que haya revisado codigo, y la portada vive de que se
+      reconozca sin explicarla.
+   2. El contraste alcanza igual. Salmon sobre el tinte da 8:1, y el verde da
+      10:1, los dos por encima del 7:1 que pide WCAG AAA. Lo que el proyector
+      lava es el fondo, y aqui el contenido esta en el texto, no en la banda.
+
+   ── El fondo ─────────────────────────────────────────────────────────────
+   Se quito la reticula de lineas finas. Es el fondo que traen las paginas
+   generadas en serie, Aceternity la vende como componente listo para pegar,
+   y GitHub no la usa en ninguna superficie propia.
+
+   Lo que si usa GitHub es el calendario de contribuciones. Su guia de marca,
+   en brand.github.com/graphic-elements/textures, lo define como su textura,
+   y dice dos cosas que mandan aqui. Que "wherever it is found it should feel
+   like wallpaper, not like key art". Y en la lista de prohibiciones: "Don't
+   use the contribution graph to add texture to a background". Lo que si
+   autoriza, con estas palabras, es la forma simple para "speaker cards or
+   presentations": cuatro casillas en fila o en columna.
+
+   Por eso la portada lleva eso y no una trama: cuatro casillas con los
+   cuatro tonos de verde del tema oscuro, encima del nombre, en el pie. Es la
+   firma de la casa a la escala que la casa la usa en una presentacion, y no
+   compite con el diff, que es la unica idea de la lamina.
+
+   Se probo la franja completa de siete filas, y se ve en la captura
+   01-t7000-calendario del 25 de septiembre: se reconoce al instante, pero
+   pesa mas que el titulo y contradice la regla de arriba. Queda disponible
+   con la clase con-calendario sobre .cover.portada, por si el expositor
+   prefiere compararlas en el auditorio.
    ========================================================================== */
 
 .cover.portada {
@@ -17,6 +56,12 @@
   --t1d: 1.3s;    /* cuanto tarda en escribirse */
   --t2:  2.1s;    /* cambia de lado, se tacha, y arranca la segunda */
   --t3d: 1.5s;    /* cuanto tarda en escribirse la segunda */
+
+  /* El par de GitHub para diffs en oscuro, los mismos de .ad y .rm */
+  --ad-ink: #7EE787;
+  --ad-bg:  rgba(46, 160, 67, 0.15);
+  --rm-ink: #FFA198;
+  --rm-bg:  rgba(248, 81, 73, 0.15);
 
   position: relative;
   z-index: 1;
@@ -27,10 +72,10 @@
   max-width: none;
 }
 
-/* ── El fondo ────────────────────────────────────────────────────────────
-   La reticula del grafico de contribuciones, que es lenguaje de la casa, con
-   dos luces suaves detras de las bandas. Muy tenue a proposito: se percibe,
-   no se mira. Negro plano no es un fondo, es una pantalla apagada. */
+/* ── El lienzo ───────────────────────────────────────────────────────────
+   El lienzo oscuro de GitHub, #0D1117, cayendo hacia el negro de las laminas
+   de corte por abajo. Sin lineas, sin luces de color: lo que da vida a la
+   lamina es el calendario de arriba y el diff, no el fondo. */
 .cover.portada::before {
   content: "";
   position: absolute;
@@ -39,11 +84,28 @@
   margin: calc(var(--pad-y) * -1) calc(var(--pad-x) * -1);
   z-index: -1;
   pointer-events: none;
-  background:
-    radial-gradient(880px 420px at 28% 44%, rgba(248, 81, 73, 0.10), transparent 70%),
-    radial-gradient(760px 400px at 72% 74%, rgba(63, 185, 80, 0.09), transparent 72%),
-    repeating-linear-gradient(0deg, rgba(255,255,255,0.032) 0 1px, transparent 1px 14px),
-    repeating-linear-gradient(90deg, rgba(255,255,255,0.022) 0 1px, transparent 1px 14px);
+  background: linear-gradient(180deg, #0D1117 0%, #0D1117 42%, #010409 100%);
+}
+
+/* ── El calendario de contribuciones ────────────────────────────────────
+   Siete filas a todo el ancho, como se ve en cualquier perfil. Se apoya en el
+   borde superior de la lamina y termina antes de la primera linea del diff.
+   La mascara lo disuelve por la izquierda, donde arranca la lectura, para
+   que no compita con el signo de la linea. */
+.cover.portada .calendario { display: none; }
+
+.cover.portada.con-calendario .calendario {
+  display: block;
+  position: absolute;
+  left: calc(var(--pad-x) * -1);
+  top: calc(var(--pad-y) * -1 + 30px);
+  width: var(--W);
+  height: auto;
+  z-index: -1;
+  opacity: 0.62;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 34%, #000 100%);
+          mask-image: linear-gradient(90deg, transparent 0%, #000 34%, #000 100%);
 }
 
 /* ── Las dos lineas ──────────────────────────────────────────────────────── */
@@ -66,46 +128,76 @@
   margin: 0;
 }
 
+/* El signo vive en la canal izquierda, del mismo color que su linea y un
+   poco mas apagado, como en la lamina de un pull request. */
 .cover.portada .sig {
   position: relative;
+  display: inline-block;
   flex: none;
   width: 62px;
+  height: 1.1em;
   font-family: var(--font-display);
   font-size: 76px;
   font-weight: 700;
   line-height: 1.1;
+  opacity: 0.78;
 }
 
-.cover.portada .sig i { position: absolute; left: 0; font-style: normal; }
+.cover.portada .sig i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-style: normal;
+  line-height: 1.1;
+}
 
-.cover.portada .tx { position: relative; display: inline-flex; align-items: baseline; }
+/* .tx lleva el mismo cuerpo que el texto. Sin esto el tachado y el cursor,
+   que son hijos suyos y se miden en em, tomaban el cuerpo del texto corrido,
+   15,5 pixeles, y el tachado salia por encima de las letras. Se vio en la
+   captura, no en el codigo. */
+.cover.portada .tx {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  font-size: 76px;
+  --w1: 372px;   /* ancho medido de "vibe coding" a 76px con Mona Sans */
+  --w2: 875px;   /* ancho medido de "Destruyendo el vibe coding" */
+}
 
 /* ── El cursor de escritura ──────────────────────────────────────────────── */
+/* El cursor va en absoluto y se desplaza con los mismos pasos y el mismo
+   reloj que el recorte del texto, asi que queda siempre pegado a la ultima
+   letra escrita. Antes era un hermano en linea y se quedaba al final de la
+   caja completa, a media lamina del texto que se estaba escribiendo. */
 .cover.portada .caret {
-  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 50%;
   width: 5px;
   height: 0.74em;
-  margin-left: 7px;
-  align-self: center;
+  margin-top: -0.37em;
   opacity: 0;
 }
+
+@keyframes pCursor1 { to { left: calc(var(--w1) + 8px); } }
+@keyframes pCursor2 { to { left: calc(var(--w2) + 8px); } }
 
 @keyframes pParpadeo { 0%, 45% { opacity: 1; } 55%, 100% { opacity: 0; } }
 @keyframes pEscribir { to { clip-path: inset(0 0 0 0); } }
 @keyframes pApagar   { to { opacity: 0; } }
 @keyframes pEncender { to { opacity: 1; } }
 @keyframes pTachar   { to { transform: scaleX(1); } }
-@keyframes pARojo    { to { background: #8E1519; } }
-@keyframes pInkRojo  { to { color: #FFECEA; } }
+@keyframes pARojo    { to { background: var(--rm-bg); } }
+@keyframes pInkRojo  { to { color: var(--rm-ink); } }
 
 /* ══════════════════════════════════════════════════════════════════════════
    Linea 1. Nace verde, se escribe, y al terminar cambia de lado.
    ══════════════════════════════════════════════════════════════════════════ */
-.cover.portada .l1 { background: #11502B; }
-.cover.portada .l1 .ink { color: #E9FFEF; clip-path: inset(0 100% 0 0); }
-.cover.portada .l1 .s-mas   { color: #7EE787; opacity: 1; }
-.cover.portada .l1 .s-menos { color: #FF9A92; opacity: 0; }
-.cover.portada .l1 .caret { background: #7EE787; }
+.cover.portada .l1 { background: var(--ad-bg); }
+.cover.portada .l1 .ink { color: var(--ad-ink); clip-path: inset(0 100% 0 0); }
+.cover.portada .l1 .s-mas   { color: var(--ad-ink); opacity: 1; }
+.cover.portada .l1 .s-menos { color: var(--rm-ink); opacity: 0; }
+.cover.portada .l1 .caret { background: var(--ad-ink); }
 
 /* Se escribe recortando el texto, no animando el ancho de su caja, para que
    las letras no se compriman mientras entra. */
@@ -121,6 +213,7 @@
 
 .slide.is-active .cover.portada .l1 .caret {
   animation:
+    pCursor1 var(--t1d) steps(11, end) var(--t1) forwards,
     pParpadeo 0.5s steps(1, end) var(--t1) 3,
     pApagar 0.01s linear var(--t2) forwards;
 }
@@ -128,15 +221,16 @@
 .slide.is-active .cover.portada .l1 .s-mas   { animation: pApagar 0.22s linear var(--t2) forwards; }
 .slide.is-active .cover.portada .l1 .s-menos { animation: pEncender 0.22s linear var(--t2) forwards; }
 
-/* El tachado entra en el mismo instante en que la linea cambia de lado */
+/* El tachado entra en el mismo instante en que la linea cambia de lado. Del
+   color del texto y fino, a la altura de la x, como tacha cualquier editor. */
 .cover.portada .tachon {
   position: absolute;
   left: 0;
-  right: 8px;
-  top: 54%;
-  height: 7px;
-  border-radius: 4px;
-  background: #FFECEA;
+  width: var(--w1);
+  top: 0.585em;
+  height: 0.06em;
+  border-radius: 2px;
+  background: var(--rm-ink);
   transform: scaleX(0);
   transform-origin: left center;
 }
@@ -148,14 +242,18 @@
 /* ══════════════════════════════════════════════════════════════════════════
    Linea 2. Aparece en el mismo instante y se escribe.
    ══════════════════════════════════════════════════════════════════════════ */
-.cover.portada .l2 { background: #11502B; margin-top: 8px; opacity: 0; }
-.cover.portada .l2 .ink { color: #E9FFEF; clip-path: inset(0 100% 0 0); }
-.cover.portada .l2 .s-mas { color: #7EE787; }
-.cover.portada .l2 .caret { background: #7EE787; }
+.cover.portada .l2 { background: var(--ad-bg); margin-top: 8px; opacity: 0; }
+.cover.portada .l2 .ink { color: var(--ad-ink); clip-path: inset(0 100% 0 0); }
+.cover.portada .l2 .s-mas { color: var(--ad-ink); }
+.cover.portada .l2 .caret { background: var(--ad-ink); }
 
 .slide.is-active .cover.portada .l2 { animation: pEncender 0.2s linear var(--t2) forwards; }
 .slide.is-active .cover.portada .l2 .ink { animation: pEscribir var(--t3d) steps(26, end) var(--t2) forwards; }
-.slide.is-active .cover.portada .l2 .caret { animation: pParpadeo 0.5s steps(1, end) var(--t2) 7; }
+.slide.is-active .cover.portada .l2 .caret {
+  animation:
+    pCursor2 var(--t3d) steps(26, end) var(--t2) forwards,
+    pParpadeo 0.5s steps(1, end) var(--t2) 7;
+}
 
 /* ══════════════════════════════════════════════════════════════════════════
    Pie. Entra al final, cuando ya no compite con nada.
@@ -173,6 +271,27 @@
 
 .slide.is-active .cover.portada .pie-portada { animation: pEncender 0.6s ease-out 3.9s forwards; }
 
+/* La forma simple del calendario que autoriza la guia de marca para una
+   presentacion: cuatro casillas en fila, del tono mas apagado al mas vivo,
+   como la leyenda que hay debajo de cualquier perfil. */
+.cover.portada .cuatro {
+  display: inline-flex;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.cover.portada .cuatro i {
+  display: block;
+  width: 13px;
+  height: 13px;
+  border-radius: 2px;
+}
+
+.cover.portada .cuatro i:nth-child(1) { background: #0E4429; }
+.cover.portada .cuatro i:nth-child(2) { background: #006D32; }
+.cover.portada .cuatro i:nth-child(3) { background: #26A641; }
+.cover.portada .cuatro i:nth-child(4) { background: #39D353; }
+
 .cover.portada .pp-quien b {
   display: block;
   font-size: 22px;
@@ -187,11 +306,10 @@
   color: var(--text-dim);
 }
 
-/* Los tres logos venian como PNG sin canal alfa, con el fondo blanco horneado
-   dentro del archivo. Sobre una lamina oscura eso se veia como tres recortes
-   blancos pegados, y la placa era un parche encima del parche. Se les quito el
-   blanco del archivo, asi que ahora se apoyan directamente sobre el fondo sin
-   caja de ninguna clase. */
+/* Los tres logos venian como PNG con el fondo blanco horneado dentro del
+   archivo. Se les quito el blanco, y como son arte oscuro se invierten a
+   blanco para apoyarse sobre el fondo, que es lo que hace cualquier
+   universidad cuando su marca va sobre negro. Sin caja de ninguna clase. */
 .cover.portada .logos {
   display: inline-flex;
   align-items: center;
@@ -199,16 +317,22 @@
   flex: none;
   background: none;
   padding: 0;
-  opacity: 0.85;
 }
 
-.cover.portada .logos img { height: 26px; width: auto; display: block; }
+.cover.portada .logos img {
+  height: 30px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+  opacity: 0.78;
+}
+
 .cover.portada .logos .sep { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.22); }
 
 /* En papel no hay animacion: todo en su estado final */
 @media print {
-  .cover.portada .l1 { background: #8E1519; }
-  .cover.portada .l1 .ink { color: #FFECEA; clip-path: none; }
+  .cover.portada .l1 { background: var(--rm-bg); }
+  .cover.portada .l1 .ink { color: var(--rm-ink); clip-path: none; }
   .cover.portada .l1 .s-mas { opacity: 0; }
   .cover.portada .l1 .s-menos { opacity: 1; }
   .cover.portada .tachon { transform: scaleX(1); }
@@ -216,36 +340,3 @@
   .cover.portada .l2 .ink { clip-path: none; }
   .cover.portada .caret { display: none; }
 }
-
-/* ══════════════════════════════════════════════════════════════════════════
-   Correcciones verificadas mirando el render, no el codigo.
-   ══════════════════════════════════════════════════════════════════════════ */
-
-/* 1. Los dos signos se posicionaban en absoluto dentro de una caja sin altura,
-      asi que el menos no aparecia y el mas se caia fuera de su banda. El canal
-      necesita ser una caja con altura propia. */
-.cover.portada .sig {
-  position: relative;
-  display: inline-block;
-  width: 62px;
-  height: 1.1em;
-  flex: none;
-}
-
-.cover.portada .sig i {
-  position: absolute;
-  left: 0;
-  top: 0;
-  line-height: 1.1;
-}
-
-/* 2. Los logos son arte oscuro. Sin el blanco del archivo quedaban invisibles
-      sobre una lamina oscura. Se invierten a blanco, que es lo que hace
-      cualquier universidad cuando su marca va sobre fondo negro. */
-.cover.portada .logos img {
-  height: 30px;
-  filter: brightness(0) invert(1);
-  opacity: 0.78;
-}
-
-.cover.portada .logos { opacity: 1; }

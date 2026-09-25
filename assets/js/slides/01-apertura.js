@@ -23,9 +23,35 @@
        en toda la lamina, el que pesa en este auditorio. El chiste del lenguaje
        no vive aqui, esta en la lamina 08.
 
-   Los ritmos de escritura viven en laminas/01-apertura.css, porque el motor no
+   Los ritmos de escritura viven en laminas/01-portada.css, porque el motor no
    tiene pasos dentro de una lamina.
    ========================================================================== */
+
+/* El calendario de contribuciones que va de textura en la portada. Es el
+   elemento de textura que define la guia de marca de GitHub, y tiene la forma
+   exacta del que sale en cualquier perfil: siete filas, una por dia de la
+   semana, y una columna por semana. Los cinco tonos son los del tema oscuro
+   de GitHub. La semilla es fija para que el patron sea el mismo cada vez que
+   se abre la presentacion y no cambie entre el ensayo y el auditorio. */
+var CALENDARIO = (function () {
+  var cols = 64, filas = 7, celda = 13, paso = 18;
+  var tono = ['#161B22', '#0E4429', '#006D32', '#26A641', '#39D353'];
+  var x = 20261002;
+  var r = '';
+  for (var c = 0; c < cols; c++) {
+    for (var f = 0; f < filas; f++) {
+      x = (x * 48271) % 2147483647;
+      var p = x % 100;
+      var n = p < 68 ? 0 : p < 81 ? 1 : p < 91 ? 2 : p < 97 ? 3 : 4;
+      r += '<rect x="' + (c * paso) + '" y="' + (f * paso) + '" width="' + celda +
+           '" height="' + celda + '" rx="2" fill="' + tono[n] + '"/>';
+    }
+  }
+  var w = cols * paso - (paso - celda), h = filas * paso - (paso - celda);
+  return '<svg class="calendario" viewBox="0 0 ' + w + ' ' + h +
+         '" aria-hidden="true" focusable="false">' + r + '</svg>';
+})();
+
 window.DECK.push(
 
 /* ─────────────────────── 01 Portada, la linea borrada ───────────────────── */
@@ -38,6 +64,7 @@ window.DECK.push(
   html: `
   <div class="pad">
     <div class="cover portada">
+      ${CALENDARIO}
 
       <!-- La secuencia es un diff ocurriendo en vivo:
            1. se escribe "+ vibe coding" en verde, como una linea que alguien
@@ -64,6 +91,7 @@ window.DECK.push(
 
       <div class="pie-portada">
         <div class="pp-quien">
+          <span class="cuatro" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
           <b>Luisdavid Colina</b>
           <span>Dev Days 2026 &nbsp;&middot;&nbsp; Auditorio Manuel Bemporad &nbsp;&middot;&nbsp; 2 de octubre</span>
         </div>

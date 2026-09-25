@@ -1,11 +1,12 @@
 /* ==========================================================================
    03-metodo.js : laminas 06, 07 y 08
 
-   06  El giro. Corte a oscuro. Arriba la unica pregunta del deck y debajo
-       su respuesta, que es el diff que abrio la portada, ahora con su linea
-       verde. El cohete, la definicion de programacion con varios agentes y
-       la aclaracion de que nada de esto depende de una marca van hablados,
-       no escritos.
+   06  El giro. Corte a oscuro y una sola cosa en pantalla: la unica
+       pregunta del deck, a cuerpo de portada. La respuesta va hablada. El
+       diff no se repite aqui porque la portada ya lo cerro con su linea
+       verde, y contarlo dos veces gasta el efecto. El cohete, la definicion
+       de programacion con varios agentes y la aclaracion de que nada de esto
+       depende de una marca van hablados, no escritos.
    07  El encargo es el trabajo. La peticion pobre al lado del encargo
        completo, cada uno con su resultado. Los cuatro elementos se encienden
        uno por uno y con cada uno aparece la parte del resultado que produce.
@@ -35,19 +36,10 @@ window.DECK.push(
            la sala lleva tres minutos llegando sola a ella. -->
       <h2>¿Entonces la IA es el problema?</h2>
 
-      <!-- Y debajo la respuesta, que es el diff que abrio la portada. La roja
-           entra ya tachada, porque tacharla fue lo que ocurrio alli, y la
-           verde se escribe sola: es la linea que la sala lleva tres minutos
-           esperando. Las dos juntas dicen la ponencia entera, de modo que
-           quien solo mire las laminas se lleva el argumento completo.
-
-           La aclaracion de que nada de esto depende de una marca ni de un
-           lenguaje va hablada. Escrita ocupa sitio, no es el argumento de la
-           lamina y suena a descargo de responsabilidad. -->
-      <div class="diff">
-        <div class="dl rm"><span class="sig" aria-hidden="true">-</span><span class="tx">vibe coding</span></div>
-        <div class="dl ad"><span class="sig" aria-hidden="true">+</span><span class="tx">programacion con varios agentes</span></div>
-      </div>
+      <!-- Nada mas. La respuesta, la definicion y la aclaracion de que nada
+           de esto depende de una marca ni de un lenguaje van habladas.
+           Escritas ocupan sitio, no son el argumento de la lamina y la
+           aclaracion suena a descargo de responsabilidad. -->
 
     </div>
   </div>`

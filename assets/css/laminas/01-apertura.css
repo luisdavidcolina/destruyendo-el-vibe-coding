@@ -22,8 +22,11 @@
 
 /* La portada no usa el ancho de columna de las demas portadas: aqui la linea
    cruza la lamina de lado a lado. Los logos salen del flujo para que el par
-   de lineas quede centrado en la altura y no empujado por ellos. */
-@@PORTADA@@
+   de lineas quede centrado en la altura y no empujado por ellos.
+
+   Todo eso vive en laminas/01-portada.css. Aqui habia un token suelto,
+   arroba arroba PORTADA, que el navegador tomaba como el arranque de una
+   regla y se tragaba con el la primera regla de la lamina 02. */
 
 /* ══════════════════════════════════════════════════════════════════════════
    02 Quien expone

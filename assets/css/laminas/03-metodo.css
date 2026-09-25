@@ -17,10 +17,10 @@
 
 /* ══════════════════════════════════════════════════════════════════════════
    06 El giro
-   Corte a oscuro. Arriba la unica pregunta del deck y debajo su respuesta,
-   que es el diff que abrio la portada. El color no se inventa: .rm y .ad son
-   las clases con las que el deck pinta un diff en todos sus bloques de
-   codigo, asi que la lamina 01 y esta se leen como el mismo archivo.
+   Corte a oscuro y una sola frase: la unica pregunta del deck. Va a cuerpo
+   de portada, a lo Takahashi, porque es lo unico que hay que mirar y tiene
+   que leerse de un golpe desde la ultima fila. El diff no se repite aqui: la
+   portada ya lo cerro con su linea verde.
    ══════════════════════════════════════════════════════════════════════════ */
 .cine-hero.giro {
   justify-content: center;
@@ -31,85 +31,13 @@
   padding-bottom: 0;
 }
 
-/* La pregunta pesa menos que el diff, porque la respuesta es lo que la sala
-   vino esperando desde la portada. A este cuerpo cabe en un solo renglon. */
 .cine-hero.giro h2 {
-  font-size: 58px;
+  font-size: var(--t-hero);
   line-height: 1.04;
-  max-width: 920px;
-  margin: 0 0 44px;
+  letter-spacing: -0.03em;
+  max-width: 1040px;
+  margin: 0;
   text-wrap: balance;
-}
-
-/* ── El diff ──────────────────────────────────────────────────────────────
-   Las dos lineas salen de los margenes de .pad hasta tocar los bordes, igual
-   que en la portada, para que se lean como renglones de un archivo y no como
-   dos rotulos centrados. El cuerpo esta medido sobre la propia tipografia:
-   la linea verde, que es la larga, cabe entera en un renglon y deja aire a
-   los dos lados. Si crece el texto, baja el cuerpo, porque no envuelve. */
-.cine-hero.giro .diff {
-  align-self: stretch;
-  margin: 0 calc(var(--pad-x) * -1);
-  text-align: left;
-}
-
-.cine-hero.giro .dl {
-  display: flex;
-  align-items: baseline;
-  width: auto;
-  padding: 16px var(--pad-x) 20px;
-  font-family: var(--font-mono);
-  font-size: 64px;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  white-space: nowrap;
-}
-
-.cine-hero.giro .dl + .dl { margin-top: 12px; }
-
-/* El signo vive en la canal izquierda y queda fuera del tachado, igual que
-   en un diff de verdad: lo que se tacha es la linea, no su marcador. */
-.cine-hero.giro .dl .sig {
-  flex: none;
-  margin-right: 0.26em;
-  opacity: 0.78;
-}
-
-.cine-hero.giro .dl .tx {
-  position: relative;
-  display: inline-block;
-}
-
-/* La roja entra ya tachada. Tacharla fue lo que ocurrio en la portada, y
-   hacerlo otra vez seria contar dos veces lo mismo. Mismo grosor y misma
-   altura que alli, para que la sala reconozca la linea. */
-.cine-hero.giro .dl.rm .tx::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.585em;
-  width: 100%;
-  height: 0.058em;
-  background: currentColor;
-  border-radius: 2px;
-}
-
-/* ── La linea verde ───────────────────────────────────────────────────────
-   Es lo unico que se mueve aqui, y aclara lo que de otro modo se pierde: que
-   primero hay una pregunta y despues una respuesta. Puestas a la vez, las dos
-   lineas se leen como un rotulo de dos renglones. Escalonadas, la sala ve
-   llegar la linea que le falta desde la portada. Se escribe de izquierda a
-   derecha, que es como se inserta una linea. */
-@keyframes giroAd {
-  from { clip-path: inset(0 100% 0 0); }
-  to   { clip-path: inset(0 0 0 0); }
-}
-
-.cine-hero.giro .dl.ad { clip-path: inset(0 100% 0 0); }
-
-.slide.is-active .cine-hero.giro .dl.ad {
-  animation: giroAd 0.72s cubic-bezier(0.22, 1, 0.36, 1) 2.4s both;
 }
 
 /* ══════════════════════════════════════════════════════════════════════════

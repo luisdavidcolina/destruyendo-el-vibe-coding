@@ -1,0 +1,241 @@
+/* ==========================================================================
+   laminas/00-identidad.css : la capa de identidad de git
+
+   El deck ya usa la paleta de Primer y Mona Sans, pero el lenguaje visual de
+   git solo aparece en la portada y en la lamina del giro, que son las dos que
+   estan compuestas como un diff. En las once laminas de en medio no hay nada
+   que diga de que evento es esto.
+
+   Esta hoja agrega esa capa SIN tocar ninguna lamina y SIN marcado nuevo.
+   Solo redibuja piezas que ya existen en base.css y components.css, y lo hace
+   con las mismas variables de color, de modo que el tema oscuro sale gratis.
+
+   El limite lo pone el principio de coherencia de Mayer, que esta medido en
+   23 de 23 experimentos: el adorno que no aporta baja el aprendizaje. Asi que
+   nada de esto pide atencion. Lo que se ve es estructura, no decoracion. Dice
+   donde empieza una lamina, donde termina y de que familia es.
+
+   NO ANIMA NADA. Ni un keyframe propio, ni un elemento que quede en opacidad
+   cero. Lo unico que se mueve es el barrido que motion.css ya le hace a .rule,
+   y este archivo lo aprovecha en vez de competir con el.
+
+   PENDIENTE, y no lo puede resolver esta hoja: falta enlazarla. En index.html
+   va como PRIMERA de la lista de laminas, antes de 01-apertura.css:
+
+       <link rel="stylesheet" href="assets/css/laminas/00-identidad.css">
+
+   Va de primera a proposito. Todo lo de aqui esta escrito para perder contra
+   una hoja de lamina que quiera otra cosa, salvo una regla que lleva
+   especificidad de mas y que esta marcada en su sitio.
+   ========================================================================== */
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   1. La reticula de contribuciones, como textura
+
+   El grafico de contribuciones es la imagen que cualquiera de esa sala
+   reconoce sin que se la expliquen. Aqui va como textura y no como grafico:
+   un bloque de casillas en la esquina inferior derecha, al 5 por ciento de
+   opacidad, con un degradado que lo disuelve hacia el contenido.
+
+   Tres decisiones y sus motivos:
+
+   - No va a sangre completa. Una trama sobre toda la lamina compite con el
+     texto y ademas, proyectada, se lee como ruido de compresion. En una
+     esquina se lee como lo que es, un pedazo de calendario.
+   - El paso es de 11 pixeles. La reticula que base.css ya dibuja en
+     .slide::before va a 44, que son cuatro casillas exactas, asi que las dos
+     tramas caen en la misma cuadricula y no producen moire. Por eso el bloque
+     arranca en 858 y 583, que son multiplos de 11 medidos desde el origen de
+     la lamina.
+   - No entra en las laminas de corte. La portada, el giro y el cierre estan
+     compuestas en negro con una sola cosa en pantalla, y ahi cualquier trama
+     sobra.
+
+   Se dibuja en .slide::after, que estaba libre. Queda por encima del fondo de
+   .slide::before y por debajo del contenido, que va a z-index 1.
+   ══════════════════════════════════════════════════════════════════════════ */
+.slide::after {
+  content: "";
+  position: absolute;
+  left: 858px;
+  top: 583px;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  /* Casilla de 8 pixeles con 3 de calle, que es la proporcion del grafico
+     real. El archivo va dibujado aqui mismo: ni una peticion a la red el dia
+     de la ponencia.
+
+     La opacidad se midio en el render, no se eligio a ojo. Al 5 por ciento la
+     casilla caia en 232 sobre un fondo de 240, que es MAS contraste del que ya
+     tienen las lineas de la reticula de base.css, y como la casilla cubre la
+     mitad de la superficie el bloque se leia como un objeto. Al 3 por ciento
+     la diferencia queda en cinco niveles y desde la sala no existe. */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11'%3E%3Crect x='0' y='0' width='8' height='8' rx='2' fill='%231F2328' fill-opacity='0.03'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 11px 11px;
+
+  /* El bloque se disuelve hacia arriba y hacia la izquierda, para que no quede
+     un rectangulo de borde recto detras del contenido. Si el navegador no
+     entiende la mascara, lo que se ve es el mismo bloque sin difuminar, y a
+     esta opacidad eso tampoco molesta. */
+  -webkit-mask-image: radial-gradient(130% 150% at 100% 100%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.45) 40%, rgba(0, 0, 0, 0) 72%);
+          mask-image: radial-gradient(130% 150% at 100% 100%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.45) 40%, rgba(0, 0, 0, 0) 72%);
+}
+
+/* En oscuro la casilla es clara, con la misma opacidad. El tema se cambia con
+   la tecla T y la textura tiene que comportarse igual en los dos. */
+:root[data-theme="dark"] .slide::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11'%3E%3Crect x='0' y='0' width='8' height='8' rx='2' fill='%23E6EDF3' fill-opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Las tres laminas de corte quedan limpias */
+.slide.cinema::after { content: none; }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   2. La regla bajo el titulo, dibujada como una rama con commits
+
+   Es la pieza que mas rinde, porque .rule aparece en las once laminas que
+   llevan titular y hoy es una barra plana con un tramo de acento al principio.
+   Pasa a ser una rama: la linea fina cruza la lamina entera y sobre el tramo
+   de acento se apoyan tres nodos de commit.
+
+   Por que aclara y no adorna: motion.css ya le hace a .rule un barrido de
+   izquierda a derecha. Con los nodos dentro, ese barrido deja de ser un efecto
+   de entrada y pasa a dibujar una rama que avanza, que es exactamente la forma
+   de la ponencia. La animacion no cambia, cambia lo que cuenta.
+
+   El alto sube de 2 a 10 pixeles para que los nodos quepan DENTRO de la caja.
+   Sobresalir no es opcion: el barrido de motion.css recorta con clip-path a la
+   caja del elemento y cortaria los nodos por la mitad. Los margenes bajan 4
+   pixeles por lado para compensar, de modo que la regla sigue ocupando los
+   mismos 40 pixeles de siempre y ninguna lamina se mueve un pixel.
+   ══════════════════════════════════════════════════════════════════════════ */
+.slide .rule {
+  height: 10px;
+  margin: 12px 0 18px;
+  border-radius: 0;
+  background-color: transparent;
+
+  /* Cinco capas, de arriba hacia abajo: tres nodos, el tramo de rama en acento
+     y la linea de fondo que llega hasta el otro margen. Los nodos caen en 5,
+     49 y 93, siempre dentro del tramo de acento, que mide 134 y es
+     practicamente el mismo 12 por ciento que tenia la version plana. */
+  background-image:
+    radial-gradient(circle at 5px 50%, var(--accent) 0 3.2px, transparent 3.4px),
+    radial-gradient(circle at 5px 50%, var(--accent) 0 3.2px, transparent 3.4px),
+    radial-gradient(circle at 5px 50%, var(--accent) 0 3.2px, transparent 3.4px),
+    linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(var(--line), var(--line));
+  background-repeat: no-repeat;
+  background-size: 10px 100%, 10px 100%, 10px 100%, 134px 2px, 100% 2px;
+  background-position: 0 50%, 44px 50%, 88px 50%, 0 50%, 0 50%;
+}
+
+/* ESPECIFICIDAD DE MAS, a proposito y solo aqui.
+   La lamina 02 le pone a su regla un margen propio en 01-apertura.css, con la
+   misma especificidad que la regla de arriba, asi que quien gane dependeria
+   del orden de carga. Se le devuelve su ritmo restando los mismos 4 pixeles
+   por lado, para que esa lamina tampoco se mueva. */
+.slide .quien .rule { margin: 20px 0 26px; }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   3. El pie de lamina, como el rail del grafico de commits
+
+   El pie ya trae una linea de 1 pixel que cruza hasta el numero de lamina. Con
+   un nodo en su extremo derecho, esa linea deja de ser un separador y pasa a
+   leerse como la rama del grafico, con el numero de lamina haciendo de
+   referencia al final. Es el mismo gesto que la regla de arriba, repetido
+   abajo, y eso es lo que ata la lamina de arriba a abajo.
+
+   El alto pasa de 1 a 9 pixeles para que el nodo quepa, pero el pie centra sus
+   hijos, asi que no se mueve nada. Las laminas de corte no llevan pie.
+   ══════════════════════════════════════════════════════════════════════════ */
+.slide .slide-foot .spacer {
+  height: 9px;
+  background-color: transparent;
+  background-image:
+    radial-gradient(circle at 4.5px 50%, var(--accent) 0 3px, transparent 3.2px),
+    linear-gradient(var(--line), var(--line));
+  background-repeat: no-repeat;
+  background-size: 9px 100%, 100% 1px;
+  background-position: 100% 50%, 0 50%;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   4. El rotulo de la tarjeta, como una etiqueta de referencia
+
+   .card .card-ix es el rotulo que va arriba de una tarjeta, y hoy es texto
+   suelto en versalitas. Compuesto como una pastilla con un punto de color
+   delante se lee como una etiqueta de rama o de incidencia, que es la unica
+   parte del aspecto de una tarjeta de pull request que cabe aqui sin estorbar.
+
+   Sube el contraste en vez de bajarlo: el rotulo deja de flotar sobre el fondo
+   de la tarjeta y queda encerrado, con su borde y su fondo propio.
+   ══════════════════════════════════════════════════════════════════════════ */
+.slide .card .card-ix {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 12px 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+}
+
+.slide .card .card-ix::before {
+  content: "";
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* La tarjeta en dorado lleva su punto en dorado, como ya lleva su texto */
+.slide .card.gold .card-ix::before { background: var(--gold); }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   5. Impresion
+
+   La exportacion a PDF redibuja cada trama vector a vector y engorda el
+   archivo sin que aporte nada en papel, que es el criterio que base.css ya
+   aplica a la reticula de fondo. La textura se apaga entera. La rama de la
+   regla se queda, porque ahi si es informacion: es lo que distingue el
+   arranque de una lamina en una hoja impresa.
+   ══════════════════════════════════════════════════════════════════════════ */
+@media print {
+  .slide::after { content: none !important; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   6. Lo que se probo y se descarto, con su motivo
+
+   Queda escrito para que nadie lo vuelva a intentar sin saber que ya se miro.
+
+   - EL ROTULO DE SECCION COMO RAMA, con su punto de commit delante. No se
+     puede: base.css apaga .kicker en todo el deck, porque el rotulo repetia en
+     pequeno lo que el titular ya dice en grande. No hay donde ponerlo.
+
+   - LA TARJETA COMPLETA CON ASPECTO DE PULL REQUEST, con su icono de estado en
+     una esquina. Las dos laminas que usan .card tienen las dos esquinas de
+     arriba ocupadas: la lamina 08 lleva el icono a la izquierda y el numero a
+     la derecha, y la 10 lleva el rotulo. Cualquier marca de estado choca con
+     algo. Queda solo la etiqueta del bloque 4, que es la parte que si cabe.
+
+   - MAS PRESENCIA DE .rm Y .ad. Las dos clases viven hoy en la portada y en la
+     lamina del giro, que son justamente las dos que estan compuestas enteras
+     como un diff, a 64 y a 176 pixeles. Ya tienen toda la presencia que
+     admiten. Llevarlas a una tercera lamina diria que ahi tambien se borra o
+     se agrega algo, y no es cierto, asi que seria una metafora falsa.
+
+   - LA TEXTURA A SANGRE COMPLETA. Descartada por lo que dice el bloque 1.
+   ══════════════════════════════════════════════════════════════════════════ */

@@ -44,8 +44,9 @@
 /* ── El diff ──────────────────────────────────────────────────────────────
    Las dos lineas salen de los margenes de .pad hasta tocar los bordes, igual
    que en la portada, para que se lean como renglones de un archivo y no como
-   dos rotulos centrados. El cuerpo esta calculado para que la linea verde
-   termine justo donde termina la roja de la lamina 01. */
+   dos rotulos centrados. El cuerpo esta medido sobre la propia tipografia:
+   la linea verde, que es la larga, cabe entera en un renglon y deja aire a
+   los dos lados. Si crece el texto, baja el cuerpo, porque no envuelve. */
 .cine-hero.giro .diff {
   align-self: stretch;
   margin: 0 calc(var(--pad-x) * -1);
@@ -256,58 +257,94 @@
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
-   08 Como se trabaja bien
+   08 Cuatro reglas, y la primera manda
    ══════════════════════════════════════════════════════════════════════════ */
 
-/* Cuatro fichas en dos filas. Con cuatro y no ocho cabe el predicado de cada
-   una, y el cuerpo sube lo bastante para leerse desde el fondo del auditorio.
-   Dos palabras sueltas no le decian nada a quien mirara la lamina sin oir al
-   expositor. Las otras cuatro reglas van habladas y no llevan ficha. */
-.consejos .grid { align-items: stretch; }
+/* Cuatro fichas, no ocho, y cada una con su predicado. Dos palabras sueltas
+   no significan nada para quien mire la lamina sin oir al expositor, que es
+   lo que le pasa a media sala mientras toma nota. Las otras cuatro reglas del
+   guion van habladas y no llevan ficha.
+
+   La rejilla se estira hasta el borde inferior en vez de quedarse como una
+   banda a media altura: antes la lamina dejaba medio proyector vacio debajo
+   de las fichas. Dos filas iguales, y las cuatro fichas del mismo alto. */
+.consejos .grid {
+  flex: 1;
+  min-height: 0;
+  grid-template-rows: 1fr 1fr;
+  align-items: stretch;
+}
 
 .consejos .ficha {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  padding: 30px 32px;
+  min-height: 0;
+}
+
+/* El icono y el numero arriba, y el texto apoyado contra el borde de abajo,
+   de modo que los cuatro predicados quedan a la misma altura y se leen como
+   una lista aunque esten en dos filas. */
+.consejos .ficha .cab {
+  display: flex;
   align-items: center;
-  gap: 22px;
-  padding: 26px;
-  min-height: 150px;
+  justify-content: space-between;
+  margin-bottom: auto;
 }
 
 .consejos .ficha .ico {
-  width: 54px;
-  height: 54px;
-  border-radius: 15px;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
   margin-bottom: 0;
 }
 
-.consejos .ficha .ico svg { width: 28px; height: 28px; }
+.consejos .ficha .ico svg { width: 29px; height: 29px; stroke-width: 1.8; }
 
+.consejos .ficha .n {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+}
+
+/* El predicado es lo que la sala tiene que poder leer desde la ultima fila,
+   asi que manda el tamaño y no la cantidad de texto. */
 .consejos .ficha h3 {
-  font-size: 27px;
-  line-height: 1.24;
-  margin-bottom: 0;
-  letter-spacing: -0.015em;
+  font-size: 33px;
+  line-height: 1.16;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 22px 0 8px;
   text-wrap: balance;
 }
 
-/* ── Cada ficha entra cuando se la nombra ─────────────────────────────────
-   No entran juntas: cuatro predicados de golpe se leen de corrido mientras
-   el expositor todavia esta en el chiste, y la sala deja de escuchar. La
-   entrada es la señal de cual se esta diciendo, asi que no hace falta ademas
-   encenderlas y apagarlas: eso seria decir dos veces lo mismo.
+/* El apoyo va en el gris de cuerpo y nunca en el mas claro de la paleta: el
+   videobeam del auditorio lava ese rango y desde la tercera fila desaparece. */
+.consejos .ficha p {
+  font-size: 20px;
+  line-height: 1.35;
+  color: var(--text-dim);
+}
 
-   Los tiempos salen de los tramos del guion, a 148 palabras por minuto. Las
-   tres primeras van seguidas. La cuarta espera, porque entre ella y la
-   tercera van dos consejos que se dicen hablando y no tienen ficha. */
+/* ── Cada ficha entra cuando le toca ──────────────────────────────────────
+   No entran juntas, y tampoco esperan a que se las nombre una por una. Las
+   cuatro de golpe se leen de corrido mientras el expositor todavia esta en el
+   chiste del lenguaje, y la sala deja de escuchar. Encadenadas a los tramos
+   exactos del guion, un minuto que se adelante deja fichas sin aparecer.
+
+   El escalonado de cuatro segundos resuelve las dos cosas: marca el orden de
+   las reglas, que es lo que la animacion tiene que aclarar, y a los trece
+   segundos la lamina esta completa pase lo que pase con el reloj. */
 .slide.is-active .consejos .ficha {
   animation: rise 0.62s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.slide.is-active .consejos .f1 { animation-delay: 14.0s; }
-.slide.is-active .consejos .f2 { animation-delay: 21.0s; }
-.slide.is-active .consejos .f3 { animation-delay: 28.0s; }
-.slide.is-active .consejos .f4 { animation-delay: 42.0s; }
+.slide.is-active .consejos .f1 { animation-delay: 1.0s; }
+.slide.is-active .consejos .f2 { animation-delay: 5.0s; }
+.slide.is-active .consejos .f3 { animation-delay: 9.0s; }
+.slide.is-active .consejos .f4 { animation-delay: 13.0s; }
 
 /* ══════════════════════════════════════════════════════════════════════════
    Movimiento reducido e impresion
@@ -352,61 +389,4 @@
 
   .encargo .code .ln { background: transparent !important; box-shadow: none !important; }
   .consejos .ficha { border-color: var(--line) !important; }
-}
-
-/* ── Lamina 08, el recorrido de una tarea ────────────────────────────────
-   Cuatro consejos en fichas son cuatro frases sueltas y no explican nada. El
-   mismo contenido puesto como el recorrido que hace una tarea si explica:
-   se ve que hay un orden, que cada puerta filtra algo, y que al final hay una
-   persona. La flecha entre puertas es lo que convierte la lista en proceso. */
-/* El recorrido ocupa el alto disponible en vez de quedarse como una banda en
-   mitad de la lamina con hueco arriba y abajo. */
-.via { display: flex; align-items: stretch; }
-
-.via-riel { display: flex; align-items: stretch; gap: 0; width: 100%; }
-
-.vp {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--r);
-  padding: 30px 24px;
-  box-shadow: var(--card-shadow);
-}
-
-.vp-n {
-  font-family: var(--font-mono);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-}
-
-.vp-t { font-size: 20px; font-weight: 650; color: var(--text); line-height: 1.25; }
-.vp-d { font-size: 16px; color: var(--text-dim); line-height: 1.4; margin-top: auto; }
-
-/* La ultima puerta es humana y se distingue */
-.vp.fin { border-color: var(--accent); box-shadow: var(--glow); }
-
-/* La flecha entre puertas. Sin ella esto seria una rejilla de cuatro cajas. */
-.vp-fl {
-  flex: none;
-  align-self: center;
-  width: 30px;
-  height: 2px;
-  background: var(--line);
-  position: relative;
-}
-
-.vp-fl::after {
-  content: "";
-  position: absolute;
-  right: -1px;
-  top: -4px;
-  border-left: 8px solid var(--line);
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
 }

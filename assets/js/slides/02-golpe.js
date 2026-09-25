@@ -2,71 +2,87 @@
    02-golpe.js : laminas 03, 04 y 05
 
    Es el golpe de la ponencia. Tres laminas seguidas que abren una tension y
-   la cierran con evidencia, y las tres mejores animaciones del deck.
+   la cierran con evidencia.
 
-   03  El iceberg y la cita de quien bautizo el termino. Sobre la linea de
-       agua esta la punta, que es la peticion que se escribe, y debajo esta
-       todo lo que decide si el resultado sirve. No hay ninguna cifra: esta
-       lamina existe para abrir la tension que resuelven las dos siguientes.
-       La foto todavia no esta en la carpeta, asi que hay un hueco preparado
-       y un iceberg dibujado en CSS que sostiene la lamina hoy mismo.
-   04  El experimento de METR. Dos barras enfrentadas sobre un mismo eje.
-       Sube lo que sintieron, cae lo que se midio. La forma se guarda tal
-       cual porque la lamina 11 la repite a proposito, y ese eco es el
-       recurso narrativo de la ponencia.
-   05  Nueve segundos de reloj corriendo de verdad, con la cadena de cuatro
-       pasos encendiendose mientras corre, y la captura real de prensa al
-       lado. Al llegar a nueve no se apaga nada: entra lo que costo y la
-       lamina se queda entera, que es lo que la sala fotografia.
+   03  El reparto. Arriba de la linea de flotacion va UNA sola caja: escribir
+       la peticion. Debajo van ocho, que es todo lo que decide si el resultado
+       sirve. El volumen de cada lado ES el argumento y se lee de un vistazo,
+       sin leer una sola palabra. Antes esto era un dibujo de iceberg con una
+       frase encima, que no decia nada. La cita de Karpathy se queda, pero
+       arriba y fuera del agua, porque el termino lo bautizo el.
+   04  El experimento de METR. Dos barras enfrentadas sobre un mismo eje. Mas
+       20 y menos 19 son magnitudes casi iguales: las dos barras salen casi
+       identicas y lo unico que las separa es la direccion, que es justo el
+       punto. Al flanco izquierdo, que estaba vacio, entra la captura de la
+       propia pagina de METR, con la nota de que en febrero de 2026 volvieron
+       a medir. La forma de las barras se guarda tal cual porque la lamina 11
+       la repite a proposito, y ese eco es el recurso narrativo de la ponencia.
+   05  Nueve segundos. El numero y la palabra son UNA sola unidad tipografica,
+       no un numero gigante con una etiqueta gris debajo. El reloj corre de
+       verdad, la cadena de cuatro pasos se enciende mientras corre y la
+       captura real de prensa esta en pantalla desde el primer fotograma,
+       porque es la prueba de lo que se afirma. Abajo, la banda con lo que
+       costo.
 
    Lo visual vive en assets/css/laminas/02-golpe.css. Ninguna de las tres
-   toca deck.js: las cifras las escribe CSS con un contador y el reloj es
-   una cinta con steps().
+   toca deck.js.
 
    Lo que se dice hablando no esta escrito aqui. En la 03 faltan la creencia
    compartida, la pregunta que abre la tension y quien es Karpathy. En la 04
-   falta el aviso de que METR cambio el diseño del experimento en febrero de
-   2026, y en la 05 falta todo el relato del incidente, quien es Cursor y el
-   remate de que nueve segundos bastaron para destruir lo que tomo años
-   construir. Eso va en la voz, no en la pantalla.
+   falta el detalle del diseño del experimento, y en la 05 falta todo el
+   relato del incidente, quien es Cursor y el remate de que nueve segundos
+   bastaron para destruir lo que tomo años construir. Eso va en la voz, no en
+   la pantalla.
    ========================================================================== */
 window.DECK.push(
 
-/* ───────────────────── 03 El iceberg y la cita de Karpathy ─────────────────── */
+/* ───────────────────── 03 El reparto y la cita de Karpathy ───────────────── */
 {
   section: 'El golpe',
-  title: 'Lo que decide esta debajo',
+  title: 'Lo que decide está debajo',
   min: '0:40 a 1:20',
   html: `
   <div class="pad">
-    <div class="kicker anim" data-d="1">vibe coding</div>
-    <h1 class="title">Lo que decide esta debajo</h1>
+    <h1 class="title">Lo que decide está debajo</h1>
     <div class="rule"></div>
 
     <div class="body-area ice-area">
-      <!-- El hueco de la foto es .ice-foto y apunta a assets/img/iceberg.jpg.
-           Ese archivo todavia no existe, asi que hoy esa capa no pinta nada y
-           lo que se ve es el iceberg dibujado con degradados y recortes que
-           queda debajo. El dia que la imagen entre en la carpeta la tapa sin
-           que haya que tocar una linea de aqui. -->
-      <figure class="ice">
-        <div class="ice-masa" aria-hidden="true"></div>
-        <div class="ice-punta" aria-hidden="true"></div>
-        <div class="ice-foto" aria-hidden="true"></div>
-        <div class="ice-tapa" aria-hidden="true"></div>
-        <div class="ice-agua" aria-hidden="true"></div>
-        <div class="ice-velo" aria-hidden="true"></div>
 
-        <!-- La cita va en .quote, que es la misma pieza con barra lateral de
-             acento que lleva la cita de Thompson en la lamina 13. Las dos
-             tienen que leerse como un par, asi que el formato no se toca:
-             aqui solo cambian el sitio y el tamaño. El mes de la publicacion
-             y quien es Karpathy se dicen hablando. -->
+      <!-- Sobre la linea de flotacion: una sola caja, y al lado la cita de
+           quien bautizo el termino. La cita va aqui arriba, fuera del agua,
+           porque nombra justo lo unico que el metodo entero consiste en
+           escribir. -->
+      <div class="ice-sobre">
+        <div class="ice-arriba">
+          <span class="ice-eti">Lo que se escribe</span>
+          <div class="ice-caja">Escribir la petición</div>
+        </div>
+
         <blockquote class="quote ice-cita">
-          &ldquo;Entregarse a las vibras y olvidar que el codigo existe&rdquo;
+          <b>vibe coding</b>
+          &ldquo;Entregarse a las vibras y olvidar que el código existe&rdquo;
           <span class="who">Andrej Karpathy, 2025</span>
         </blockquote>
-      </figure>
+      </div>
+
+      <div class="ice-agua"><span>Línea de flotación</span></div>
+
+      <!-- Debajo, las ocho. La rejilla llena lo que queda de lamina a
+           proposito: ese volumen es el argumento. -->
+      <div class="ice-bajo">
+        <span class="ice-eti">Lo que decide si el resultado sirve</span>
+        <div class="ice-rej">
+          <span>Contexto del proyecto</span>
+          <span>Convenciones del repositorio</span>
+          <span>Criterio de aceptación</span>
+          <span>Permisos del agente</span>
+          <span>Revisión humana</span>
+          <span>Pruebas que corren</span>
+          <span>Qué modelo para qué tarea</span>
+          <span>Saber leer lo que devuelve</span>
+        </div>
+      </div>
+
     </div>
   </div>`
 },
@@ -78,38 +94,53 @@ window.DECK.push(
   min: '1:20 a 2:20',
   html: `
   <div class="pad">
-    <h1 class="title">La sensacion no sirve para medir</h1>
+    <h1 class="title">La sensación no sirve para medir</h1>
     <div class="rule"></div>
 
-    <div class="body-area enf-area">
-      <!-- Pieza .enf, generica y reutilizable. Los valores entran por
-           atributos: --to es la cifra a la que cuenta el numero y --h el
-           alto de la barra. Como los dos porcentajes son casi iguales en
-           magnitud, las dos barras salen casi identicas y lo unico que las
-           separa es la direccion, que es exactamente el punto.
+    <div class="body-area met-area">
+      <div class="met-grid">
 
-           Primero sube la de arriba, rapida. Se sostiene un segundo. Y
-           entonces aparece la de abajo y cae hacia el otro lado. -->
-      <div class="enf">
+        <!-- La captura de la pagina de METR. Ocupa el flanco izquierdo, que
+             antes eran cuatrocientos noventa pixeles muertos, y sostiene la
+             cifra con la fuente a la vista: el titulo del estudio, el resumen
+             donde se lee el 19 por ciento y la nota de actualizacion. El
+             recorte lo hace el marco, no el archivo. -->
+        <figure class="met-nota">
+          <div class="met-marco">
+            <img src="assets/img/nota-metr.png" alt="Página de METR con el estudio Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity">
+          </div>
+          <figcaption class="met-pie">METR, ensayo controlado aleatorizado. Julio de 2025.</figcaption>
+        </figure>
 
-        <div class="enf-arriba">
-          <span class="enf-eti">Lo que sintieron</span>
-          <span class="enf-cifra" style="--to:20"><i class="sg">+</i><i class="nm"></i><i class="pc">%</i></span>
-          <span class="enf-barra" style="--h:132px"></span>
-        </div>
+        <!-- Pieza .enf, generica y reutilizable. Los valores entran por
+             atributos: --to es la cifra y --h el alto de la barra. Como los
+             dos porcentajes son casi iguales en magnitud, las dos barras
+             salen casi identicas y lo unico que las separa es la direccion,
+             que es exactamente el punto. Las cifras estan completas desde el
+             primer fotograma: un contador que sube proyecta cifras falsas
+             mientras el expositor dice la verdadera. -->
+        <div class="enf">
 
-        <div class="enf-eje"></div>
+          <div class="enf-arriba">
+            <span class="enf-eti">Lo que sintieron</span>
+            <span class="enf-cifra" style="--to:20"><i class="sg">+</i><i class="nm"></i><i class="pc">%</i></span>
+            <span class="enf-barra" style="--h:124px"></span>
+          </div>
 
-        <div class="enf-abajo">
-          <span class="enf-barra" style="--h:125px"></span>
-          <span class="enf-cifra" style="--to:19"><i class="sg">-</i><i class="nm"></i><i class="pc">%</i></span>
-          <span class="enf-eti">Lo que se midio</span>
+          <div class="enf-eje"></div>
+
+          <div class="enf-abajo">
+            <span class="enf-barra" style="--h:118px"></span>
+            <span class="enf-cifra" style="--to:19"><i class="sg">&minus;</i><i class="nm"></i><i class="pc">%</i></span>
+            <span class="enf-eti">Lo que se midió</span>
+          </div>
+
         </div>
 
       </div>
     </div>
 
-    <div class="fuente anim" data-d="8">METR, 2025 y 2026</div>
+    <p class="met-ajuste">En febrero de 2026 METR volvió a medir con modelos posteriores y publicó los datos nuevos.</p>
   </div>`
 },
 
@@ -120,7 +151,7 @@ window.DECK.push(
   min: '2:20 a 3:10',
   html: `
   <div class="pad">
-    <h1 class="title">El agente tenia permiso</h1>
+    <h1 class="title">El agente tenía permiso</h1>
     <div class="rule"></div>
 
     <div class="body-area nueve">
@@ -128,29 +159,24 @@ window.DECK.push(
 
         <div class="nv-izq">
 
-          <!-- El nombre del caso es informacion principal, asi que va a cuerpo
-               de informacion principal y no de pie de foto. Encima del reloj,
-               porque lo que la sala tiene que leer de corrido es PocketOS,
-               nueve segundos. -->
+          <!-- El nombre del caso es informacion principal, asi que va a
+               cuerpo de informacion principal y no de pie de foto. -->
           <div class="nv-caso">
             <span class="nv-marca">PocketOS</span>
-            <span class="nv-giro">alquiler de vehiculos</span>
+            <span class="nv-giro">Alquiler de vehículos</span>
           </div>
 
-          <!-- El reloj corre de verdad: nueve segundos de sala en silencio.
-               Las diez celdas van vacias a proposito, los digitos los escribe
-               la hoja de estilo con un contador. -->
-          <div class="nv-reloj">
-            <div class="nv-vent" aria-hidden="true">
-              <div class="nv-cinta"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            </div>
-            <div class="nv-u">segundos</div>
-          </div>
+          <!-- El numero y la palabra son UNA sola unidad tipografica, en una
+               sola linea y sobre una sola base. Antes eran dos objetos, un
+               nueve gigante y una etiqueta gris debajo, y desde el fondo del
+               salon se leia "9" a secas. El digito lo escribe la hoja de
+               estilo con un contador, asi que el marcado no lleva ni una
+               cifra suelta y, si el navegador no anima, se lee el nueve. -->
+          <div class="nv-seg"><i class="nv-n"></i> segundos</div>
 
           <!-- La cadena se enciende paso a paso mientras el reloj corre. El
                ultimo es el unico que hace daño, y por eso es el unico rojo.
-               Al parar el reloj se queda encendida entera, porque es lo que
-               la sala fotografia. -->
+               Al parar el reloj se queda encendida entera. -->
           <ol class="nv-cadena">
             <li class="nv-paso">entorno de pruebas</li>
             <li class="nv-paso">problema de credenciales</li>
@@ -160,33 +186,28 @@ window.DECK.push(
 
         </div>
 
-        <div class="nv-der">
-
-          <!-- La evidencia. Titular real de prensa, con la marca del medio
-               arriba y las dos lineas del titular abajo. El recorte lo hace el
-               marco en la hoja de estilo: entra la imagen entera y se corta lo
-               que sobra, que es el cuerpo de la nota. -->
-          <figure class="nv-nota">
-            <div class="nv-marco">
-              <img src="assets/img/nota-pocketos.png" alt="Titular de Hackread sobre el borrado de la base de datos y los respaldos de PocketOS en nueve segundos">
-            </div>
-            <figcaption class="nv-pie pie-fuente">Hackread, 29 de abril de 2026</figcaption>
-          </figure>
-
-          <!-- Al llegar a nueve no se apaga nada. Entra lo que costo, y esto
-               es lo que queda proyectado mientras se sigue hablando. -->
-          <div class="nv-saldo">
-            <p class="nv-dano">Base de datos y respaldos, borrados</p>
-            <div class="nv-dato"><b>30 horas</b><span>fuera de servicio</span></div>
-            <div class="nv-dato"><b>3 meses</b><span>de reservas perdidas</span></div>
+        <!-- La evidencia, en pantalla desde el primer fotograma. Titular real
+             de prensa. El recorte lo hace el marco: entra la imagen entera y
+             se corta el cuerpo de la nota, que esta en ingles y que nadie
+             alcanza a leer proyectado. -->
+        <figure class="nv-nota">
+          <div class="nv-marco">
+            <img src="assets/img/nota-pocketos.png" alt="Titular de Hackread: Cursor AI Agent Wipes PocketOS Database and Backups in 9 Seconds">
           </div>
-
-        </div>
+          <figcaption class="nv-pie">Hackread, 29 de abril de 2026 &middot; OECD AI Incidents</figcaption>
+        </figure>
 
       </div>
-    </div>
 
-    <div class="fuente">OECD AI Incidents</div>
+      <!-- La banda de abajo: lo que costo. Cruza la lamina entera para que no
+           quede aire muerto debajo de la cadena. -->
+      <div class="nv-saldo">
+        <p class="nv-dano">Base de datos y respaldos, borrados</p>
+        <div class="nv-dato"><b>30 horas</b><span>fuera de servicio</span></div>
+        <div class="nv-dato"><b>3 meses</b><span>de reservas perdidas</span></div>
+      </div>
+
+    </div>
   </div>`
 }
 

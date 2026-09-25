@@ -147,11 +147,16 @@
 
 /* Estas etiquetas se probaron en gris claro sobre gris y no se leian. Un
    videobeam lava justo ese rango. Van sobre blanco, con borde y con el texto
-   al color de cuerpo, no al de apoyo. */
+   al color de cuerpo, no al de apoyo.
+
+   El relleno bajo de 7 a 6 y el hueco interno de 8 a 7 al entrar los
+   logotipos. Con las medidas anteriores las seis fichas se pasaban de los
+   680 pixeles de la pila y la franja se partia en dos filas, que la
+   desprendia del pie de la piramide. */
 .cr {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   font-family: var(--font-mono);
   font-size: 15px;
   font-weight: 500;
@@ -159,12 +164,41 @@
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 7px 16px;
+  padding: 6px 13px;
   box-shadow: var(--card-shadow);
 }
 
-/* Hueco para el logotipo de cada marca, cuando se consigan */
-.cr .cr-logo { width: 16px; height: 16px; flex: none; display: block; }
+/* ── Los logotipos de cada marca ─────────────────────────────────────────
+   Son los oficiales, descargados y guardados en assets/logos, asi que el dia
+   de la ponencia no se le pide nada a internet.
+
+   Van pequenos y a la izquierda del nombre. No estan de adorno: la sala
+   reconoce la marca antes de leer el codigo del examen, y eso es justamente
+   lo que la lamina esta diciendo, que cada capa trae su propia fiebre de
+   credenciales con nombre y apellido. */
+.cr-logo {
+  flex: none;
+  display: block;
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+}
+
+/* Amazon e IBM no tienen simbolo suelto: su marca es la palabra. Se les da
+   alto de letra y ancho libre, para que no queden aplastadas dentro de un
+   cuadrado que no les corresponde. */
+.cr-logo.ancho { width: auto; height: 11px; max-width: 34px; }
+
+/* Con la tecla T el deck se va a oscuro y dos de estas marcas son casi
+   negras, asi que desaparecerian sobre la ficha. Cada logotipo se apoya
+   entonces en una placa blanca, que ademas es como las publican sus propios
+   manuales de marca. */
+:root[data-theme="dark"] .cr-logo {
+  background: #FFFFFF;
+  border-radius: 3px;
+  padding: 1px;
+  box-sizing: content-box;
+}
 
 /* ── Lamina 12 ───────────────────────────────────────────────────────────
    Aqui no va nada. Las dos barras son el componente .enf de la lamina 04 y
@@ -219,32 +253,147 @@
   margin-top: 5px;
 }
 
-/* ── El codigo de la lamina 14 ───────────────────────────────────────────
-   Va grande porque un codigo proyectado se lee desde unas diez veces su
-   ancho, y la direccion escrita va debajo para quien este mas atras. */
-.qr-bloque { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+/* ══════════════════════════════════════════════════════════════════════════
+   Lamina 14, contacto y referencias.
 
-.qr-bloque img {
-  width: 208px;
-  height: 208px;
-  display: block;
-  background: #FFFFFF;
-  padding: 12px;
-  border-radius: var(--r);
-  box-shadow: var(--card-shadow);
+   Es la unica lamina sin tope de palabras, porque queda proyectada durante
+   toda la ronda de preguntas y la sala la fotografia. Estaba resuelta como
+   dos bloques planos uno al lado del otro, y una lamina que va a estar diez
+   minutos en pantalla necesita una composicion que aguante mirarla.
+
+   Ahora la reticula tiene un lado corto y uno largo: a la izquierda el
+   camino rapido, que es el codigo y los tres enlaces, y a la derecha las
+   catorce fuentes ordenadas para leerse.
+   ══════════════════════════════════════════════════════════════════════════ */
+.cierre-contacto {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  align-items: start;
 }
+
+.col-qr { display: flex; flex-direction: column; gap: 18px; }
+
+/* ── El codigo ───────────────────────────────────────────────────────────
+   Un codigo proyectado se lee desde unas diez veces su ancho, asi que crecio
+   de 208 a 272 pixeles: con eso alcanza comodo a la mitad delantera del
+   auditorio. La direccion escrita debajo es para la otra mitad.
+
+   El ancho de la ficha del codigo manda en toda la columna y las tres del
+   enlace miden lo mismo. Con medidas distintas el borde derecho quedaba
+   dentado y la columna se leia como tres piezas sueltas. */
+.qr-bloque { display: flex; flex-direction: column; align-items: stretch; gap: 11px; }
+
+.qr-marco {
+  position: relative;
+  padding: 14px;
+  background: #FFFFFF;
+  border-radius: var(--r);
+  box-shadow: var(--card-shadow), var(--glow);
+}
+
+.qr-marco img { width: 272px; height: 272px; display: block; }
+
+/* Dos esquinas de encuadre, como las de una camara cuando busca un codigo.
+   Dicen que eso se escanea sin gastar una palabra en explicarlo, que es la
+   unica razon por la que estan. */
+.qr-marco::before,
+.qr-marco::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 0 solid var(--accent);
+}
+
+.qr-marco::before { top: 7px; left: 7px; border-width: 3px 0 0 3px; border-radius: 7px 0 0 0; }
+.qr-marco::after { bottom: 7px; right: 7px; border-width: 0 3px 3px 0; border-radius: 0 0 7px 0; }
 
 .qr-url {
   font-family: var(--font-mono);
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 19px;
+  font-weight: 650;
   color: var(--text);
   letter-spacing: -0.01em;
 }
 
-.qr-mas {
+/* ── Los tres enlaces ────────────────────────────────────────────────────
+   Antes eran dos direcciones sueltas en gris claro, que es el gris que el
+   videobeam lava. Ahora cada una es una ficha con la marca de su red
+   dibujada en linea: desde el fondo del salon se reconoce el icono mucho
+   antes de poder leer la direccion.
+
+   Las clases llevan nombre propio y no reutilizan .contacto .en, que es una
+   pieza compartida de components.css con otras medidas. Compartir el nombre
+   dejaba a esta columna a merced de una hoja que no es de esta lamina. */
+.enlaces { display: flex; flex-direction: column; gap: 9px; }
+
+.enl {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  box-shadow: var(--card-shadow);
+}
+
+.enl-i { flex: none; width: 20px; height: 20px; display: block; color: var(--text); }
+.enl-i svg { width: 20px; height: 20px; fill: currentColor; }
+
+/* El globo del portafolio va de trazo, no de mancha */
+.enl-i svg.ln {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.enl-u {
   font-family: var(--font-mono);
-  font-size: 12.5px;
-  line-height: 1.7;
-  color: var(--text-faint);
+  font-size: 14.5px;
+  color: var(--text-dim);
+  letter-spacing: -0.015em;
+}
+
+/* ── Las fuentes ─────────────────────────────────────────────────────────
+   Estan ahi para que alguien las lea y las fotografie, asi que no van en
+   letra pequena de pie de pagina. Numero en color, texto al gris de cuerpo,
+   y una linea arriba que las separa del resto de la lamina. */
+.col-refs { align-self: start; }
+
+.refs-h {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding-bottom: 10px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.ref-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 30px; }
+
+.ref-col { display: flex; flex-direction: column; gap: 12px; }
+
+.ref-r { display: flex; gap: 11px; align-items: baseline; }
+
+.ref-n {
+  flex: none;
+  width: 22px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.ref-t {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-dim);
 }

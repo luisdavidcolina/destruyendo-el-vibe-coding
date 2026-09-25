@@ -1,0 +1,251 @@
+/* ==========================================================================
+   01 Portada. Un diff ocurriendo en vivo.
+
+   La sala ve escribirse una linea verde, "+ vibe coding", como si alguien la
+   acabara de agregar al proyecto. Al terminar de escribirse, esa misma linea
+   cambia de lado: se pone roja, el signo pasa de mas a menos, y se tacha. En
+   el mismo instante empieza a escribirse debajo la linea verde que la
+   reemplaza.
+
+   Tres momentos y ninguno se pisa con otro: se escribe, cambia de lado, se
+   escribe la que la sustituye. Los tiempos viven en variables para poder
+   ajustarlos en un solo sitio.
+   ========================================================================== */
+
+.cover.portada {
+  --t1:  0.5s;    /* empieza a escribirse la primera linea */
+  --t1d: 1.3s;    /* cuanto tarda en escribirse */
+  --t2:  2.1s;    /* cambia de lado, se tacha, y arranca la segunda */
+  --t3d: 1.5s;    /* cuanto tarda en escribirse la segunda */
+
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  max-width: none;
+}
+
+/* ── El fondo ────────────────────────────────────────────────────────────
+   La reticula del grafico de contribuciones, que es lenguaje de la casa, con
+   dos luces suaves detras de las bandas. Muy tenue a proposito: se percibe,
+   no se mira. Negro plano no es un fondo, es una pantalla apagada. */
+.cover.portada::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0;
+  margin: calc(var(--pad-y) * -1) calc(var(--pad-x) * -1);
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(880px 420px at 28% 44%, rgba(248, 81, 73, 0.10), transparent 70%),
+    radial-gradient(760px 400px at 72% 74%, rgba(63, 185, 80, 0.09), transparent 72%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.032) 0 1px, transparent 1px 14px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.022) 0 1px, transparent 1px 14px);
+}
+
+/* ── Las dos lineas ──────────────────────────────────────────────────────── */
+.cover.portada .dl {
+  display: flex;
+  align-items: baseline;
+  margin-left: calc(var(--pad-x) * -1);
+  margin-right: calc(var(--pad-x) * -1);
+  padding: 16px var(--pad-x);
+}
+
+/* Las dos al mismo cuerpo. Lo fija la mas larga de las dos. */
+.cover.portada .ink {
+  font-family: var(--font-display);
+  font-size: 76px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.cover.portada .sig {
+  position: relative;
+  flex: none;
+  width: 62px;
+  font-family: var(--font-display);
+  font-size: 76px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.cover.portada .sig i { position: absolute; left: 0; font-style: normal; }
+
+.cover.portada .tx { position: relative; display: inline-flex; align-items: baseline; }
+
+/* ── El cursor de escritura ──────────────────────────────────────────────── */
+.cover.portada .caret {
+  display: inline-block;
+  width: 5px;
+  height: 0.74em;
+  margin-left: 7px;
+  align-self: center;
+  opacity: 0;
+}
+
+@keyframes pParpadeo { 0%, 45% { opacity: 1; } 55%, 100% { opacity: 0; } }
+@keyframes pEscribir { to { clip-path: inset(0 0 0 0); } }
+@keyframes pApagar   { to { opacity: 0; } }
+@keyframes pEncender { to { opacity: 1; } }
+@keyframes pTachar   { to { transform: scaleX(1); } }
+@keyframes pARojo    { to { background: #8E1519; } }
+@keyframes pInkRojo  { to { color: #FFECEA; } }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Linea 1. Nace verde, se escribe, y al terminar cambia de lado.
+   ══════════════════════════════════════════════════════════════════════════ */
+.cover.portada .l1 { background: #11502B; }
+.cover.portada .l1 .ink { color: #E9FFEF; clip-path: inset(0 100% 0 0); }
+.cover.portada .l1 .s-mas   { color: #7EE787; opacity: 1; }
+.cover.portada .l1 .s-menos { color: #FF9A92; opacity: 0; }
+.cover.portada .l1 .caret { background: #7EE787; }
+
+/* Se escribe recortando el texto, no animando el ancho de su caja, para que
+   las letras no se compriman mientras entra. */
+.slide.is-active .cover.portada .l1 .ink {
+  animation:
+    pEscribir var(--t1d) steps(11, end) var(--t1) forwards,
+    pInkRojo 0.4s ease-out var(--t2) forwards;
+}
+
+.slide.is-active .cover.portada .l1 {
+  animation: pARojo 0.4s ease-out var(--t2) forwards;
+}
+
+.slide.is-active .cover.portada .l1 .caret {
+  animation:
+    pParpadeo 0.5s steps(1, end) var(--t1) 3,
+    pApagar 0.01s linear var(--t2) forwards;
+}
+
+.slide.is-active .cover.portada .l1 .s-mas   { animation: pApagar 0.22s linear var(--t2) forwards; }
+.slide.is-active .cover.portada .l1 .s-menos { animation: pEncender 0.22s linear var(--t2) forwards; }
+
+/* El tachado entra en el mismo instante en que la linea cambia de lado */
+.cover.portada .tachon {
+  position: absolute;
+  left: 0;
+  right: 8px;
+  top: 54%;
+  height: 7px;
+  border-radius: 4px;
+  background: #FFECEA;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.slide.is-active .cover.portada .tachon {
+  animation: pTachar 0.42s cubic-bezier(0.65, 0, 0.35, 1) var(--t2) forwards;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Linea 2. Aparece en el mismo instante y se escribe.
+   ══════════════════════════════════════════════════════════════════════════ */
+.cover.portada .l2 { background: #11502B; margin-top: 8px; opacity: 0; }
+.cover.portada .l2 .ink { color: #E9FFEF; clip-path: inset(0 100% 0 0); }
+.cover.portada .l2 .s-mas { color: #7EE787; }
+.cover.portada .l2 .caret { background: #7EE787; }
+
+.slide.is-active .cover.portada .l2 { animation: pEncender 0.2s linear var(--t2) forwards; }
+.slide.is-active .cover.portada .l2 .ink { animation: pEscribir var(--t3d) steps(26, end) var(--t2) forwards; }
+.slide.is-active .cover.portada .l2 .caret { animation: pParpadeo 0.5s steps(1, end) var(--t2) 7; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Pie. Entra al final, cuando ya no compite con nada.
+   ══════════════════════════════════════════════════════════════════════════ */
+.cover.portada .pie-portada {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 46px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  opacity: 0;
+}
+
+.slide.is-active .cover.portada .pie-portada { animation: pEncender 0.6s ease-out 3.9s forwards; }
+
+.cover.portada .pp-quien b {
+  display: block;
+  font-size: 22px;
+  font-weight: 650;
+  color: var(--text);
+  margin-bottom: 5px;
+}
+
+.cover.portada .pp-quien span {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+/* Los tres logos venian como PNG sin canal alfa, con el fondo blanco horneado
+   dentro del archivo. Sobre una lamina oscura eso se veia como tres recortes
+   blancos pegados, y la placa era un parche encima del parche. Se les quito el
+   blanco del archivo, asi que ahora se apoyan directamente sobre el fondo sin
+   caja de ninguna clase. */
+.cover.portada .logos {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  flex: none;
+  background: none;
+  padding: 0;
+  opacity: 0.85;
+}
+
+.cover.portada .logos img { height: 26px; width: auto; display: block; }
+.cover.portada .logos .sep { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.22); }
+
+/* En papel no hay animacion: todo en su estado final */
+@media print {
+  .cover.portada .l1 { background: #8E1519; }
+  .cover.portada .l1 .ink { color: #FFECEA; clip-path: none; }
+  .cover.portada .l1 .s-mas { opacity: 0; }
+  .cover.portada .l1 .s-menos { opacity: 1; }
+  .cover.portada .tachon { transform: scaleX(1); }
+  .cover.portada .l2, .cover.portada .pie-portada { opacity: 1; }
+  .cover.portada .l2 .ink { clip-path: none; }
+  .cover.portada .caret { display: none; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Correcciones verificadas mirando el render, no el codigo.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* 1. Los dos signos se posicionaban en absoluto dentro de una caja sin altura,
+      asi que el menos no aparecia y el mas se caia fuera de su banda. El canal
+      necesita ser una caja con altura propia. */
+.cover.portada .sig {
+  position: relative;
+  display: inline-block;
+  width: 62px;
+  height: 1.1em;
+  flex: none;
+}
+
+.cover.portada .sig i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 1.1;
+}
+
+/* 2. Los logos son arte oscuro. Sin el blanco del archivo quedaban invisibles
+      sobre una lamina oscura. Se invierten a blanco, que es lo que hace
+      cualquier universidad cuando su marca va sobre fondo negro. */
+.cover.portada .logos img {
+  height: 30px;
+  filter: brightness(0) invert(1);
+  opacity: 0.78;
+}
+
+.cover.portada .logos { opacity: 1; }

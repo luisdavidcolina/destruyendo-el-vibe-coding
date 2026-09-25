@@ -1,14 +1,15 @@
 /* ==========================================================================
    laminas/01-apertura.css : lo propio de las laminas 01 y 02
 
-   Solo esta aqui lo que components.css no cubre: el tamaño de la linea de
-   diff de la portada, su escritura y su tachado, y el ritmo de entrada de
-   las tres lineas de la lamina 02.
+   Solo esta aqui lo que components.css no cubre: la escala y el color de las
+   dos lineas de diff de la portada, su escritura, y el tamaño y el ritmo de
+   la lamina 02.
 
-   El color no se inventa. La banda roja y el rojo del texto salen de .rm,
-   que es la clase con la que el deck pinta las lineas borradas en todos sus
-   bloques de codigo, asi que la portada y la lamina 06 se leen como el mismo
-   diff. Aqui solo cambia la escala.
+   Sobre el color de la portada. El par de GitHub para diffs, salmon sobre
+   granate translucido, esta calculado para un monitor. Proyectado con
+   videobeam, que lava los negros y baja el contraste, la banda se desvanece
+   y el texto pierde el filo. Aqui el rojo va saturado y opaco y el texto
+   casi blanco, que es el par que aguanta una sala con luz.
 
    Todos los selectores cuelgan de .portada o de .quien, y llevan una clase
    de mas a proposito, para que valgan aunque esta hoja se cargue antes que
@@ -20,125 +21,9 @@
    ══════════════════════════════════════════════════════════════════════════ */
 
 /* La portada no usa el ancho de columna de las demas portadas: aqui la linea
-   cruza la lamina de lado a lado. Los logos salen del flujo para que la
-   linea quede centrada en la altura y no empujada por ellos. */
-.cover.portada {
-  position: relative;
-  max-width: none;
-  justify-content: center;
-}
-
-/* ── La linea borrada ────────────────────────────────────────────────────
-   .rm trae el rojo y el fondo. Lo unico que se agrega es la escala y que la
-   banda salga de los margenes de .pad hasta tocar los dos bordes, que es
-   como se ve una linea dentro de un archivo. */
-.cover.portada .dl.rm {
-  display: flex;
-  align-items: baseline;
-  width: auto;
-  margin: 0 calc(var(--pad-x) * -1);
-  padding: 24px var(--pad-x) 28px;
-  font-family: var(--font-mono);
-  font-size: 176px;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  white-space: nowrap;
-}
-
-/* El signo vive en la canal izquierda y queda fuera del tachado, igual que
-   en un diff de verdad: lo que se tacha es la linea, no su marcador. */
-.cover.portada .dl .sig {
-  flex: none;
-  margin-right: 0.26em;
-  opacity: 0.78;
-}
-
-.cover.portada .dl .tx {
-  position: relative;
-  display: inline-block;
-}
-
-/* Estado de partida: la linea todavia no esta escrita */
-.cover.portada .dl .ink {
-  display: inline-block;
-  clip-path: inset(-0.4em 100% -0.4em 0);
-}
-
-.cover.portada .dl .cursor {
-  position: absolute;
-  left: 0;
-  top: 0.08em;
-  width: 0.05em;
-  height: 0.78em;
-  background: currentColor;
-}
-
-.cover.portada .dl .tachon {
-  position: absolute;
-  left: 0;
-  top: 0.585em;
-  width: 100%;
-  height: 0.058em;
-  background: currentColor;
-  border-radius: 2px;
-  transform: scaleX(0);
-  transform-origin: left center;
-}
-
-/* ── Escritura y tachado ─────────────────────────────────────────────────
-   Dos movimientos, y ninguno es adorno. La escritura, en once pasos que son
-   los once caracteres, hace que la sala vea aparecer la linea en vez de
-   encontrarsela puesta. El tachado entra a los tres segundos, cuando ya
-   termino de leer, y es la primera palabra del titulo ocurriendo en
-   pantalla. Despues la lamina se queda quieta. */
-@keyframes portadaEscribe {
-  from { clip-path: inset(-0.4em 100% -0.4em 0); }
-  to   { clip-path: inset(-0.4em 0 -0.4em 0); }
-}
-
-@keyframes portadaCursor {
-  from { left: 0; }
-  to   { left: 100%; }
-}
-
-@keyframes portadaCursorSale {
-  from { opacity: 1; }
-  to   { opacity: 0; }
-}
-
-@keyframes portadaTachon {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
-}
-
-.slide.is-active .cover.portada .ink {
-  animation: portadaEscribe 1.2s steps(11, end) 0.55s both;
-}
-
-.slide.is-active .cover.portada .cursor {
-  animation:
-    portadaCursor 1.2s steps(11, end) 0.55s both,
-    portadaCursorSale 0.24s ease 3.02s both;
-}
-
-.slide.is-active .cover.portada .tachon {
-  animation: portadaTachon 0.62s cubic-bezier(0.22, 1, 0.36, 1) 3.2s both;
-}
-
-/* ── Pie institucional ───────────────────────────────────────────────────
-   Los tres logos de la casa, pequeños y abajo. Sin marca de GitHub. */
-.cover.portada .logos {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  margin: 0;
-  gap: 15px;
-  padding: 9px 16px;
-}
-
-.cover.portada .logos img { height: 30px; }
-.cover.portada .logos .sep { height: 20px; }
+   cruza la lamina de lado a lado. Los logos salen del flujo para que el par
+   de lineas quede centrado en la altura y no empujado por ellos. */
+@@PORTADA@@
 
 /* ══════════════════════════════════════════════════════════════════════════
    02 Quien expone
@@ -146,15 +31,43 @@
 
 /* ── El retrato ──────────────────────────────────────────────────────────
    La foto va como fondo de .foto. Si el archivo no esta, el navegador
-   descarta esa capa y queda la silueta: un sitio reservado, no un error. */
+   descarta esa capa y queda la silueta: un sitio reservado, no un error.
+
+   Es una foto de carnet sobre fondo gris claro, y sobre una lamina clara el
+   borde se disolvia: la cabeza parecia flotar sin contorno. El aro claro con
+   su filo oscuro le da un canto definido, y el viñeteado interior oscurece el
+   gris justo en el borde, que es donde se fundia. */
+/* La columna del retrato se estrecha a la medida de la foto. Lo que sobraba
+   ahi se lo lleva el texto, que es lo que necesitaba el ancho: a la reparticion
+   de antes dos de las tres lineas partian en dos y dejaban una palabra huerfana
+   colgando en el renglon de abajo. */
+.quien .grid.g-1-2 {
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+}
+
 .quien .retrato {
   position: relative;
-  height: 430px;
+  width: 260px;
+  height: 260px;
   overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: var(--r-lg);
+  border: none;
+  border-radius: 50%;
   background: linear-gradient(168deg, var(--surface) 0%, var(--surface-3) 100%);
-  box-shadow: var(--card-shadow);
+  box-shadow:
+    0 0 0 7px var(--surface),
+    0 0 0 9px rgba(31, 35, 40, 0.34),
+    0 22px 44px -22px rgba(31, 35, 40, 0.48);
+}
+
+/* En tema oscuro el filo tiene que ser claro, o el aro se come el canto que
+   vino a dar. El presentador puede cambiar de tema en el salon si el
+   proyector lava los negros, asi que los dos casos tienen que aguantar. */
+:root[data-theme="dark"] .quien .retrato {
+  box-shadow:
+    0 0 0 7px var(--surface),
+    0 0 0 9px rgba(230, 237, 243, 0.34),
+    0 22px 44px -22px rgba(0, 0, 0, 0.7);
 }
 
 .quien .retrato::before,
@@ -176,42 +89,76 @@
   top: 0; right: 0; bottom: 0; left: 0;
   inset: 0;
   z-index: 1;
-  background: url("../../img/foto.png") center 28% / cover no-repeat;
+  background: url("../../img/foto.png") center 24% / cover no-repeat;
+  filter: contrast(1.06) saturate(1.06);
+  box-shadow: inset 0 0 44px 16px rgba(18, 27, 38, 0.30);
 }
 
-/* ── Las tres lineas ─────────────────────────────────────────────────────── */
-.quien h1.title { font-size: 52px; margin-bottom: 0; }
-.quien .rule { max-width: 320px; margin: 18px 0 26px; }
+/* ── El nombre y las tres lineas ─────────────────────────────────────────
+   Todo a un cuerpo mayor que antes. La lamina se leia como una tarjeta chica
+   pegada arriba, con el tercio inferior vacio; a esta escala el bloque ocupa
+   la lamina y el aire que queda es parejo arriba y abajo. */
+.quien h1.title {
+  font-size: 74px;
+  line-height: 1.02;
+  margin-bottom: 0;
+}
 
-.quien .lineas { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+.quien .ficha .cargo {
+  font-size: 27px;
+  line-height: 1.3;
+  color: var(--text-dim);
+  margin-top: 10px;
+}
+
+.quien .rule { max-width: 380px; margin: 24px 0 30px; }
+
+.quien .lineas {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
 
 .quien .linea {
   position: relative;
-  padding-left: 26px;
-  font-size: 23px;
-  line-height: 1.4;
+  padding-left: 30px;
+  font-size: 27px;
+  line-height: 1.35;
   color: var(--text-dim);
   opacity: 0;
 }
 
+/* Renglones separados por un filete y no por aire suelto: el bloque gana
+   altura y estructura sin agregar una palabra que nadie aprobo. */
+.quien .linea + .linea {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+}
+
+/* Los tres puntos, del mismo color. Antes el de la segunda linea salia azul y
+   los otros dos en el gris mas claro de la paleta: parecian tres estados de
+   una lista de tareas, con el primero desactivado. El unico resalte de la
+   lamina es el azul de la credencial que pesa en este auditorio, y esta en el
+   texto, que es donde se lee. */
 .quien .linea::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 13px;
-  width: 9px;
-  height: 9px;
+  top: 14px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: var(--line);
+  background: var(--text-dim);
 }
 
-/* La credencial que pesa en este auditorio lleva el punto encendido */
-.quien .linea.n2::before { background: var(--accent); }
+.quien .linea + .linea::before { top: 45px; }
 
 /* Entrada escalonada al ritmo del habla. Con los retardos de data-d las tres
    caerian en menos de un quinto de segundo, que es ritmo decorativo y no
    señalizacion: la sala leeria las tres de golpe y dejaria de escuchar. */
-.slide.is-active .quien .linea    { animation: rise 0.58s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.slide.is-active .quien .linea    { animation: rise 0.58s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
 .slide.is-active .quien .linea.n1 { animation-delay: 0.70s; }
 .slide.is-active .quien .linea.n2 { animation-delay: 2.00s; }
 .slide.is-active .quien .linea.n3 { animation-delay: 3.30s; }
@@ -219,20 +166,21 @@
 /* ══════════════════════════════════════════════════════════════════════════
    Movimiento reducido e impresion
 
-   En los dos casos la linea queda escrita y tachada, que es el estado final
-   y el unico que cuenta algo. Lo que se apaga es el camino hasta ahi.
+   En los dos casos las dos lineas quedan escritas y el perfil completo, que
+   es el estado final y el unico que cuenta algo. Lo que se apaga es el camino
+   hasta ahi.
    ══════════════════════════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
   .slide.is-active .cover.portada .ink,
   .slide.is-active .cover.portada .cursor,
-  .slide.is-active .cover.portada .tachon,
+  .slide.is-active .portada .dl.ad,
   .slide.is-active .quien .linea {
     animation: none !important;
   }
 
   .cover.portada .ink    { clip-path: none !important; }
   .cover.portada .cursor { display: none !important; }
-  .cover.portada .tachon { transform: scaleX(1) !important; }
+  .portada .dl.ad        { opacity: 1 !important; }
   .slide.is-active .quien .linea { opacity: 1 !important; }
 }
 
@@ -244,9 +192,10 @@
 
   .cover.portada .cursor { display: none !important; }
 
-  .cover.portada .tachon {
+  .portada .dl.ad {
     animation: none !important;
-    transform: scaleX(1) !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   .quien .linea {
@@ -256,161 +205,17 @@
   }
 }
 
-/* ── La linea verde de la portada ────────────────────────────────────────
-   Un diff que solo borra esta incompleto. Cualquiera en esa sala sabe que
-   despues de una roja viene una verde, y se queda esperandola. Aqui llega,
-   ya tachada la de arriba, y trae el titulo de la ponencia. */
-.portada .dl.ad { margin-top: 10px; opacity: 0; }
+/* ═══════════════════════════════════════════════════════════════════════════
+   Por que las dos lineas no van al mismo cuerpo
 
-.slide.is-active .portada .dl.ad {
-  animation: portadaVerde 0.6s cubic-bezier(0.22, 1, 0.36, 1) 2.4s forwards;
-}
+   Un diff de verdad tiene las dos lineas iguales, es cierto. Pero esta es la
+   portada de una ponencia de diez minutos, y lo primero que la sala tiene que
+   ver es de que se habla. Igualadas a un cuerpo mediano la lamina se convierte
+   en dos franjas de color con texto chico dentro, y vuelve el problema que
+   habia al principio: la vista no aterriza en el titulo. La roja manda porque
+   es la palabra que la ponencia va a destruir; la verde es la respuesta, y una
+   respuesta puede venir en cuerpo menor sin dejar de leerse a doce metros.
 
-@keyframes portadaVerde {
-  from { opacity: 0; transform: translateY(-12px); }
-  to   { opacity: 1; transform: none; }
-}
-
-.portada .dl.ad .ink.verde {
-  font-family: var(--font-display);
-  font-size: 0.56em;
-  font-weight: 650;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  color: #7EE787;
-  white-space: nowrap;
-}
-
-/* ── El cargo, debajo del nombre en la lamina 02 ─────────────────────────── */
-.quien .ficha .cargo {
-  font-size: 21px;
-  color: var(--text-dim);
-  margin-top: 6px;
-}
-
-/* El retrato bajaba a ficha: a 430 de alto ocupaba media lamina e intimidaba */
-.quien .retrato { width: 210px; height: 210px; border-radius: 50%; }
-.quien .retrato .foto { background-position: center 22%; background-size: cover; }
-
-/* ── La linea de tiempo de la lamina 02 ──────────────────────────────────
-   Va en jerarquia baja a proposito. No es informacion que la sala tenga que
-   leer, es respaldo de los nueve anos: se percibe que hay recorrido sin que
-   nadie se ponga a leer nombres de empresas mientras el expositor habla.
-   Y de paso ocupa el tercio inferior, que estaba vacio. */
-.quien .trayecto { margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--line-soft); }
-
-.quien .ty { display: flex; align-items: flex-start; gap: 0; }
-
-.quien .ty-p {
-  flex: 1;
-  position: relative;
-  padding-top: 16px;
-  padding-right: 12px;
-  font-size: 14px;
-  line-height: 1.3;
-  color: var(--text-faint);
-}
-
-/* El riel y el punto de cada parada */
-.quien .ty-p::before {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; top: 4px;
-  height: 1px;
-  background: var(--line);
-}
-
-.quien .ty-p::after {
-  content: "";
-  position: absolute;
-  left: 0; top: 1px;
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: var(--line);
-}
-
-.quien .ty-p b {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-dim);
-  margin-bottom: 2px;
-}
-
-/* La parada actual es la unica con color, y aun asi discreta */
-.quien .ty-p.hoy { color: var(--text-dim); }
-.quien .ty-p.hoy b { color: var(--accent); }
-.quien .ty-p.hoy::after { background: var(--accent); }
-.quien .ty-p.hoy::before { background: linear-gradient(90deg, var(--accent), transparent); }
-
-/* ══════════════════════════════════════════════════════════════════════════
-   Correcciones de la portada, sobre lo ya construido.
-   ══════════════════════════════════════════════════════════════════════════ */
-
-/* 1. El rojo. El salmon sobre granate oscuro es el par que peor aguanta un
-      videobeam: el proyector lava el fondo y el texto se acerca al fondo hasta
-      desaparecer. Rojo saturado de verdad y texto casi blanco. */
-.cover.portada .dl.rm {
-  background: #8E1519;
-  box-shadow: inset 5px 0 0 #F85149;
-}
-
-.cover.portada .dl.rm .ink { color: #FFECEA; }
-.cover.portada .dl.rm .sig { color: #FF9A92; }
-.cover.portada .tachon { background: #FFECEA; }
-
-/* 2. El verde, por el mismo motivo */
-.cover.portada .dl.ad {
-  background: #11502B;
-  box-shadow: inset 5px 0 0 #3FB950;
-}
-
-.cover.portada .dl.ad .ink.verde { color: #E9FFEF; }
-.cover.portada .dl.ad .sig { color: #7EE787; }
-
-/* 3. El signo se leia como un rectangulo suelto separado de la palabra. Va en
-      canal izquierda, del ancho fijo de un caracter, como en un diff de
-      verdad, y pegado a su linea. */
-.cover.portada .dl .sig {
-  width: 52px;
-  text-align: center;
-  opacity: 0.9;
-}
-
-/* 4. La tarjeta blanca de los logos era el objeto mas brillante de una lamina
-      casi negra, asi que la vista iba ahi antes que al titulo. Se conserva la
-      placa, porque los logos institucionales son arte solido en negro y
-      silueteados el de Ciencias se convierte en una mancha, pero se apaga
-      hasta dejar de competir. */
-.cover.portada .logos {
-  background: rgba(255, 255, 255, 0.82);
-  opacity: 0.5;
-  transition: opacity 0.3s ease;
-}
-
-.cover.portada .logos img { height: 26px; }
-
-/* 5. La linea verde tiene que leerse como la hermana de la roja: misma sangre
-      completa, mismo canal de signo, y el titulo a un cuerpo que se vea desde
-      el fondo. Habia quedado a un tercio de su tamano y sin salir a los
-      bordes, asi que parecia un pie de la roja en vez de su respuesta. */
-.cover.portada .dl.ad {
-  margin-left: calc(var(--pad-x) * -1);
-  margin-right: calc(var(--pad-x) * -1);
-  margin-top: 0;
-  padding: 18px var(--pad-x);
-  align-items: center;
-}
-
-.cover.portada .dl.ad .ink.verde {
-  font-family: var(--font-display);
-  font-size: 54px;
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 1.05;
-  white-space: nowrap;
-}
-
-/* El signo de la verde, del mismo ancho de canal que el de la roja */
-.cover.portada .dl.ad .sig { font-size: 54px; line-height: 1; }
+   Lo que si hace falta del diff esta todo aqui: el mismo material, la canaleta
+   compartida, los dos signos en la misma columna y ningun aire entre bandas.
+   ═══════════════════════════════════════════════════════════════════════════ */

@@ -35,6 +35,20 @@ window.DECK.push(
            la sala lleva tres minutos llegando sola a ella. -->
       <h2>¿Entonces la IA es el problema?</h2>
 
+      <!-- Y debajo la respuesta, que es el diff que abrio la portada. La roja
+           entra ya tachada, porque tacharla fue lo que ocurrio alli, y la
+           verde se escribe sola: es la linea que la sala lleva tres minutos
+           esperando. Las dos juntas dicen la ponencia entera, de modo que
+           quien solo mire las laminas se lleva el argumento completo.
+
+           La aclaracion de que nada de esto depende de una marca ni de un
+           lenguaje va hablada. Escrita ocupa sitio, no es el argumento de la
+           lamina y suena a descargo de responsabilidad. -->
+      <div class="diff">
+        <div class="dl rm"><span class="sig" aria-hidden="true">-</span><span class="tx">vibe coding</span></div>
+        <div class="dl ad"><span class="sig" aria-hidden="true">+</span><span class="tx">programacion con varios agentes</span></div>
+      </div>
+
     </div>
   </div>`
 },
@@ -101,52 +115,63 @@ window.DECK.push(
   </div>`
 },
 
-/* ────────────────────────── 08 Como se trabaja bien ─────────────────────── */
+/* ───────────────── 08 Cuatro reglas, en concreto ──────────────── */
 {
   section: 'La resolucion',
-  title: 'Las reglas cambian el resultado',
+  title: 'Cuatro reglas, y la primera manda',
   min: '4:30 a 5:30',
   html: `
   <div class="pad">
-    <h1 class="title anim" data-d="1">Una tarea pasa por cuatro puertas</h1>
+    <h1 class="title">Cuatro reglas, y la primera manda</h1>
     <div class="rule"></div>
 
-    <!-- Las reglas no van como lista de consejos. Van como el recorrido que
-         hace una tarea real desde que se asigna hasta que se integra, y cada
-         regla es la puerta que tiene que pasar. La sala ve un proceso, no
-         cuatro frases sueltas. -->
-    <div class="body-area via">
-      <div class="via-riel">
+    <!-- Cuatro fichas y ninguna mas, cada una con un predicado que se entiende
+         solo. El orden es el del guion: primero lo que evita un desastre y
+         despues lo que da velocidad. La primera lleva la barra de acento
+         porque es la leccion literal de la lamina 05 y la unica de la lista
+         que no es opcional.
 
-        <div class="vp anim" data-d="3">
-          <span class="vp-n">01</span>
-          <span class="vp-t">Se asigna una pieza pequena</span>
-          <span class="vp-d">con su criterio de aceptacion escrito</span>
-        </div>
+         Las otras cuatro reglas del guion van habladas y no llevan ficha, y
+         el chiste del lenguaje tampoco se escribe: leido pierde el tiempo de
+         entrega y ademas gasta presupuesto de texto. -->
+    <div class="body-area consejos">
+      <div class="grid g2 gap-lg">
 
-        <span class="vp-fl anim" data-d="4"></span>
+        <article class="ficha card lit f1">
+          <div class="cab">
+            <span class="ico"><svg viewBox="0 0 24 24"><rect x="4.6" y="10.4" width="14.8" height="9.6" rx="2.2"/><path d="M8.2 10.4V7.8a3.8 3.8 0 0 1 7.6 0v2.6"/></svg></span>
+            <span class="n">01</span>
+          </div>
+          <h3>Alcance minimo</h3>
+          <p>ningun permiso de mas</p>
+        </article>
 
-        <div class="vp anim" data-d="5">
-          <span class="vp-n">02</span>
-          <span class="vp-t">El agente recibe el permiso justo</span>
-          <span class="vp-d">ninguno que no necesite</span>
-        </div>
+        <article class="ficha card f2">
+          <div class="cab">
+            <span class="ico"><svg viewBox="0 0 24 24"><path d="M2.8 12S6.2 6 12 6s9.2 6 9.2 6-3.4 6-9.2 6-9.2-6-9.2-6z"/><circle cx="12" cy="12" r="2.9"/></svg></span>
+            <span class="n">02</span>
+          </div>
+          <h3>Revision humana</h3>
+          <p>antes de integrar</p>
+        </article>
 
-        <span class="vp-fl anim" data-d="6"></span>
+        <article class="ficha card f3">
+          <div class="cab">
+            <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3.4l7.4 4.2v8.8L12 20.6l-7.4-4.2V7.6z"/><path d="M4.6 7.6L12 11.8l7.4-4.2"/><path d="M12 11.8v8.8"/></svg></span>
+            <span class="n">03</span>
+          </div>
+          <h3>Piezas pequeñas</h3>
+          <p>con criterio de aceptacion</p>
+        </article>
 
-        <div class="vp anim" data-d="7">
-          <span class="vp-n">03</span>
-          <span class="vp-t">Trabaja donde vive el proyecto</span>
-          <span class="vp-d">en el repositorio, no en una pestana</span>
-        </div>
-
-        <span class="vp-fl anim" data-d="8"></span>
-
-        <div class="vp fin anim" data-d="9">
-          <span class="vp-n">04</span>
-          <span class="vp-t">Una persona revisa y acepta</span>
-          <span class="vp-d">las pruebas son la red, no el juez</span>
-        </div>
+        <article class="ficha card f4">
+          <div class="cab">
+            <span class="ico"><svg viewBox="0 0 24 24"><rect x="3.2" y="4.8" width="17.6" height="14.4" rx="2.2"/><path d="M7.6 10.2l2.7 2.6-2.7 2.6"/><path d="M12.8 15.4h4"/></svg></span>
+            <span class="n">04</span>
+          </div>
+          <h3>Del navegador a la terminal</h3>
+          <p>donde el agente ve el proyecto</p>
+        </article>
 
       </div>
     </div>

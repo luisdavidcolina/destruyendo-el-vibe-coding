@@ -89,11 +89,11 @@ window.DECK.push(
    que es lo que dice el guion. */
 {
   section: 'Lo construido',
-  title: 'Esto lo hizo una persona',
+  title: 'Seis meses contra cinco semanas',
   min: '7:05 a 8:05',
   html: `
   <div class="pad">
-    <h1 class="title anim" data-d="2">Esto lo hizo una persona</h1>
+    <h1 class="title anim" data-d="2">Seis meses contra cinco semanas</h1>
     <div class="rule"></div>
 
     <div class="body-area">

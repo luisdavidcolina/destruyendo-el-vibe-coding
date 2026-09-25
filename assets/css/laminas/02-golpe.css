@@ -1,31 +1,42 @@
 /* ==========================================================================
    laminas/02-golpe.css : lo propio de las laminas 03, 04 y 05
 
-   Son las tres laminas del golpe y las que llevan las mejores animaciones de
-   la ponencia. Aqui solo esta lo que components.css no cubre.
+   Son las tres laminas del golpe. Aqui solo esta lo que components.css no
+   cubre.
 
    Tres piezas:
 
-   1. .ice    El iceberg de la lamina 03, con la linea de agua visible y la
-              cita de Karpathy al lado. La foto va en .ice-foto y todavia no
-              existe, asi que debajo queda un iceberg dibujado con degradados
-              y recortes, que es lo que se ve hoy y se ve bien.
+   1. .ice    El reparto de la lamina 03. Arriba de la linea de flotacion una
+              sola caja, debajo ocho. El volumen de cada lado es el argumento.
+              Antes esto era un iceberg dibujado con degradados y una frase
+              encima, y un dibujo con una frase no dice nada.
    2. .enf    Dos barras enfrentadas sobre un mismo eje. Es una pieza
               GENERICA, sin nada de METR dentro: la lamina 11 la vuelve a
               usar tal cual, con otras cifras, y ese eco es el recurso
               narrativo de la ponencia. Los valores entran por --h, --w y
-              --to en el propio marcado.
-   3. .nv     La lamina 05. El nombre del caso a cuerpo de informacion
-              principal, el contador de nueve segundos reales, la cadena de
-              cuatro pasos que se enciende mientras corre, la captura real de
-              prensa que sirve de evidencia y el saldo que entra al parar el
-              reloj y se queda proyectado.
+              --to en el propio marcado. La captura de prensa que acompaña a
+              la 04 vive aparte, en .met, para que la pieza siga siendo
+              generica.
+   3. .nv     La lamina 05. El caso, el nueve y la palabra como una sola
+              unidad tipografica, la cadena de cuatro pasos que se enciende
+              mientras el reloj corre, la captura real de prensa que sirve de
+              evidencia desde el primer fotograma y la banda de abajo con lo
+              que costo.
 
-   Regla que se respeta en toda la hoja: el estado BASE de cada elemento es
-   el estado FINAL de su animacion, y las animaciones solo escriben el
-   arranque con un fotograma "from". Asi el PDF, el modo sin movimiento y
-   cualquier navegador que no anime muestran la lamina terminada en vez de
-   una lamina en blanco.
+   TRES REGLAS QUE SE RESPETAN EN TODA LA HOJA
+
+   a. El estado BASE de cada elemento es el estado FINAL de su animacion, y
+      las animaciones solo escriben el arranque con un fotograma "from". Asi
+      el PDF, el modo sin movimiento y cualquier navegador que no anime
+      muestran la lamina terminada en vez de una lamina en blanco.
+   b. Nada queda atenuado. Ningun elemento termina su animacion por debajo de
+      opacidad 1 ni a mitad de una cuenta. Una animacion que esconde una
+      prueba es peor que no tener animacion.
+   c. Nada por debajo de 18 pixeles y ningun gris mas claro que --text-dim.
+      Se proyecta con videobeam: --text-faint se lava y desaparece desde la
+      tercera fila, asi que no se usa en ninguna de estas tres laminas. Las
+      versalitas pequeñas van sin letterspacing, que a ese tamaño solo
+      deshace las palabras.
 
    Todo cuelga de .slide.is-active para que el ciclo vuelva a empezar cada
    vez que se entra a la lamina, que es como funciona el motor.
@@ -34,203 +45,206 @@
 /* Numero entero animable, para que las cifras cuenten con CSS y sin tocar
    deck.js. Si el navegador no lo soporta, la cifra se queda en su valor
    final, que es justo lo que hay que leer. */
-@property --enf-n {
+@property --nv-n {
   syntax: "<integer>";
   inherits: false;
-  initial-value: 0;
-}
-
-/* ── Pie de fuente de la lamina ──────────────────────────────────────────
-   components.css no trae uno. La nota con borde superior pesa demasiado
-   para tres palabras, asi que la fuente va como una linea suelta. */
-.fuente {
-  flex: none;
-  margin-top: 18px;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  color: var(--text-dim);
+  initial-value: 9;
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
-   03  El iceberg y la cita de Karpathy
+   03  El reparto
 
-   Sobre la linea de agua esta la punta, que es la peticion que se escribe.
-   Debajo esta todo lo que decide si el resultado sirve, y la lamina lo
-   enseña en vez de decirlo.
+   Arriba de la linea de flotacion va UNA caja: escribir la peticion. Debajo
+   van ocho, y la rejilla se estira hasta el borde inferior de la lamina a
+   proposito. Ese desequilibrio de area es el argumento entero, y se lee de
+   un vistazo desde cualquier fila sin leer una sola palabra.
 
-   El hueco de la foto es .ice-foto, que apunta a assets/img/iceberg.jpg. Ese
-   archivo todavia no existe: mientras no este, esa capa no pinta nada y se
-   ve el iceberg de abajo, dibujado con degradados y recortes. Cuando la
-   imagen entre en la carpeta lo tapa sola, sin tocar nada mas.
-
-   Las capas van en este orden, de atras hacia adelante:
-
-     .ice        el panel, con el cielo y el agua en su propio fondo
-     .ice-masa   lo sumergido
-     .ice-punta  lo que asoma
-     .ice-foto   la foto, cuando exista
-     .ice-tapa   la capa que tapa lo sumergido y se abre
-     .ice-agua   la linea de agua
-     .ice-velo   el lavado que deja legible la cita
-     .ice-cita   la cita, en la misma pieza .quote que usa la lamina 13
-
-   Los tonos del respaldo van escritos a mano y no en variables, porque
-   ocupan el sitio de una fotografia y una fotografia no cambia de color con
-   el tema. Es lo mismo que hace .video-missing en components.css.
+   Sin sombra de tarjeta en ninguna pieza: esto es un diagrama, no una
+   coleccion de tarjetas flotando.
    ══════════════════════════════════════════════════════════════════════════ */
 
-.body-area.ice-area { justify-content: stretch; }
+.body-area.ice-area {
+  justify-content: flex-start;
+}
 
-/* --ice-agua manda sobre todo: la altura de la linea de agua, donde termina
-   la punta, donde empieza lo sumergido y donde corta el degradado del fondo.
-   Se cambia en un solo sitio y las capas se reacomodan juntas. */
-.ice {
-  --ice-agua: 40%;
-  position: relative;
-  flex: 1;
-  min-height: 0;
+/* La etiqueta de cada mitad. Versalita, pero a 18px y sin letterspacing:
+   proyectada, el espaciado a ese tamaño separa las letras antes que las
+   palabras y deja de leerse. */
+/* El !important no es capricho. base.css trae una regla de piso pensada para
+   subir las etiquetas de 10 y 11 pixeles que habia en los diagramas, pero esta
+   escrita como .slide [class*="-eti"] { font-size: 14px !important }, y eso no
+   es un piso: es un techo que aplasta a 14 cualquier clase que termine en
+   -eti, esta incluida. Proyectado, 14 pixeles no se leen desde la fila quince.
+   Como esa hoja no se toca desde aqui, se contrarresta con la misma
+   especificidad y mas abajo en la cascada. */
+.slide .ice-eti {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 18px !important;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 13px;
+}
+
+/* ── Sobre el agua ───────────────────────────────────────────────────────
+   La caja a la izquierda y la cita a la derecha, en la misma banda. La cita
+   ocupa el hueco que dejaba la caja sola, que es ancha de menos para llenar
+   la lamina y tiene que seguir siendolo: si creciera, dejaria de leerse como
+   la parte pequeña del reparto. */
+.ice-sobre {
+  flex: none;
   display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.ice-arriba { flex: none; }
+
+/* El borde de acento marca que esto es lo unico que se hace a mano. Sin
+   sombra: el resto del diagrama tampoco la lleva. */
+.ice-caja {
+  display: inline-flex;
   align-items: center;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: var(--r-lg);
-  box-shadow: var(--card-shadow);
-  background: linear-gradient(180deg,
-    #EEF6FC 0%,
-    #DCEBF7 calc(var(--ice-agua) * 0.60),
-    #C7DFF0 calc(var(--ice-agua) - 1px),
-    #9FC8E2 calc(var(--ice-agua) + 1px),
-    #4F8AB4 calc(var(--ice-agua) + 22%),
-    #16395A 100%);
-}
-
-/* Lo que asoma. Termina justo en la linea de agua, y es lo unico que la sala
-   ve del iceberg, igual que la peticion es lo unico que se escribe. */
-.ice-punta {
-  position: absolute;
-  z-index: 1;
-  left: 56%;
-  width: 26%;
-  top: 9%;
-  height: calc(var(--ice-agua) - 9%);
-  clip-path: polygon(44% 0%, 68% 32%, 100% 100%, 0% 100%, 17% 46%);
-  background: linear-gradient(148deg, #FFFFFF 0%, #EAF6FF 40%, #C2DDEF 100%);
-}
-
-/* Lo sumergido. Arranca en la linea de agua, es mucho mas ancho que la punta
-   y se va perdiendo hacia el fondo, que es como se ve de verdad. */
-.ice-masa {
-  position: absolute;
-  z-index: 1;
-  left: 40%;
-  width: 58%;
-  top: var(--ice-agua);
-  bottom: 3%;
-  clip-path: polygon(24% 0%, 80% 0%, 100% 19%, 91% 53%, 69% 85%, 43% 100%, 17% 77%, 2% 38%);
-  background: linear-gradient(180deg,
-    rgba(232, 247, 255, 0.94) 0%,
-    rgba(168, 214, 238, 0.66) 40%,
-    rgba(96, 158, 196, 0.34) 74%,
-    rgba(52, 112, 152, 0.12) 100%);
-}
-
-/* El hueco de la foto. Sin archivo no pinta nada y deja ver el dibujo. */
-.ice-foto {
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-  inset: 0;
-  z-index: 2;
-  background: url("../../img/iceberg.jpg") center / cover no-repeat;
-}
-
-/* La capa que tapa lo sumergido al entrar la lamina. Se abre y aparece la
-   masa que estaba debajo, que es el argumento dicho sin una palabra. El
-   estado base es transparente, que es como termina, asi que en papel y sin
-   movimiento la lamina se ve entera. */
-.ice-tapa {
-  position: absolute;
-  z-index: 3;
-  left: 0; right: 0;
-  top: var(--ice-agua);
-  bottom: 0;
-  opacity: 0;
-  background: linear-gradient(180deg, #C7DFF0 0%, #E8F3FB 58%, #F2F8FC 100%);
-}
-
-/* La linea de agua. Es la frontera entre lo que se ve y lo que no, asi que
-   va encima de la tapa y se queda visible todo el tiempo. */
-.ice-agua {
-  position: absolute;
-  z-index: 4;
-  left: 0; right: 0;
-  top: var(--ice-agua);
-  height: 2px;
-  margin-top: -1px;
-  transform-origin: left center;
-  background: linear-gradient(90deg,
-    rgba(255, 255, 255, 0.28) 0%,
-    rgba(255, 255, 255, 0.92) 26%,
-    rgba(255, 255, 255, 0.98) 66%,
-    rgba(255, 255, 255, 0.50) 100%);
-  box-shadow: 0 0 18px rgba(255, 255, 255, 0.55);
-}
-
-/* Lavado direccional: solido donde va la cita, limpio donde esta el hielo.
-   Es lo mismo que hace el velo de las laminas de cine, y sirve para que la
-   cita siga leyendose cualquiera que sea la foto que entre despues. */
-.ice-velo {
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-  inset: 0;
-  z-index: 5;
-  background: linear-gradient(94deg,
-    rgba(255, 255, 255, 0.97) 0%,
-    rgba(255, 255, 255, 0.95) 34%,
-    rgba(255, 255, 255, 0.86) 48%,
-    rgba(255, 255, 255, 0.40) 60%,
-    rgba(255, 255, 255, 0.08) 70%,
-    rgba(255, 255, 255, 0) 80%);
-}
-
-:root[data-theme="dark"] .ice-velo {
-  background: linear-gradient(94deg,
-    rgba(1, 4, 9, 0.96) 0%,
-    rgba(1, 4, 9, 0.93) 34%,
-    rgba(1, 4, 9, 0.84) 48%,
-    rgba(1, 4, 9, 0.40) 60%,
-    rgba(1, 4, 9, 0.08) 70%,
-    rgba(1, 4, 9, 0) 80%);
+  min-height: 64px;
+  padding: 0 32px;
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  border-radius: var(--r);
+  font-family: var(--font-display);
+  font-size: 23px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  color: var(--text);
 }
 
 /* La cita hereda .quote de components.css, que es la pieza con barra lateral
-   de acento. Aqui solo se le da sitio y tamaño. La atribucion va al mismo
-   cuerpo que la de Thompson en la lamina 13, para que las dos se lean como
-   un par. */
+   de acento, la misma que lleva la cita de Thompson en la lamina 13. Aqui
+   solo cambian el sitio y el tamaño. El termino va en negrita encima, porque
+   la frase define una palabra y la palabra tiene que verse antes. */
 .ice-cita {
-  position: relative;
-  z-index: 6;
-  margin-left: 58px;
-  max-width: 470px;
-  font-size: 33px;
-  line-height: 1.32;
+  flex: none;
+  max-width: 520px;
+  font-size: 25px;
+  line-height: 1.34;
+  padding-left: 22px;
 }
 
-.ice-cita .who { font-size: 13.5px; margin-top: 20px; }
+.ice-cita b {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  margin-bottom: 9px;
+}
 
-@keyframes icePanel { from { opacity: 0; } }
+/* .quote .who viene en --text-faint, a 12px y con letterspacing de versalita.
+   Los tres valores se caen proyectados, asi que aqui se rehace entera. */
+.ice-cita .who {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text-dim);
+  margin-top: 14px;
+}
+
+/* ── La linea de flotacion ───────────────────────────────────────────────
+   Es el eje de la lamina. La etiqueta va al final de la linea y la linea se
+   detiene antes de ella, en vez de pasarle por debajo con un parche del
+   color del fondo: el fondo del deck lleva una reticula y el parche se veria.
+   ────────────────────────────────────────────────────────────────────── */
+.ice-agua {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 26px 0 24px;
+}
+
+.ice-agua::before {
+  content: "";
+  flex: 1;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+  transform-origin: left center;
+}
+
+.ice-agua span {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ── Debajo del agua ─────────────────────────────────────────────────────
+   La rejilla se come todo lo que queda de lamina. No es que sobre sitio: es
+   que el sitio que ocupa ES el dato. */
+.ice-bajo {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ice-rej {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 14px;
+}
+
+/* Tintadas de azul muy claro, a diferencia de la caja de arriba, que es
+   blanca. Asi las ocho se leen como UNA masa sumergida y no como ocho
+   tarjetas sueltas, y el contraste de volumen con la caja de arriba se ve
+   antes de leer una sola palabra. */
+.ice-rej span {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  background: rgba(9, 105, 218, 0.07);
+  border: 1px solid rgba(9, 105, 218, 0.22);
+  border-radius: var(--r-sm);
+  font-size: 20px;
+  line-height: 1.26;
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .ice-rej span {
+  background: rgba(88, 166, 255, 0.10);
+  border-color: rgba(88, 166, 255, 0.26);
+}
+
+/* Las ocho entran una detras de otra, rapido, y en 1.3s esta todo puesto. El
+   goteo es lo que hace sentir que debajo hay mas de lo que uno pensaba, pero
+   no puede durar: mientras dure, la lamina esta contando una cifra falsa. */
+@keyframes iceSube { from { opacity: 0; transform: translate3d(0, 16px, 0); } }
 @keyframes iceLinea { from { transform: scaleX(0); } }
-@keyframes iceAbre  { from { opacity: 1; } }
-@keyframes iceCita  { from { opacity: 0; transform: translate3d(0, 18px, 0); } }
 
-/* La secuencia es el argumento. Primero se ve la punta y nada mas. La linea
-   de agua cruza y marca hasta donde llega lo visible. Entonces se abre el
-   agua y aparece la masa, que es mucho mayor. Al final entra la cita, que le
-   pone nombre a lo que la sala acaba de ver. */
-.slide.is-active .ice      { animation: icePanel 0.50s ease-out 0.28s both; }
-.slide.is-active .ice-agua { animation: iceLinea 0.70s cubic-bezier(0.22, 1, 0.36, 1) 0.70s both; }
-.slide.is-active .ice-tapa { animation: iceAbre 1.15s cubic-bezier(0.40, 0, 0.20, 1) 1.25s both; }
-.slide.is-active .ice-cita { animation: iceCita 0.70s cubic-bezier(0.22, 1, 0.36, 1) 2.30s both; }
+.slide.is-active .ice-arriba    { animation: iceSube 0.52s cubic-bezier(0.22, 1, 0.36, 1) 0.16s both; }
+.slide.is-active .ice-cita      { animation: iceSube 0.52s cubic-bezier(0.22, 1, 0.36, 1) 0.30s both; }
+.slide.is-active .ice-agua::before { animation: iceLinea 0.60s cubic-bezier(0.22, 1, 0.36, 1) 0.34s both; }
+.slide.is-active .ice-rej span  { animation: iceSube 0.40s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+.slide.is-active .ice-rej span:nth-child(1) { animation-delay: 0.52s; }
+.slide.is-active .ice-rej span:nth-child(2) { animation-delay: 0.60s; }
+.slide.is-active .ice-rej span:nth-child(3) { animation-delay: 0.68s; }
+.slide.is-active .ice-rej span:nth-child(4) { animation-delay: 0.76s; }
+.slide.is-active .ice-rej span:nth-child(5) { animation-delay: 0.84s; }
+.slide.is-active .ice-rej span:nth-child(6) { animation-delay: 0.92s; }
+.slide.is-active .ice-rej span:nth-child(7) { animation-delay: 1.00s; }
+.slide.is-active .ice-rej span:nth-child(8) { animation-delay: 1.08s; }
 
 /* ══════════════════════════════════════════════════════════════════════════
    04 y 11  Dos barras enfrentadas sobre un mismo eje
@@ -244,15 +258,21 @@
        <div class="enf-arriba">
          <span class="enf-eti">...</span>
          <span class="enf-cifra" style="--to:20"><i class="sg">+</i><i class="nm"></i><i class="pc">%</i></span>
-         <span class="enf-barra" style="--h:140px"></span>
+         <span class="enf-barra" style="--h:124px"></span>
        </div>
        <div class="enf-eje"></div>
        <div class="enf-abajo">
-         <span class="enf-barra" style="--h:133px"></span>
+         <span class="enf-barra" style="--h:118px"></span>
          <span class="enf-cifra" style="--to:19"><i class="sg">-</i><i class="nm"></i><i class="pc">%</i></span>
          <span class="enf-eti">...</span>
        </div>
      </div>
+
+   LAS CIFRAS NO CUENTAN. Antes subian de cero a su valor en casi un segundo,
+   y durante ese segundo la lamina proyectaba cifras que no existen mientras
+   el expositor decia la verdadera. Un numero mal leido por la sala no se
+   arregla despues. Ahora estan completas desde el primer fotograma y lo unico
+   que se mueve es la barra, que es donde el movimiento significa algo.
 
    La etiqueta y la cifra viajan pegadas al extremo de su barra mientras
    crece, que es contiguidad espacial en movimiento: nunca hay que buscar a
@@ -277,26 +297,27 @@
 .enf-arriba { height: var(--sup, 236px); justify-content: flex-end; }
 .enf-abajo  { height: var(--inf, 229px); justify-content: flex-start; }
 
-/* El eje va en el gris de texto apagado y no en el de los bordes. Es la
-   referencia que separa lo que sube de lo que cae, asi que tiene que
-   seguir ahi cuando el proyector se coma los tonos suaves. */
+/* El eje va en el gris de texto de cuerpo y no en el de los bordes. Es la
+   referencia que separa lo que sube de lo que cae, asi que tiene que seguir
+   ahi cuando el proyector se coma los tonos suaves. */
 .enf-eje {
   height: 2px;
-  background: var(--text-faint);
+  background: var(--text-dim);
   border-radius: 2px;
   transform-origin: left center;
 }
 
-.enf-eti {
-  font-size: 18px;
-  letter-spacing: 0.01em;
+/* Mismo caso que .ice-eti: base.css la aplastaba a 14 pixeles. Lo que
+   nombra cada barra tiene que leerse, o las barras no dicen nada. */
+.slide .enf-eti {
+  font-size: 19px !important;
+  letter-spacing: 0;
   color: var(--text-dim);
   white-space: nowrap;
 }
 
 .enf-cifra {
-  --enf-n: var(--to, 0);
-  counter-reset: enfc var(--enf-n);
+  counter-reset: enfc var(--to, 0);
   font-family: var(--font-display);
   font-size: 56px;
   font-weight: 700;
@@ -327,160 +348,197 @@
 .enf-arriba .enf-barra {
   border-radius: 10px 10px 0 0;
   background: linear-gradient(180deg, var(--accent-br), var(--accent));
-  box-shadow: var(--card-shadow);
 }
 
 .enf-abajo .enf-cifra { color: var(--danger); }
 .enf-abajo .enf-barra {
   border-radius: 0 0 10px 10px;
   background: var(--danger);
-  box-shadow: var(--card-shadow);
 }
 
-@keyframes enfEje    { from { transform: scaleX(0); } }
-@keyframes enfEntra  { from { opacity: 0; } }
-@keyframes enfCrece  { from { height: 0; } }
-@keyframes enfCuenta { from { --enf-n: 0; } }
+@keyframes enfEje   { from { transform: scaleX(0); } }
+@keyframes enfEntra { from { opacity: 0; } }
+@keyframes enfCrece { from { height: 0; } }
 
-.slide.is-active .enf-eje    { animation: enfEje 0.62s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both; }
-.slide.is-active .enf-arriba { animation: enfEntra 0.36s ease-out 0.40s both; }
+/* Toda la secuencia termina a los 2.3 segundos. Primero sube la de arriba,
+   rapida y optimista. Se sostiene un momento. Y entonces aparece la de abajo
+   y cae hacia el otro lado, que es el unico gesto que hay que entender. */
+.slide.is-active .enf-eje    { animation: enfEje 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.22s both; }
+.slide.is-active .enf-arriba { animation: enfEntra 0.32s ease-out 0.38s both; }
 
-/* Primero sube la de arriba, rapida y optimista */
-.slide.is-active .enf-arriba .enf-barra,
-.slide.is-active .enf-arriba .enf-cifra {
-  animation: enfCrece 0.95s cubic-bezier(0.16, 1, 0.30, 1) 0.60s both;
+.slide.is-active .enf-arriba .enf-barra {
+  animation: enfCrece 0.60s cubic-bezier(0.16, 1, 0.30, 1) 0.55s both;
 }
-.slide.is-active .enf-arriba .enf-cifra { animation-name: enfCuenta; }
 
-/* Se sostiene un segundo, y entonces aparece la de abajo y cae */
-.slide.is-active .enf-abajo { animation: enfEntra 0.36s ease-out 2.60s both; }
-.slide.is-active .enf-abajo .enf-barra,
-.slide.is-active .enf-abajo .enf-cifra {
-  animation: enfCrece 1.05s cubic-bezier(0.50, 0, 0.20, 1) 2.90s both;
+.slide.is-active .enf-abajo { animation: enfEntra 0.32s ease-out 1.45s both; }
+.slide.is-active .enf-abajo .enf-barra {
+  animation: enfCrece 0.70s cubic-bezier(0.50, 0, 0.20, 1) 1.60s both;
 }
-.slide.is-active .enf-abajo .enf-cifra { animation-name: enfCuenta; }
+
+/* ── 04  La captura de METR en el flanco izquierdo ───────────────────────
+   Una sola columna de barras centrada dejaba casi quinientos pixeles muertos
+   a cada lado. Ahi entra la captura de la propia pagina del estudio: el
+   titulo, el resumen donde se lee el 19 por ciento y la nota de febrero de
+   2026. No hace falta leerla desde la fila quince; hace falta que la sala vea
+   que la cifra tiene una pagina detras.
+
+   El recorte lo hace el marco y no el archivo. La relacion 2100 por 1180 ES
+   el encuadre: cambiarla mueve el corte y no hay que tocar nada mas. La
+   imagen entra un 14% mas ancha que el marco y corrida a la izquierda, para
+   quitarle el aire de los margenes de la pagina y que el titulo llegue al
+   tamaño en que se lee. */
+.body-area.met-area { justify-content: center; }
+
+.met-grid {
+  display: grid;
+  grid-template-columns: 1fr 352px;
+  gap: 46px;
+  align-items: center;
+}
+
+.met-grid .enf { --sup: 224px; --inf: 218px; }
+
+.met-nota { margin: 0; min-width: 0; }
+
+.met-marco {
+  position: relative;
+  aspect-ratio: 2100 / 1180;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: #FFFFFF;
+}
+
+.met-marco img {
+  position: absolute;
+  top: 0;
+  left: -2.86%;
+  width: 114.29%;
+  display: block;
+}
+
+.met-pie {
+  margin-top: 12px;
+  font-size: 18px;
+  line-height: 1.35;
+  color: var(--text-dim);
+  padding-left: 14px;
+  border-left: 3px solid var(--accent);
+}
+
+/* El ajuste de febrero de 2026. Va con filete rojo y no azul porque es la
+   linea que dice que el propio estudio se corrige, y esa es la parte que le
+   suma credibilidad en vez de quitarsela. */
+.met-ajuste {
+  flex: none;
+  margin-top: 16px;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--text-dim);
+  padding-left: 14px;
+  border-left: 3px solid var(--danger);
+}
+
+@keyframes metEntra { from { opacity: 0; transform: translate3d(-18px, 0, 0); } }
+
+.slide.is-active .met-nota   { animation: metEntra 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.10s both; }
+.slide.is-active .met-ajuste { animation: enfEntra 0.45s ease-out 2.20s both; }
 
 /* ══════════════════════════════════════════════════════════════════════════
    05  Nueve segundos
 
-   La lamina tiene tres piezas y cada una hace un trabajo distinto.
+   La lamina tiene cuatro piezas y cada una hace un trabajo distinto.
 
-   .nv-izq    El caso y el reloj. Arriba el nombre de la empresa afectada, a
-              cuerpo de informacion principal, porque hasta ahora estaba
-              compuesto como un pie de foto y desde la tercera fila no se
-              leia. Debajo el contador, que corre de verdad, y debajo la
-              cadena de cuatro pasos que se enciende mientras corre.
-   .nv-nota   La captura de prensa. Es el titular real de Hackread y es la
-              evidencia de la lamina, porque el numero 9 solo no cuenta la
-              historia. El recorte se hace aqui y no en el archivo.
-   .nv-saldo  Lo que costo. Entra cuando el reloj para y se queda.
+   .nv-izq    El caso, el reloj y la cadena. Arriba el nombre de la empresa
+              afectada, a cuerpo de informacion principal. Debajo el reloj,
+              que corre de verdad. Debajo la cadena de cuatro pasos, que se
+              enciende mientras corre.
+   .nv-nota   La captura de prensa. Titular real de Hackread, en pantalla
+              desde el primer fotograma: el numero 9 solo no cuenta la
+              historia y una catastrofe que se afirma sin prueba a la vista
+              no es una catastrofe, es una anecdota.
+   .nv-saldo  Lo que costo. Cruza la lamina entera por debajo de las dos
+              columnas, que es donde antes quedaba aire muerto.
 
-   Al llegar a nueve NO se apaga nada. La version anterior apagaba la lamina
-   entera y dejaba una frase sola, y eso tiraba a la basura justo lo que la
-   sala quiere fotografiar. Ahora el reloj se detiene en nueve, la cadena
-   sigue encendida y entra el saldo debajo de la captura.
+   EL NUEVE Y LA PALABRA SON UNA SOLA UNIDAD. Antes eran dos objetos: un
+   nueve de 150 pixeles y la palabra "segundos" en gris de 14 debajo. Desde
+   el fondo del salon se leia "9" a secas, que no es un dato. Ahora van en la
+   misma linea, sobre la misma base y en el mismo color, y se leen de corrido.
 
-   El contador se hace con una cinta de diez celdas que sube a saltos, no con
-   un numero interpolado, porque una cinta con steps() la mueve cualquier
-   navegador y este es el momento de la ponencia que no puede fallar. Las
-   cifras las escribe CSS con un contador, asi que el marcado no lleva ni un
-   digito suelto.
+   Las cifras las escribe CSS con un contador, asi que el marcado no lleva ni
+   un digito suelto y el estado base es el final: si el navegador no anima,
+   se lee nueve.
    ══════════════════════════════════════════════════════════════════════════ */
 
 .body-area.nueve { justify-content: center; }
 
 .nv-grid {
   display: grid;
-  grid-template-columns: 420px 1fr;
-  gap: 44px;
+  grid-template-columns: 440px 1fr;
+  gap: 40px;
   align-items: start;
 }
 
-.nv-izq, .nv-der { min-width: 0; }
+.nv-izq { min-width: 0; }
 
-/* ── El nombre del caso ──────────────────────────────────────────────────
-   Esto era el problema mas visible de la lamina. El nombre de la empresa
-   afectada es el dato principal y estaba a tamaño de nota al pie. Va a 48px,
-   en el color de maximo contraste, y con el giro del negocio debajo para que
-   la sala sepa que se borro sin que haya que explicarlo. */
-.nv-caso { margin-bottom: 20px; }
+/* ── El nombre del caso ────────────────────────────────────────────────── */
+.nv-caso { margin-bottom: 18px; }
 
 .nv-marca {
   display: block;
   font-family: var(--font-display);
-  font-size: 48px;
+  font-size: 44px;
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1;
   color: var(--text);
 }
 
+/* Versalita a 18px y sin letterspacing. A 14.5 y con 0.15em de espaciado no
+   era una linea de texto, era una fila de letras sueltas. */
 .nv-giro {
   display: block;
-  margin-top: 8px;
+  margin-top: 9px;
   font-family: var(--font-mono);
-  font-size: 14.5px;
-  letter-spacing: 0.15em;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
   color: var(--text-dim);
 }
 
-/* ── El contador ─────────────────────────────────────────────────────────
-   La ventana mide una celda de alto y la cinta se desplaza justo una celda
-   por segundo. --nv-celda manda sobre el alto, el tipo y el recorrido, asi
-   que el tamaño se cambia en un solo sitio. */
-.nv-reloj { --nv-celda: 146px; margin-bottom: 24px; }
+/* ── El reloj ────────────────────────────────────────────────────────────
+   Una sola linea: el digito y la palabra, misma base, mismo color, sin nada
+   entre ellos. El digito sale de un contador animado, de modo que el estado
+   base ya es el nueve y la animacion solo escribe el arranque en cero.
 
-.nv-vent {
-  height: var(--nv-celda);
-  overflow: hidden;
-}
-
-/* La cinta se desplaza con margen y no con transform. Un transform se va a
-   la capa del compositor, y ahi hay motores y modos de captura que no lo
-   adelantan al mismo reloj que el resto: comprobado, el numero se quedaba
-   en cero mientras la cadena si avanzaba. Con margen el paso ocurre en el
-   mismo sitio donde ocurre todo lo demas, y nueve saltos en nueve segundos
-   no le cuestan nada a nadie.
-
-   El estado base es el final, con la cinta ya corrida hasta el nueve, y la
-   animacion escribe el arranque. La version anterior arrancaba el fotograma
-   en transform, que es justo lo que el parrafo de arriba dice que no se
-   usa, asi que el reloj no se movia y el nueve salia de entrada. */
-.nv-cinta {
-  counter-reset: nvd -1;
-  margin-top: calc(var(--nv-celda) * -9);
-}
-
-/* El color base es el rojo porque es donde termina: cuando el reloj para, el
+   El color base es el rojo porque es donde termina: cuando el reloj para, el
    daño ya ocurrio. Durante los nueve segundos va en azul, y el cambio llega
    justo al detenerse. */
-.nv-cinta i {
-  display: block;
-  height: var(--nv-celda);
-  line-height: var(--nv-celda);
+.nv-seg {
+  --nv-n: 9;
+  counter-reset: nvs var(--nv-n);
+  margin-bottom: 22px;
   font-family: var(--font-display);
-  font-style: normal;
-  font-size: 152px;
+  font-size: 48px;
   font-weight: 700;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: nowrap;
   color: var(--danger);
   font-variant-numeric: tabular-nums;
-  counter-increment: nvd;
 }
 
-.nv-cinta i::after { content: counter(nvd); }
-
-/* La unidad va en --text-dim y no en --text-faint. El videobeam del auditorio
-   lava el gris claro sobre gris y desde el fondo esa palabra desaparecia. */
-.nv-u {
-  font-family: var(--font-mono);
-  font-size: 17px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-  margin-top: 4px;
+.nv-seg .nv-n {
+  font-style: normal;
+  font-size: 2.95em;
+  letter-spacing: -0.05em;
+  /* El espacio de la palabra, a cuerpo del digito y no del texto: sin esto el
+     nueve y la ese se tocan y la unidad deja de leerse como una sola cosa. */
+  margin-right: 0.10em;
 }
+
+.nv-seg .nv-n::after { content: counter(nvs); }
 
 /* ── La cadena ───────────────────────────────────────────────────────────
    Los cuatro pasos comparten un rail de 2px formado por sus propios bordes
@@ -492,7 +550,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 42px;
+  min-height: 40px;
   padding-left: 26px;
   margin-left: 6px;
   border-left: 2px solid var(--accent);
@@ -517,8 +575,6 @@
    unico de los cuatro que hace daño. */
 .nv-paso.fatal { color: var(--danger); border-left-color: var(--danger); }
 
-/* El filo del recuadro va en currentColor para que se apague junto con su
-   paso, en vez de quedarse rojo cuando todavia no le toca. */
 .nv-paso code {
   font-family: var(--font-mono);
   font-size: 18px;
@@ -532,16 +588,14 @@
 }
 
 /* ── La captura de prensa ────────────────────────────────────────────────
-   Una captura real de prensa es evidencia, y es lo que le faltaba a la
-   lamina. El recorte se hace con el marco y no en el archivo: la imagen
-   entra a ancho completo y el marco, mas apaisado que ella, le corta lo de
-   abajo. Queda la marca del medio, la ilustracion y las dos lineas del
-   titular, y se va el cuerpo de la nota, que esta en ingles y que nadie
-   alcanza a leer proyectado.
+   El recorte se hace con el marco y no en el archivo: la imagen entra a
+   ancho completo y el marco, mas apaisado que ella, le corta lo de abajo.
+   Queda la marca del medio, la ilustracion y las dos lineas del titular, y
+   se va el cuerpo de la nota, que esta en ingles y que nadie alcanza a leer
+   proyectado.
 
-   La relacion del marco, 2400 por 1290, ES el encuadre. Cambiarla mueve el
-   corte y no hace falta tocar nada mas. */
-.nv-nota { margin: 0; }
+   La relacion del marco, 2400 por 1290, ES el encuadre. */
+.nv-nota { margin: 0; min-width: 0; }
 
 .nv-marco {
   position: relative;
@@ -549,7 +603,6 @@
   overflow: hidden;
   border-radius: 14px;
   border: 1px solid var(--line);
-  box-shadow: var(--card-shadow);
   background: #0B1017;
 }
 
@@ -561,35 +614,35 @@
   display: block;
 }
 
-/* El pie lleva ademas .pie-fuente, que es la pieza con la que todo el deck
-   compone las fuentes desde que se subieron de tamaño y se les puso la marca
-   de color delante. Aqui solo queda lo que esa pieza no fija, por si algun
-   dia deja de existir. */
 .nv-pie {
-  margin-top: 10px;
-  font-family: var(--font-mono);
-  font-size: 14.5px;
-  letter-spacing: 0.01em;
+  margin-top: 12px;
+  font-size: 18px;
+  line-height: 1.35;
   color: var(--text-dim);
+  padding-left: 14px;
+  border-left: 3px solid var(--accent);
 }
 
-/* ── El saldo ────────────────────────────────────────────────────────────
+/* ── La banda de abajo ───────────────────────────────────────────────────
    Entra cuando el reloj para, y es lo que queda proyectado mientras se sigue
-   hablando. El filete rojo de arriba lo amarra al ultimo paso de la cadena. */
+   hablando. El filete rojo de arriba la amarra al ultimo paso de la cadena.
+   Cruza la lamina entera: debajo de la cadena no puede quedar aire. */
 .nv-saldo {
+  flex: none;
   display: flex;
-  align-items: center;
-  gap: 26px;
-  margin-top: 20px;
-  padding-top: 17px;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 22px;
+  padding-top: 18px;
   border-top: 2px solid var(--danger);
 }
 
 .nv-dano {
   flex: none;
-  max-width: 250px;
+  max-width: 360px;
   font-family: var(--font-display);
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 650;
   line-height: 1.25;
   letter-spacing: -0.01em;
@@ -599,13 +652,13 @@
 .nv-dato {
   flex: none;
   display: flex;
-  flex-direction: column;
-  gap: 3px;
+  align-items: baseline;
+  gap: 9px;
 }
 
 .nv-dato b {
   font-family: var(--font-display);
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1;
@@ -613,40 +666,40 @@
 }
 
 .nv-dato span {
-  font-size: 13.5px;
+  font-size: 18px;
   line-height: 1.2;
   color: var(--text-dim);
   white-space: nowrap;
 }
 
 /* ── La secuencia ────────────────────────────────────────────────────────
-   Cuatro movimientos y ninguno decorativo. El nombre del caso llega primero,
-   la evidencia entra detras, el reloj corre nueve segundos reales con la
-   cadena encendiendose al ritmo del relato, y al pararse cambia de color y
-   entra el saldo. Todo termina visible: ningun elemento queda en opacidad
-   cero al acabar su animacion. */
+   Cuatro movimientos y ninguno decorativo. El caso llega primero, la cadena
+   se escribe en los primeros cuatro segundos y medio, el reloj corre nueve
+   segundos reales y al pararse cambia de color y entra el saldo. La captura
+   de prensa NO se anima: es la prueba, y la prueba esta desde el primer
+   fotograma. Todo termina visible y a plena opacidad. */
 @keyframes nvEntra    { from { opacity: 0; transform: translate3d(0, 12px, 0); } }
-@keyframes nvNota     { from { opacity: 0; transform: translate3d(0, 18px, 0) scale(0.985); } }
-@keyframes nvCorre    { from { margin-top: 0; } }
-@keyframes nvRojo     { 0%, 93.75% { color: var(--accent); } to { color: var(--danger); } }
-@keyframes nvEnciende { from { opacity: 0.22; color: var(--text-faint); border-left-color: var(--line); transform: translate3d(-10px, 0, 0); } }
+@keyframes nvEnciende { from { opacity: 0; transform: translate3d(-12px, 0, 0); } }
+@keyframes nvCuenta   { from { --nv-n: 0; } }
+@keyframes nvRojo     { 0%, 92% { color: var(--accent); } to { color: var(--danger); } }
 
-.slide.is-active .nv-caso { animation: nvEntra 0.52s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both; }
-.slide.is-active .nv-nota { animation: nvNota 0.66s cubic-bezier(0.22, 1, 0.36, 1) 0.34s both; }
+.slide.is-active .nv-caso { animation: nvEntra 0.50s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both; }
 
 /* Nueve saltos en nueve segundos. El cero se ve al arrancar y el nueve entra
-   exactamente nueve segundos despues, a los 9.35s de entrar la lamina. */
-.slide.is-active .nv-cinta   { animation: nvCorre 9s steps(9, end) 0.35s both; }
-.slide.is-active .nv-cinta i { animation: nvRojo 9.6s linear 0.35s both; }
+   exactamente nueve segundos despues, a los 9.45s de entrar la lamina. */
+.slide.is-active .nv-seg {
+  animation: nvCuenta 9s steps(9, end) 0.45s both,
+             nvRojo 9.45s linear 0.45s both;
+}
 
-.slide.is-active .nv-paso { animation: nvEnciende 0.46s cubic-bezier(0.22, 1, 0.36, 1) both; }
-.slide.is-active .nv-paso:nth-child(1) { animation-delay: 1.15s; }
-.slide.is-active .nv-paso:nth-child(2) { animation-delay: 3.10s; }
-.slide.is-active .nv-paso:nth-child(3) { animation-delay: 5.10s; }
-.slide.is-active .nv-paso:nth-child(4) { animation-delay: 7.00s; }
+.slide.is-active .nv-paso { animation: nvEnciende 0.42s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.slide.is-active .nv-paso:nth-child(1) { animation-delay: 0.90s; }
+.slide.is-active .nv-paso:nth-child(2) { animation-delay: 2.00s; }
+.slide.is-active .nv-paso:nth-child(3) { animation-delay: 3.10s; }
+.slide.is-active .nv-paso:nth-child(4) { animation-delay: 4.20s; }
 
-/* El reloj para en 9.35s y el saldo entra justo detras */
-.slide.is-active .nv-saldo { animation: nvEntra 0.62s cubic-bezier(0.22, 1, 0.36, 1) 9.48s both; }
+/* El reloj para en 9.45s y el saldo entra justo detras */
+.slide.is-active .nv-saldo { animation: nvEntra 0.60s cubic-bezier(0.22, 1, 0.36, 1) 9.55s both; }
 
 /* ══════════════════════════════════════════════════════════════════════════
    Sin movimiento y en papel
@@ -657,121 +710,35 @@
    saldo puesto, que es exactamente lo que queda proyectado en vivo.
    ══════════════════════════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
-  .slide.is-active .ice,
-  .slide.is-active .ice-agua,
+  .slide.is-active .ice-arriba,
   .slide.is-active .ice-cita,
+  .slide.is-active .ice-agua::before,
+  .slide.is-active .ice-rej span,
   .slide.is-active .enf-eje,
   .slide.is-active .enf-arriba,
   .slide.is-active .enf-abajo,
   .slide.is-active .enf-barra,
-  .slide.is-active .enf-cifra,
+  .slide.is-active .met-nota,
+  .slide.is-active .met-ajuste,
   .slide.is-active .nv-caso,
-  .slide.is-active .nv-nota,
-  .slide.is-active .nv-cinta,
-  .slide.is-active .nv-cinta i,
+  .slide.is-active .nv-seg,
   .slide.is-active .nv-paso,
   .slide.is-active .nv-saldo {
     animation: none !important;
     opacity: 1 !important;
+    transform: none !important;
   }
-
-  /* La tapa del iceberg se queda donde termina, que es transparente. Si
-     entrara en la lista de arriba volveria a opacidad 1 y taparia justo lo
-     que la lamina tiene que enseñar. */
-  .slide.is-active .ice-tapa { animation: none !important; }
 }
 
 @media print {
-  .ice, .ice-agua, .ice-cita,
-  .enf-eje, .enf-arriba, .enf-abajo, .enf-barra, .enf-cifra,
-  .nv-caso, .nv-nota, .nv-cinta, .nv-cinta i, .nv-paso, .nv-saldo {
+  .ice-arriba, .ice-cita, .ice-agua::before, .ice-rej span,
+  .enf-eje, .enf-arriba, .enf-abajo, .enf-barra,
+  .met-nota, .met-ajuste,
+  .nv-caso, .nv-seg, .nv-paso, .nv-saldo {
     animation: none !important;
     opacity: 1 !important;
+    transform: none !important;
   }
 
-  .ice-tapa { animation: none !important; }
-
-  .ice-agua, .enf-barra { box-shadow: none !important; }
   .nv-paso code { background: #FFFFFF !important; }
-  .nv-marco { box-shadow: none !important; }
 }
-
-/* ── Lamina 03, el iceberg como diagrama ─────────────────────────────────
-   Un dibujo de iceberg con una frase encima no dice nada. Lo que dice algo es
-   el reparto: una sola caja arriba de la linea de agua y ocho debajo. El
-   volumen de cada lado ES el argumento, y se lee de un vistazo sin leer una
-   sola palabra. */
-.ice { display: flex; flex-direction: column; justify-content: center; }
-
-.ice-eti {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-  margin-bottom: 10px;
-}
-
-.ice-caja {
-  display: inline-flex;
-  align-items: center;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--r);
-  padding: 14px 26px;
-  font-size: 21px;
-  font-weight: 600;
-  color: var(--text);
-  box-shadow: var(--card-shadow);
-}
-
-/* La linea de agua, que es el eje de la lamina */
-.ice-agua {
-  position: relative;
-  height: 1px;
-  background: var(--accent);
-  margin: 20px 0 26px;
-}
-
-.ice-agua span {
-  position: absolute;
-  right: 0;
-  top: -9px;
-  background: var(--bg);
-  padding-left: 12px;
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
-/* Debajo, todo lo demas. En rejilla para que se lea el volumen de golpe. */
-.ice-rej {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-}
-
-.ice-rej span {
-  background: var(--surface-2);
-  border: 1px solid var(--line-soft);
-  border-radius: var(--r-sm);
-  padding: 12px 14px;
-  font-size: 15px;
-  color: var(--text);
-  opacity: 0;
-}
-
-/* Entran una detras de otra, rapido. No es adorno: el goteo es lo que hace
-   sentir que debajo hay mas de lo que uno pensaba. */
-.slide.is-active .ice-rej span { animation: rise 0.34s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-.slide.is-active .ice-rej span:nth-child(1) { animation-delay: 0.55s; }
-.slide.is-active .ice-rej span:nth-child(2) { animation-delay: 0.66s; }
-.slide.is-active .ice-rej span:nth-child(3) { animation-delay: 0.77s; }
-.slide.is-active .ice-rej span:nth-child(4) { animation-delay: 0.88s; }
-.slide.is-active .ice-rej span:nth-child(5) { animation-delay: 0.99s; }
-.slide.is-active .ice-rej span:nth-child(6) { animation-delay: 1.10s; }
-.slide.is-active .ice-rej span:nth-child(7) { animation-delay: 1.21s; }
-.slide.is-active .ice-rej span:nth-child(8) { animation-delay: 1.32s; }

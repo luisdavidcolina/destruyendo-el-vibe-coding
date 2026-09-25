@@ -619,3 +619,32 @@ strong { color: var(--text); font-weight: 650; }
   /* Los bordes finos con transparencia obligan a mezclar capas */
   .slide-foot .spacer, .progress-track { display: none !important; }
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Las lineas de fuente, corregidas para todo el deck.
+
+   Estaban compuestas como un pie de pagina: gris claro, 11 pixeles y pegadas
+   al borde inferior, sin relacion visual con el dato que respaldan. En un
+   videobeam ese gris se lava y no se lee, y al quedar sueltas abajo no se
+   entendia a que se referian.
+
+   Ahora son informacion, no letra pequena: van al color de cuerpo, a un
+   tamano que se lee desde el fondo del salon, y con una marca de color
+   delante que las ata a lo que sostienen.
+   ══════════════════════════════════════════════════════════════════════════ */
+.slide .fuente,
+.slide .pie-fuente,
+.slide .shot-cap {
+  font-family: var(--font-mono);
+  font-size: 14.5px !important;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--text-dim) !important;
+  padding-left: 14px;
+  border-left: 3px solid var(--accent);
+  display: inline-block;
+  text-align: left;
+}
+
+/* Y ninguna se pega al borde: van debajo de su evidencia, no del todo abajo */
+.slide .fuente, .slide .pie-fuente { margin-top: 18px; }

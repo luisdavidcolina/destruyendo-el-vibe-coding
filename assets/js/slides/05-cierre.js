@@ -17,12 +17,12 @@ window.DECK.push(
 
     <div class="body-area">
       <div class="pila anim f" data-d="3">
-        <div class="cp ahora"><span class="cp-a">ahora</span><span class="cp-n">Orquestacion de agentes</span></div>
-        <div class="cp"><span class="cp-a">2010</span><span class="cp-n">Servicios gestionados y nube</span></div>
-        <div class="cp"><span class="cp-a">1990</span><span class="cp-n">Bibliotecas y marcos de trabajo</span></div>
-        <div class="cp"><span class="cp-a">1957</span><span class="cp-n">Lenguajes de alto nivel</span></div>
-        <div class="cp"><span class="cp-a">1950</span><span class="cp-n">Ensamblador</span></div>
-        <div class="cp"><span class="cp-a">1940</span><span class="cp-n">Tarjetas perforadas</span></div>
+        <div class="cp ahora"><span class="cp-i"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="18" r="2.4"/><circle cx="19" cy="18" r="2.4"/><path d="M12 7.4v4.2M12 11.6L6.4 16M12 11.6L17.6 16"/></svg></span><span class="cp-a">ahora</span><span class="cp-n">Orquestacion de agentes</span></div>
+        <div class="cp"><span class="cp-i"><svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 000-8 6 6 0 00-11.6 2A3.5 3.5 0 006 18z"/></svg></span><span class="cp-a">2010</span><span class="cp-n">Nube y servicios gestionados</span></div>
+        <div class="cp"><span class="cp-i"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="7" rx="1"/><rect x="13" y="4" width="8" height="7" rx="1"/><rect x="3" y="13" width="8" height="7" rx="1"/><rect x="13" y="13" width="8" height="7" rx="1"/></svg></span><span class="cp-a">1990</span><span class="cp-n">Bibliotecas y marcos</span></div>
+        <div class="cp"><span class="cp-i"><svg viewBox="0 0 24 24"><path d="M9 4c-2 0-2 3-2 4s0 4-3 4c3 0 3 3 3 4s0 4 2 4"/><path d="M15 4c2 0 2 3 2 4s0 4 3 4c-3 0-3 3-3 4s0 4-2 4"/></svg></span><span class="cp-a">1957</span><span class="cp-n">Lenguajes de alto nivel</span></div>
+        <div class="cp"><span class="cp-i"><svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1"/><path d="M10 7V4M14 7V4M10 20v-3M14 20v-3M7 10H4M7 14H4M20 10h-3M20 14h-3"/></svg></span><span class="cp-a">1950</span><span class="cp-n">Ensamblador</span></div>
+        <div class="cp"><span class="cp-i"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><circle cx="7.5" cy="10" r="1.1"/><circle cx="11" cy="10" r="1.1"/><circle cx="14.5" cy="10" r="1.1"/><circle cx="7.5" cy="14" r="1.1"/><circle cx="14.5" cy="14" r="1.1"/></svg></span><span class="cp-a">1940</span><span class="cp-n">Tarjetas perforadas</span></div>
       </div>
 
       <div class="credenciales anim" data-d="6">
@@ -49,26 +49,29 @@ window.DECK.push(
     <h1 class="title anim" data-d="2">Creen que entienden, y no</h1>
     <div class="rule"></div>
 
-    <!-- El mismo componente .enf de la lamina 04, a proposito. Nueve minutos
-         despues, la misma forma: uno cree, la medicion dice otra cosa. -->
-    <div class="body-area enf-area">
-      <div class="enf">
+    <!-- Se probo reutilizando las barras verticales de la lamina 04 y no
+         funciono: con 85 contra 16 sale un bloque enorme y una astilla, y
+         media lamina queda vacia. La desproporcion es el argumento, asi que
+         se dibuja a lo ancho, donde se ve de golpe. -->
+    <div class="body-area brechas">
 
-        <div class="enf-arriba">
-          <span class="enf-eti">Junior que dice entender</span>
-          <span class="enf-cifra" style="--to:85"><i class="nm"></i><i class="pc">%</i></span>
-          <span class="enf-barra" style="--h:150px"></span>
+      <div class="br anim" data-d="3">
+        <div class="br-top">
+          <span class="br-eti">Junior que dice entender el codigo que entrega</span>
+          <span class="br-cif">85 %</span>
         </div>
-
-        <div class="enf-eje"></div>
-
-        <div class="enf-abajo">
-          <span class="enf-barra" style="--h:30px"></span>
-          <span class="enf-cifra" style="--to:16"><i class="nm"></i><i class="pc">%</i></span>
-          <span class="enf-eti">Senior que lo confirma</span>
-        </div>
-
+        <div class="br-riel"><span class="br-fill alto" style="--w:85%"></span></div>
       </div>
+
+      <div class="br anim" data-d="5">
+        <div class="br-top">
+          <span class="br-eti">Senior que confirma que lo entienden</span>
+          <span class="br-cif bajo">16 %</span>
+        </div>
+        <div class="br-riel"><span class="br-fill bajo" style="--w:16%"></span></div>
+      </div>
+
+      <div class="br-nota anim" data-d="7">Sesenta y nueve puntos de diferencia entre creerlo y que alguien lo confirme</div>
     </div>
 
     <div class="fuente anim" data-d="8">BairesDev, Dev Barometer, 1.569 desarrolladores en 77 paises, 2026</div>
@@ -91,7 +94,7 @@ window.DECK.push(
 
       <div class="fin-cita anim" data-d="5">
         <p>&ldquo;Uno de mis dias mas productivos fue tirar a la basura mil lineas de codigo.&rdquo;</p>
-        <span>Ken Thompson</span>
+        <span>Ken Thompson<i>creador de Unix y del lenguaje B, premio Turing</i></span>
       </div>
     </div>
   </div>`

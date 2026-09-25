@@ -17,6 +17,24 @@
   position: relative;
 }
 
+.tb-top {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.tb-nom { font-size: 15px; font-weight: 650; color: var(--text); }
+
+.tb-num {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--text-faint);
+  letter-spacing: 0.06em;
+}
+
 .tb-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
 .tb-col { display: flex; flex-direction: column; gap: 8px; }
@@ -30,40 +48,60 @@
   margin-bottom: 2px;
 }
 
+/* Cada historia dice quien la esta atendiendo. Sin eso el tablero es un dibujo
+   de columnas; con eso se ve que son tres proveedores distintos trabajando a la
+   vez sobre el mismo proyecto, que es el argumento de la lamina. */
 .tb-card {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-left: 3px solid var(--line);
   border-radius: var(--r-sm);
-  padding: 9px 12px;
+  padding: 8px 12px;
   font-family: var(--font-mono);
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--text-dim);
 }
 
-/* Cada agente con su color, para que se vea que son tres y no uno */
-.tb-card.ag1 { border-left-color: var(--accent);   color: var(--text); }
-.tb-card.ag2 { border-left-color: var(--accent-2); color: var(--text); }
-.tb-card.ag3 { border-left-color: var(--accent-2); color: var(--text); }
-.tb-card.ok  { border-left-color: var(--ok); opacity: 0.55; }
+.tb-card b { font-weight: 600; color: inherit; }
 
-/* Las dos historias que se pisan por llevar el mismo nombre */
-.slide.is-active .tb-card.ag1 { animation: tomar 6s ease-in-out infinite; }
-.slide.is-active .tb-card.ag2 { animation: tomar 6s ease-in-out 0.4s infinite; }
-.slide.is-active .tb-card.ag3 { animation: chocar 6s ease-in-out infinite; }
-.slide.is-active .tb-aviso    { animation: avisar 6s ease-in-out infinite; }
-
-@keyframes tomar {
-  0%, 12%   { opacity: 0; transform: translateY(-6px); }
-  20%, 100% { opacity: 1; transform: none; }
+.tb-card i {
+  font-style: normal;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--text-faint);
 }
 
+/* Cada agente con su color, para que se vea que son tres y no uno */
+/* Un color por proveedor, el mismo en todas las columnas */
+.tb-card.ag1 { border-left-color: var(--accent);    color: var(--text); }
+.tb-card.ag1 i { color: var(--accent); }
+.tb-card.ag2 { border-left-color: var(--gold);      color: var(--text); }
+.tb-card.ag2 i { color: var(--gold); }
+.tb-card.ag3 { border-left-color: var(--accent-2);  color: var(--text); }
+.tb-card.ag3 i { color: var(--accent-2); }
+.tb-card.ok  { opacity: 0.45; }
+
+/* Las tres historias en curso quedan fijas en pantalla. Se probo animarlas
+   entrando y el resultado fue que la columna aparecia vacia buena parte del
+   bucle, que es justo lo contrario de lo que la lamina quiere demostrar.
+   Lo unico que se mueve es el choque. */
+.slide.is-active .tb-card.choque { animation: chocar 6s ease-in-out infinite; }
+.slide.is-active .tb-aviso    { animation: avisar 6s ease-in-out infinite; }
+
+
+/* El cuarto agente entra con un nombre que ya esta en uso. Los dos creen tener
+   la T-043, el tablero lo detecta y la rechaza. */
 @keyframes chocar {
-  0%, 30%  { opacity: 0; transform: translateY(-6px); }
-  38%      { opacity: 1; transform: none; }
-  /* aqui los dos creen tener la misma historia */
-  46%, 62% { opacity: 1; border-left-color: var(--danger); background: rgba(248, 81, 73, 0.12); }
-  70%, 100%{ opacity: 0; transform: translateY(-4px); }
+  0%, 38%  { opacity: 0; transform: translateY(-6px); }
+  46%      { opacity: 1; transform: none;
+             border-left-color: var(--accent); background: var(--surface); }
+  54%, 70% { opacity: 1;
+             border-left-color: var(--danger); background: rgba(248, 81, 73, 0.14); }
+  80%, 100%{ opacity: 0; transform: translateY(-4px); }
 }
 
 .tb-aviso {
@@ -86,8 +124,8 @@
 .pie-fuente {
   margin-top: auto;
   padding-top: 14px;
-  font-size: 11.5px;
-  color: var(--text-faint);
+  font-size: 13px;
+  color: var(--text-dim);
   letter-spacing: 0.01em;
 }
 

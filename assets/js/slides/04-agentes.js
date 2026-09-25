@@ -16,27 +16,38 @@ window.DECK.push(
 
     <div class="body-area">
       <div class="tablero anim f" data-d="3" data-widget="tablero">
+        <div class="tb-top">
+          <span class="tb-nom">Tablero del proyecto</span>
+          <span class="tb-num">323 historias</span>
+        </div>
+
         <div class="tb-cols">
           <div class="tb-col"><span class="tb-h">Disponibles</span>
-            <div class="tb-card">T-041</div>
-            <div class="tb-card">T-044</div>
-            <div class="tb-card">T-045</div>
+            <div class="tb-card"><b>T-044</b></div>
+            <div class="tb-card"><b>T-045</b></div>
+            <div class="tb-card"><b>T-046</b></div>
+            <div class="tb-card"><b>T-047</b></div>
           </div>
-          <div class="tb-col"><span class="tb-h">Tomadas</span>
-            <div class="tb-card ag1" data-ag="ana">T-042</div>
-            <div class="tb-card ag2" data-ag="beto">T-043</div>
-            <div class="tb-card ag3 choque" data-ag="beto">T-043</div>
+
+          <div class="tb-col"><span class="tb-h">En curso</span>
+            <div class="tb-card ag1"><b>T-041</b><i>copilot</i></div>
+            <div class="tb-card ag2"><b>T-042</b><i>gemini</i></div>
+            <div class="tb-card ag3"><b>T-043</b><i>copilot</i></div>
+            <div class="tb-card choque"><b>T-043</b><i>copilot</i></div>
           </div>
+
           <div class="tb-col"><span class="tb-h">Hechas</span>
-            <div class="tb-card ok">T-038</div>
-            <div class="tb-card ok">T-039</div>
-            <div class="tb-card ok">T-040</div>
+            <div class="tb-card ok"><b>T-037</b><i>claude</i></div>
+            <div class="tb-card ok"><b>T-038</b><i>copilot</i></div>
+            <div class="tb-card ok"><b>T-039</b><i>gemini</i></div>
+            <div class="tb-card ok"><b>T-040</b><i>claude</i></div>
           </div>
         </div>
+
         <div class="tb-aviso">nombre repetido, historia rechazada</div>
       </div>
 
-      <div class="grid g3 gap-lg" style="margin-top:22px">
+      <div class="grid g3 gap-lg" style="margin-top:18px">
         <div class="card anim" data-d="5" style="padding:14px 18px">
           <span class="card-ix">ALCANCE</span>
           <h3 style="font-size:17px">Solo lo que nadie toca</h3>
@@ -51,8 +62,7 @@ window.DECK.push(
         </div>
       </div>
 
-      <div class="pie-fuente anim" data-d="8">323 historias en el tablero &middot;
-        crecimiento de flujos multiagente de 327&nbsp;% en cuatro meses, Databricks 2026</div>
+      <div class="pie-fuente anim" data-d="8">Databricks, 2026</div>
     </div>
   </div>`
 },

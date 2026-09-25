@@ -30,16 +30,33 @@
 .cp:nth-child(5) { width: 86%; }
 .cp:nth-child(6) { width: 92%; }
 
-.cp-a {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  color: var(--text-faint);
-  flex: none;
-  width: 48px;
+/* Un icono por epoca. No son adornos: dan de un vistazo con que se programaba
+   en cada capa, que es lo que la lamina esta contando, y sacan a la pila de ser
+   seis rectangulos blancos iguales. */
+.cp-i { flex: none; width: 22px; height: 22px; display: block; color: var(--text-faint); }
+
+.cp-i svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.cp-n { font-size: 15.5px; color: var(--text-dim); }
+/* Los anos se probaron en gris claro y no se leian proyectados */
+.cp-a {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  flex: none;
+  width: 52px;
+}
+
+.cp-n { font-size: 16.5px; color: var(--text); }
 
 /* La capa de ahora se distingue, pero no se corona: el argumento de la lamina
    es que no es mejor que las de abajo, solo es la ultima */
@@ -50,7 +67,13 @@
 }
 
 .cp.ahora .cp-a { color: var(--accent); }
+.cp.ahora .cp-i { color: var(--accent); }
 .cp.ahora .cp-n { color: var(--text); font-weight: 650; }
+
+/* Las capas se van aclarando hacia abajo, que es hacia atras en el tiempo.
+   Da profundidad sin colorear nada. */
+.cp:nth-child(4) .cp-i, .cp:nth-child(5) .cp-i, .cp:nth-child(6) .cp-i { opacity: 0.75; }
+.cp:nth-child(5) .cp-n, .cp:nth-child(6) .cp-n { color: var(--text-dim); }
 
 /* Entran de abajo hacia arriba, en el orden en que ocurrieron */
 .slide.is-active .cp { opacity: 0; animation: rise 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
@@ -74,24 +97,35 @@
   border-top: 1px solid var(--line-soft);
 }
 
+/* Estas etiquetas se probaron en gris claro sobre gris y no se leian. Un
+   videobeam lava justo ese rango. Van sobre blanco, con borde y con el texto
+   al color de cuerpo, no al de apoyo. */
 .cr-t {
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.18em;
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--text-faint);
-  margin-right: 6px;
+  color: var(--text-dim);
+  margin-right: 8px;
 }
 
 .cr {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: var(--font-mono);
-  font-size: 12.5px;
-  color: var(--text-dim);
-  background: var(--surface-3);
-  border: 1px solid var(--line-soft);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 4px 12px;
+  padding: 6px 14px;
+  box-shadow: var(--card-shadow);
 }
+
+/* Hueco para el logotipo de cada marca, cuando se consigan */
+.cr .cr-logo { width: 16px; height: 16px; flex: none; display: block; }
 
 /* ── La lamina de cierre, oscura ─────────────────────────────────────────── */
 .final { display: flex; flex-direction: column; justify-content: center; height: 100%; max-width: 900px; }
@@ -119,12 +153,25 @@
   margin-bottom: 10px;
 }
 
+/* La atribucion de la cita lleva quien es. La sala no tiene por que saber quien
+   fue Ken Thompson, y sin eso la cita pierde la mitad de su peso. */
 .fin-cita span {
+  display: block;
   font-family: var(--font-mono);
-  font-size: 12.5px;
-  letter-spacing: 0.14em;
+  font-size: 13.5px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.fin-cita span i {
+  display: block;
+  font-style: normal;
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  text-transform: none;
   color: var(--text-faint);
+  margin-top: 5px;
 }
 
 /* ── El codigo de la lamina 14 ───────────────────────────────────────────
@@ -155,4 +202,61 @@
   font-size: 12.5px;
   line-height: 1.7;
   color: var(--text-faint);
+}
+
+/* ── Lamina 12: la brecha entre creer y comprobar ────────────────────────
+   Dos barras a lo ancho de la lamina. La desproporcion entre 85 y 16 es el
+   argumento entero, asi que se dibuja en el eje donde hay sitio para verla.
+   Las barras crecen al entrar, y la de abajo entra despues, porque el orden
+   es primero lo que se cree y despues lo que se comprueba. */
+.brechas { display: flex; flex-direction: column; justify-content: center; gap: 40px; padding: 0 10px; }
+
+.br-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 12px;
+}
+
+.br-eti { font-size: 18px; color: var(--text); }
+
+.br-cif {
+  font-family: var(--font-display);
+  font-size: 46px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.br-cif.bajo { color: var(--danger); }
+
+.br-riel {
+  height: 30px;
+  background: var(--surface-3);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.br-fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-br));
+}
+
+.br-fill.bajo { background: linear-gradient(90deg, var(--danger), #FF9A8F); }
+
+.slide.is-active .br-fill { animation: crecer 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards; }
+.slide.is-active .br:nth-child(2) .br-fill { animation-delay: 1.3s; }
+
+@keyframes crecer { to { width: var(--w); } }
+
+.br-nota {
+  margin-top: 8px;
+  font-size: 16px;
+  color: var(--text-dim);
+  text-align: center;
 }

@@ -1,20 +1,27 @@
 /* ==========================================================================
    01-apertura.js : laminas 01 y 02
 
-   01  Portada. El iceberg a sangre completa y el titulo encima. La marca de
-       GitHub sale de aqui: las condiciones de marca piden que su logo quede
-       menos prominente que la marca propia y que no sugiera respaldo, y esta
-       ponencia lleva opinion propia. Quedan los tres logos institucionales,
-       pequeños, que son los de la casa.
-   02  Quien expone. Veinte segundos, un retrato y cuatro lineas.
+   01  Portada. El titulo no va escrito como titulo: va escrito como la linea
+       que un cambio de codigo borra. Fondo rojo de diff, signo menos en la
+       canal izquierda y el texto tachado, a tamaño enorme. Cualquiera que
+       haya abierto un pull request lo lee sin que nadie se lo explique, y
+       en un evento de GitHub eso es toda la sala. La linea verde que falta
+       aparece en la lamina 06 y cierra el diff.
 
-   El clip del iceberg todavia no existe. La capa de video queda escrita igual
-   que la escribe el motor, con data-src, y mientras tanto manda el respaldo
-   dibujado en laminas/01-apertura.css, que ya se ve terminado.
+       Sin iceberg, sin video y sin marca de GitHub: sus condiciones de marca
+       piden que el logo no quede como el elemento mas prominente ni sugiera
+       respaldo, y esta ponencia lleva opinion propia. Quedan los tres logos
+       institucionales, pequeños, que son los de la casa.
+
+   02  Quien expone. Veinte segundos, un retrato y tres lineas. El chiste del
+       lenguaje no vive aqui, esta en la lamina 08.
+
+   Los ritmos de escritura y tachado viven en laminas/01-apertura.css, porque
+   el motor no tiene pasos dentro de una lamina.
    ========================================================================== */
 window.DECK.push(
 
-/* ───────────────────────── 01 Portada, el iceberg ───────────────────────── */
+/* ─────────────────────── 01 Portada, la linea borrada ───────────────────── */
 {
   section: 'Apertura',
   title: 'Destruyendo el vibe coding',
@@ -22,43 +29,25 @@ window.DECK.push(
   bare: true,
   cinema: true,
   html: `
-  <!-- Misma estructura que arma el motor cuando una lamina declara video.
-       Va escrita aqui para poder marcar el respaldo con la clase berg, que
-       es la que dibuja el hielo y la linea de agua mientras falte el clip.
-       Cuando el archivo exista, el video se carga solo y tapa el respaldo. -->
-  <div class="slide-video">
-    <div class="video-missing berg"></div>
-    <video muted loop playsinline preload="none" data-src="assets/video/iceberg-portada.mp4"></video>
-  </div>
-
   <div class="pad">
     <div class="cover portada">
 
-      <div class="logos anim z" data-d="1">
+      <!-- La banda roja sale de .rm, que es la clase con la que el deck pinta
+           las lineas borradas en todos los bloques de codigo. Aqui solo crece
+           hasta ocupar la lamina. El signo va fuera de .tx para que el tachado
+           cruce el texto y no el marcador, igual que en un diff de verdad. -->
+      <div class="dl rm">
+        <span class="sig" aria-hidden="true">-</span>
+        <span class="tx"><span class="ink">vibe coding</span><span class="cursor" aria-hidden="true"></span><span class="tachon" aria-hidden="true"></span></span>
+      </div>
+
+      <div class="logos">
         <img src="assets/logos/logo_ucv.png" alt="Universidad Central de Venezuela">
         <span class="sep"></span>
         <img src="assets/logos/logo_ciencias.png" alt="Facultad de Ciencias">
         <span class="sep"></span>
         <img src="assets/logos/logo_computacion.png" alt="Escuela de Computacion">
       </div>
-
-      <!-- Entra con mascara de abajo hacia arriba, como si emergiera. La
-           animacion ya vive en motion.css para todo h1 dentro de .cover. -->
-      <h1>
-        <span class="a">Destruyendo</span>
-        <span class="b">el vibe coding</span>
-      </h1>
-
-      <p class="frase anim" data-d="4">Lo que se ve es el prompt.</p>
-
-      <!-- La regla de la casa, aqui haciendo de linea de agua: se traza de
-           izquierda a derecha justo entre las dos frases, y separa lo que se
-           ve de lo que no. -->
-      <div class="rule"></div>
-
-      <p class="frase hondo anim" data-d="9">Debajo esta todo lo demas.</p>
-
-      <div class="uni firma anim" data-d="12">Luisdavid Colina</div>
 
     </div>
   </div>`

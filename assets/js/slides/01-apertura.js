@@ -82,7 +82,7 @@ window.DECK.push(
           <ul class="lineas">
             <li class="linea n1"><em>Integration Manager</em> en Workforce.com</li>
             <li class="linea n2">Auxiliar docente y <em>preparador de Matematica Discreta I</em></li>
-            <li class="linea n3">Siete años integrando sistemas de empresa</li>
+            <li class="linea n3">Nueve años en tecnologia, <em>seis construyendo sistemas</em></li>
           </ul>
         </div>
 

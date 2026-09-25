@@ -23,14 +23,13 @@
 
    Lo que se dice hablando no esta escrito aqui. En la 03 faltan la creencia
    compartida, la pregunta que abre la tension y quien es Karpathy. En la 04
-   falta el aviso de
-   que METR cambio el diseño del experimento en febrero de 2026, y en la 05
-   falta todo el relato del incidente y la cuenta de lo que costo. Eso va en
-   la voz, no en la pantalla.
+   falta el aviso de que METR cambio el diseño del experimento en febrero de
+   2026, y en la 05 falta todo el relato del incidente y la cuenta de lo que
+   costo. Eso va en la voz, no en la pantalla.
    ========================================================================== */
 window.DECK.push(
 
-/* ───────────────── 03 El iceberg y la cita de Karpathy ─────────────── */
+/* ───────────────────── 03 El iceberg y la cita de Karpathy ─────────────────── */
 {
   section: 'El golpe',
   title: 'Lo que decide esta debajo',

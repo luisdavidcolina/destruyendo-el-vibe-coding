@@ -38,9 +38,12 @@ if (!String.prototype.padStart) {
         '</div>';
     }
 
+    // El pie llevaba tambien el nombre de la seccion, que ya sale arriba en el
+    // kicker de cada lamina. Repetido abajo en letra chica no aportaba nada, se
+    // leia mal proyectado y a veces no coincidia con lo que la lamina mostraba.
+    // Queda solo el numero, que es lo unico que el pie tiene que decir.
     var foot = s.bare ? '' :
       '<div class="slide-foot">' +
-        '<span class="sec">' + (s.section || '') + '</span>' +
         '<span class="spacer"></span>' +
         '<span>' + String(i + 1).padStart(2, '0') + ' / ' + String(total).padStart(2, '0') + '</span>' +
       '</div>';

@@ -107,7 +107,7 @@
 .ice-punta {
   position: absolute;
   z-index: 1;
-  left: 52%;
+  left: 56%;
   width: 26%;
   top: 9%;
   height: calc(var(--ice-agua) - 9%);
@@ -120,11 +120,11 @@
 .ice-masa {
   position: absolute;
   z-index: 1;
-  left: 36%;
+  left: 40%;
   width: 58%;
   top: var(--ice-agua);
   bottom: 3%;
-  clip-path: polygon(30% 0%, 77% 0%, 100% 19%, 91% 53%, 69% 85%, 43% 100%, 17% 77%, 2% 38%);
+  clip-path: polygon(24% 0%, 80% 0%, 100% 19%, 91% 53%, 69% 85%, 43% 100%, 17% 77%, 2% 38%);
   background: linear-gradient(180deg,
     rgba(232, 247, 255, 0.94) 0%,
     rgba(168, 214, 238, 0.66) 40%,
@@ -182,20 +182,22 @@
   inset: 0;
   z-index: 5;
   background: linear-gradient(94deg,
-    rgba(255, 255, 255, 0.96) 0%,
-    rgba(255, 255, 255, 0.92) 30%,
-    rgba(255, 255, 255, 0.58) 46%,
-    rgba(255, 255, 255, 0.12) 62%,
-    rgba(255, 255, 255, 0) 74%);
+    rgba(255, 255, 255, 0.97) 0%,
+    rgba(255, 255, 255, 0.95) 34%,
+    rgba(255, 255, 255, 0.86) 48%,
+    rgba(255, 255, 255, 0.40) 60%,
+    rgba(255, 255, 255, 0.08) 70%,
+    rgba(255, 255, 255, 0) 80%);
 }
 
 :root[data-theme="dark"] .ice-velo {
   background: linear-gradient(94deg,
-    rgba(1, 4, 9, 0.95) 0%,
-    rgba(1, 4, 9, 0.90) 30%,
-    rgba(1, 4, 9, 0.56) 46%,
-    rgba(1, 4, 9, 0.12) 62%,
-    rgba(1, 4, 9, 0) 74%);
+    rgba(1, 4, 9, 0.96) 0%,
+    rgba(1, 4, 9, 0.93) 34%,
+    rgba(1, 4, 9, 0.84) 48%,
+    rgba(1, 4, 9, 0.40) 60%,
+    rgba(1, 4, 9, 0.08) 70%,
+    rgba(1, 4, 9, 0) 80%);
 }
 
 /* La cita hereda .quote de components.css, que es la pieza con barra lateral

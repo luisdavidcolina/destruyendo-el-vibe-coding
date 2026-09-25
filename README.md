@@ -1,103 +1,114 @@
-# Ponencia de Dev Days 2026, Luisdavid Colina
+# Destruyendo el vibe coding
 
-Dev Days 2026, **viernes 2 de octubre de 2026, 11:00 AM**, Auditorio Manuel Bemporad, Escuela de
-Computacion, Facultad de Ciencias, UCV. Entrada libre con registro previo y cupos limitados, solo
-para estudiantes de la UCV.
+Ponencia de Luisdavid Colina en Dev Days 2026. **Viernes 2 de octubre de 2026, 11:00 AM**,
+Auditorio Manuel Bemporad, Escuela de Computación, Facultad de Ciencias, UCV. Entrada libre con
+registro previo y cupos limitados, solo para estudiantes de la UCV.
 
 Organiza David Jaimes (`djhenrz`), GitHub Campus Expert. Aliados: 4Geeks Academy Latam, Escuela
-de Computacion UCV (`escompucv`) y Cluster (`ucvcluster`).
+de Computación UCV (`escompucv`) y Cluster (`ucvcluster`).
 
-El publico son estudiantes, entusiastas del codigo y desarrolladores en formacion, asi que el
-nivel de entrada es bajo y la sala es del propio salon de clases.
+Dura diez minutos como tope. El público son estudiantes, entusiastas del código y desarrolladores
+en formación, así que el nivel de entrada es bajo.
 
-Base de la presentacion, montada sobre el mismo motor de la expo de Home Assistant del
-Laboratorio General de IoT 6565. Falta el contenido: el titulo de la ponencia y la duracion del
-turno entran cuando lleguen las indicaciones.
+En línea: https://destruyendo-el-vibe-coding.luisdavidcolina.com
 
-Todo lo que dice **PENDIENTE** es un hueco a llenar, y esta puesto a proposito para que se vea
-en pantalla lo que falta.
+La presentación está montada sobre el mismo motor de la exposición de Home Assistant del
+Laboratorio General de IoT 6565, con la paleta y la tipografía de GitHub.
 
 ---
 
-## Abrir la presentacion
+## Abrir la presentación
 
-Doble clic en `index.html`. No necesita servidor ni conexion a internet. No usa modulos de
-JavaScript ni carga librerias de terceros, para que funcione en cualquier equipo.
+Doble clic en `index.html`. No necesita servidor ni conexión a internet. No usa módulos de
+JavaScript ni carga librerías de terceros, para que funcione en cualquier equipo.
 
-| Tecla | Que hace |
+| Tecla | Qué hace |
 |---|---|
 | `→` o espacio | Avanzar |
 | `←` | Retroceder |
-| `0` `4` y esperar | Saltar a esa lamina |
-| `R` | Cronometro |
+| `0` `4` y esperar | Saltar a esa lámina |
+| `R` | Cronómetro |
 | `B` | Pantalla en negro |
-| `I` | Volver al indice |
+| `I` | Volver al índice |
 | `T` | Tema claro u oscuro |
 | `F` | Pantalla completa |
 | `H` | Ver los atajos |
 
-El tema tambien se fuerza por URL, con `index.html?tema=oscuro`.
+El tema también se fuerza por URL, con `index.html?tema=oscuro`.
 
 ---
 
 ## Estructura de la carpeta
 
 ```
-index.html              la presentacion
-assets/css/             base, components, motion y fuentes
-assets/js/deck.js       navegacion, cronometro y exportacion a PDF
-assets/js/slides/       el contenido, un archivo por bloque
-assets/img/             capturas oficiales
-assets/video/           los clips de las laminas de corte, si se usan
-assets/logos/           GitHub, UCV, Ciencias y Computacion
-assets/fonts/           Source Sans 3, para no pedirle nada a internet
-guion/GUION.md          la teoria de cada lamina
-guion/CHECKLIST.md      que falta y como llevarlo
-informe/                plantilla LaTeX, por si el evento pide informe
+index.html                la presentación
+assets/css/               base, components, motion y fuentes
+assets/css/laminas/       una hoja por bloque de láminas
+assets/js/deck.js         navegación, cronómetro, índice y exportación a PDF
+assets/js/slides/         el contenido, un archivo por bloque (cinco en total)
+assets/img/               capturas de fuentes y sistemas, la foto y el código QR
+assets/logos/             GitHub, UCV, Ciencias, Computación y las marcas de las certificaciones
+assets/fonts/             Mona Sans, y Source Sans 3 como respaldo
+guion/GUION.md            la teoría de cada lámina, con datos y fuentes
+informe/                  plantilla LaTeX, por si el evento pide informe
+vercel.json               cabeceras de caché y URL limpias
 ```
 
-Cuando el contenido crezca, `02-cuerpo.js` se parte en un archivo por seccion y se agregan las
-lineas `<script>` en `index.html`. El orden de esas lineas es el orden de las laminas.
+El orden de las líneas `<script>` de `index.html` es el orden de las láminas. Cada hoja de
+`assets/css/laminas/` tiene que estar enlazada en `index.html`, porque si no, no se aplica.
+
+Los estilos, los scripts y las imágenes se revalidan en cada carga, así que no hace falta borrar
+la caché para ver un cambio. `guion/` e `informe/` no se publican en el sitio, se leen aquí.
 
 ---
 
-## Las laminas
+## Las láminas
 
-Seis por ahora, cuatro de ellas plantillas.
+Catorce. Las trece primeras son de contenido y la 14 es de contacto, la que queda proyectada
+durante las preguntas. Las de corte van en fondo oscuro a propósito y son la 01, la 06 y la 13.
 
-| # | Lamina | Estado |
+| # | Bloque | Lámina |
 |---|---|---|
-| 01 | Portada | evento, lugar, fecha y enlaces definitivos. Falta el titulo |
-| 02 | Objetivo de la ponencia | plantilla |
-| 03 | Lamina de corte | plantilla |
-| 04 | Lamina de contenido | plantilla |
-| 05 | Conclusiones | plantilla |
-| 06 | Contacto | GitHub y LinkedIn, referencias PENDIENTE |
+| 01 | Apertura | Destruyendo el vibe coding |
+| 02 | Apertura | Luisdavid Colina |
+| 03 | El golpe | Lo que decide está debajo |
+| 04 | El golpe | La sensación no sirve para medir |
+| 05 | El golpe | El agente tenía permiso |
+| 06 | La resolución | ¿Entonces la IA es el problema? |
+| 07 | La resolución | El encargo es el trabajo |
+| 08 | La resolución | Cuatro reglas, y la primera manda |
+| 09 | Orquestación | Aquí no hay espera muerta |
+| 10 | Lo construido | Seis meses contra cinco semanas |
+| 11 | Las capas y sus modas | Ninguna capa borró la de abajo |
+| 12 | Las bases | Creen que entienden, y no |
+| 13 | Cierre | Reflexión final |
+| 14 | Contacto | Contacto y referencias |
 
 Los tres enlaces, `luisdavidcolina.com`, `github.com/luisdavidcolina` y
-`linkedin.com/in/luisdavidcolina`, van en la portada y en la ultima lamina, que es la que queda
-proyectada durante las preguntas.
+`linkedin.com/in/luisdavidcolina`, van en la portada y en la última lámina, que es la que queda
+proyectada durante las preguntas. Esa lámina lleva además un código QR generado dentro de la
+carpeta, sin pedirle nada a ningún servicio.
 
 ---
 
 ## Paleta
 
 La del propio GitHub, para que el deck y cualquier captura del sitio se lean como una sola cosa.
-Azul `#0969DA` en claro y `#4493F8` en oscuro, con los grises de Primer. El coloreado de codigo
-usa los tonos del tema oscuro de GitHub, incluidas las lineas de un diff.
+Azul `#0969DA` en claro y `#4493F8` en oscuro, con los grises de Primer. El coloreado de código
+usa los tonos del tema oscuro de GitHub, incluidas las líneas de un diff.
 
-El tema claro es el predeterminado porque el videobeam de salon lava los negros y un deck oscuro
-se vuelve ilegible desde la tercera fila. Las laminas de corte si van oscuras, a proposito.
+El tema claro es el predeterminado porque el videobeam de salón lava los negros y un deck oscuro
+se vuelve ilegible desde la tercera fila. Las láminas de corte sí van oscuras, a propósito.
 
 ---
 
 ## El guion
 
-Esta en `guion/GUION.md`: la teoria de cada lamina, con los datos verificados y sus fuentes. No es
-un libreto para leer, es lo que hay que saber para hablar de cada lamina. Las reglas de redaccion y
-el plan de trabajo viven aparte.
+Está en `guion/GUION.md`: la teoría de cada lámina, con los datos verificados y sus fuentes. No es
+un libreto para leer, es lo que hay que saber para hablar de cada lámina. Las reglas de redacción
+y el plan de trabajo viven aparte.
 
-## Antes de dar una lamina por buena
+## Antes de dar una lámina por buena
 
-Una sola idea por lamina, cincuenta palabras como tope, el titular dice algo en lugar de nombrar un
-tema, y ninguna animacion que no aclare nada.
+Una sola idea por lámina, cincuenta palabras como tope, el titular dice algo en lugar de nombrar un
+tema, y ninguna animación que no aclare nada.

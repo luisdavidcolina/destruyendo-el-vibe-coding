@@ -106,7 +106,7 @@
 }
 
 /* Las historias en curso dicen quien las esta atendiendo. Sin eso el tablero es
-   un dibujo de columnas. Con eso se ve que son tres proveedores distintos
+   un dibujo de columnas. Con eso se ve que son tres agentes distintos
    trabajando a la vez sobre el mismo proyecto, que es el argumento de la
    lamina. Las hechas van sin nombre, para no gastar palabras en un dato que
    ya no informa. */
@@ -136,7 +136,7 @@
   color: var(--text-dim);
 }
 
-/* Un color por proveedor, el mismo en todas las columnas */
+/* Un color por agente, el mismo en todas las columnas */
 .tb-card.ag1 { border-left-color: var(--accent);    color: var(--text); }
 .tb-card.ag1 i { color: var(--accent); }
 .tb-card.ag2 { border-left-color: var(--gold);      color: var(--text); }

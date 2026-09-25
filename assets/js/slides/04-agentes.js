@@ -13,12 +13,12 @@ window.DECK.push(
    cada una explica lo que se esta viendo justo encima. El tablero pasa a ser
    lo unico que hay en el cuerpo de la lamina y ocupa todo el alto. */
 {
-  section: 'Orquestacion',
-  title: 'Aqui no hay espera muerta',
+  section: 'Orquestación',
+  title: 'Aquí no hay espera muerta',
   min: '5:45 a 7:05',
   html: `
   <div class="pad">
-    <h1 class="title anim" data-d="2">Aqui no hay espera muerta</h1>
+    <h1 class="title anim" data-d="2">Aquí no hay espera muerta</h1>
     <div class="rule"></div>
 
     <div class="body-area">
@@ -41,20 +41,22 @@ window.DECK.push(
             <div class="tb-card"><b>T-047</b></div>
           </div>
 
-          <!-- Los tres proveedores se ven aqui, en la columna que manda, y por
-               eso la anotacion de la columna dice lo que sostienen. Las tres
-               tarjetas entran una detras de otra: eso es lo que significa que
-               no haya espera muerta. La cuarta llega con un nombre en uso. -->
+          <!-- Tres agentes de Copilot, cada uno con su identificador, en la
+               columna que manda. Sin nombrar a la competencia: la ponencia es
+               sobre Copilot y la aclaracion de que nada depende de una marca
+               va hablada. Las tres tarjetas entran una detras de otra: eso es
+               lo que significa que no haya espera muerta. La cuarta llega con
+               un identificador en uso. -->
           <div class="tb-col">
             <div class="tb-hd">
               <span class="tb-h">En curso</span>
-              <span class="tb-nota">tres proveedores</span>
+              <span class="tb-nota">tres agentes a la vez</span>
             </div>
-            <div class="tb-card ag1 ent e1"><b>T-041</b><i>copilot</i></div>
-            <div class="tb-card ag2 ent e2"><b>T-042</b><i>gemini</i></div>
-            <div class="tb-card ag3 ent e3"><b>T-043</b><i>claude</i></div>
-            <div class="tb-card dup"><b>T-043</b><i>claude</i></div>
-            <div class="tb-aviso">nombre repetido</div>
+            <div class="tb-card ag1 ent e1"><b>T-041</b><i>copilot-1</i></div>
+            <div class="tb-card ag2 ent e2"><b>T-042</b><i>copilot-2</i></div>
+            <div class="tb-card ag3 ent e3"><b>T-043</b><i>copilot-3</i></div>
+            <div class="tb-card dup"><b>T-043</b><i>copilot-3</i></div>
+            <div class="tb-aviso">identificador repetido</div>
           </div>
 
           <!-- Las hechas van sin nombre: quien las hizo ya no informa nada y

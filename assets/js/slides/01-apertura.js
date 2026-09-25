@@ -19,9 +19,17 @@
        respaldo, y esta ponencia lleva opinion propia. Quedan los tres logos
        institucionales, en monocromo sobre el fondo, que son los de la casa.
 
-   02  Quien expone. Veinte segundos, un retrato y tres lineas. Un solo resalte
-       en toda la lamina, el que pesa en este auditorio. El chiste del lenguaje
-       no vive aqui, esta en la lamina 08.
+   02  Quien expone. Veinte segundos, un retrato, tres lineas y, abajo y en
+       jerarquia baja, la trayectoria: siete hitos sobre un eje de nueve años,
+       que es lo que sostiene la tercera linea sin que haya que decirlo. Un
+       solo resalte en toda la lamina, el que pesa en este auditorio. El
+       chiste del lenguaje no vive aqui, esta en la lamina 08.
+
+       Los hitos salen del CV, con los años de inicio de cada etapa: Veconinter
+       2017, BDB Soluciones 2018, IntelliPOS 2019, King Code 2021, DreamJob
+       2022, y desde 2023 Workforce.com y Diamond Hotel, que son las dos que
+       siguen. El eje va de 2017 a 2026 y cada hito cae en su año, no a
+       espacios iguales, para que las distancias digan la verdad.
 
    Los ritmos de escritura viven en laminas/01-portada.css, porque el motor no
    tiene pasos dentro de una lamina.
@@ -144,6 +152,22 @@ window.DECK.push(
         </div>
 
       </div>
+
+      <!-- La trayectoria. Un eje de 2017 a 2026, y cada hito en su año, con
+           la posicion en la variable --x. El tramo desde 2023 va en acento,
+           porque es el que sigue abierto. Entra despues de la tercera linea,
+           que es la que enuncia los nueve años: primero se dice, despues se
+           ve. Todo a cuerpo pequeño y en el gris de cuerpo, no en el tenue,
+           para que se lea proyectado sin competir con las tres lineas. -->
+      <ol class="trayectoria" aria-label="Trayectoria profesional">
+        <li class="tr-hito" style="--x:0%"><span class="tr-a">2017</span><span class="tr-n">Veconinter</span></li>
+        <li class="tr-hito" style="--x:11.1%"><span class="tr-a">2018</span><span class="tr-n">BDB Soluciones</span></li>
+        <li class="tr-hito" style="--x:22.2%"><span class="tr-a">2019</span><span class="tr-n">IntelliPOS</span></li>
+        <li class="tr-hito" style="--x:44.4%"><span class="tr-a">2021</span><span class="tr-n">King Code</span></li>
+        <li class="tr-hito" style="--x:55.6%"><span class="tr-a">2022</span><span class="tr-n">DreamJob</span></li>
+        <li class="tr-hito" style="--x:66.7%"><span class="tr-a">2023</span><span class="tr-n">Workforce.com y Diamond Hotel</span></li>
+        <li class="tr-hito fin" style="--x:100%"><span class="tr-a">2026</span><span class="tr-n">hoy</span></li>
+      </ol>
     </div>
   </div>`
 }

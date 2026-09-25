@@ -166,6 +166,108 @@
 .slide.is-active .quien .linea.n2 { animation-delay: 2.00s; }
 .slide.is-active .quien .linea.n3 { animation-delay: 3.30s; }
 
+/* ── La trayectoria ──────────────────────────────────────────────────────
+   Abajo del retrato y de las tres lineas, a todo el ancho. Es la evidencia
+   de la tercera linea, los nueve años, y va en jerarquia baja: eje de dos
+   pixeles, puntos de nueve, años en mono a 12,5 y nombres a 14. El gris es
+   el de cuerpo, --text-dim, que sobre el fondo claro da 7,5:1; el tenue no
+   se usa porque el videobeam lo lava. */
+.quien .trayectoria {
+  position: relative;
+  flex: none;
+  list-style: none;
+  margin: 26px 0 6px;
+  padding: 22px 0 0;
+  height: 76px;
+  border-top: 1px solid var(--line);
+  opacity: 0;
+}
+
+/* El eje completo, y encima el tramo que sigue abierto, desde 2023 */
+.quien .trayectoria::before,
+.quien .trayectoria::after {
+  content: "";
+  position: absolute;
+  top: 26px;
+  height: 2px;
+  border-radius: 1px;
+}
+
+.quien .trayectoria::before { left: 0; right: 0; background: var(--line); }
+
+.quien .trayectoria::after {
+  left: 66.7%;
+  right: 0;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.quien .tr-hito {
+  position: absolute;
+  top: 22px;
+  left: var(--x);
+  padding-top: 18px;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+/* El ultimo hito cae en el borde derecho: se ancla por la derecha y se alinea
+   al final para que no se salga de la lamina. */
+.quien .tr-hito.fin { left: auto; right: 0; text-align: right; }
+
+/* El punto sobre el eje */
+.quien .tr-hito::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--text-dim);
+  box-shadow: 0 0 0 3px var(--bg);
+}
+
+.quien .tr-hito.fin::before { left: auto; right: 0; background: var(--accent); }
+.quien .tr-hito:nth-child(6)::before { background: var(--accent); }
+
+.quien .tr-a {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+}
+
+.quien .tr-n {
+  display: block;
+  margin-top: 2px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dim);
+}
+
+.quien .tr-hito.fin .tr-a,
+.quien .tr-hito:nth-child(6) .tr-a { color: var(--accent); }
+
+/* Entra despues de la tercera linea, que es la que dice los nueve años.
+   El eje aparece, el tramo en acento se traza de izquierda a derecha y los
+   hitos se encienden uno por uno en orden cronologico. */
+@keyframes trTrazo { to { transform: scaleX(1); } }
+
+.slide.is-active .quien .trayectoria { animation: fade 0.5s ease-out 4.2s forwards; }
+.slide.is-active .quien .trayectoria::after { animation: trTrazo 0.6s cubic-bezier(0.22, 1, 0.36, 1) 5.0s forwards; }
+
+.slide.is-active .quien .tr-hito { animation: rise 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.slide.is-active .quien .tr-hito:nth-child(1) { animation-delay: 4.30s; }
+.slide.is-active .quien .tr-hito:nth-child(2) { animation-delay: 4.42s; }
+.slide.is-active .quien .tr-hito:nth-child(3) { animation-delay: 4.54s; }
+.slide.is-active .quien .tr-hito:nth-child(4) { animation-delay: 4.66s; }
+.slide.is-active .quien .tr-hito:nth-child(5) { animation-delay: 4.78s; }
+.slide.is-active .quien .tr-hito:nth-child(6) { animation-delay: 4.90s; }
+.slide.is-active .quien .tr-hito:nth-child(7) { animation-delay: 5.30s; }
+
 /* ══════════════════════════════════════════════════════════════════════════
    Movimiento reducido e impresion
 
@@ -185,6 +287,10 @@
   .cover.portada .cursor { display: none !important; }
   .portada .dl.ad        { opacity: 1 !important; }
   .slide.is-active .quien .linea { opacity: 1 !important; }
+
+  .slide.is-active .quien .trayectoria,
+  .slide.is-active .quien .tr-hito { animation: none !important; opacity: 1 !important; }
+  .slide.is-active .quien .trayectoria::after { animation: none !important; transform: none !important; }
 }
 
 @media print {
@@ -201,11 +307,15 @@
     transform: none !important;
   }
 
-  .quien .linea {
+  .quien .linea,
+  .quien .trayectoria,
+  .quien .tr-hito {
     animation: none !important;
     transform: none !important;
     opacity: 1 !important;
   }
+
+  .quien .trayectoria::after { animation: none !important; transform: none !important; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════

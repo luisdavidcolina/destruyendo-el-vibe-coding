@@ -360,29 +360,73 @@
 /* ══════════════════════════════════════════════════════════════════════════
    05  Nueve segundos
 
-   El contador corre de verdad: nueve segundos de reloj, en silencio, frente
-   a la sala. Se hace con una cinta de diez celdas que sube a saltos, no con
-   un numero interpolado, porque una cinta con steps() la mueve cualquier
-   navegador y este es el momento de la ponencia que no puede fallar.
+   La lamina tiene tres piezas y cada una hace un trabajo distinto.
 
-   Las cifras las escribe CSS con un contador, asi que el marcado no lleva
-   ni un digito suelto.
+   .nv-izq    El caso y el reloj. Arriba el nombre de la empresa afectada, a
+              cuerpo de informacion principal, porque hasta ahora estaba
+              compuesto como un pie de foto y desde la tercera fila no se
+              leia. Debajo el contador, que corre de verdad, y debajo la
+              cadena de cuatro pasos que se enciende mientras corre.
+   .nv-nota   La captura de prensa. Es el titular real de Hackread y es la
+              evidencia de la lamina, porque el numero 9 solo no cuenta la
+              historia. El recorte se hace aqui y no en el archivo.
+   .nv-saldo  Lo que costo. Entra cuando el reloj para y se queda.
+
+   Al llegar a nueve NO se apaga nada. La version anterior apagaba la lamina
+   entera y dejaba una frase sola, y eso tiraba a la basura justo lo que la
+   sala quiere fotografiar. Ahora el reloj se detiene en nueve, la cadena
+   sigue encendida y entra el saldo debajo de la captura.
+
+   El contador se hace con una cinta de diez celdas que sube a saltos, no con
+   un numero interpolado, porque una cinta con steps() la mueve cualquier
+   navegador y este es el momento de la ponencia que no puede fallar. Las
+   cifras las escribe CSS con un contador, asi que el marcado no lleva ni un
+   digito suelto.
    ══════════════════════════════════════════════════════════════════════════ */
 
-.body-area.nueve { position: relative; justify-content: center; }
+.body-area.nueve { justify-content: center; }
 
 .nv-grid {
   display: grid;
-  grid-template-columns: 400px 1fr;
-  gap: 54px;
-  align-items: center;
+  grid-template-columns: 420px 1fr;
+  gap: 44px;
+  align-items: start;
+}
+
+.nv-izq, .nv-der { min-width: 0; }
+
+/* ── El nombre del caso ──────────────────────────────────────────────────
+   Esto era el problema mas visible de la lamina. El nombre de la empresa
+   afectada es el dato principal y estaba a tamaño de nota al pie. Va a 48px,
+   en el color de maximo contraste, y con el giro del negocio debajo para que
+   la sala sepa que se borro sin que haya que explicarlo. */
+.nv-caso { margin-bottom: 20px; }
+
+.nv-marca {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--text);
+}
+
+.nv-giro {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 14.5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
 }
 
 /* ── El contador ─────────────────────────────────────────────────────────
    La ventana mide una celda de alto y la cinta se desplaza justo una celda
    por segundo. --nv-celda manda sobre el alto, el tipo y el recorrido, asi
    que el tamaño se cambia en un solo sitio. */
-.nv-reloj { --nv-celda: 200px; }
+.nv-reloj { --nv-celda: 146px; margin-bottom: 24px; }
 
 .nv-vent {
   height: var(--nv-celda);
@@ -394,34 +438,45 @@
    adelantan al mismo reloj que el resto: comprobado, el numero se quedaba
    en cero mientras la cadena si avanzaba. Con margen el paso ocurre en el
    mismo sitio donde ocurre todo lo demas, y nueve saltos en nueve segundos
-   no le cuestan nada a nadie. */
+   no le cuestan nada a nadie.
+
+   El estado base es el final, con la cinta ya corrida hasta el nueve, y la
+   animacion escribe el arranque. La version anterior arrancaba el fotograma
+   en transform, que es justo lo que el parrafo de arriba dice que no se
+   usa, asi que el reloj no se movia y el nueve salia de entrada. */
 .nv-cinta {
   counter-reset: nvd -1;
   margin-top: calc(var(--nv-celda) * -9);
 }
 
+/* El color base es el rojo porque es donde termina: cuando el reloj para, el
+   daño ya ocurrio. Durante los nueve segundos va en azul, y el cambio llega
+   justo al detenerse. */
 .nv-cinta i {
   display: block;
   height: var(--nv-celda);
   line-height: var(--nv-celda);
   font-family: var(--font-display);
   font-style: normal;
-  font-size: 208px;
+  font-size: 152px;
   font-weight: 700;
   letter-spacing: -0.05em;
-  color: var(--accent);
+  color: var(--danger);
   font-variant-numeric: tabular-nums;
   counter-increment: nvd;
 }
 
 .nv-cinta i::after { content: counter(nvd); }
 
+/* La unidad va en --text-dim y no en --text-faint. El videobeam del auditorio
+   lava el gris claro sobre gris y desde el fondo esa palabra desaparecia. */
 .nv-u {
   font-family: var(--font-mono);
-  font-size: 19px;
+  font-size: 17px;
   letter-spacing: 0.22em;
-  color: var(--text-faint);
-  margin-top: 6px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-top: 4px;
 }
 
 /* ── La cadena ───────────────────────────────────────────────────────────
@@ -434,12 +489,12 @@
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 58px;
-  padding-left: 28px;
+  min-height: 42px;
+  padding-left: 26px;
   margin-left: 6px;
   border-left: 2px solid var(--accent);
-  font-size: 19.5px;
-  line-height: 1.35;
+  font-size: 19px;
+  line-height: 1.3;
   color: var(--text);
 }
 
@@ -473,33 +528,109 @@
   background: var(--surface);
 }
 
-/* ── La frase que queda ──────────────────────────────────────────────────
-   Va sobre la lamina entera, para poder aparecer justo cuando el contador y
-   la cadena se apagan. Reutiliza .quote y solo cambia el tamaño y el color
-   del filo. */
-.nv-caja {
+/* ── La captura de prensa ────────────────────────────────────────────────
+   Una captura real de prensa es evidencia, y es lo que le faltaba a la
+   lamina. El recorte se hace con el marco y no en el archivo: la imagen
+   entra a ancho completo y el marco, mas apaisado que ella, le corta lo de
+   abajo. Queda la marca del medio, la ilustracion y las dos lineas del
+   titular, y se va el cuerpo de la nota, que esta en ingles y que nadie
+   alcanza a leer proyectado.
+
+   La relacion del marco, 2400 por 1290, ES el encuadre. Cambiarla mueve el
+   corte y no hace falta tocar nada mas. */
+.nv-nota { margin: 0; }
+
+.nv-marco {
+  position: relative;
+  aspect-ratio: 2400 / 1290;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  box-shadow: var(--card-shadow);
+  background: #0B1017;
+}
+
+.nv-marco img {
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: block;
+}
+
+.nv-pie {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}
+
+/* ── El saldo ────────────────────────────────────────────────────────────
+   Entra cuando el reloj para, y es lo que queda proyectado mientras se sigue
+   hablando. El filete rojo de arriba lo amarra al ultimo paso de la cadena. */
+.nv-saldo {
   display: flex;
   align-items: center;
-  pointer-events: none;
+  gap: 26px;
+  margin-top: 20px;
+  padding-top: 17px;
+  border-top: 2px solid var(--danger);
 }
 
-.nv-frase {
-  font-size: 40px;
-  line-height: 1.26;
-  border-left-color: var(--danger);
-  max-width: 940px;
+.nv-dano {
+  flex: none;
+  max-width: 250px;
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--danger);
 }
 
-@keyframes nvCorre    { from { transform: translate3d(0, 0, 0); } }
+.nv-dato {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.nv-dato b {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  color: var(--text);
+}
+
+.nv-dato span {
+  font-size: 13.5px;
+  line-height: 1.2;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+/* ── La secuencia ────────────────────────────────────────────────────────
+   Cuatro movimientos y ninguno decorativo. El nombre del caso llega primero,
+   la evidencia entra detras, el reloj corre nueve segundos reales con la
+   cadena encendiendose al ritmo del relato, y al pararse cambia de color y
+   entra el saldo. Todo termina visible: ningun elemento queda en opacidad
+   cero al acabar su animacion. */
+@keyframes nvEntra    { from { opacity: 0; transform: translate3d(0, 12px, 0); } }
+@keyframes nvNota     { from { opacity: 0; transform: translate3d(0, 18px, 0) scale(0.985); } }
+@keyframes nvCorre    { from { margin-top: 0; } }
+@keyframes nvRojo     { 0%, 93.75% { color: var(--accent); } to { color: var(--danger); } }
 @keyframes nvEnciende { from { opacity: 0.22; color: var(--text-faint); border-left-color: var(--line); transform: translate3d(-10px, 0, 0); } }
-@keyframes nvApagon   { to   { opacity: 0.05; } }
-@keyframes nvFrase    { from { opacity: 0; transform: translate3d(0, 20px, 0); } }
 
-/* Nueve saltos en nueve segundos. El cero se ve al arrancar y el nueve
-   entra exactamente nueve segundos despues. */
-.slide.is-active .nv-cinta { animation: nvCorre 9s steps(9, end) 0.35s both; }
+.slide.is-active .nv-caso { animation: nvEntra 0.52s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both; }
+.slide.is-active .nv-nota { animation: nvNota 0.66s cubic-bezier(0.22, 1, 0.36, 1) 0.34s both; }
+
+/* Nueve saltos en nueve segundos. El cero se ve al arrancar y el nueve entra
+   exactamente nueve segundos despues, a los 9.35s de entrar la lamina. */
+.slide.is-active .nv-cinta   { animation: nvCorre 9s steps(9, end) 0.35s both; }
+.slide.is-active .nv-cinta i { animation: nvRojo 9.6s linear 0.35s both; }
 
 .slide.is-active .nv-paso { animation: nvEnciende 0.46s cubic-bezier(0.22, 1, 0.36, 1) both; }
 .slide.is-active .nv-paso:nth-child(1) { animation-delay: 1.15s; }
@@ -507,16 +638,16 @@
 .slide.is-active .nv-paso:nth-child(3) { animation-delay: 5.10s; }
 .slide.is-active .nv-paso:nth-child(4) { animation-delay: 7.00s; }
 
-/* Al llegar a nueve se apaga todo de golpe y entra la frase */
-.slide.is-active .nv-grid  { animation: nvApagon 0.26s ease-in 9.35s both; }
-.slide.is-active .nv-frase { animation: nvFrase 0.68s cubic-bezier(0.22, 1, 0.36, 1) 9.62s both; }
+/* El reloj para en 9.35s y el saldo entra justo detras */
+.slide.is-active .nv-saldo { animation: nvEntra 0.62s cubic-bezier(0.22, 1, 0.36, 1) 9.48s both; }
 
 /* ══════════════════════════════════════════════════════════════════════════
    Sin movimiento y en papel
 
    El estado base de todo lo de arriba ya es el estado final, asi que basta
-   con apagar las animaciones para que la lamina se lea entera. La unica
-   excepcion es el apagon de la 05, que no tiene sentido congelado.
+   con apagar las animaciones para que la lamina se lea entera. En la 05 eso
+   significa el reloj detenido en nueve y en rojo, la cadena encendida y el
+   saldo puesto, que es exactamente lo que queda proyectado en vivo.
    ══════════════════════════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
   .slide.is-active .ice,
@@ -554,3 +685,83 @@
   .ice-agua, .enf-barra { box-shadow: none !important; }
   .nv-paso code { background: #FFFFFF !important; }
 }
+
+/* ── Lamina 03, el iceberg como diagrama ─────────────────────────────────
+   Un dibujo de iceberg con una frase encima no dice nada. Lo que dice algo es
+   el reparto: una sola caja arriba de la linea de agua y ocho debajo. El
+   volumen de cada lado ES el argumento, y se lee de un vistazo sin leer una
+   sola palabra. */
+.ice { display: flex; flex-direction: column; justify-content: center; }
+
+.ice-eti {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+
+.ice-caja {
+  display: inline-flex;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 14px 26px;
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--text);
+  box-shadow: var(--card-shadow);
+}
+
+/* La linea de agua, que es el eje de la lamina */
+.ice-agua {
+  position: relative;
+  height: 1px;
+  background: var(--accent);
+  margin: 20px 0 26px;
+}
+
+.ice-agua span {
+  position: absolute;
+  right: 0;
+  top: -9px;
+  background: var(--bg);
+  padding-left: 12px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Debajo, todo lo demas. En rejilla para que se lea el volumen de golpe. */
+.ice-rej {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.ice-rej span {
+  background: var(--surface-2);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--r-sm);
+  padding: 12px 14px;
+  font-size: 15px;
+  color: var(--text);
+  opacity: 0;
+}
+
+/* Entran una detras de otra, rapido. No es adorno: el goteo es lo que hace
+   sentir que debajo hay mas de lo que uno pensaba. */
+.slide.is-active .ice-rej span { animation: rise 0.34s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.slide.is-active .ice-rej span:nth-child(1) { animation-delay: 0.55s; }
+.slide.is-active .ice-rej span:nth-child(2) { animation-delay: 0.66s; }
+.slide.is-active .ice-rej span:nth-child(3) { animation-delay: 0.77s; }
+.slide.is-active .ice-rej span:nth-child(4) { animation-delay: 0.88s; }
+.slide.is-active .ice-rej span:nth-child(5) { animation-delay: 0.99s; }
+.slide.is-active .ice-rej span:nth-child(6) { animation-delay: 1.10s; }
+.slide.is-active .ice-rej span:nth-child(7) { animation-delay: 1.21s; }
+.slide.is-active .ice-rej span:nth-child(8) { animation-delay: 1.32s; }

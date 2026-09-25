@@ -670,3 +670,26 @@ strong { color: var(--text); font-weight: 650; }
 }
 
 .slide h1.title.sm { font-size: 44px; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Suelo de legibilidad para todo el deck.
+
+   Aparecieron etiquetas de 10 y 11 pixeles en gris de apoyo dentro de
+   diagramas y anotaciones. En un monitor se leen, proyectadas en un auditorio
+   con videobeam desaparecen. Nada por debajo de 14 pixeles, y nada de texto
+   con contenido en el gris mas claro de la paleta.
+   ══════════════════════════════════════════════════════════════════════════ */
+.slide .sub, .slide .nota, .slide .ann, .slide .anot, .slide .tag,
+.slide .cap, .slide .lbl, .slide .meta, .slide small {
+  font-size: 14.5px !important;
+  color: var(--text-dim) !important;
+}
+
+/* Ninguna etiqueta de diagrama baja de 14. El mono a 11 no sobrevive a un
+   proyector, por mucho que en pantalla se vea bien. */
+.slide [class*="-eti"],
+.slide [class*="-lab"],
+.slide [class*="-ann"] {
+  font-size: 14px !important;
+  color: var(--text-dim) !important;
+}

@@ -48,9 +48,11 @@
   margin-bottom: 2px;
 }
 
-/* Cada historia dice quien la esta atendiendo. Sin eso el tablero es un dibujo
-   de columnas; con eso se ve que son tres proveedores distintos trabajando a la
-   vez sobre el mismo proyecto, que es el argumento de la lamina. */
+/* Las historias en curso dicen quien las esta atendiendo. Sin eso el tablero es
+   un dibujo de columnas. Con eso se ve que son tres proveedores distintos
+   trabajando a la vez sobre el mismo proyecto, que es el argumento de la
+   lamina. Las hechas van sin nombre, para no gastar palabras en un dato que
+   ya no informa. */
 .tb-card {
   display: flex;
   align-items: baseline;
@@ -166,24 +168,30 @@
 }
 
 /* ── La rafaga de proyectos ──────────────────────────────────────────────
-   Van numerados y entran uno tras otro, rapido. La velocidad es el mensaje:
-   que sean muchos es justamente lo que se esta demostrando. */
-.rafaga { display: flex; flex-direction: column; gap: 9px; justify-content: center; }
+   Entran uno tras otro, rapido. La velocidad es el mensaje: que sean muchos es
+   justamente lo que se esta demostrando. Cada renglon lleva una sola palabra,
+   asi que va mas grande, y el numero de orden lo dibuja el CSS en vez de
+   gastar cinco palabras del presupuesto. */
+.rafaga { display: flex; flex-direction: column; gap: 11px; justify-content: center; }
 
 .rafaga .rf {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 15.5px;
-  color: var(--text-dim);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
   opacity: 0;
 }
 
-.rafaga .rf span {
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  color: var(--accent);
+.rafaga .rf::before {
+  content: "";
   flex: none;
+  width: 7px;
+  height: 7px;
+  border: 1.6px solid var(--accent);
+  border-radius: 2px;
 }
 
 .slide.is-active .rafaga .rf { animation: rise 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards; }

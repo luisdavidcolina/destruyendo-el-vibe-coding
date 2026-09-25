@@ -41,6 +41,13 @@ window.DECK.push(
         <span class="tx"><span class="ink">vibe coding</span><span class="cursor" aria-hidden="true"></span><span class="tachon" aria-hidden="true"></span></span>
       </div>
 
+      <!-- La linea verde llega despues del tachado y trae el titulo. El diff
+           completo dice la ponencia entera: lo que se borra y lo que queda. -->
+      <div class="dl ad">
+        <span class="sig" aria-hidden="true">+</span>
+        <span class="tx"><h1 class="ink verde">Destruyendo el vibe coding</h1></span>
+      </div>
+
       <div class="logos">
         <img src="assets/logos/logo_ucv.png" alt="Universidad Central de Venezuela">
         <span class="sep"></span>
@@ -81,7 +88,7 @@ window.DECK.push(
                de una lamina. La segunda es la que pesa en este auditorio. -->
           <ul class="lineas">
             <li class="linea n1"><em>Integration Manager</em> en Workforce.com</li>
-            <li class="linea n2">Auxiliar docente y <em>preparador de Matematica Discreta I</em></li>
+            <li class="linea n2"><em>Auxiliar docente UCV</em>, preparador de Matematica Discreta I</li>
             <li class="linea n3">Nueve años en tecnologia, <em>seis construyendo sistemas</em></li>
           </ul>
         </div>

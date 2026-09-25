@@ -176,7 +176,7 @@
   top: 0; right: 0; bottom: 0; left: 0;
   inset: 0;
   z-index: 1;
-  background: url("../../img/foto.png") center bottom / contain no-repeat;
+  background: url("../../img/foto.png") center 28% / cover no-repeat;
 }
 
 /* ── Las tres lineas ─────────────────────────────────────────────────────── */
@@ -256,11 +256,38 @@
   }
 }
 
-/* El titular profesional, debajo del nombre. Va antes de la regla para que se
-   lea como una sola unidad con el nombre y no como el primer dato de la lista. */
-.ficha .cargo {
+/* ── La linea verde de la portada ────────────────────────────────────────
+   Un diff que solo borra esta incompleto. Cualquiera en esa sala sabe que
+   despues de una roja viene una verde, y se queda esperandola. Aqui llega,
+   ya tachada la de arriba, y trae el titulo de la ponencia. */
+.portada .dl.ad { margin-top: 10px; opacity: 0; }
+
+.slide.is-active .portada .dl.ad {
+  animation: portadaVerde 0.6s cubic-bezier(0.22, 1, 0.36, 1) 2.4s forwards;
+}
+
+@keyframes portadaVerde {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.portada .dl.ad .ink.verde {
+  font-family: var(--font-display);
+  font-size: 0.56em;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: #7EE787;
+  white-space: nowrap;
+}
+
+/* ── El cargo, debajo del nombre en la lamina 02 ─────────────────────────── */
+.quien .ficha .cargo {
   font-size: 21px;
   color: var(--text-dim);
   margin-top: 6px;
-  margin-bottom: 4px;
 }
+
+/* El retrato bajaba a ficha: a 430 de alto ocupaba media lamina e intimidaba */
+.quien .retrato { width: 210px; height: 210px; border-radius: 50%; }
+.quien .retrato .foto { background-position: center 22%; background-size: cover; }

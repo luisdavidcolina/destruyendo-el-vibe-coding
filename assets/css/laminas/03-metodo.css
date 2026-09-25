@@ -17,9 +17,10 @@
 
 /* ══════════════════════════════════════════════════════════════════════════
    06 El giro
-   Corte a oscuro. Una sola frase centrada y, debajo, la aclaracion de que
-   nada de lo que viene depende de una marca. Sin animacion propia: el
-   contraste contra las tres laminas claras anteriores es el efecto.
+   Corte a oscuro. Arriba la unica pregunta del deck y debajo su respuesta,
+   que es el diff que abrio la portada. El color no se inventa: .rm y .ad son
+   las clases con las que el deck pinta un diff en todos sus bloques de
+   codigo, asi que la lamina 01 y esta se leen como el mismo archivo.
    ══════════════════════════════════════════════════════════════════════════ */
 .cine-hero.giro {
   justify-content: center;
@@ -30,25 +31,84 @@
   padding-bottom: 0;
 }
 
+/* La pregunta pesa menos que el diff, porque la respuesta es lo que la sala
+   vino esperando desde la portada. A este cuerpo cabe en un solo renglon. */
 .cine-hero.giro h2 {
-  font-size: 72px;
-  line-height: 1.02;
+  font-size: 58px;
+  line-height: 1.04;
   max-width: 920px;
-  margin: 0 0 34px;
+  margin: 0 0 44px;
   text-wrap: balance;
 }
 
-/* La aclaracion va en letra pequena y apagada: es un pie tecnico, no la
-   frase. En versalitas se lee como nota y no compite con el titular. */
-.cine-hero.giro .nota {
+/* ── El diff ──────────────────────────────────────────────────────────────
+   Las dos lineas salen de los margenes de .pad hasta tocar los bordes, igual
+   que en la portada, para que se lean como renglones de un archivo y no como
+   dos rotulos centrados. El cuerpo esta calculado para que la linea verde
+   termine justo donde termina la roja de la lamina 01. */
+.cine-hero.giro .diff {
+  align-self: stretch;
+  margin: 0 calc(var(--pad-x) * -1);
+  text-align: left;
+}
+
+.cine-hero.giro .dl {
+  display: flex;
+  align-items: baseline;
+  width: auto;
+  padding: 16px var(--pad-x) 20px;
   font-family: var(--font-mono);
-  font-size: 15.5px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-  max-width: 780px;
-  line-height: 1.6;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+
+.cine-hero.giro .dl + .dl { margin-top: 12px; }
+
+/* El signo vive en la canal izquierda y queda fuera del tachado, igual que
+   en un diff de verdad: lo que se tacha es la linea, no su marcador. */
+.cine-hero.giro .dl .sig {
+  flex: none;
+  margin-right: 0.26em;
+  opacity: 0.78;
+}
+
+.cine-hero.giro .dl .tx {
+  position: relative;
+  display: inline-block;
+}
+
+/* La roja entra ya tachada. Tacharla fue lo que ocurrio en la portada, y
+   hacerlo otra vez seria contar dos veces lo mismo. Mismo grosor y misma
+   altura que alli, para que la sala reconozca la linea. */
+.cine-hero.giro .dl.rm .tx::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.585em;
+  width: 100%;
+  height: 0.058em;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+/* ── La linea verde ───────────────────────────────────────────────────────
+   Es lo unico que se mueve aqui, y aclara lo que de otro modo se pierde: que
+   primero hay una pregunta y despues una respuesta. Puestas a la vez, las dos
+   lineas se leen como un rotulo de dos renglones. Escalonadas, la sala ve
+   llegar la linea que le falta desde la portada. Se escribe de izquierda a
+   derecha, que es como se inserta una linea. */
+@keyframes giroAd {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+.cine-hero.giro .dl.ad { clip-path: inset(0 100% 0 0); }
+
+.slide.is-active .cine-hero.giro .dl.ad {
+  animation: giroAd 0.72s cubic-bezier(0.22, 1, 0.36, 1) 2.4s both;
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -198,88 +258,56 @@
 /* ══════════════════════════════════════════════════════════════════════════
    08 Como se trabaja bien
    ══════════════════════════════════════════════════════════════════════════ */
+
+/* Cuatro fichas en dos filas. Con cuatro y no ocho cabe el predicado de cada
+   una, y el cuerpo sube lo bastante para leerse desde el fondo del auditorio.
+   Dos palabras sueltas no le decian nada a quien mirara la lamina sin oir al
+   expositor. Las otras cuatro reglas van habladas y no llevan ficha. */
 .consejos .grid { align-items: stretch; }
 
 .consejos .ficha {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 16px;
-  padding: 24px 22px;
-  min-height: 152px;
+  flex-direction: row;
+  align-items: center;
+  gap: 22px;
+  padding: 26px;
+  min-height: 150px;
 }
 
 .consejos .ficha .ico {
-  width: 46px;
-  height: 46px;
-  border-radius: 13px;
+  width: 54px;
+  height: 54px;
+  border-radius: 15px;
   margin-bottom: 0;
 }
 
-.consejos .ficha .ico svg { width: 24px; height: 24px; }
+.consejos .ficha .ico svg { width: 28px; height: 28px; }
 
 .consejos .ficha h3 {
-  font-size: 21px;
-  line-height: 1.22;
+  font-size: 27px;
+  line-height: 1.24;
   margin-bottom: 0;
   letter-spacing: -0.015em;
+  text-wrap: balance;
 }
 
-/* ── Las dos tandas y la ficha que se nombra ─────────────────────────────
-   Las cuatro primeras entran al empezar la lamina. Las cuatro siguientes
-   esperan a que se hable de ellas, porque ocho nombres de golpe se leen de
-   corrido y la sala deja de escuchar.
+/* ── Cada ficha entra cuando se la nombra ─────────────────────────────────
+   No entran juntas: cuatro predicados de golpe se leen de corrido mientras
+   el expositor todavia esta en el chiste, y la sala deja de escuchar. La
+   entrada es la señal de cual se esta diciendo, asi que no hace falta ademas
+   encenderlas y apagarlas: eso seria decir dos veces lo mismo.
 
-   La que se esta nombrando se ilumina y vuelve a apagarse. Si se quedaran
-   todas encendidas dejarian de señalar nada. El encendido no toca transform,
-   que ya lo usa la entrada, asi que ambas animaciones conviven. */
-@keyframes fichaOn {
-  0%   { border-color: var(--line); box-shadow: var(--card-shadow); }
-  9%   { border-color: var(--accent); box-shadow: var(--glow), var(--card-shadow); }
-  86%  { border-color: var(--accent); box-shadow: var(--glow), var(--card-shadow); }
-  100% { border-color: var(--line); box-shadow: var(--card-shadow); }
-}
-
-@keyframes fichaTitulo {
-  0%, 100% { color: var(--text); }
-  9%, 86%  { color: var(--accent); }
-}
-
-@keyframes fichaIcono {
-  0%, 100% { transform: none; }
-  9%, 86%  { transform: scale(1.09); }
-}
-
+   Los tiempos salen de los tramos del guion, a 148 palabras por minuto. Las
+   tres primeras van seguidas. La cuarta espera, porque entre ella y la
+   tercera van dos consejos que se dicen hablando y no tienen ficha. */
 .slide.is-active .consejos .ficha {
-  animation:
-    rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both,
-    fichaOn 5.4s ease-in-out both;
+  animation: rise 0.62s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.slide.is-active .consejos .ficha h3  { animation: fichaTitulo 5.4s ease-in-out both; }
-.slide.is-active .consejos .ficha .ico { animation: fichaIcono 5.4s cubic-bezier(0.22, 1, 0.36, 1) both; }
-
-/* Primera tanda: entra de una y se va iluminando desde el arranque */
-.slide.is-active .consejos .f1 { animation-delay: 0.45s, 1.4s; }
-.slide.is-active .consejos .f2 { animation-delay: 0.55s, 6.9s; }
-.slide.is-active .consejos .f3 { animation-delay: 0.65s, 12.4s; }
-.slide.is-active .consejos .f4 { animation-delay: 0.75s, 17.9s; }
-
-/* Segunda tanda: entra cuando el guion llega a ella */
-.slide.is-active .consejos .f5 { animation-delay: 23.0s, 23.6s; }
-.slide.is-active .consejos .f6 { animation-delay: 23.1s, 29.1s; }
-.slide.is-active .consejos .f7 { animation-delay: 23.2s, 34.6s; }
-.slide.is-active .consejos .f8 { animation-delay: 23.3s, 40.1s; }
-
-.slide.is-active .consejos .f1 h3, .slide.is-active .consejos .f1 .ico { animation-delay: 1.4s; }
-.slide.is-active .consejos .f2 h3, .slide.is-active .consejos .f2 .ico { animation-delay: 6.9s; }
-.slide.is-active .consejos .f3 h3, .slide.is-active .consejos .f3 .ico { animation-delay: 12.4s; }
-.slide.is-active .consejos .f4 h3, .slide.is-active .consejos .f4 .ico { animation-delay: 17.9s; }
-.slide.is-active .consejos .f5 h3, .slide.is-active .consejos .f5 .ico { animation-delay: 23.6s; }
-.slide.is-active .consejos .f6 h3, .slide.is-active .consejos .f6 .ico { animation-delay: 29.1s; }
-.slide.is-active .consejos .f7 h3, .slide.is-active .consejos .f7 .ico { animation-delay: 34.6s; }
-.slide.is-active .consejos .f8 h3, .slide.is-active .consejos .f8 .ico { animation-delay: 40.1s; }
+.slide.is-active .consejos .f1 { animation-delay: 14.0s; }
+.slide.is-active .consejos .f2 { animation-delay: 21.0s; }
+.slide.is-active .consejos .f3 { animation-delay: 28.0s; }
+.slide.is-active .consejos .f4 { animation-delay: 42.0s; }
 
 /* ══════════════════════════════════════════════════════════════════════════
    Movimiento reducido e impresion
@@ -287,15 +315,16 @@
    sin nada a medio encender.
    ══════════════════════════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
+  .slide.is-active .cine-hero.giro .dl.ad,
   .slide.is-active .encargo .code .ln,
   .slide.is-active .encargo .salida .chip,
-  .slide.is-active .consejos .ficha,
-  .slide.is-active .consejos .ficha h3,
-  .slide.is-active .consejos .ficha .ico {
+  .slide.is-active .consejos .ficha {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
   }
+
+  .cine-hero.giro .dl.ad { clip-path: none !important; }
 
   .slide.is-active .encargo .salida .chip {
     background: var(--on-bg);
@@ -305,14 +334,14 @@
 }
 
 @media print {
+  .cine-hero.giro .dl.ad,
   .encargo .code .ln,
   .encargo .salida .chip,
-  .consejos .ficha,
-  .consejos .ficha h3,
-  .consejos .ficha .ico {
+  .consejos .ficha {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
+    clip-path: none !important;
   }
 
   .encargo .salida .chip {

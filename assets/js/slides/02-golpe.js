@@ -15,7 +15,9 @@
        cual porque la lamina 11 la repite a proposito, y ese eco es el
        recurso narrativo de la ponencia.
    05  Nueve segundos de reloj corriendo de verdad, con la cadena de cuatro
-       pasos encendiendose mientras corre, y el apagon al llegar a nueve.
+       pasos encendiendose mientras corre, y la captura real de prensa al
+       lado. Al llegar a nueve no se apaga nada: entra lo que costo y la
+       lamina se queda entera, que es lo que la sala fotografia.
 
    Lo visual vive en assets/css/laminas/02-golpe.css. Ninguna de las tres
    toca deck.js: las cifras las escribe CSS con un contador y el reloj es
@@ -24,8 +26,9 @@
    Lo que se dice hablando no esta escrito aqui. En la 03 faltan la creencia
    compartida, la pregunta que abre la tension y quien es Karpathy. En la 04
    falta el aviso de que METR cambio el diseño del experimento en febrero de
-   2026, y en la 05 falta todo el relato del incidente y la cuenta de lo que
-   costo. Eso va en la voz, no en la pantalla.
+   2026, y en la 05 falta todo el relato del incidente, quien es Cursor y el
+   remate de que nueve segundos bastaron para destruir lo que tomo años
+   construir. Eso va en la voz, no en la pantalla.
    ========================================================================== */
 window.DECK.push(
 
@@ -121,33 +124,66 @@ window.DECK.push(
     <div class="rule"></div>
 
     <div class="body-area nueve">
-
       <div class="nv-grid">
-        <!-- El reloj corre de verdad: nueve segundos de sala en silencio.
-             Las diez celdas van vacias a proposito, los digitos los escribe
-             la hoja de estilo con un contador. -->
-        <div class="nv-reloj">
-          <div class="nv-vent" aria-hidden="true">
-            <div class="nv-cinta"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <div class="nv-izq">
+
+          <!-- El nombre del caso es informacion principal, asi que va a cuerpo
+               de informacion principal y no de pie de foto. Encima del reloj,
+               porque lo que la sala tiene que leer de corrido es PocketOS,
+               nueve segundos. -->
+          <div class="nv-caso">
+            <span class="nv-marca">PocketOS</span>
+            <span class="nv-giro">alquiler de vehiculos</span>
           </div>
-          <div class="nv-u">segundos</div>
+
+          <!-- El reloj corre de verdad: nueve segundos de sala en silencio.
+               Las diez celdas van vacias a proposito, los digitos los escribe
+               la hoja de estilo con un contador. -->
+          <div class="nv-reloj">
+            <div class="nv-vent" aria-hidden="true">
+              <div class="nv-cinta"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <div class="nv-u">segundos</div>
+          </div>
+
+          <!-- La cadena se enciende paso a paso mientras el reloj corre. El
+               ultimo es el unico que hace daño, y por eso es el unico rojo.
+               Al parar el reloj se queda encendida entera, porque es lo que
+               la sala fotografia. -->
+          <ol class="nv-cadena">
+            <li class="nv-paso">entorno de pruebas</li>
+            <li class="nv-paso">problema de credenciales</li>
+            <li class="nv-paso">llave sin alcance limitado</li>
+            <li class="nv-paso fatal"><code>volumeDelete</code></li>
+          </ol>
+
         </div>
 
-        <!-- La cadena se enciende paso a paso mientras el reloj corre. El
-             ultimo es el unico que hace daño, y por eso es el unico rojo. -->
-        <ol class="nv-cadena">
-          <li class="nv-paso">entorno de pruebas</li>
-          <li class="nv-paso">problema de credenciales</li>
-          <li class="nv-paso">llave sin alcance limitado</li>
-          <li class="nv-paso fatal"><code>volumeDelete</code></li>
-        </ol>
-      </div>
+        <div class="nv-der">
 
-      <!-- Al llegar a nueve se apaga todo de golpe y queda esto -->
-      <div class="nv-caja">
-        <p class="quote nv-frase">La IA hace en segundos lo que no deberias haberle pedido.</p>
-      </div>
+          <!-- La evidencia. Titular real de prensa, con la marca del medio
+               arriba y las dos lineas del titular abajo. El recorte lo hace el
+               marco en la hoja de estilo: entra la imagen entera y se corta lo
+               que sobra, que es el cuerpo de la nota. -->
+          <figure class="nv-nota">
+            <div class="nv-marco">
+              <img src="assets/img/nota-pocketos.png" alt="Titular de Hackread sobre el borrado de la base de datos y los respaldos de PocketOS en nueve segundos">
+            </div>
+            <figcaption class="nv-pie">Hackread, 29 de abril de 2026</figcaption>
+          </figure>
 
+          <!-- Al llegar a nueve no se apaga nada. Entra lo que costo, y esto
+               es lo que queda proyectado mientras se sigue hablando. -->
+          <div class="nv-saldo">
+            <p class="nv-dano">Base de datos y respaldos, borrados</p>
+            <div class="nv-dato"><b>30 horas</b><span>fuera de servicio</span></div>
+            <div class="nv-dato"><b>3 meses</b><span>de reservas perdidas</span></div>
+          </div>
+
+        </div>
+
+      </div>
     </div>
 
     <div class="fuente">OECD AI Incidents</div>

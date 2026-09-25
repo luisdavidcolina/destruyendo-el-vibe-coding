@@ -35,22 +35,6 @@ window.DECK.push(
            la sala lleva tres minutos llegando sola a ella. -->
       <h2>¿Entonces la IA es el problema?</h2>
 
-      <!-- Y debajo la respuesta, que es el diff que abrio la portada. Las
-           dos lineas salen de .rm y .ad, las clases con las que el deck pinta
-           un diff en todos sus bloques de codigo, asi que la lamina 01 y esta
-           se leen como el mismo archivo. La roja entra ya tachada, porque
-           tacharla fue lo que ocurrio en la portada. -->
-      <div class="diff">
-        <div class="dl rm">
-          <span class="sig" aria-hidden="true">-</span>
-          <span class="tx">vibe coding</span>
-        </div>
-        <div class="dl ad">
-          <span class="sig" aria-hidden="true">+</span>
-          <span class="tx">programacion con varios agentes</span>
-        </div>
-      </div>
-
     </div>
   </div>`
 },

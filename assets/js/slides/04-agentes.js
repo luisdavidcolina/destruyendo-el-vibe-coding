@@ -107,7 +107,7 @@ window.DECK.push(
             <th></th>
             <th style="width:270px">DreamJob, 2022</th>
             <!-- Simply Pool: falta el permiso del cliente para nombrarlo -->
-            <th style="width:270px">Sistema de gestion, 2026</th>
+            <th style="width:270px">Sistema de gestión, 2026</th>
           </tr>
         </thead>
         <tbody>
@@ -123,15 +123,15 @@ window.DECK.push(
           <ul class="reglas">
             <li>Gasto limitado</li>
             <li>Credenciales encerradas</li>
-            <li>Aprobacion humana</li>
+            <li>Aprobación humana</li>
           </ul>
         </div>
         <!-- La rafaga va a una palabra por renglon. La frase de cada pieza se
              dice hablando, y el numero de orden ahora lo dibuja el CSS. -->
         <div class="rafaga anim" data-d="6">
           <div class="rf">Carpetas</div>
-          <div class="rf">Guias</div>
-          <div class="rf">Preparaduria</div>
+          <div class="rf">Guías</div>
+          <div class="rf">Preparaduría</div>
           <div class="rf">WhatsApp</div>
           <div class="rf">Cliente</div>
         </div>

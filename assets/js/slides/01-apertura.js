@@ -108,7 +108,7 @@ window.DECK.push(
           <span class="sep"></span>
           <img src="assets/logos/logo_ciencias.png" alt="Facultad de Ciencias">
           <span class="sep"></span>
-          <img src="assets/logos/logo_computacion.png" alt="Escuela de Computacion">
+          <img src="assets/logos/logo_computacion.png" alt="Escuela de Computación">
         </div>
       </div>
 

@@ -23,7 +23,7 @@ window.DECK.push(
 
 /* ─────────────────────────── 06 El giro, corte ──────────────────────────── */
 {
-  section: 'La resolucion',
+  section: 'La resolución',
   title: '¿Entonces la IA es el problema?',
   min: '3:10 a 3:30',
   bare: true,
@@ -47,7 +47,7 @@ window.DECK.push(
 
 /* ───────────────────── 07 El encargo es el trabajo ──────────────────────── */
 {
-  section: 'La resolucion',
+  section: 'La resolución',
   title: 'El encargo es el trabajo',
   min: '3:30 a 4:30',
   html: `
@@ -86,16 +86,16 @@ window.DECK.push(
               <span class="nm">.github/copilot-instructions.md</span>
             </div>
             <pre><span class="ln e1"><span class="et k">contexto</span><span class="ev v">src/auth, estilo del repo</span></span
-              ><span class="ln e2"><span class="et k">objetivo</span><span class="ev v">la sesion caduca en 30 min</span></span
-              ><span class="ln e3"><span class="et k">limites</span><span class="ev v">no tocar el esquema</span></span
-              ><span class="ln e4"><span class="et k">verificacion</span><span class="ev v">correr la prueba nueva</span></span></pre>
+              ><span class="ln e2"><span class="et k">objetivo</span><span class="ev v">la sesión caduca en 30 min</span></span
+              ><span class="ln e3"><span class="et k">límites</span><span class="ev v">no tocar el esquema</span></span
+              ><span class="ln e4"><span class="et k">verificación</span><span class="ev v">correr la prueba nueva</span></span></pre>
           </div>
 
           <div class="salida buena anim" data-d="4">
             <span class="fl"><svg viewBox="0 0 24 24"><path d="M12 4v13.2"/><path d="M6.4 12.2l5.6 5.9 5.6-5.9"/></svg></span>
             <div class="chips">
               <span class="chip r1">un archivo</span>
-              <span class="chip r2">sesion corregida</span>
+              <span class="chip r2">sesión corregida</span>
               <span class="chip r3">esquema intacto</span>
               <span class="chip r4">en verde</span>
             </div>
@@ -109,7 +109,7 @@ window.DECK.push(
 
 /* ───────────────── 08 Cuatro reglas, en concreto ──────────────── */
 {
-  section: 'La resolucion',
+  section: 'La resolución',
   title: 'Cuatro reglas, y la primera manda',
   min: '4:30 a 5:30',
   html: `
@@ -134,8 +134,8 @@ window.DECK.push(
             <span class="ico"><svg viewBox="0 0 24 24"><rect x="4.6" y="10.4" width="14.8" height="9.6" rx="2.2"/><path d="M8.2 10.4V7.8a3.8 3.8 0 0 1 7.6 0v2.6"/></svg></span>
             <span class="n">01</span>
           </div>
-          <h3>Alcance minimo</h3>
-          <p>ningun permiso de mas</p>
+          <h3>Alcance mínimo</h3>
+          <p>ningún permiso de más</p>
         </article>
 
         <article class="ficha card f2">
@@ -143,7 +143,7 @@ window.DECK.push(
             <span class="ico"><svg viewBox="0 0 24 24"><path d="M2.8 12S6.2 6 12 6s9.2 6 9.2 6-3.4 6-9.2 6-9.2-6-9.2-6z"/><circle cx="12" cy="12" r="2.9"/></svg></span>
             <span class="n">02</span>
           </div>
-          <h3>Revision humana</h3>
+          <h3>Revisión humana</h3>
           <p>antes de integrar</p>
         </article>
 
@@ -153,7 +153,7 @@ window.DECK.push(
             <span class="n">03</span>
           </div>
           <h3>Piezas pequeñas</h3>
-          <p>con criterio de aceptacion</p>
+          <p>con criterio de aceptación</p>
         </article>
 
         <article class="ficha card f4">

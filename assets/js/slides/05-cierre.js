@@ -18,11 +18,11 @@ window.DECK.push(
 /* ─────────────── 11 Ninguna capa borro la de abajo ─────────────── */
 {
   section: 'Las capas y sus modas',
-  title: 'Ninguna capa borro la de abajo',
+  title: 'Ninguna capa borró la de abajo',
   min: '8:05 a 8:40',
   html: `
   <div class="pad">
-    <h1 class="title anim" data-d="2">Ninguna capa borro la de abajo</h1>
+    <h1 class="title anim" data-d="2">Ninguna capa borró la de abajo</h1>
     <div class="rule"></div>
 
     <div class="body-area">
@@ -95,14 +95,14 @@ window.DECK.push(
       </div>
     </div>
 
-    <div class="fuente anim" data-d="8">BairesDev, Dev Barometer, 1.569 desarrolladores en 77 paises, 2026</div>
+    <div class="fuente anim" data-d="8">BairesDev, Dev Barometer, 1.569 desarrolladores en 77 países, 2026</div>
   </div>`
 },
 
 /* ─────────────── 13 Reflexion final ─────────────── */
 {
   section: 'Cierre',
-  title: 'Reflexion final',
+  title: 'Reflexión final',
   min: '9:10 a 9:45',
   bare: true,
   cinema: true,
@@ -110,11 +110,11 @@ window.DECK.push(
   <div class="pad">
     <div class="final">
       <p class="fin-frase anim" data-d="2">
-        El que cree que ya sabe usar la IA<br>es el que peor la esta usando.
+        El que cree que ya sabe usar la IA<br>es el que peor la está usando.
       </p>
 
       <div class="fin-cita anim" data-d="5">
-        <p>&ldquo;Uno de mis dias mas productivos fue tirar a la basura mil lineas de codigo.&rdquo;</p>
+        <p>&ldquo;Uno de mis días más productivos fue tirar a la basura mil líneas de código.&rdquo;</p>
         <span>Ken Thompson<i>creador de Unix y del lenguaje B, premio Turing</i></span>
       </div>
     </div>
@@ -148,7 +148,7 @@ window.DECK.push(
       <div class="col-qr">
         <div class="qr-bloque anim z" data-d="3">
           <div class="qr-marco">
-            <img src="assets/img/qr-enlaces.svg" alt="Codigo para abrir la pagina de enlaces">
+            <img src="assets/img/qr-enlaces.svg" alt="Código para abrir la página de enlaces">
           </div>
           <span class="qr-url">luisdavidcolina.com/enlaces</span>
         </div>
@@ -177,10 +177,10 @@ window.DECK.push(
         <div class="ref-cols">
           <div class="ref-col">
             <div class="ref-r"><span class="ref-n">01</span><span class="ref-t">METR, programadores experimentados con IA, julio de 2025</span></div>
-            <div class="ref-r"><span class="ref-n">02</span><span class="ref-t">METR, cambio en el diseno del experimento, febrero de 2026</span></div>
+            <div class="ref-r"><span class="ref-n">02</span><span class="ref-t">METR, cambio en el diseño del experimento, febrero de 2026</span></div>
             <div class="ref-r"><span class="ref-n">03</span><span class="ref-t">McKinsey, 4.500 desarrolladores en 150 empresas</span></div>
             <div class="ref-r"><span class="ref-n">04</span><span class="ref-t">Base de incidentes de IA de la OCDE, caso PocketOS, abril de 2026</span></div>
-            <div class="ref-r"><span class="ref-n">05</span><span class="ref-t">Veracode, seguridad del codigo generado, 2026</span></div>
+            <div class="ref-r"><span class="ref-n">05</span><span class="ref-t">Veracode, seguridad del código generado, 2026</span></div>
             <div class="ref-r"><span class="ref-n">06</span><span class="ref-t">Databricks, State of AI Agents 2026</span></div>
             <div class="ref-r"><span class="ref-n">07</span><span class="ref-t">BairesDev, Dev Barometer, segundo trimestre de 2026</span></div>
           </div>
@@ -190,8 +190,8 @@ window.DECK.push(
             <div class="ref-r"><span class="ref-n">09</span><span class="ref-t">Microsoft Learn, examen GH-300 de GitHub Copilot</span></div>
             <div class="ref-r"><span class="ref-n">10</span><span class="ref-t">Microsoft Learn, retiro del AI-102 y examen AI-103</span></div>
             <div class="ref-r"><span class="ref-n">11</span><span class="ref-t">Pearson VUE, certificaciones de Anthropic</span></div>
-            <div class="ref-r"><span class="ref-n">12</span><span class="ref-t">Andrej Karpathy, publicacion del 2 de febrero de 2025</span></div>
-            <div class="ref-r"><span class="ref-n">13</span><span class="ref-t">Collins English Dictionary, palabra del ano 2025</span></div>
+            <div class="ref-r"><span class="ref-n">12</span><span class="ref-t">Andrej Karpathy, publicación del 2 de febrero de 2025</span></div>
+            <div class="ref-r"><span class="ref-n">13</span><span class="ref-t">Collins English Dictionary, palabra del año 2025</span></div>
             <div class="ref-r"><span class="ref-n">14</span><span class="ref-t">Ken Thompson, folclore documentado de Bell Labs</span></div>
           </div>
         </div>

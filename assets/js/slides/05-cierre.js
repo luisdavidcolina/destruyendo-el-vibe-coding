@@ -6,12 +6,12 @@ window.DECK.push(
 
 /* ─────────────── 11 Ninguna capa borro la de abajo ─────────────── */
 {
-  section: 'Una capa mas',
+  section: 'Las capas y sus modas',
   title: 'Ninguna capa borro la de abajo',
   min: '8:05 a 8:40',
   html: `
   <div class="pad">
-    <div class="kicker anim" data-d="1">Una capa mas</div>
+    <div class="kicker anim" data-d="1">Las capas y sus modas</div>
     <h1 class="title anim" data-d="2">Ninguna capa borro la de abajo</h1>
     <div class="rule"></div>
 
@@ -40,12 +40,12 @@ window.DECK.push(
 
 /* ─────────────── 12 Creen que entienden. No siempre ─────────────── */
 {
-  section: 'Estudiar',
+  section: 'Las bases',
   title: 'Creen que entienden, y no',
   min: '8:40 a 9:10',
   html: `
   <div class="pad">
-    <div class="kicker anim" data-d="1">Estudiar</div>
+    <div class="kicker anim" data-d="1">Las bases</div>
     <h1 class="title anim" data-d="2">Creen que entienden, y no</h1>
     <div class="rule"></div>
 

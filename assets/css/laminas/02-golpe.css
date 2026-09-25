@@ -15,8 +15,11 @@
               usar tal cual, con otras cifras, y ese eco es el recurso
               narrativo de la ponencia. Los valores entran por --h, --w y
               --to en el propio marcado.
-   3. .nv     El contador de nueve segundos reales y la cadena de cuatro
-              pasos que se enciende mientras corre.
+   3. .nv     La lamina 05. El nombre del caso a cuerpo de informacion
+              principal, el contador de nueve segundos reales, la cadena de
+              cuatro pasos que se enciende mientras corre, la captura real de
+              prensa que sirve de evidencia y el saldo que entra al parar el
+              reloj y se queda proyectado.
 
    Regla que se respeta en toda la hoja: el estado BASE de cada elemento es
    el estado FINAL de su animacion, y las animaciones solo escriben el
@@ -658,10 +661,12 @@
   .slide.is-active .enf-abajo,
   .slide.is-active .enf-barra,
   .slide.is-active .enf-cifra,
+  .slide.is-active .nv-caso,
+  .slide.is-active .nv-nota,
   .slide.is-active .nv-cinta,
+  .slide.is-active .nv-cinta i,
   .slide.is-active .nv-paso,
-  .slide.is-active .nv-grid,
-  .slide.is-active .nv-frase {
+  .slide.is-active .nv-saldo {
     animation: none !important;
     opacity: 1 !important;
   }
@@ -675,7 +680,7 @@
 @media print {
   .ice, .ice-agua, .ice-cita,
   .enf-eje, .enf-arriba, .enf-abajo, .enf-barra, .enf-cifra,
-  .nv-cinta, .nv-paso, .nv-grid, .nv-frase {
+  .nv-caso, .nv-nota, .nv-cinta, .nv-cinta i, .nv-paso, .nv-saldo {
     animation: none !important;
     opacity: 1 !important;
   }
@@ -684,6 +689,7 @@
 
   .ice-agua, .enf-barra { box-shadow: none !important; }
   .nv-paso code { background: #FFFFFF !important; }
+  .nv-marco { box-shadow: none !important; }
 }
 
 /* ── Lamina 03, el iceberg como diagrama ─────────────────────────────────

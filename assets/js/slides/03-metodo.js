@@ -108,37 +108,44 @@ window.DECK.push(
   min: '4:30 a 5:30',
   html: `
   <div class="pad">
-    <h1 class="title">Las reglas cambian el resultado</h1>
+    <h1 class="title anim" data-d="1">Una tarea pasa por cuatro puertas</h1>
     <div class="rule"></div>
 
-    <!-- Cuatro fichas y no ocho. Dos palabras sueltas no significan nada
-         para quien mira la lamina sin oir al expositor, asi que cada ficha
-         lleva su predicado y las otras cuatro reglas van habladas. Las tres
-         primeras evitan un desastre y la cuarta da velocidad, que es el
-         orden en que se dicen. Los iconos van dibujados aqui mismo, de trazo
-         y con la misma reticula de 24, para que no se le pida nada a
-         internet el dia de la ponencia. -->
-    <div class="body-area consejos">
-      <div class="grid g2 gap-lg">
+    <!-- Las reglas no van como lista de consejos. Van como el recorrido que
+         hace una tarea real desde que se asigna hasta que se integra, y cada
+         regla es la puerta que tiene que pasar. La sala ve un proceso, no
+         cuatro frases sueltas. -->
+    <div class="body-area via">
+      <div class="via-riel">
 
-        <div class="card ficha f1">
-          <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3.2l7.2 3v5.4c0 4.2-3 7.7-7.2 8.6-4.2-.9-7.2-4.4-7.2-8.6V6.2z"/><path d="M9.2 11.6h5.6"/></svg></span>
-          <h3>Alcance minimo: ningun permiso de mas</h3>
+        <div class="vp anim" data-d="3">
+          <span class="vp-n">01</span>
+          <span class="vp-t">Se asigna una pieza pequena</span>
+          <span class="vp-d">con su criterio de aceptacion escrito</span>
         </div>
 
-        <div class="card ficha f2">
-          <span class="ico"><svg viewBox="0 0 24 24"><circle cx="9.4" cy="7.8" r="3.2"/><path d="M3.6 19.6c.5-3.3 3-5.4 5.8-5.4 1.2 0 2.3.3 3.3.9"/><path d="M14.4 17.1l2.1 2.1 3.9-4.3"/></svg></span>
-          <h3>Revision humana antes de integrar</h3>
+        <span class="vp-fl anim" data-d="4"></span>
+
+        <div class="vp anim" data-d="5">
+          <span class="vp-n">02</span>
+          <span class="vp-t">El agente recibe el permiso justo</span>
+          <span class="vp-d">ninguno que no necesite</span>
         </div>
 
-        <div class="card ficha f3">
-          <span class="ico"><svg viewBox="0 0 24 24"><rect x="3.8" y="3.8" width="7" height="7" rx="1.7"/><rect x="13.2" y="3.8" width="7" height="7" rx="1.7"/><rect x="3.8" y="13.2" width="7" height="7" rx="1.7"/><rect x="13.2" y="13.2" width="7" height="7" rx="1.7"/></svg></span>
-          <h3>Piezas pequeñas con criterio de aceptacion</h3>
+        <span class="vp-fl anim" data-d="6"></span>
+
+        <div class="vp anim" data-d="7">
+          <span class="vp-n">03</span>
+          <span class="vp-t">Trabaja donde vive el proyecto</span>
+          <span class="vp-d">en el repositorio, no en una pestana</span>
         </div>
 
-        <div class="card ficha f4">
-          <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4.6" width="18" height="14.8" rx="2.4"/><path d="M3 8.6h18"/><path d="M7.4 12.4l2.4 2.2-2.4 2.2"/><path d="M12.6 16.8h4.2"/></svg></span>
-          <h3>Del navegador a la terminal</h3>
+        <span class="vp-fl anim" data-d="8"></span>
+
+        <div class="vp fin anim" data-d="9">
+          <span class="vp-n">04</span>
+          <span class="vp-t">Una persona revisa y acepta</span>
+          <span class="vp-d">las pruebas son la red, no el juez</span>
         </div>
 
       </div>

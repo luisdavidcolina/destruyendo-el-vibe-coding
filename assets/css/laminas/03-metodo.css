@@ -353,3 +353,60 @@
   .encargo .code .ln { background: transparent !important; box-shadow: none !important; }
   .consejos .ficha { border-color: var(--line) !important; }
 }
+
+/* ── Lamina 08, el recorrido de una tarea ────────────────────────────────
+   Cuatro consejos en fichas son cuatro frases sueltas y no explican nada. El
+   mismo contenido puesto como el recorrido que hace una tarea si explica:
+   se ve que hay un orden, que cada puerta filtra algo, y que al final hay una
+   persona. La flecha entre puertas es lo que convierte la lista en proceso. */
+/* El recorrido ocupa el alto disponible en vez de quedarse como una banda en
+   mitad de la lamina con hueco arriba y abajo. */
+.via { display: flex; align-items: stretch; }
+
+.via-riel { display: flex; align-items: stretch; gap: 0; width: 100%; }
+
+.vp {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 30px 24px;
+  box-shadow: var(--card-shadow);
+}
+
+.vp-n {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.vp-t { font-size: 20px; font-weight: 650; color: var(--text); line-height: 1.25; }
+.vp-d { font-size: 16px; color: var(--text-dim); line-height: 1.4; margin-top: auto; }
+
+/* La ultima puerta es humana y se distingue */
+.vp.fin { border-color: var(--accent); box-shadow: var(--glow); }
+
+/* La flecha entre puertas. Sin ella esto seria una rejilla de cuatro cajas. */
+.vp-fl {
+  flex: none;
+  align-self: center;
+  width: 30px;
+  height: 2px;
+  background: var(--line);
+  position: relative;
+}
+
+.vp-fl::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: -4px;
+  border-left: 8px solid var(--line);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}

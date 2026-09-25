@@ -300,16 +300,64 @@
   margin-bottom: 5px;
 }
 
-.cover.portada .pp-quien span {
-  font-family: var(--font-mono);
-  font-size: 14px;
-  color: var(--text-dim);
+/* GitHub y LinkedIn, con su icono, en una fila. En el blanco roto de las
+   lineas del diff y no en gris: el proyector lava el gris y estas dos
+   direcciones son para leerse desde la butaca. */
+.cover.portada .pp-redes {
+  display: flex;
+  gap: 28px;
+  font-size: 17px;
+  font-weight: 500;
+  color: rgba(230, 237, 243, 0.86);
 }
 
-/* Los tres logos venian como PNG con el fondo blanco horneado dentro del
-   archivo. Se les quito el blanco, y como son arte oscuro se invierten a
-   blanco para apoyarse sobre el fondo, que es lo que hace cualquier
-   universidad cuando su marca va sobre negro. Sin caja de ninguna clase. */
+.cover.portada .pp-redes .red { display: inline-flex; align-items: center; gap: 9px; }
+.cover.portada .pp-redes svg { width: 19px; height: 19px; fill: currentColor; flex: none; }
+
+/* ── El encabezado del evento ────────────────────────────────────────────
+   La voz del afiche oficial: el nombre del evento en letra de terminal,
+   mayusculas espaciadas y en el verde del diff, y debajo lugar y hora.
+   Entra primero, antes de que empiece a escribirse la primera linea, porque
+   es lo que la sala ya vio en el afiche y la ubica. */
+.cover.portada .evento {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  opacity: 0;
+}
+
+.cover.portada .evento img { width: 38px; height: 38px; display: block; }
+
+.cover.portada .ev-tx b {
+  display: block;
+  font-family: ui-monospace, "Cascadia Mono", Consolas, "Courier New", monospace;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--ad-ink);
+}
+
+.cover.portada .ev-tx span {
+  display: block;
+  margin-top: 3px;
+  font-size: 16px;
+  color: rgba(230, 237, 243, 0.80);
+}
+
+.slide.is-active .cover.portada .evento { animation: pEncender 0.5s ease-out 0.1s forwards; }
+
+/* Los tres logos en su version blanca, que es lo que hace cualquier
+   universidad cuando su marca va sobre negro. Sin caja de ninguna clase.
+
+   Antes se blanqueaban con un filtro, brightness(0) invert(1), que vuelve
+   blanco todo pixel no transparente. En el de Computacion eso lleno el
+   interior de las letras y el degradado de la C, y el logo salia empastado.
+   Ahora son archivos propios, logo_*_blanco.png, generados desde el original
+   con la transparencia calculada por tono: lo oscuro queda blanco opaco, lo
+   claro transparente y el degradado como sombra. Ya no llevan filtro. */
 .cover.portada .logos {
   display: inline-flex;
   align-items: center;
@@ -320,11 +368,10 @@
 }
 
 .cover.portada .logos img {
-  height: 30px;
+  height: 34px;
   width: auto;
   display: block;
-  filter: brightness(0) invert(1);
-  opacity: 0.78;
+  opacity: 0.92;
 }
 
 .cover.portada .logos .sep { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.22); }
@@ -336,7 +383,7 @@
   .cover.portada .l1 .s-mas { opacity: 0; }
   .cover.portada .l1 .s-menos { opacity: 1; }
   .cover.portada .tachon { transform: scaleX(1); }
-  .cover.portada .l2, .cover.portada .pie-portada { opacity: 1; }
+  .cover.portada .l2, .cover.portada .pie-portada, .cover.portada .evento { opacity: 1; }
   .cover.portada .l2 .ink { clip-path: none; }
   .cover.portada .caret { display: none; }
 }

@@ -19,19 +19,31 @@
    cero. Lo unico que se mueve es el barrido que motion.css ya le hace a .rule,
    y este archivo lo aprovecha en vez de competir con el.
 
-   PENDIENTE, y no lo puede resolver esta hoja: falta enlazarla. En index.html
-   va como PRIMERA de la lista de laminas, antes de 01-apertura.css:
+   Enlazada en index.html el 25 de septiembre de 2026, como PRIMERA de la lista
+   de laminas, antes de 01-apertura.css. Va de primera a proposito. Todo lo de
+   aqui esta escrito para perder contra una hoja de lamina que quiera otra
+   cosa, salvo una regla que lleva especificidad de mas y que esta marcada en
+   su sitio.
 
-       <link rel="stylesheet" href="assets/css/laminas/00-identidad.css">
-
-   Va de primera a proposito. Todo lo de aqui esta escrito para perder contra
-   una hoja de lamina que quiera otra cosa, salvo una regla que lleva
-   especificidad de mas y que esta marcada en su sitio.
+   La seccion 1, la textura de casillas, quedo APAGADA ese mismo dia. Se puede
+   volver a encender agregando la clase con-textura a .slide.
    ========================================================================== */
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   1. La reticula de contribuciones, como textura
+   1. La reticula de contribuciones, como textura   [APAGADA]
+
+   Apagada el 25 de septiembre de 2026 y no borrada. Dos motivos. La guia de
+   marca de GitHub prohibe usar el grafico de contribuciones como textura de
+   fondo ("Don't use the contribution graph to add texture to a background or
+   a product visual") y solo autoriza para presentaciones la forma simple de
+   cuatro casillas, que ya vive en el pie de la portada. Y este bloque se
+   diseno para caer en la misma cuadricula que la reticula de 44 pixeles de
+   base.css, que ese dia se quito. La investigacion y las fuentes estan en
+   DISENO.md, seccion "El fondo, y por que la reticula se va".
+
+   Los selectores llevan .con-textura. Ninguna lamina tiene esa clase, asi que
+   nada de esto se dibuja. El texto de abajo es el original, sin cambios.
 
    El grafico de contribuciones es la imagen que cualquiera de esa sala
    reconoce sin que se la expliquen. Aqui va como textura y no como grafico:
@@ -55,7 +67,7 @@
    Se dibuja en .slide::after, que estaba libre. Queda por encima del fondo de
    .slide::before y por debajo del contenido, que va a z-index 1.
    ══════════════════════════════════════════════════════════════════════════ */
-.slide::after {
+.slide.con-textura::after {
   content: "";
   position: absolute;
   left: 858px;
@@ -88,7 +100,7 @@
 
 /* En oscuro la casilla es clara, con la misma opacidad. El tema se cambia con
    la tecla T y la textura tiene que comportarse igual en los dos. */
-:root[data-theme="dark"] .slide::after {
+:root[data-theme="dark"] .slide.con-textura::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11'%3E%3Crect x='0' y='0' width='8' height='8' rx='2' fill='%23E6EDF3' fill-opacity='0.035'/%3E%3C/svg%3E");
 }
 

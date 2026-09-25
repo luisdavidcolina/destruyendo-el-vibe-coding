@@ -189,9 +189,9 @@ window.DECK.push(
                assets/img/nota-pocketos.png por si hace falta. -->
           <figure class="nv-nota">
             <div class="nv-marco">
-              <img src="assets/img/tit-pocketos.png" alt="Titular de Hackread: Cursor AI Agent Wipes PocketOS Database and Backups in 9 Seconds">
+              <img src="assets/img/tit-pocketos-limpio.png" alt="Titular de Hackread: Cursor AI Agent Wipes PocketOS Database and Backups in 9 Seconds">
             </div>
-            <figcaption class="nv-pie">Hackread, 29 de abril de 2026 &middot; OECD AI Incidents</figcaption>
+            <figcaption class="nv-pie">Hackread y OCDE, abril de 2026</figcaption>
           </figure>
 
           <!-- La cadena se enciende paso a paso mientras el reloj corre. El
@@ -208,12 +208,15 @@ window.DECK.push(
 
       </div>
 
-      <!-- La banda de abajo: lo que costo. Cruza la lamina entera para que no
-           quede aire muerto debajo de la cadena. -->
+      <!-- La banda de abajo: lo que costo, y la frase que lo resume. Entra
+           cuando el reloj para. Primero las dos cifras, y un instante despues
+           la frase, que es la que el expositor eligio para esta lamina entre
+           todas las que se escribieron. Va tal cual la aprobo. Lo borrado, la
+           base y sus respaldos, ya lo dice el titular de prensa en pantalla. -->
       <div class="nv-saldo">
-        <p class="nv-dano">Base de datos y respaldos, borrados</p>
         <div class="nv-dato"><b>30 horas</b><span>fuera de servicio</span></div>
         <div class="nv-dato"><b>3 meses</b><span>de reservas perdidas</span></div>
+        <p class="nv-frase">La IA hace en segundos lo que no deberías haberle pedido.</p>
       </div>
 
     </div>

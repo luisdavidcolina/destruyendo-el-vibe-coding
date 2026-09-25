@@ -602,13 +602,17 @@
    y no el foco. Cambiado el 25 de septiembre de 2026. */
 .nv-nota { margin: 0; min-width: 0; }
 
+/* El titular va limpio, en tit-pocketos-limpio.png: las dos bandas verdes
+   de Hackread sobre blanco, sin la franja de la ilustracion que asomaba a
+   la derecha ni los restos de la linea de arriba. El original sigue en
+   tit-pocketos.png. Medido: 2180 por 423. */
 .nv-marco {
   position: relative;
-  aspect-ratio: 2400 / 435;
+  aspect-ratio: 2180 / 423;
   overflow: hidden;
   border-radius: 14px;
   border: 1px solid var(--line);
-  background: #0B1017;
+  background: #FFFFFF;
 }
 
 .nv-marco img {
@@ -621,9 +625,10 @@
 
 .nv-pie {
   margin-top: 12px;
-  font-size: 18px;
+  font-size: 21px;
+  font-weight: 500;
   line-height: 1.35;
-  color: var(--text-dim);
+  color: var(--text);
   padding-left: 14px;
   border-left: 3px solid var(--accent);
 }
@@ -635,12 +640,26 @@
 .nv-saldo {
   flex: none;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 32px;
   margin-top: 22px;
   padding-top: 18px;
   border-top: 2px solid var(--danger);
+}
+
+/* La frase del expositor, a la derecha de las cifras y en el rojo del paso
+   fatal. Cuerpo de cita y no de rotulo: es el remate de la lamina. */
+.nv-frase {
+  flex: 1 1 auto;
+  max-width: 560px;
+  text-align: right;
+  font-family: var(--font-display);
+  font-size: 27px;
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--danger);
 }
 
 .nv-dano {
@@ -671,9 +690,9 @@
 }
 
 .nv-dato span {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.2;
-  color: var(--text-dim);
+  color: var(--text);
   white-space: nowrap;
 }
 
@@ -705,6 +724,7 @@
 
 /* El reloj para en 9.45s y el saldo entra justo detras */
 .slide.is-active .nv-saldo { animation: nvEntra 0.60s cubic-bezier(0.22, 1, 0.36, 1) 9.55s both; }
+.slide.is-active .nv-frase { animation: nvEntra 0.60s cubic-bezier(0.22, 1, 0.36, 1) 10.60s both; }
 
 /* ══════════════════════════════════════════════════════════════════════════
    Sin movimiento y en papel
@@ -728,7 +748,8 @@
   .slide.is-active .nv-caso,
   .slide.is-active .nv-seg,
   .slide.is-active .nv-paso,
-  .slide.is-active .nv-saldo {
+  .slide.is-active .nv-saldo,
+  .slide.is-active .nv-frase {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
@@ -739,7 +760,7 @@
   .ice-arriba, .ice-cita, .ice-agua::before, .ice-rej span,
   .enf-eje, .enf-arriba, .enf-abajo, .enf-barra,
   .met-nota, .met-ajuste,
-  .nv-caso, .nv-seg, .nv-paso, .nv-saldo {
+  .nv-caso, .nv-seg, .nv-paso, .nv-saldo, .nv-frase {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;

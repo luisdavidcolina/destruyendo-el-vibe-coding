@@ -4,10 +4,12 @@
    Es el golpe de la ponencia. Tres laminas seguidas que abren una tension y
    la cierran con evidencia, y las tres mejores animaciones del deck.
 
-   03  La promesa dibujada como una barra que se encoge sola, de meses a
-       dias, y el signo de interrogacion que queda encima cuando se detiene.
-       No hay ninguna cifra: esta lamina existe para abrir la tension que
-       resuelven las dos siguientes.
+   03  El iceberg y la cita de quien bautizo el termino. Sobre la linea de
+       agua esta la punta, que es la peticion que se escribe, y debajo esta
+       todo lo que decide si el resultado sirve. No hay ninguna cifra: esta
+       lamina existe para abrir la tension que resuelven las dos siguientes.
+       La foto todavia no esta en la carpeta, asi que hay un hueco preparado
+       y un iceberg dibujado en CSS que sostiene la lamina hoy mismo.
    04  El experimento de METR. Dos barras enfrentadas sobre un mismo eje.
        Sube lo que sintieron, cae lo que se midio. La forma se guarda tal
        cual porque la lamina 11 la repite a proposito, y ese eco es el
@@ -19,37 +21,50 @@
    toca deck.js: las cifras las escribe CSS con un contador y el reloj es
    una cinta con steps().
 
-   Lo que se dice hablando no esta escrito aqui. En la 04 falta el aviso de
+   Lo que se dice hablando no esta escrito aqui. En la 03 faltan la creencia
+   compartida, la pregunta que abre la tension y quien es Karpathy. En la 04
+   falta el aviso de
    que METR cambio el diseño del experimento en febrero de 2026, y en la 05
    falta todo el relato del incidente y la cuenta de lo que costo. Eso va en
    la voz, no en la pantalla.
    ========================================================================== */
 window.DECK.push(
 
-/* ─────────────────────── 03 La promesa contra la realidad ────────────────── */
+/* ───────────────── 03 El iceberg y la cita de Karpathy ─────────────── */
 {
   section: 'El golpe',
-  title: 'La promesa contra la realidad',
+  title: 'Lo que decide esta debajo',
   min: '0:40 a 1:20',
   html: `
   <div class="pad">
-    <div class="kicker anim" data-d="1">La promesa</div>
-    <h1 class="title">Meses se convierten en dias</h1>
+    <div class="kicker anim" data-d="1">vibe coding</div>
+    <h1 class="title">Lo que decide esta debajo</h1>
     <div class="rule"></div>
 
-    <div class="body-area promesa">
-      <!-- La barra arranca midiendo la lamina entera y se encoge sola
-           mientras se enuncia la promesa. La huella de trazo discontinuo se
-           queda: sin ella la barra corta no dice nada, porque lo que se lee
-           es la distancia entre las dos. Al detenerse cae el signo de
-           interrogacion y ahi termina el argumento, sin una palabra mas. -->
-      <div class="pr">
-        <div class="pr-huella"></div>
-        <div class="pr-fill"></div>
-        <span class="pr-eti larga">meses</span>
-        <span class="pr-eti corta">dias</span>
-        <span class="pr-q">?</span>
-      </div>
+    <div class="body-area ice-area">
+      <!-- El hueco de la foto es .ice-foto y apunta a assets/img/iceberg.jpg.
+           Ese archivo todavia no existe, asi que hoy esa capa no pinta nada y
+           lo que se ve es el iceberg dibujado con degradados y recortes que
+           queda debajo. El dia que la imagen entre en la carpeta la tapa sin
+           que haya que tocar una linea de aqui. -->
+      <figure class="ice">
+        <div class="ice-masa" aria-hidden="true"></div>
+        <div class="ice-punta" aria-hidden="true"></div>
+        <div class="ice-foto" aria-hidden="true"></div>
+        <div class="ice-tapa" aria-hidden="true"></div>
+        <div class="ice-agua" aria-hidden="true"></div>
+        <div class="ice-velo" aria-hidden="true"></div>
+
+        <!-- La cita va en .quote, que es la misma pieza con barra lateral de
+             acento que lleva la cita de Thompson en la lamina 13. Las dos
+             tienen que leerse como un par, asi que el formato no se toca:
+             aqui solo cambian el sitio y el tamaño. El mes de la publicacion
+             y quien es Karpathy se dicen hablando. -->
+        <blockquote class="quote ice-cita">
+          &ldquo;Entregarse a las vibras y olvidar que el codigo existe&rdquo;
+          <span class="who">Andrej Karpathy, 2025</span>
+        </blockquote>
+      </figure>
     </div>
   </div>`
 },

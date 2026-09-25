@@ -1,204 +1,257 @@
 /* ==========================================================================
-   01-apertura.css : portada y quien expone
+   laminas/01-apertura.css : lo propio de las laminas 01 y 02
+
+   Solo esta aqui lo que components.css no cubre: el tamaño de la linea de
+   diff de la portada, su escritura y su tachado, y el ritmo de entrada de
+   las tres lineas de la lamina 02.
+
+   El color no se inventa. La banda roja y el rojo del texto salen de .rm,
+   que es la clase con la que el deck pinta las lineas borradas en todos sus
+   bloques de codigo, asi que la portada y la lamina 06 se leen como el mismo
+   diff. Aqui solo cambia la escala.
+
+   Todos los selectores cuelgan de .portada o de .quien, y llevan una clase
+   de mas a proposito, para que valgan aunque esta hoja se cargue antes que
+   components.css.
    ========================================================================== */
 
-/* ── La portada, una linea borrada de un diff ────────────────────────────
-   Los colores son los de un diff de GitHub, que ya vienen en la paleta. No
-   hay imagen de fondo ni video: el titulo ES la imagen. */
-.cover-diff {
-  display: flex;
-  flex-direction: column;
+/* ══════════════════════════════════════════════════════════════════════════
+   01 Portada
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* La portada no usa el ancho de columna de las demas portadas: aqui la linea
+   cruza la lamina de lado a lado. Los logos salen del flujo para que la
+   linea quede centrada en la altura y no empujada por ellos. */
+.cover.portada {
+  position: relative;
+  max-width: none;
   justify-content: center;
-  height: 100%;
 }
 
-.cd-evento {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  margin-bottom: 44px;
-}
-
-.cd-ev {
-  color: var(--accent-ink);
-  background: var(--accent);
-  border-radius: 999px;
-  padding: 5px 14px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-size: 11.5px;
-}
-
-.cd-sep { width: 1px; height: 16px; background: var(--line); }
-.cd-lugar { color: var(--text-dim); }
-
-/* ── El diff ─────────────────────────────────────────────────────────────── */
-.cd-diff { font-family: var(--font-mono); }
-
-.cd-linea, .cd-verde {
+/* ── La linea borrada ────────────────────────────────────────────────────
+   .rm trae el rojo y el fondo. Lo unico que se agrega es la escala y que la
+   banda salga de los margenes de .pad hasta tocar los dos bordes, que es
+   como se ve una linea dentro de un archivo. */
+.cover.portada .dl.rm {
   display: flex;
   align-items: baseline;
-  gap: 22px;
-  padding: 10px 26px 14px;
-  border-radius: 10px;
-}
-
-.cd-linea { background: rgba(248, 81, 73, 0.16); box-shadow: inset 4px 0 0 var(--danger); }
-.cd-verde { background: rgba(46, 160, 67, 0.14); box-shadow: inset 4px 0 0 #3FB950; margin-top: 8px; opacity: 0.2; }
-
-.cd-signo {
-  font-size: 58px;
-  font-weight: 400;
-  line-height: 1;
-  color: var(--danger);
-  flex: none;
-}
-
-.cd-signo.mas { color: #3FB950; }
-
-.cd-txt {
-  font-size: 92px;
+  width: auto;
+  margin: 0 calc(var(--pad-x) * -1);
+  padding: 24px var(--pad-x) 28px;
+  font-family: var(--font-mono);
+  font-size: 176px;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: -0.045em;
-  color: #FFA198;
-  position: relative;
+  letter-spacing: -0.04em;
   white-space: nowrap;
 }
 
-/* El tachado se dibuja solo, y es el unico movimiento de la lamina.
-   Entra cuando la sala ya termino de leer. */
-.cd-txt::after {
-  content: "";
+/* El signo vive en la canal izquierda y queda fuera del tachado, igual que
+   en un diff de verdad: lo que se tacha es la linea, no su marcador. */
+.cover.portada .dl .sig {
+  flex: none;
+  margin-right: 0.26em;
+  opacity: 0.78;
+}
+
+.cover.portada .dl .tx {
+  position: relative;
+  display: inline-block;
+}
+
+/* Estado de partida: la linea todavia no esta escrita */
+.cover.portada .dl .ink {
+  display: inline-block;
+  clip-path: inset(-0.4em 100% -0.4em 0);
+}
+
+.cover.portada .dl .cursor {
   position: absolute;
-  left: -6px;
-  right: -6px;
-  top: 52%;
-  height: 6px;
-  background: var(--danger);
-  border-radius: 3px;
+  left: 0;
+  top: 0.08em;
+  width: 0.05em;
+  height: 0.78em;
+  background: currentColor;
+}
+
+.cover.portada .dl .tachon {
+  position: absolute;
+  left: 0;
+  top: 0.585em;
+  width: 100%;
+  height: 0.058em;
+  background: currentColor;
+  border-radius: 2px;
   transform: scaleX(0);
   transform-origin: left center;
 }
 
-.slide.is-active .cd-txt::after {
-  animation: tachar 0.6s cubic-bezier(0.65, 0, 0.35, 1) 1.5s forwards;
+/* ── Escritura y tachado ─────────────────────────────────────────────────
+   Dos movimientos, y ninguno es adorno. La escritura, en once pasos que son
+   los once caracteres, hace que la sala vea aparecer la linea en vez de
+   encontrarsela puesta. El tachado entra a los tres segundos, cuando ya
+   termino de leer, y es la primera palabra del titulo ocurriendo en
+   pantalla. Despues la lamina se queda quieta. */
+@keyframes portadaEscribe {
+  from { clip-path: inset(-0.4em 100% -0.4em 0); }
+  to   { clip-path: inset(-0.4em 0 -0.4em 0); }
 }
 
-@keyframes tachar { to { transform: scaleX(1); } }
-
-/* La linea verde se insinua y no se completa. La sala sabe que despues de una
-   roja viene una verde, y esa espera es el gancho que cobra la lamina 06. */
-.cd-txt-v { font-size: 92px; line-height: 1; }
-
-/* ── Bajada y pie ────────────────────────────────────────────────────────── */
-.cd-bajada {
-  font-family: var(--font-display);
-  font-size: 27px;
-  font-weight: 300;
-  letter-spacing: -0.015em;
-  color: var(--text-dim);
-  margin-top: 34px;
+@keyframes portadaCursor {
+  from { left: 0; }
+  to   { left: 100%; }
 }
 
-.cd-pie {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 30px;
-  margin-top: 54px;
-  padding-top: 22px;
-  border-top: 1px solid var(--line);
+@keyframes portadaCursorSale {
+  from { opacity: 1; }
+  to   { opacity: 0; }
 }
 
-.cd-quien b {
-  display: block;
-  font-size: 17px;
-  font-weight: 650;
-  color: var(--text);
-  margin-bottom: 4px;
+@keyframes portadaTachon {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
 }
 
-.cd-quien span {
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  color: var(--text-dim);
-  letter-spacing: 0.03em;
+.slide.is-active .cover.portada .ink {
+  animation: portadaEscribe 1.2s steps(11, end) 0.55s both;
 }
 
-/* Los logos institucionales son arte solido en negro, asi que sobre el fondo
-   oscuro de la portada desaparecen. Van sobre una placa clara. */
-.cd-logos {
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
-  background: #FFFFFF;
-  padding: 9px 16px;
-  border-radius: 10px;
-  flex: none;
+.slide.is-active .cover.portada .cursor {
+  animation:
+    portadaCursor 1.2s steps(11, end) 0.55s both,
+    portadaCursorSale 0.24s ease 3.02s both;
 }
 
-.cd-logos img { height: 32px; width: auto; display: block; }
-
-/* ── Lamina 02, el perfil ────────────────────────────────────────────────
-   Compuesta como una ficha de perfil profesional, que es el formato que esta
-   sala reconoce sin que nadie se lo explique. */
-.perfil {
-  display: flex;
-  align-items: center;
-  gap: 48px;
-  height: 100%;
+.slide.is-active .cover.portada .tachon {
+  animation: portadaTachon 0.62s cubic-bezier(0.22, 1, 0.36, 1) 3.2s both;
 }
 
-.pf-foto { flex: none; }
-
-.pf-foto img {
-  width: 224px;
-  height: 224px;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-  box-shadow: 0 0 0 4px var(--surface), 0 0 0 6px var(--accent), var(--shadow);
-}
-
-.pf-nombre {
-  font-family: var(--font-display);
-  font-size: 52px;
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 1.05;
-  color: var(--text);
-}
-
-.pf-titular {
-  font-size: 21px;
-  color: var(--text-dim);
-  margin-top: 8px;
-  margin-bottom: 30px;
-}
-
-.pf-lineas { display: flex; flex-direction: column; gap: 15px; }
-
-.pf-l {
-  display: flex;
-  align-items: center;
+/* ── Pie institucional ───────────────────────────────────────────────────
+   Los tres logos de la casa, pequeños y abajo. Sin marca de GitHub. */
+.cover.portada .logos {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 0;
   gap: 15px;
-  font-size: 18.5px;
-  color: var(--text);
+  padding: 9px 16px;
 }
 
-.pf-ico { flex: none; width: 26px; height: 26px; color: var(--accent); }
+.cover.portada .logos img { height: 30px; }
+.cover.portada .logos .sep { height: 20px; }
 
-.pf-ico svg {
-  width: 26px;
-  height: 26px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+/* ══════════════════════════════════════════════════════════════════════════
+   02 Quien expone
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── El retrato ──────────────────────────────────────────────────────────
+   La foto va como fondo de .foto. Si el archivo no esta, el navegador
+   descarta esa capa y queda la silueta: un sitio reservado, no un error. */
+.quien .retrato {
+  position: relative;
+  height: 430px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: linear-gradient(168deg, var(--surface) 0%, var(--surface-3) 100%);
+  box-shadow: var(--card-shadow);
+}
+
+.quien .retrato::before,
+.quien .retrato::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  background: rgba(31, 35, 40, 0.12);
+}
+
+.quien .retrato::before { top: 24%; width: 104px; height: 104px; margin-left: -52px; border-radius: 50%; }
+.quien .retrato::after  { top: 53%; width: 224px; height: 210px; margin-left: -112px; border-radius: 112px 112px 0 0; }
+
+:root[data-theme="dark"] .quien .retrato::before,
+:root[data-theme="dark"] .quien .retrato::after { background: rgba(230, 237, 243, 0.10); }
+
+.quien .retrato .foto {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0;
+  z-index: 1;
+  background: url("../../img/foto.png") center 28% / cover no-repeat;
+}
+
+/* ── Las tres lineas ─────────────────────────────────────────────────────── */
+.quien h1.title { font-size: 52px; margin-bottom: 0; }
+.quien .rule { max-width: 320px; margin: 18px 0 26px; }
+
+.quien .lineas { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+
+.quien .linea {
+  position: relative;
+  padding-left: 26px;
+  font-size: 23px;
+  line-height: 1.4;
+  color: var(--text-dim);
+  opacity: 0;
+}
+
+.quien .linea::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--line);
+}
+
+/* La credencial que pesa en este auditorio lleva el punto encendido */
+.quien .linea.n2::before { background: var(--accent); }
+
+/* Entrada escalonada al ritmo del habla. Con los retardos de data-d las tres
+   caerian en menos de un quinto de segundo, que es ritmo decorativo y no
+   señalizacion: la sala leeria las tres de golpe y dejaria de escuchar. */
+.slide.is-active .quien .linea    { animation: rise 0.58s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.slide.is-active .quien .linea.n1 { animation-delay: 0.70s; }
+.slide.is-active .quien .linea.n2 { animation-delay: 2.00s; }
+.slide.is-active .quien .linea.n3 { animation-delay: 3.30s; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Movimiento reducido e impresion
+
+   En los dos casos la linea queda escrita y tachada, que es el estado final
+   y el unico que cuenta algo. Lo que se apaga es el camino hasta ahi.
+   ══════════════════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .slide.is-active .cover.portada .ink,
+  .slide.is-active .cover.portada .cursor,
+  .slide.is-active .cover.portada .tachon,
+  .slide.is-active .quien .linea {
+    animation: none !important;
+  }
+
+  .cover.portada .ink    { clip-path: none !important; }
+  .cover.portada .cursor { display: none !important; }
+  .cover.portada .tachon { transform: scaleX(1) !important; }
+  .slide.is-active .quien .linea { opacity: 1 !important; }
+}
+
+@media print {
+  .cover.portada .ink {
+    animation: none !important;
+    clip-path: none !important;
+  }
+
+  .cover.portada .cursor { display: none !important; }
+
+  .cover.portada .tachon {
+    animation: none !important;
+    transform: scaleX(1) !important;
+  }
+
+  .quien .linea {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
 }

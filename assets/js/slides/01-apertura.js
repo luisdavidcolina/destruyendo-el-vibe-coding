@@ -1,91 +1,91 @@
-/* 01 - Apertura: portada y quien expone
-   La portada es una linea borrada de un diff. En un evento de GitHub, una
-   linea roja con un menos delante la lee al instante toda la sala, asi que no
-   hay metafora que descifrar. Y deja abierta la linea verde, que llega en la
-   lamina 06 y cierra el argumento. */
+/* ==========================================================================
+   01-apertura.js : laminas 01 y 02
+
+   01  Portada. El titulo no va escrito como titulo: va escrito como la linea
+       que un cambio de codigo borra. Fondo rojo de diff, signo menos en la
+       canal izquierda y el texto tachado, a tamaño enorme. Cualquiera que
+       haya abierto un pull request lo lee sin que nadie se lo explique, y
+       en un evento de GitHub eso es toda la sala. La linea verde que falta
+       aparece en la lamina 06 y cierra el diff.
+
+       Sin iceberg, sin video y sin marca de GitHub: sus condiciones de marca
+       piden que el logo no quede como el elemento mas prominente ni sugiera
+       respaldo, y esta ponencia lleva opinion propia. Quedan los tres logos
+       institucionales, pequeños, que son los de la casa.
+
+   02  Quien expone. Veinte segundos, un retrato y tres lineas. El chiste del
+       lenguaje no vive aqui, esta en la lamina 08.
+
+   Los ritmos de escritura y tachado viven en laminas/01-apertura.css, porque
+   el motor no tiene pasos dentro de una lamina.
+   ========================================================================== */
 window.DECK.push(
 
-/* ─────────────────────────────── 01 Portada ─────────────────────────────── */
+/* ─────────────────────── 01 Portada, la linea borrada ───────────────────── */
 {
-  section: 'Portada',
+  section: 'Apertura',
   title: 'Destruyendo el vibe coding',
   min: '0:00 a 0:20',
   bare: true,
   cinema: true,
   html: `
   <div class="pad">
-    <div class="cover-diff">
+    <div class="cover portada">
 
-      <div class="cd-evento anim sr" data-d="1">
-        <span class="cd-ev">Dev Days 2026</span>
-        <span class="cd-sep"></span>
-        <span class="cd-lugar">Auditorio Manuel Bemporad &nbsp;&middot;&nbsp; 2 de octubre</span>
+      <!-- La banda roja sale de .rm, que es la clase con la que el deck pinta
+           las lineas borradas en todos los bloques de codigo. Aqui solo crece
+           hasta ocupar la lamina. El signo va fuera de .tx para que el tachado
+           cruce el texto y no el marcador, igual que en un diff de verdad. -->
+      <div class="dl rm">
+        <span class="sig" aria-hidden="true">-</span>
+        <span class="tx"><span class="ink">vibe coding</span><span class="cursor" aria-hidden="true"></span><span class="tachon" aria-hidden="true"></span></span>
       </div>
 
-      <div class="cd-diff">
-        <div class="cd-linea">
-          <span class="cd-signo">-</span>
-          <span class="cd-txt">vibe coding</span>
-        </div>
-        <div class="cd-verde anim" data-d="9">
-          <span class="cd-signo mas">+</span>
-          <span class="cd-txt-v">&nbsp;</span>
-        </div>
-      </div>
-
-      <p class="cd-bajada anim" data-d="6">
-        Destruyendo el vibe coding
-      </p>
-
-      <div class="cd-pie anim" data-d="7">
-        <div class="cd-quien">
-          <b>Luisdavid Colina</b>
-          <span>Escuela de Computacion, Facultad de Ciencias, UCV</span>
-        </div>
-        <div class="cd-logos">
-          <img src="assets/logos/logo_ucv.png" alt="Universidad Central de Venezuela">
-          <img src="assets/logos/logo_ciencias.png" alt="Facultad de Ciencias">
-          <img src="assets/logos/logo_computacion.png" alt="Escuela de Computacion">
-        </div>
+      <div class="logos">
+        <img src="assets/logos/logo_ucv.png" alt="Universidad Central de Venezuela">
+        <span class="sep"></span>
+        <img src="assets/logos/logo_ciencias.png" alt="Facultad de Ciencias">
+        <span class="sep"></span>
+        <img src="assets/logos/logo_computacion.png" alt="Escuela de Computacion">
       </div>
 
     </div>
   </div>`
 },
 
-/* ────────────────────────────── 02 Quien expone ─────────────────────────── */
+/* ───────────────────────────── 02 Quien expone ──────────────────────────── */
 {
-  section: 'Quien expone',
+  section: 'Apertura',
   title: 'Quien expone',
   min: '0:20 a 0:40',
   html: `
   <div class="pad">
-    <div class="perfil">
+    <div class="body-area quien">
+      <div class="grid g-1-2 gap-lg center-y">
 
-      <div class="pf-foto">
-        <img src="assets/img/foto.png" alt="Luisdavid Colina">
-      </div>
+        <!-- Hueco del retrato. La foto entra como fondo desde la hoja de
+             estilo: si el archivo no esta, el navegador descarta esa capa y
+             queda la silueta, que se lee como sitio reservado y no como un
+             error de carga. -->
+        <figure class="retrato anim z" data-d="1" role="img" aria-label="Retrato de Luisdavid Colina">
+          <span class="foto"></span>
+        </figure>
 
-      <div class="pf-datos">
-        <h2 class="pf-nombre anim" data-d="2">Luisdavid Colina</h2>
-        <p class="pf-titular anim" data-d="3">Desarrollador full stack con inteligencia artificial</p>
+        <div class="ficha">
+          <h1 class="title">Luisdavid Colina</h1>
+          <div class="rule"></div>
 
-        <div class="pf-lineas">
-          <div class="pf-l anim" data-d="4">
-            <span class="pf-ico">${'' /* anos de oficio */}<svg viewBox="0 0 24 24"><path d="M3 7h18v13H3zM8 7V4h8v3"/></svg></span>
-            <span>Siete anos integrando sistemas de empresa</span>
-          </div>
-          <div class="pf-l anim" data-d="5">
-            <span class="pf-ico"><svg viewBox="0 0 24 24"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11.5V17c0 1.5 2.4 3 5 3s5-1.5 5-3v-5.5"/></svg></span>
-            <span>Auxiliar docente y preparador de Matematica Discreta I</span>
-          </div>
-          <div class="pf-l anim" data-d="6">
-            <span class="pf-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M8.5 13.5L7 21l5-2.5L17 21l-1.5-7.5"/></svg></span>
-            <span>Claude Certified Architect</span>
-          </div>
+          <!-- Las tres lineas entran una detras de otra, al ritmo en que se
+               dicen. El ritmo va en CSS porque el motor no tiene pasos dentro
+               de una lamina. La segunda es la que pesa en este auditorio. -->
+          <ul class="lineas">
+            <li class="linea n1">Siete años integrando sistemas de empresa</li>
+            <li class="linea n2">Auxiliar docente y <em>preparador de Matematica Discreta I</em></li>
+            <li class="linea n3">Claude Certified Architect</li>
+          </ul>
         </div>
-      </div>
 
+      </div>
     </div>
   </div>`
 }

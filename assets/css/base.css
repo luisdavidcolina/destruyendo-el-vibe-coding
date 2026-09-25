@@ -648,3 +648,25 @@ strong { color: var(--text); font-weight: 650; }
 
 /* Y ninguna se pega al borde: van debajo de su evidencia, no del todo abajo */
 .slide .fuente, .slide .pie-fuente { margin-top: 18px; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Fuera el rotulo pequeno de encima del titulo.
+
+   Era un texto chico en mayusculas que nombraba la seccion, justo encima del
+   titular. Como los titulares ahora afirman algo en vez de nombrar un tema,
+   el rotulo repetia en pequeno lo que el titulo ya decia en grande, y al
+   entrar antes que el titulo se llevaba la jerarquia de la lamina.
+
+   Se quita de todas. El titular pasa a ser lo primero que se lee, que es lo
+   que tiene que ser, y gana el aire que ocupaba el rotulo.
+   ══════════════════════════════════════════════════════════════════════════ */
+.slide .kicker { display: none !important; }
+
+/* Con el rotulo fuera, el titular sube y respira */
+.slide h1.title {
+  font-size: 54px;
+  line-height: 1.04;
+  margin-top: 4px;
+}
+
+.slide h1.title.sm { font-size: 44px; }

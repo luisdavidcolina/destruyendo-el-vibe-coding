@@ -121,6 +121,57 @@ window.DECK.push(
   </div>`
 },
 
+/* ─────────────── El consejo ───────────────
+   Las tres lineas que el expositor escribio para cerrar, tal cual, en una
+   lamina propia: con la frase de humildad y la cita de Thompson no cabian en
+   cincuenta palabras, y el expositor eligio separarlas.
+
+   Debajo, una franja del calendario de contribuciones de GitHub. Casi toda
+   en gris, que son los años en que los objetivos estaban en mente y no se
+   hacian. El ultimo tramo se enciende en verde cuando entra la segunda
+   linea, la de "este año los termine todos". No es textura de fondo, es el
+   dato dibujado: mucho tiempo esperando y poco tiempo haciendolo.
+
+   La tercera linea entra tarde a proposito. Entre la segunda y la tercera
+   el guion pide un silencio, y la lamina lo respeta. */
+{
+  section: 'Cierre',
+  title: 'Es hora de que cumplan los suyos',
+  min: '9:30 a 9:50',
+  bare: true,
+  cinema: true,
+  html: `
+  <div class="pad">
+    <div class="consejo">
+      <p class="cj-l cj1">Yo tenía objetivos en mente desde hacía <b>muchos</b> años.</p>
+      <p class="cj-l cj2">Este año los terminé todos.</p>
+
+      ${(function () {
+        var cols = 60, filas = 7, verdes = 11, celda = 14, paso = 19, r = '';
+        var tonos = ['#0E4429', '#006D32', '#26A641', '#39D353'];
+        var x = 20261002;
+        for (var c = 0; c < cols; c++) {
+          for (var f = 0; f < filas; f++) {
+            var cls = 'cj-c', estilo = '';
+            if (c >= cols - verdes) {
+              x = (x * 48271) % 2147483647;
+              var t = tonos[1 + (x % 3)];
+              cls += ' v';
+              estilo = ' style="--t:' + t + ';--i:' + (c - (cols - verdes)) + '"';
+            }
+            r += '<rect class="' + cls + '"' + estilo + ' x="' + (c * paso) + '" y="' + (f * paso) +
+                 '" width="' + celda + '" height="' + celda + '" rx="3"/>';
+          }
+        }
+        var w = cols * paso - (paso - celda), h = filas * paso - (paso - celda);
+        return '<svg class="cj-cal" viewBox="0 0 ' + w + ' ' + h + '" aria-hidden="true" focusable="false">' + r + '</svg>';
+      })()}
+
+      <p class="cj-l cj3">Es hora de que cumplan los suyos.</p>
+    </div>
+  </div>`
+},
+
 /* ─────────────── 14 Contacto y referencias ───────────────
    Es la unica lamina sin tope de palabras: queda proyectada toda la ronda de
    preguntas y la sala la fotografia, asi que se compone para ser leida.

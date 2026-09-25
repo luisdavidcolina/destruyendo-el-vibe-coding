@@ -1,0 +1,7 @@
+# Lo que NO se publica.
+# El guion lleva datos de un proyecto de cliente (Simply Pool, colaboracion con
+# Joel), rutas internas del equipo y cifras todavia sin verificar. Nada de eso
+# tiene por que quedar en una URL publica.
+guion/
+informe/
+REGLAS.md

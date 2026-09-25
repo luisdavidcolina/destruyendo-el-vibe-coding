@@ -9,10 +9,11 @@
    llevan una clase de mas a proposito, para que valgan aunque esta hoja se
    cargue antes que components.css.
 
-   Los tiempos de encendido estan calculados sobre los tramos del guion, a
-   148 palabras por minuto. Son largos porque acompañan lo que se dice, no el
-   ritmo de la lamina: cada elemento del encargo dura unos seis segundos y
-   medio, y cada ficha unos cinco y medio.
+   Los tiempos de encendido son cortos a proposito: cada elemento del encargo
+   se enciende a un segundo y medio del anterior, y cada ficha de la 08 a un
+   segundo. Estuvieron calculados sobre los tramos del guion y eran tan largos
+   que la lamina se veia a medias mucho tiempo. Ahora una lamina vista a los
+   5 o 7 segundos ya esta completa, vaya el expositor al ritmo que vaya.
    ========================================================================== */
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -132,12 +133,20 @@
 
 /* ── El encendido, elemento por elemento ─────────────────────────────────
    Cada elemento del encargo se resalta cuando se esta hablando de el, y en
-   ese mismo momento aparece la parte del resultado que produce. La causa y
+   ese mismo momento se resalta la parte del resultado que produce. La causa y
    su efecto ocurren a la vez y estan a la vista al mismo tiempo, que es lo
    unico que justifica animar esta lamina.
 
    El resalte pega un golpe corto y se queda en un tono suave, de modo que al
-   final del minuto el encargo completo sigue leyendose entero. */
+   final el encargo completo sigue leyendose entero.
+
+   Los chips del resultado ya no nacen atenuados. Vivian al 26 por ciento de
+   opacidad hasta que les tocaba, y proyectados se veian como gris lavado, que
+   es justo lo que el videobeam borra. Ahora nacen a contraste completo y lo
+   que cambia al encenderse es el borde y el fondo, no la opacidad. La
+   cadencia es la misma para la linea y para su chip, pero acortada a 1,5
+   segundos entre elementos: a los 7 segundos estan los cuatro resaltados y a
+   los 3 se ve la secuencia a la mitad. Cambiado el 25 de septiembre de 2026. */
 @keyframes encargoLinea {
   0%   { background: transparent; box-shadow: none; }
   16%  { background: rgba(88, 166, 255, 0.22); box-shadow: inset 3px 0 0 var(--accent-br); }
@@ -145,11 +154,11 @@
 }
 
 @keyframes encargoChip {
-  from { opacity: 0.26; background: var(--surface); border-color: var(--line); color: var(--text-faint); }
-  to   { opacity: 1;    background: var(--on-bg);  border-color: var(--on-line); color: var(--accent); }
+  from { background: var(--surface); border-color: var(--line); color: var(--text-dim); }
+  to   { background: var(--on-bg);  border-color: var(--on-line); color: var(--accent); }
 }
 
-.encargo .salida .chip { --on-bg: #E4F2F9; --on-line: #A9D3E7; opacity: 0.26; }
+.encargo .salida .chip { --on-bg: #E4F2F9; --on-line: #A9D3E7; }
 
 :root[data-theme="dark"] .encargo .salida .chip {
   --on-bg: rgba(88, 166, 255, 0.10);
@@ -168,13 +177,13 @@
 }
 
 .slide.is-active .encargo .code .ln.e1,
-.slide.is-active .encargo .salida .chip.r1 { animation-delay: 7.0s; }
+.slide.is-active .encargo .salida .chip.r1 { animation-delay: 2.0s; }
 .slide.is-active .encargo .code .ln.e2,
-.slide.is-active .encargo .salida .chip.r2 { animation-delay: 13.5s; }
+.slide.is-active .encargo .salida .chip.r2 { animation-delay: 3.5s; }
 .slide.is-active .encargo .code .ln.e3,
-.slide.is-active .encargo .salida .chip.r3 { animation-delay: 20.0s; }
+.slide.is-active .encargo .salida .chip.r3 { animation-delay: 5.0s; }
 .slide.is-active .encargo .code .ln.e4,
-.slide.is-active .encargo .salida .chip.r4 { animation-delay: 26.5s; }
+.slide.is-active .encargo .salida .chip.r4 { animation-delay: 6.5s; }
 
 /* El nombre del archivo de instrucciones es una ruta, no un rotulo: en
    versalitas se lee mal y ademas deja de parecer un archivo. */

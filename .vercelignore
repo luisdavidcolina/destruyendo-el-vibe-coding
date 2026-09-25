@@ -1,7 +1,5 @@
-# Lo que NO se publica.
-# El guion lleva datos de un proyecto de cliente (Simply Pool, colaboracion con
-# Joel), rutas internas del equipo y cifras todavia sin verificar. Nada de eso
-# tiene por que quedar en una URL publica.
+# Lo que NO se publica en el sitio.
+# El guion y la plantilla del informe son material del repositorio, no de la
+# presentacion proyectada. Se leen en GitHub, no hace falta servirlos.
 guion/
 informe/
-REGLAS.md

@@ -91,10 +91,11 @@ se vuelve ilegible desde la tercera fila. Las laminas de corte si van oscuras, a
 
 ---
 
-## El guion y las reglas
+## El guion
 
-No estan en este repositorio. Viven aparte porque citan el proyecto de un cliente. Lo que se
-proyecta es publico, lo que se dice no.
+Esta en `guion/GUION.md`: la teoria de cada lamina, con los datos verificados y sus fuentes. No es
+un libreto para leer, es lo que hay que saber para hablar de cada lamina. Las reglas de redaccion y
+el plan de trabajo viven aparte.
 
 ## Antes de dar una lamina por buena
 

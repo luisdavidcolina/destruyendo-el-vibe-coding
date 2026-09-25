@@ -73,15 +73,16 @@ window.DECK.push(
 
         <div class="ficha">
           <h1 class="title">Luisdavid Colina</h1>
+          <p class="cargo">Arquitecto de soluciones con inteligencia artificial</p>
           <div class="rule"></div>
 
           <!-- Las tres lineas entran una detras de otra, al ritmo en que se
                dicen. El ritmo va en CSS porque el motor no tiene pasos dentro
                de una lamina. La segunda es la que pesa en este auditorio. -->
           <ul class="lineas">
-            <li class="linea n1">Siete años integrando sistemas de empresa</li>
+            <li class="linea n1"><em>Integration Manager</em> en Workforce.com</li>
             <li class="linea n2">Auxiliar docente y <em>preparador de Matematica Discreta I</em></li>
-            <li class="linea n3">Claude Certified Architect</li>
+            <li class="linea n3">Siete años integrando sistemas de empresa</li>
           </ul>
         </div>
 

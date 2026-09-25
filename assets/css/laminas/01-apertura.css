@@ -255,3 +255,12 @@
     opacity: 1 !important;
   }
 }
+
+/* El titular profesional, debajo del nombre. Va antes de la regla para que se
+   lea como una sola unidad con el nombre y no como el primer dato de la lista. */
+.ficha .cargo {
+  font-size: 21px;
+  color: var(--text-dim);
+  margin-top: 6px;
+  margin-bottom: 4px;
+}

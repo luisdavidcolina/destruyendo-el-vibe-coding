@@ -6,8 +6,10 @@
 
    Tres piezas:
 
-   1. .pr     La promesa que se encoge sola, de meses a dias, y el signo de
-              interrogacion que queda encima. La animacion es el argumento.
+   1. .ice    El iceberg de la lamina 03, con la linea de agua visible y la
+              cita de Karpathy al lado. La foto va en .ice-foto y todavia no
+              existe, asi que debajo queda un iceberg dibujado con degradados
+              y recortes, que es lo que se ve hoy y se ve bien.
    2. .enf    Dos barras enfrentadas sobre un mismo eje. Es una pieza
               GENERICA, sin nada de METR dentro: la lamina 11 la vuelve a
               usar tal cual, con otras cifras, y ese eco es el recurso
@@ -48,85 +50,182 @@
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
-   03  La promesa que se encoge
+   03  El iceberg y la cita de Karpathy
+
+   Sobre la linea de agua esta la punta, que es la peticion que se escribe.
+   Debajo esta todo lo que decide si el resultado sirve, y la lamina lo
+   enseña en vez de decirlo.
+
+   El hueco de la foto es .ice-foto, que apunta a assets/img/iceberg.jpg. Ese
+   archivo todavia no existe: mientras no este, esa capa no pinta nada y se
+   ve el iceberg de abajo, dibujado con degradados y recortes. Cuando la
+   imagen entre en la carpeta lo tapa sola, sin tocar nada mas.
+
+   Las capas van en este orden, de atras hacia adelante:
+
+     .ice        el panel, con el cielo y el agua en su propio fondo
+     .ice-masa   lo sumergido
+     .ice-punta  lo que asoma
+     .ice-foto   la foto, cuando exista
+     .ice-tapa   la capa que tapa lo sumergido y se abre
+     .ice-agua   la linea de agua
+     .ice-velo   el lavado que deja legible la cita
+     .ice-cita   la cita, en la misma pieza .quote que usa la lamina 13
+
+   Los tonos del respaldo van escritos a mano y no en variables, porque
+   ocupan el sitio de una fotografia y una fotografia no cambia de color con
+   el tema. Es lo mismo que hace .video-missing en components.css.
    ══════════════════════════════════════════════════════════════════════════ */
 
-.body-area.promesa { justify-content: center; }
+.body-area.ice-area { justify-content: stretch; }
 
-.pr {
+/* --ice-agua manda sobre todo: la altura de la linea de agua, donde termina
+   la punta, donde empieza lo sumergido y donde corta el degradado del fondo.
+   Se cambia en un solo sitio y las capas se reacomodan juntas. */
+.ice {
+  --ice-agua: 40%;
   position: relative;
-  height: 120px;
-  margin-top: 34px;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--card-shadow);
+  background: linear-gradient(180deg,
+    #EEF6FC 0%,
+    #DCEBF7 calc(var(--ice-agua) * 0.60),
+    #C7DFF0 calc(var(--ice-agua) - 1px),
+    #9FC8E2 calc(var(--ice-agua) + 1px),
+    #4F8AB4 calc(var(--ice-agua) + 22%),
+    #16395A 100%);
 }
 
-/* La huella de lo que la barra media al empezar. Se queda dibujada, porque
-   sin ella la barra corta no dice nada: lo que se lee es la distancia entre
-   las dos. Va con relleno claro y no solo con el trazo discontinuo, porque
-   un borde de un pixel y medio se pierde en cuanto el videobeam lava el
-   contraste. */
-.pr-huella {
+/* Lo que asoma. Termina justo en la linea de agua, y es lo unico que la sala
+   ve del iceberg, igual que la peticion es lo unico que se escribe. */
+.ice-punta {
+  position: absolute;
+  z-index: 1;
+  left: 52%;
+  width: 26%;
+  top: 9%;
+  height: calc(var(--ice-agua) - 9%);
+  clip-path: polygon(44% 0%, 68% 32%, 100% 100%, 0% 100%, 17% 46%);
+  background: linear-gradient(148deg, #FFFFFF 0%, #EAF6FF 40%, #C2DDEF 100%);
+}
+
+/* Lo sumergido. Arranca en la linea de agua, es mucho mas ancho que la punta
+   y se va perdiendo hacia el fondo, que es como se ve de verdad. */
+.ice-masa {
+  position: absolute;
+  z-index: 1;
+  left: 36%;
+  width: 58%;
+  top: var(--ice-agua);
+  bottom: 3%;
+  clip-path: polygon(30% 0%, 77% 0%, 100% 19%, 91% 53%, 69% 85%, 43% 100%, 17% 77%, 2% 38%);
+  background: linear-gradient(180deg,
+    rgba(232, 247, 255, 0.94) 0%,
+    rgba(168, 214, 238, 0.66) 40%,
+    rgba(96, 158, 196, 0.34) 74%,
+    rgba(52, 112, 152, 0.12) 100%);
+}
+
+/* El hueco de la foto. Sin archivo no pinta nada y deja ver el dibujo. */
+.ice-foto {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
-  background: var(--surface);
-  border: 2px dashed var(--line);
-  border-radius: 14px;
+  inset: 0;
+  z-index: 2;
+  background: url("../../img/iceberg.jpg") center / cover no-repeat;
 }
 
-.pr-fill {
+/* La capa que tapa lo sumergido al entrar la lamina. Se abre y aparece la
+   masa que estaba debajo, que es el argumento dicho sin una palabra. El
+   estado base es transparente, que es como termina, asi que en papel y sin
+   movimiento la lamina se ve entera. */
+.ice-tapa {
   position: absolute;
-  top: 0; bottom: 0; left: 0;
-  width: 18%;
-  border-radius: 14px;
-  background: linear-gradient(110deg, var(--accent-br), var(--accent));
-  box-shadow: var(--card-shadow);
+  z-index: 3;
+  left: 0; right: 0;
+  top: var(--ice-agua);
+  bottom: 0;
+  opacity: 0;
+  background: linear-gradient(180deg, #C7DFF0 0%, #E8F3FB 58%, #F2F8FC 100%);
 }
 
-.pr-eti {
+/* La linea de agua. Es la frontera entre lo que se ve y lo que no, asi que
+   va encima de la tapa y se queda visible todo el tiempo. */
+.ice-agua {
   position: absolute;
-  font-family: var(--font-mono);
-  font-size: 17px;
-  letter-spacing: 0.14em;
-  white-space: nowrap;
+  z-index: 4;
+  left: 0; right: 0;
+  top: var(--ice-agua);
+  height: 2px;
+  margin-top: -1px;
+  transform-origin: left center;
+  background: linear-gradient(90deg,
+    rgba(255, 255, 255, 0.28) 0%,
+    rgba(255, 255, 255, 0.92) 26%,
+    rgba(255, 255, 255, 0.98) 66%,
+    rgba(255, 255, 255, 0.50) 100%);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.55);
 }
 
-.pr-eti.larga {
-  right: 4px;
-  bottom: calc(100% + 14px);
-  color: var(--text-faint);
-}
-
-.pr-eti.corta {
-  left: 18%;
-  margin-left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--accent);
-  font-weight: 600;
-}
-
-/* El remate. Queda centrado sobre la barra ya detenida. */
-.pr-q {
+/* Lavado direccional: solido donde va la cita, limpio donde esta el hielo.
+   Es lo mismo que hace el velo de las laminas de cine, y sirve para que la
+   cita siga leyendose cualquiera que sea la foto que entre despues. */
+.ice-velo {
   position: absolute;
-  left: 9%;
-  bottom: calc(100% + 4px);
-  transform: translateX(-50%);
-  font-family: var(--font-display);
-  font-size: 132px;
-  font-weight: 700;
-  line-height: 0.9;
-  letter-spacing: -0.04em;
-  color: var(--text);
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0;
+  z-index: 5;
+  background: linear-gradient(94deg,
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(255, 255, 255, 0.92) 30%,
+    rgba(255, 255, 255, 0.58) 46%,
+    rgba(255, 255, 255, 0.12) 62%,
+    rgba(255, 255, 255, 0) 74%);
 }
 
-@keyframes prEncoge   { from { width: 100%; } }
-@keyframes prAparece  { from { opacity: 0; transform: translateY(-50%) translateX(-14px); } }
-@keyframes prRemate   { from { opacity: 0; transform: translateX(-50%) translateY(18px) scale(0.72); } }
-@keyframes prHuella   { from { opacity: 0; } }
+:root[data-theme="dark"] .ice-velo {
+  background: linear-gradient(94deg,
+    rgba(1, 4, 9, 0.95) 0%,
+    rgba(1, 4, 9, 0.90) 30%,
+    rgba(1, 4, 9, 0.56) 46%,
+    rgba(1, 4, 9, 0.12) 62%,
+    rgba(1, 4, 9, 0) 74%);
+}
 
-.slide.is-active .pr-huella   { animation: prHuella 0.5s ease-out 0.30s both; }
-.slide.is-active .pr-fill     { animation: prEncoge 3.4s cubic-bezier(0.62, 0, 0.30, 1) 0.90s both; }
-.slide.is-active .pr-eti.corta{ animation: prAparece 0.5s cubic-bezier(0.22, 1, 0.36, 1) 4.30s both; }
-.slide.is-active .pr-q        { animation: prRemate 0.62s cubic-bezier(0.22, 1, 0.36, 1) 4.70s both; }
+/* La cita hereda .quote de components.css, que es la pieza con barra lateral
+   de acento. Aqui solo se le da sitio y tamaño. La atribucion va al mismo
+   cuerpo que la de Thompson en la lamina 13, para que las dos se lean como
+   un par. */
+.ice-cita {
+  position: relative;
+  z-index: 6;
+  margin-left: 58px;
+  max-width: 470px;
+  font-size: 33px;
+  line-height: 1.32;
+}
+
+.ice-cita .who { font-size: 13.5px; margin-top: 20px; }
+
+@keyframes icePanel { from { opacity: 0; } }
+@keyframes iceLinea { from { transform: scaleX(0); } }
+@keyframes iceAbre  { from { opacity: 1; } }
+@keyframes iceCita  { from { opacity: 0; transform: translate3d(0, 18px, 0); } }
+
+/* La secuencia es el argumento. Primero se ve la punta y nada mas. La linea
+   de agua cruza y marca hasta donde llega lo visible. Entonces se abre el
+   agua y aparece la masa, que es mucho mayor. Al final entra la cita, que le
+   pone nombre a lo que la sala acaba de ver. */
+.slide.is-active .ice      { animation: icePanel 0.50s ease-out 0.28s both; }
+.slide.is-active .ice-agua { animation: iceLinea 0.70s cubic-bezier(0.22, 1, 0.36, 1) 0.70s both; }
+.slide.is-active .ice-tapa { animation: iceAbre 1.15s cubic-bezier(0.40, 0, 0.20, 1) 1.25s both; }
+.slide.is-active .ice-cita { animation: iceCita 0.70s cubic-bezier(0.22, 1, 0.36, 1) 2.30s both; }
 
 /* ══════════════════════════════════════════════════════════════════════════
    04 y 11  Dos barras enfrentadas sobre un mismo eje
@@ -418,10 +517,9 @@
    excepcion es el apagon de la 05, que no tiene sentido congelado.
    ══════════════════════════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
-  .slide.is-active .pr-huella,
-  .slide.is-active .pr-fill,
-  .slide.is-active .pr-eti.corta,
-  .slide.is-active .pr-q,
+  .slide.is-active .ice,
+  .slide.is-active .ice-agua,
+  .slide.is-active .ice-cita,
   .slide.is-active .enf-eje,
   .slide.is-active .enf-arriba,
   .slide.is-active .enf-abajo,
@@ -434,16 +532,23 @@
     animation: none !important;
     opacity: 1 !important;
   }
+
+  /* La tapa del iceberg se queda donde termina, que es transparente. Si
+     entrara en la lista de arriba volveria a opacidad 1 y taparia justo lo
+     que la lamina tiene que enseñar. */
+  .slide.is-active .ice-tapa { animation: none !important; }
 }
 
 @media print {
-  .pr-huella, .pr-fill, .pr-eti, .pr-q,
+  .ice, .ice-agua, .ice-cita,
   .enf-eje, .enf-arriba, .enf-abajo, .enf-barra, .enf-cifra,
   .nv-cinta, .nv-paso, .nv-grid, .nv-frase {
     animation: none !important;
     opacity: 1 !important;
   }
 
-  .pr-fill, .enf-barra { box-shadow: none !important; }
+  .ice-tapa { animation: none !important; }
+
+  .ice-agua, .enf-barra { box-shadow: none !important; }
   .nv-paso code { background: #FFFFFF !important; }
 }

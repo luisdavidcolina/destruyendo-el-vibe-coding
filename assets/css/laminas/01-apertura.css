@@ -176,7 +176,7 @@
   top: 0; right: 0; bottom: 0; left: 0;
   inset: 0;
   z-index: 1;
-  background: url("../../img/foto.png") center 28% / cover no-repeat;
+  background: url("../../img/foto.png") center bottom / contain no-repeat;
 }
 
 /* ── Las tres lineas ─────────────────────────────────────────────────────── */

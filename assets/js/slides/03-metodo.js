@@ -1,17 +1,18 @@
 /* ==========================================================================
    03-metodo.js : laminas 06, 07 y 08
 
-   06  El giro. Corte a oscuro, una sola frase centrada. Es la bisagra de la
-       ponencia: el cohete, el chiste de la lamina 02 y la definicion de
-       programacion con varios agentes van hablados, no escritos. Lo unico
-       que queda proyectado es la afirmacion y la aclaracion de que el metodo
-       no depende de ninguna marca.
+   06  El giro. Corte a oscuro. Arriba la unica pregunta del deck y debajo
+       su respuesta, que es el diff que abrio la portada, ahora con su linea
+       verde. El cohete, la definicion de programacion con varios agentes y
+       la aclaracion de que nada de esto depende de una marca van hablados,
+       no escritos.
    07  El encargo es el trabajo. La peticion pobre al lado del encargo
        completo, cada uno con su resultado. Los cuatro elementos se encienden
        uno por uno y con cada uno aparece la parte del resultado que produce.
-   08  Ocho fichas de dos o tres palabras. La explicacion de cada una va
-       hablada, la ficha solo ancla el nombre para que la sala siga el hilo
-       sin ponerse a leer.
+   08  Cuatro fichas, y cada una dice algo entero. Dos palabras sueltas no
+       significan nada para quien mira la lamina sin oir al expositor, asi
+       que la ficha lleva su predicado. Los otros cuatro consejos van
+       hablados y no llevan ficha.
 
    Los ritmos de encendido viven en laminas/03-metodo.css, porque el motor no
    tiene pasos dentro de una lamina. Estan calculados sobre los tramos del
@@ -22,7 +23,7 @@ window.DECK.push(
 /* ─────────────────────────── 06 El giro, corte ──────────────────────────── */
 {
   section: 'La resolucion',
-  title: 'El problema no es la herramienta',
+  title: '¿Entonces la IA es el problema?',
   min: '3:10 a 3:30',
   bare: true,
   cinema: true,
@@ -30,11 +31,25 @@ window.DECK.push(
   <div class="pad">
     <div class="cine-hero giro">
 
-      <!-- Sin animacion propia. El corte a oscuro contra las tres laminas
-           claras anteriores ya es todo el efecto que hace falta aqui. -->
-      <h2>El problema no es la herramienta</h2>
+      <!-- La unica pregunta de todo el deck. Se proyecta con su signo porque
+           la sala lleva tres minutos llegando sola a ella. -->
+      <h2>¿Entonces la IA es el problema?</h2>
 
-      <p class="nota">Cualquier modelo, cualquier proveedor, cualquier lenguaje</p>
+      <!-- Y debajo la respuesta, que es el diff que abrio la portada. Las
+           dos lineas salen de .rm y .ad, las clases con las que el deck pinta
+           un diff en todos sus bloques de codigo, asi que la lamina 01 y esta
+           se leen como el mismo archivo. La roja entra ya tachada, porque
+           tacharla fue lo que ocurrio en la portada. -->
+      <div class="diff">
+        <div class="dl rm">
+          <span class="sig" aria-hidden="true">-</span>
+          <span class="tx">vibe coding</span>
+        </div>
+        <div class="dl ad">
+          <span class="sig" aria-hidden="true">+</span>
+          <span class="tx">programacion con varios agentes</span>
+        </div>
+      </div>
 
     </div>
   </div>`
@@ -105,58 +120,41 @@ window.DECK.push(
 /* ────────────────────────── 08 Como se trabaja bien ─────────────────────── */
 {
   section: 'La resolucion',
-  title: 'Ocho decisiones cambian el resultado',
+  title: 'Las reglas cambian el resultado',
   min: '4:30 a 5:30',
   html: `
   <div class="pad">
-    <h1 class="title">Ocho decisiones cambian el resultado</h1>
+    <h1 class="title">Las reglas cambian el resultado</h1>
     <div class="rule"></div>
 
-    <!-- Las cuatro primeras evitan un desastre, las cuatro siguientes dan
-         velocidad. Ese es el orden y es el de las dos tandas. Los iconos van
-         dibujados aqui mismo, de trazo y con la misma reticula de 24, para
-         que no se le pida nada a internet el dia de la ponencia. -->
+    <!-- Cuatro fichas y no ocho. Dos palabras sueltas no significan nada
+         para quien mira la lamina sin oir al expositor, asi que cada ficha
+         lleva su predicado y las otras cuatro reglas van habladas. Las tres
+         primeras evitan un desastre y la cuarta da velocidad, que es el
+         orden en que se dicen. Los iconos van dibujados aqui mismo, de trazo
+         y con la misma reticula de 24, para que no se le pida nada a
+         internet el dia de la ponencia. -->
     <div class="body-area consejos">
-      <div class="grid g4 gap-lg">
+      <div class="grid g2 gap-lg">
 
         <div class="card ficha f1">
           <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3.2l7.2 3v5.4c0 4.2-3 7.7-7.2 8.6-4.2-.9-7.2-4.4-7.2-8.6V6.2z"/><path d="M9.2 11.6h5.6"/></svg></span>
-          <h3>Alcance minimo</h3>
+          <h3>Alcance minimo: ningun permiso de mas</h3>
         </div>
 
         <div class="card ficha f2">
           <span class="ico"><svg viewBox="0 0 24 24"><circle cx="9.4" cy="7.8" r="3.2"/><path d="M3.6 19.6c.5-3.3 3-5.4 5.8-5.4 1.2 0 2.3.3 3.3.9"/><path d="M14.4 17.1l2.1 2.1 3.9-4.3"/></svg></span>
-          <h3>Revision humana</h3>
+          <h3>Revision humana antes de integrar</h3>
         </div>
 
         <div class="card ficha f3">
           <span class="ico"><svg viewBox="0 0 24 24"><rect x="3.8" y="3.8" width="7" height="7" rx="1.7"/><rect x="13.2" y="3.8" width="7" height="7" rx="1.7"/><rect x="3.8" y="13.2" width="7" height="7" rx="1.7"/><rect x="13.2" y="13.2" width="7" height="7" rx="1.7"/></svg></span>
-          <h3>Piezas pequeñas</h3>
+          <h3>Piezas pequeñas con criterio de aceptacion</h3>
         </div>
 
         <div class="card ficha f4">
-          <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 7.4C10.4 6 8.4 5.4 5 5.4v12c3.4 0 5.4.6 7 2 1.6-1.4 3.6-2 7-2v-12c-3.4 0-5.4.6-7 2z"/><path d="M12 7.4v12"/></svg></span>
-          <h3>Skills reutilizables</h3>
-        </div>
-
-        <div class="card ficha f5">
-          <span class="ico"><svg viewBox="0 0 24 24"><circle cx="4.8" cy="12" r="2.6"/><path d="M8.6 12h4.6"/><path d="M11.4 9.8l2.3 2.2-2.3 2.2"/><circle cx="18.4" cy="6.6" r="2.3"/><circle cx="18.4" cy="17.4" r="2.3"/><path d="M18.4 8.9v6.2"/></svg></span>
-          <h3>Issue a PR</h3>
-        </div>
-
-        <div class="card ficha f6">
           <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4.6" width="18" height="14.8" rx="2.4"/><path d="M3 8.6h18"/><path d="M7.4 12.4l2.4 2.2-2.4 2.2"/><path d="M12.6 16.8h4.2"/></svg></span>
-          <h3>Cliente de terminal</h3>
-        </div>
-
-        <div class="card ficha f7">
-          <span class="ico"><svg viewBox="0 0 24 24"><rect x="3.4" y="4.4" width="17.2" height="6.4" rx="1.8"/><rect x="3.4" y="13.2" width="17.2" height="6.4" rx="1.8"/><path d="M6.9 7.6h.01M6.9 16.4h.01"/></svg></span>
-          <h3>Servidor propio</h3>
-        </div>
-
-        <div class="card ficha f8">
-          <span class="ico"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="10" height="18" rx="2.4"/><path d="M8.2 17.8h3.6"/><path d="M18 9.4a4 4 0 010 5.2"/><path d="M20.6 7.2a7.2 7.2 0 010 9.6"/></svg></span>
-          <h3>Control remoto</h3>
+          <h3>Del navegador a la terminal</h3>
         </div>
 
       </div>

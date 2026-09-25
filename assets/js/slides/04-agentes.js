@@ -30,17 +30,17 @@ window.DECK.push(
           </div>
 
           <div class="tb-col"><span class="tb-h">En curso</span>
-            <div class="tb-card ag1"><b>T-041</b><i>copilot</i></div>
-            <div class="tb-card ag2"><b>T-042</b><i>gemini</i></div>
-            <div class="tb-card ag3"><b>T-043</b><i>copilot</i></div>
-            <div class="tb-card choque"><b>T-043</b><i>copilot</i></div>
+            <div class="tb-card ag1"><b>T-041</b><i>copilot-1</i></div>
+            <div class="tb-card ag2"><b>T-042</b><i>copilot-2</i></div>
+            <div class="tb-card ag3"><b>T-043</b><i>copilot-3</i></div>
+            <div class="tb-card choque"><b>T-043</b><i>copilot-3</i></div>
           </div>
 
           <div class="tb-col"><span class="tb-h">Hechas</span>
-            <div class="tb-card ok"><b>T-037</b><i>claude</i></div>
-            <div class="tb-card ok"><b>T-038</b><i>copilot</i></div>
-            <div class="tb-card ok"><b>T-039</b><i>gemini</i></div>
-            <div class="tb-card ok"><b>T-040</b><i>claude</i></div>
+            <div class="tb-card ok"><b>T-037</b><i>copilot-3</i></div>
+            <div class="tb-card ok"><b>T-038</b><i>copilot-1</i></div>
+            <div class="tb-card ok"><b>T-039</b><i>copilot-2</i></div>
+            <div class="tb-card ok"><b>T-040</b><i>copilot-3</i></div>
           </div>
         </div>
 

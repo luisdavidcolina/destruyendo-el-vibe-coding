@@ -5,47 +5,104 @@
    paralelo, la lista de reglas de diseno y la rafaga de proyectos.
    ========================================================================== */
 
+/* Tinte del rechazo. Va en variables porque las usa una animacion, y asi el
+   tema oscuro cambia el tono sin tener que duplicar los fotogramas. */
+:root {
+  --tb-rechazo:   rgba(207, 34, 41, 0.10);
+  --tb-rechazo-2: rgba(207, 34, 41, 0.20);
+}
+
+:root[data-theme="dark"] {
+  --tb-rechazo:   rgba(248, 81, 73, 0.16);
+  --tb-rechazo-2: rgba(248, 81, 73, 0.26);
+}
+
 /* ── El tablero de la lamina 09 ──────────────────────────────────────────
-   Tres columnas con historias. La animacion no decora: enseña tres agentes
-   avanzando a la vez, el choque de dos que entraron con el mismo nombre, y el
-   rechazo del tablero. Sin ella la lamina es una captura muerta. */
+   Es lo unico que hay en el cuerpo de la lamina, asi que manda: crece hasta
+   ocupar todo el alto disponible en vez de dejar un tercio suelto debajo.
+   Las tres tarjetas que antes flotaban aparte ahora son la anotacion que
+   lleva cada columna, pegada a lo que explica. */
 .tablero {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
   background: var(--surface-2);
   border: 1px solid var(--line);
   border-radius: var(--r);
-  padding: 18px 20px 14px;
+  padding: 18px 20px 20px;
+  box-shadow: var(--card-shadow);
   position: relative;
 }
 
 .tb-top {
+  flex: none;
   display: flex;
   align-items: baseline;
   gap: 12px;
-  margin-bottom: 14px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--line-soft);
+  margin-bottom: 15px;
+  padding-bottom: 11px;
+  border-bottom: 1px solid var(--line);
 }
 
-.tb-nom { font-size: 15px; font-weight: 650; color: var(--text); }
+.tb-nom { font-size: 16px; font-weight: 650; color: var(--text); letter-spacing: -0.01em; }
 
+/* La cifra es evidencia, no un rotulo de widget: va al color de acento y a un
+   tamano que se lee desde el fondo del salon. */
 .tb-num {
+  margin-left: auto;
   font-family: var(--font-mono);
-  font-size: 11.5px;
-  color: var(--text-faint);
-  letter-spacing: 0.06em;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.04em;
 }
 
-.tb-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.tb-cols {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-content: start;
+}
 
-.tb-col { display: flex; flex-direction: column; gap: 8px; }
+.tb-col { display: flex; flex-direction: column; gap: 12px; }
+
+/* Nombre de la columna y, debajo, la anotacion de lo que esta pasando en ella */
+.tb-hd {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-bottom: 10px;
+  margin-bottom: 1px;
+  border-bottom: 1px solid var(--line);
+}
 
 .tb-h {
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.18em;
+  font-size: 12px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--text-faint);
-  margin-bottom: 2px;
+  color: var(--text-dim);
+}
+
+.tb-nota {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.tb-nota::before {
+  content: "";
+  flex: none;
+  width: 13px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
 }
 
 /* Las historias en curso dicen quien las esta atendiendo. Sin eso el tablero es
@@ -54,17 +111,19 @@
    lamina. Las hechas van sin nombre, para no gastar palabras en un dato que
    ya no informa. */
 .tb-card {
+  position: relative;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 10px;
+  min-height: 58px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-left: 3px solid var(--line);
   border-radius: var(--r-sm);
-  padding: 8px 12px;
+  padding: 13px 14px;
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 15px;
   color: var(--text-dim);
 }
 
@@ -72,12 +131,11 @@
 
 .tb-card i {
   font-style: normal;
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.04em;
-  color: var(--text-faint);
+  color: var(--text-dim);
 }
 
-/* Cada agente con su color, para que se vea que son tres y no uno */
 /* Un color por proveedor, el mismo en todas las columnas */
 .tb-card.ag1 { border-left-color: var(--accent);    color: var(--text); }
 .tb-card.ag1 i { color: var(--accent); }
@@ -85,50 +143,151 @@
 .tb-card.ag2 i { color: var(--gold); }
 .tb-card.ag3 { border-left-color: var(--accent-2);  color: var(--text); }
 .tb-card.ag3 i { color: var(--accent-2); }
-.tb-card.ok  { opacity: 0.45; }
 
-/* Las tres historias en curso quedan fijas en pantalla. Se probo animarlas
-   entrando y el resultado fue que la columna aparecia vacia buena parte del
-   bucle, que es justo lo contrario de lo que la lamina quiere demostrar.
-   Lo unico que se mueve es el choque. */
-.slide.is-active .tb-card.choque { animation: chocar 6s ease-in-out infinite; }
-.slide.is-active .tb-aviso    { animation: avisar 6s ease-in-out infinite; }
+/* Las hechas ya no se apagan con opacidad: gris claro sobre gris es lo primero
+   que lava el videobeam. Se distinguen por el borde verde y el visto. */
+.tb-card.ok { border-left-color: var(--ok); color: var(--text-dim); }
 
-
-/* El cuarto agente entra con un nombre que ya esta en uso. Los dos creen tener
-   la T-043, el tablero lo detecta y la rechaza. */
-@keyframes chocar {
-  0%, 38%  { opacity: 0; transform: translateY(-6px); }
-  46%      { opacity: 1; transform: none;
-             border-left-color: var(--accent); background: var(--surface); }
-  54%, 70% { opacity: 1;
-             border-left-color: var(--danger); background: rgba(248, 81, 73, 0.14); }
-  80%, 100%{ opacity: 0; transform: translateY(-4px); }
+.tb-card.ok::after {
+  content: "";
+  flex: none;
+  width: 11px;
+  height: 6px;
+  margin-bottom: 4px;
+  border: 2px solid var(--ok);
+  border-top: none;
+  border-right: none;
+  transform: rotate(-45deg);
 }
 
-.tb-aviso {
-  position: absolute;
-  right: 20px;
-  bottom: 12px;
-  font-family: var(--font-mono);
-  font-size: 11.5px;
+/* ── La secuencia del choque ─────────────────────────────────────────────
+   Tres tiempos, una sola pasada y estado final estable:
+
+   0,75 a 1,25 s   tres agentes toman historias distintas, uno tras otro
+   2,40 s          entra una cuarta con un nombre que ya esta en uso
+   3,30 s          las dos T-043 se marcan en rojo, que es la colision
+   3,90 s          el tablero tacha la repetida
+   4,20 s          queda el aviso, y ahi se queda
+
+   Nada corre en bucle y nada termina invisible: el estado base de cada
+   elemento es el estado final, y las animaciones llevan fill "both", de modo
+   que antes de su turno estan ocultas y despues quedan fijas. En impresion y
+   con movimiento reducido se ve directamente el final. */
+@keyframes tomar {
+  from { opacity: 0; transform: translate3d(-16px, 0, 0); }
+  to   { opacity: 1; transform: none; }
+}
+
+.slide.is-active .tb-card.ent { animation: tomar 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.slide.is-active .tb-card.e1  { animation-delay: 0.75s; }
+.slide.is-active .tb-card.e2  { animation-delay: 1.00s; }
+
+/* La tercera ademas acusa el golpe cuando llega la repetida, y vuelve a lo
+   que estaba: el tablero sigue corriendo. */
+.slide.is-active .tb-card.e3 {
+  animation: tomar 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1.25s both,
+             alerta 1.3s ease-in-out 3.3s both;
+}
+
+@keyframes alerta {
+  0%, 100% { box-shadow: none; }
+  25%, 72% { box-shadow: 0 0 0 2px var(--danger); }
+}
+
+/* La cuarta historia entra con el nombre de la tercera. Su estado de reposo
+   es el de rechazada, que es como queda la lamina al final. */
+.tb-card.dup {
+  margin-left: 12px;
+  border-color: var(--danger);
+  border-left-color: var(--danger);
+  background: var(--tb-rechazo);
   color: var(--danger);
-  opacity: 0;
 }
 
-@keyframes avisar {
-  0%, 62%   { opacity: 0; }
-  68%, 82%  { opacity: 1; }
-  90%, 100% { opacity: 0; }
+.tb-card.dup i { color: inherit; }
+
+.slide.is-active .tb-card.dup { animation: colar 2.6s cubic-bezier(0.4, 0, 0.2, 1) 2.4s both; }
+
+@keyframes colar {
+  0% {
+    opacity: 0;
+    transform: translate3d(-16px, 0, 0);
+    border-color: var(--line);
+    border-left-color: var(--accent-2);
+    background: var(--surface);
+    color: var(--text);
+  }
+  22% {
+    opacity: 1;
+    transform: none;
+    border-color: var(--line);
+    border-left-color: var(--accent-2);
+    background: var(--surface);
+    color: var(--text);
+  }
+  40% {
+    border-color: var(--danger);
+    border-left-color: var(--danger);
+    background: var(--tb-rechazo-2);
+    color: var(--danger);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    border-color: var(--danger);
+    border-left-color: var(--danger);
+    background: var(--tb-rechazo);
+    color: var(--danger);
+  }
 }
 
-/* ── Pie de fuente, comun a las dos laminas ──────────────────────────────── */
-.pie-fuente {
-  margin-top: auto;
-  padding-top: 14px;
-  font-size: 13px;
-  color: var(--text-dim);
-  letter-spacing: 0.01em;
+/* El tachado del tablero sobre la historia repetida */
+.tb-card.dup::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 50%;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--danger);
+  transform-origin: left center;
+}
+
+.slide.is-active .tb-card.dup::after { animation: tachar 0.45s ease both; animation-delay: 3.9s; }
+
+@keyframes tachar {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* El aviso ya no vive en una esquina ni se apaga al cerrar el bucle: cuelga de
+   la historia que rechazo y se queda visible el resto de la lamina. */
+.tb-aviso {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 12px;
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  letter-spacing: 0.02em;
+  color: var(--danger);
+}
+
+.tb-aviso::before {
+  content: "";
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--danger);
+}
+
+.slide.is-active .tb-aviso { animation: surgir 0.45s ease 4.2s both; }
+
+@keyframes surgir {
+  from { opacity: 0; transform: translate3d(0, -4px, 0); }
+  to   { opacity: 1; transform: none; }
 }
 
 /* ── Las tres reglas del archivo digital, lamina 10 ──────────────────────── */
@@ -209,3 +368,19 @@ table.t td.hi-cell {
 }
 
 :root[data-theme="dark"] table.t td.hi-cell { background: rgba(88, 166, 255, 0.08); }
+
+/* ── Sin movimiento, todo se ve igual de completo ───────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .slide.is-active .tb-card.ent,
+  .slide.is-active .tb-card.e1,
+  .slide.is-active .tb-card.e2,
+  .slide.is-active .tb-card.e3,
+  .slide.is-active .tb-card.dup,
+  .slide.is-active .tb-card.dup::after,
+  .slide.is-active .tb-aviso,
+  .slide.is-active .rafaga .rf {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

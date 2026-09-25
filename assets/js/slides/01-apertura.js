@@ -80,7 +80,7 @@ window.DECK.push(
 
         <div class="ficha">
           <h1 class="title">Luisdavid Colina</h1>
-          <p class="cargo">Arquitecto de soluciones con inteligencia artificial</p>
+          <p class="cargo">AI Solutions Architect</p>
           <div class="rule"></div>
 
           <!-- Las tres lineas entran una detras de otra, al ritmo en que se
@@ -89,8 +89,23 @@ window.DECK.push(
           <ul class="lineas">
             <li class="linea n1"><em>Integration Manager</em> en Workforce.com</li>
             <li class="linea n2"><em>Auxiliar docente UCV</em>, preparador de Matematica Discreta I</li>
-            <li class="linea n3">Nueve años en tecnologia, <em>seis construyendo sistemas</em></li>
+            <li class="linea n3">Nueve años profesionales en tecnologia, <em>seis construyendo sistemas</em></li>
           </ul>
+
+          <!-- Linea de tiempo de los trabajos, deliberadamente en jerarquia
+               baja: respalda los nueve anos sin competir con las tres lineas
+               de arriba, y ademas llena el tercio inferior que quedaba muerto.
+               Los datos salen del perfil profesional. -->
+          <div class="trayecto">
+            <div class="ty">
+              <span class="ty-p"><b>2017</b>Veconinter</span>
+              <span class="ty-p"><b>2018</b>BDB Soluciones</span>
+              <span class="ty-p"><b>2019</b>IntelliPOS, Peru</span>
+              <span class="ty-p"><b>2021</b>King Code, Brasil</span>
+              <span class="ty-p"><b>2022</b>DreamJob, EE UU</span>
+              <span class="ty-p hoy"><b>2023</b>Workforce.com y Diamond</span>
+            </div>
+          </div>
         </div>
 
       </div>

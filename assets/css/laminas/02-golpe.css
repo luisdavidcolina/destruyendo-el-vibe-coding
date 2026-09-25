@@ -561,11 +561,15 @@
   display: block;
 }
 
+/* El pie lleva ademas .pie-fuente, que es la pieza con la que todo el deck
+   compone las fuentes desde que se subieron de tamaño y se les puso la marca
+   de color delante. Aqui solo queda lo que esa pieza no fija, por si algun
+   dia deja de existir. */
 .nv-pie {
   margin-top: 10px;
   font-family: var(--font-mono);
-  font-size: 12.5px;
-  letter-spacing: 0.08em;
+  font-size: 14.5px;
+  letter-spacing: 0.01em;
   color: var(--text-dim);
 }
 

@@ -306,7 +306,7 @@ if (!String.prototype.padStart) {
         e.preventDefault(); prev(); flashHud(); break;
       case 'Home': e.preventDefault(); show(0); break;
       case 'End':  e.preventDefault(); show(total - 1); break;
-      case 'i': case 'I': show(1); break;
+      case 'i': case 'I': show(0); break;   // a la portada, no a la segunda
       case 'b': case 'B': blackout.classList.toggle('on'); break;
       case 't': case 'T': toggleTheme(); break;
       case 'r': case 'R': toggleTimer(); break;
@@ -358,7 +358,7 @@ if (!String.prototype.padStart) {
     var a = b.getAttribute('data-act');
     if (a === 'prev') prev();
     if (a === 'next') next();
-    if (a === 'index') show(1);
+    if (a === 'index') show(0);   // este deck no tiene lamina de indice: va a la portada
     if (a === 'theme') toggleTheme();
     if (a === 'full') toggleFull();
     if (a === 'help') helpEl.classList.toggle('on');

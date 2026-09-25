@@ -170,7 +170,7 @@ window.DECK.push(
             <div class="nv-marco">
               <img src="assets/img/nota-pocketos.png" alt="Titular de Hackread sobre el borrado de la base de datos y los respaldos de PocketOS en nueve segundos">
             </div>
-            <figcaption class="nv-pie">Hackread, 29 de abril de 2026</figcaption>
+            <figcaption class="nv-pie pie-fuente">Hackread, 29 de abril de 2026</figcaption>
           </figure>
 
           <!-- Al llegar a nueve no se apaga nada. Entra lo que costo, y esto

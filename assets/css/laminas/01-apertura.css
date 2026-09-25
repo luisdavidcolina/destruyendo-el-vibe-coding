@@ -291,3 +291,126 @@
 /* El retrato bajaba a ficha: a 430 de alto ocupaba media lamina e intimidaba */
 .quien .retrato { width: 210px; height: 210px; border-radius: 50%; }
 .quien .retrato .foto { background-position: center 22%; background-size: cover; }
+
+/* ── La linea de tiempo de la lamina 02 ──────────────────────────────────
+   Va en jerarquia baja a proposito. No es informacion que la sala tenga que
+   leer, es respaldo de los nueve anos: se percibe que hay recorrido sin que
+   nadie se ponga a leer nombres de empresas mientras el expositor habla.
+   Y de paso ocupa el tercio inferior, que estaba vacio. */
+.quien .trayecto { margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--line-soft); }
+
+.quien .ty { display: flex; align-items: flex-start; gap: 0; }
+
+.quien .ty-p {
+  flex: 1;
+  position: relative;
+  padding-top: 16px;
+  padding-right: 12px;
+  font-size: 14px;
+  line-height: 1.3;
+  color: var(--text-faint);
+}
+
+/* El riel y el punto de cada parada */
+.quien .ty-p::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 4px;
+  height: 1px;
+  background: var(--line);
+}
+
+.quien .ty-p::after {
+  content: "";
+  position: absolute;
+  left: 0; top: 1px;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--line);
+}
+
+.quien .ty-p b {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dim);
+  margin-bottom: 2px;
+}
+
+/* La parada actual es la unica con color, y aun asi discreta */
+.quien .ty-p.hoy { color: var(--text-dim); }
+.quien .ty-p.hoy b { color: var(--accent); }
+.quien .ty-p.hoy::after { background: var(--accent); }
+.quien .ty-p.hoy::before { background: linear-gradient(90deg, var(--accent), transparent); }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Correcciones de la portada, sobre lo ya construido.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* 1. El rojo. El salmon sobre granate oscuro es el par que peor aguanta un
+      videobeam: el proyector lava el fondo y el texto se acerca al fondo hasta
+      desaparecer. Rojo saturado de verdad y texto casi blanco. */
+.cover.portada .dl.rm {
+  background: #8E1519;
+  box-shadow: inset 5px 0 0 #F85149;
+}
+
+.cover.portada .dl.rm .ink { color: #FFECEA; }
+.cover.portada .dl.rm .sig { color: #FF9A92; }
+.cover.portada .tachon { background: #FFECEA; }
+
+/* 2. El verde, por el mismo motivo */
+.cover.portada .dl.ad {
+  background: #11502B;
+  box-shadow: inset 5px 0 0 #3FB950;
+}
+
+.cover.portada .dl.ad .ink.verde { color: #E9FFEF; }
+.cover.portada .dl.ad .sig { color: #7EE787; }
+
+/* 3. El signo se leia como un rectangulo suelto separado de la palabra. Va en
+      canal izquierda, del ancho fijo de un caracter, como en un diff de
+      verdad, y pegado a su linea. */
+.cover.portada .dl .sig {
+  width: 52px;
+  text-align: center;
+  opacity: 0.9;
+}
+
+/* 4. La tarjeta blanca de los logos era el objeto mas brillante de una lamina
+      casi negra, asi que la vista iba ahi antes que al titulo. Se conserva la
+      placa, porque los logos institucionales son arte solido en negro y
+      silueteados el de Ciencias se convierte en una mancha, pero se apaga
+      hasta dejar de competir. */
+.cover.portada .logos {
+  background: rgba(255, 255, 255, 0.82);
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.cover.portada .logos img { height: 26px; }
+
+/* 5. La linea verde tiene que leerse como la hermana de la roja: misma sangre
+      completa, mismo canal de signo, y el titulo a un cuerpo que se vea desde
+      el fondo. Habia quedado a un tercio de su tamano y sin salir a los
+      bordes, asi que parecia un pie de la roja en vez de su respuesta. */
+.cover.portada .dl.ad {
+  margin-left: calc(var(--pad-x) * -1);
+  margin-right: calc(var(--pad-x) * -1);
+  margin-top: 0;
+  padding: 18px var(--pad-x);
+  align-items: center;
+}
+
+.cover.portada .dl.ad .ink.verde {
+  font-family: var(--font-display);
+  font-size: 54px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  white-space: nowrap;
+}
+
+/* El signo de la verde, del mismo ancho de canal que el de la roja */
+.cover.portada .dl.ad .sig { font-size: 54px; line-height: 1; }

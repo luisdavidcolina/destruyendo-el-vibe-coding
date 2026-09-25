@@ -1,7 +1,18 @@
 /* 05 - Tercer acto y cierre: laminas 11, 12, 13 y 14
-   La 12 reutiliza a proposito el componente .enf de la lamina 04. El eco
-   visual es el recurso narrativo de la ponencia: la sala reconoce la forma y
-   entiende sola que es el mismo error otra vez. */
+
+   11 La pila de capas. Los nombres van al hueso, una o dos palabras, porque
+      lo que argumenta es la pila con sus anos y no la redaccion de cada
+      capa. Lo demas se dice hablando.
+   12 Reutiliza el componente .enf de la lamina 04 TAL CUAL, con las mismas
+      clases y los mismos tiempos, y sin una sola regla propia de estilo. El
+      eco visual es el recurso narrativo de la ponencia: la sala reconoce la
+      forma y entiende sola que es el mismo error otra vez. La barra de
+      arriba mide lo mismo que la de la 04, 132 pixeles, para que el eje
+      caiga en el mismo punto de la pantalla.
+   13 y 14 quedan como estaban.
+
+   El rotulo pequeno de seccion salio de todas las laminas del deck, por
+   decision de base.css, asi que aqui tampoco se escribe. */
 window.DECK.push(
 
 /* ─────────────── 11 Ninguna capa borro la de abajo ─────────────── */
@@ -11,67 +22,77 @@ window.DECK.push(
   min: '8:05 a 8:40',
   html: `
   <div class="pad">
-    <div class="kicker anim" data-d="1">Las capas y sus modas</div>
     <h1 class="title anim" data-d="2">Ninguna capa borro la de abajo</h1>
     <div class="rule"></div>
 
     <div class="body-area">
       <div class="pila anim f" data-d="3">
-        <div class="cp ahora"><span class="cp-i"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="18" r="2.4"/><circle cx="19" cy="18" r="2.4"/><path d="M12 7.4v4.2M12 11.6L6.4 16M12 11.6L17.6 16"/></svg></span><span class="cp-a">ahora</span><span class="cp-n">Orquestacion de agentes</span></div>
-        <div class="cp"><span class="cp-i"><svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 000-8 6 6 0 00-11.6 2A3.5 3.5 0 006 18z"/></svg></span><span class="cp-a">2010</span><span class="cp-n">Nube y servicios gestionados</span></div>
-        <div class="cp"><span class="cp-i"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="7" rx="1"/><rect x="13" y="4" width="8" height="7" rx="1"/><rect x="3" y="13" width="8" height="7" rx="1"/><rect x="13" y="13" width="8" height="7" rx="1"/></svg></span><span class="cp-a">1990</span><span class="cp-n">Bibliotecas y marcos</span></div>
-        <div class="cp"><span class="cp-i"><svg viewBox="0 0 24 24"><path d="M9 4c-2 0-2 3-2 4s0 4-3 4c3 0 3 3 3 4s0 4 2 4"/><path d="M15 4c2 0 2 3 2 4s0 4 3 4c-3 0-3 3-3 4s0 4-2 4"/></svg></span><span class="cp-a">1957</span><span class="cp-n">Lenguajes de alto nivel</span></div>
+        <div class="cp ahora"><span class="cp-i"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="18" r="2.4"/><circle cx="19" cy="18" r="2.4"/><path d="M12 7.4v4.2M12 11.6L6.4 16M12 11.6L17.6 16"/></svg></span><span class="cp-a">ahora</span><span class="cp-n">Agentes</span></div>
+        <div class="cp"><span class="cp-i"><svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 000-8 6 6 0 00-11.6 2A3.5 3.5 0 006 18z"/></svg></span><span class="cp-a">2010</span><span class="cp-n">Nube</span></div>
+        <div class="cp"><span class="cp-i"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="7" rx="1"/><rect x="13" y="4" width="8" height="7" rx="1"/><rect x="3" y="13" width="8" height="7" rx="1"/><rect x="13" y="13" width="8" height="7" rx="1"/></svg></span><span class="cp-a">1990</span><span class="cp-n">Bibliotecas</span></div>
+        <div class="cp"><span class="cp-i"><svg viewBox="0 0 24 24"><path d="M9 4c-2 0-2 3-2 4s0 4-3 4c3 0 3 3 3 4s0 4 2 4"/><path d="M15 4c2 0 2 3 2 4s0 4 3 4c-3 0-3 3-3 4s0 4-2 4"/></svg></span><span class="cp-a">1957</span><span class="cp-n">Alto nivel</span></div>
         <div class="cp"><span class="cp-i"><svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1"/><path d="M10 7V4M14 7V4M10 20v-3M14 20v-3M7 10H4M7 14H4M20 10h-3M20 14h-3"/></svg></span><span class="cp-a">1950</span><span class="cp-n">Ensamblador</span></div>
-        <div class="cp"><span class="cp-i"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><circle cx="7.5" cy="10" r="1.1"/><circle cx="11" cy="10" r="1.1"/><circle cx="14.5" cy="10" r="1.1"/><circle cx="7.5" cy="14" r="1.1"/><circle cx="14.5" cy="14" r="1.1"/></svg></span><span class="cp-a">1940</span><span class="cp-n">Tarjetas perforadas</span></div>
+        <div class="cp"><span class="cp-i"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><circle cx="7.5" cy="10" r="1.1"/><circle cx="11" cy="10" r="1.1"/><circle cx="14.5" cy="10" r="1.1"/><circle cx="7.5" cy="14" r="1.1"/><circle cx="14.5" cy="14" r="1.1"/></svg></span><span class="cp-a">1940</span><span class="cp-n">Tarjetas</span></div>
       </div>
 
+      <!-- La franja no lleva rotulo escrito: el sello de la izquierda dice
+           que son credenciales sin gastar una sola palabra, y de que van se
+           cuenta hablando. Los nombres largos quedan en su codigo o en su
+           marca, que es como aparecen en las ofertas de trabajo. -->
       <div class="credenciales anim" data-d="6">
-        <span class="cr-t">La fiebre de ahora</span>
+        <span class="cr-sello"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.4"/><path d="M8.4 13.4L7 21l5-2.5 5 2.5-1.4-7.6"/></svg></span>
         <span class="cr">GH-300</span>
         <span class="cr">AI-103</span>
-        <span class="cr">Claude Certified</span>
-        <span class="cr">AWS AI Practitioner</span>
-        <span class="cr">Google ML Engineer</span>
-        <span class="cr">IBM RAG y agentes</span>
+        <span class="cr">Claude</span>
+        <span class="cr">AWS</span>
+        <span class="cr">Google</span>
+        <span class="cr">IBM</span>
       </div>
     </div>
   </div>`
 },
 
-/* ─────────────── 12 Creen que entienden. No siempre ─────────────── */
+/* ─────────────── 12 Creen que entienden, y no ─────────────── */
 {
   section: 'Las bases',
   title: 'Creen que entienden, y no',
   min: '8:40 a 9:10',
   html: `
   <div class="pad">
-    <div class="kicker anim" data-d="1">Las bases</div>
-    <h1 class="title anim" data-d="2">Creen que entienden, y no</h1>
+    <h1 class="title">Creen que entienden, y no</h1>
     <div class="rule"></div>
 
-    <!-- Se probo reutilizando las barras verticales de la lamina 04 y no
-         funciono: con 85 contra 16 sale un bloque enorme y una astilla, y
-         media lamina queda vacia. La desproporcion es el argumento, asi que
-         se dibuja a lo ancho, donde se ve de golpe. -->
-    <div class="body-area brechas">
+    <!-- Misma pieza .enf de la lamina 04. Mismas clases, mismo orden, mismos
+         altos de mitad y mismos tiempos de animacion. Lo unico que cambia son
+         los datos, que es justo lo que la pieza recibe por el marcado.
 
-      <div class="br anim" data-d="3">
-        <div class="br-top">
-          <span class="br-eti">Junior que dice entender el codigo que entrega</span>
-          <span class="br-cif">85 %</span>
+         La barra de arriba mide 132 pixeles, exactamente la misma que la de
+         la 04, asi que el eje cae en el mismo punto de la pantalla y la sala
+         ve arrancar la misma imagen de hace nueve minutos. La de abajo baja a
+         25, que es lo que le toca por proporcion frente a 132. Que la mitad
+         inferior quede casi vacia no es un descuido: es el argumento.
+
+         No lleva el signo .sg que si llevan las barras de la 04, porque alli
+         los numeros son variaciones y aqui son proporciones. Un mas o un
+         menos delante diria algo falso. -->
+    <div class="body-area enf-area">
+      <div class="enf">
+
+        <div class="enf-arriba">
+          <span class="enf-eti">Los junior que dicen entender</span>
+          <span class="enf-cifra" style="--to:85"><i class="nm"></i><i class="pc">%</i></span>
+          <span class="enf-barra" style="--h:132px"></span>
         </div>
-        <div class="br-riel"><span class="br-fill alto" style="--w:85%"></span></div>
-      </div>
 
-      <div class="br anim" data-d="5">
-        <div class="br-top">
-          <span class="br-eti">Senior que confirma que lo entienden</span>
-          <span class="br-cif bajo">16 %</span>
+        <div class="enf-eje"></div>
+
+        <div class="enf-abajo">
+          <span class="enf-barra" style="--h:25px"></span>
+          <span class="enf-cifra" style="--to:16"><i class="nm"></i><i class="pc">%</i></span>
+          <span class="enf-eti">Los senior que lo confirman</span>
         </div>
-        <div class="br-riel"><span class="br-fill bajo" style="--w:16%"></span></div>
-      </div>
 
-      <div class="br-nota anim" data-d="7">Sesenta y nueve puntos de diferencia entre creerlo y que alguien lo confirme</div>
+      </div>
     </div>
 
     <div class="fuente anim" data-d="8">BairesDev, Dev Barometer, 1.569 desarrolladores en 77 paises, 2026</div>

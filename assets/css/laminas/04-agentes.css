@@ -1,0 +1,165 @@
+/* ==========================================================================
+   04-agentes.css : laminas 09 y 10
+
+   Lo unico que no cubria components.css: el tablero con agentes trabajando en
+   paralelo, la lista de reglas de diseno y la rafaga de proyectos.
+   ========================================================================== */
+
+/* ── El tablero de la lamina 09 ──────────────────────────────────────────
+   Tres columnas con historias. La animacion no decora: enseña tres agentes
+   avanzando a la vez, el choque de dos que entraron con el mismo nombre, y el
+   rechazo del tablero. Sin ella la lamina es una captura muerta. */
+.tablero {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 18px 20px 14px;
+  position: relative;
+}
+
+.tb-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+.tb-col { display: flex; flex-direction: column; gap: 8px; }
+
+.tb-h {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 2px;
+}
+
+.tb-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--line);
+  border-radius: var(--r-sm);
+  padding: 9px 12px;
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  color: var(--text-dim);
+}
+
+/* Cada agente con su color, para que se vea que son tres y no uno */
+.tb-card.ag1 { border-left-color: var(--accent);   color: var(--text); }
+.tb-card.ag2 { border-left-color: var(--accent-2); color: var(--text); }
+.tb-card.ag3 { border-left-color: var(--accent-2); color: var(--text); }
+.tb-card.ok  { border-left-color: var(--ok); opacity: 0.55; }
+
+/* Las dos historias que se pisan por llevar el mismo nombre */
+.slide.is-active .tb-card.ag1 { animation: tomar 6s ease-in-out infinite; }
+.slide.is-active .tb-card.ag2 { animation: tomar 6s ease-in-out 0.4s infinite; }
+.slide.is-active .tb-card.ag3 { animation: chocar 6s ease-in-out infinite; }
+.slide.is-active .tb-aviso    { animation: avisar 6s ease-in-out infinite; }
+
+@keyframes tomar {
+  0%, 12%   { opacity: 0; transform: translateY(-6px); }
+  20%, 100% { opacity: 1; transform: none; }
+}
+
+@keyframes chocar {
+  0%, 30%  { opacity: 0; transform: translateY(-6px); }
+  38%      { opacity: 1; transform: none; }
+  /* aqui los dos creen tener la misma historia */
+  46%, 62% { opacity: 1; border-left-color: var(--danger); background: rgba(248, 81, 73, 0.12); }
+  70%, 100%{ opacity: 0; transform: translateY(-4px); }
+}
+
+.tb-aviso {
+  position: absolute;
+  right: 20px;
+  bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--danger);
+  opacity: 0;
+}
+
+@keyframes avisar {
+  0%, 62%   { opacity: 0; }
+  68%, 82%  { opacity: 1; }
+  90%, 100% { opacity: 0; }
+}
+
+/* ── Pie de fuente, comun a las dos laminas ──────────────────────────────── */
+.pie-fuente {
+  margin-top: auto;
+  padding-top: 14px;
+  font-size: 11.5px;
+  color: var(--text-faint);
+  letter-spacing: 0.01em;
+}
+
+/* ── Las tres reglas del archivo digital, lamina 10 ──────────────────────── */
+.reglas { list-style: none; margin-top: 8px; }
+
+.reglas li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 15.5px;
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 7px;
+}
+
+/* Un candado dibujado con dos pseudoelementos, sin iconos externos */
+.reglas li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 11px;
+  height: 8px;
+  border: 1.6px solid var(--accent);
+  border-radius: 2px;
+}
+
+.reglas li::after {
+  content: "";
+  position: absolute;
+  left: 2.5px;
+  top: 1px;
+  width: 6px;
+  height: 6px;
+  border: 1.6px solid var(--accent);
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+}
+
+/* ── La rafaga de proyectos ──────────────────────────────────────────────
+   Van numerados y entran uno tras otro, rapido. La velocidad es el mensaje:
+   que sean muchos es justamente lo que se esta demostrando. */
+.rafaga { display: flex; flex-direction: column; gap: 9px; justify-content: center; }
+
+.rafaga .rf {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15.5px;
+  color: var(--text-dim);
+  opacity: 0;
+}
+
+.rafaga .rf span {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--accent);
+  flex: none;
+}
+
+.slide.is-active .rafaga .rf { animation: rise 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.slide.is-active .rafaga .rf:nth-child(1) { animation-delay: 0.60s; }
+.slide.is-active .rafaga .rf:nth-child(2) { animation-delay: 0.78s; }
+.slide.is-active .rafaga .rf:nth-child(3) { animation-delay: 0.96s; }
+.slide.is-active .rafaga .rf:nth-child(4) { animation-delay: 1.14s; }
+.slide.is-active .rafaga .rf:nth-child(5) { animation-delay: 1.32s; }
+
+/* ── La columna que gana, en la tabla comparativa ────────────────────────── */
+table.t td.hi-cell {
+  color: var(--text);
+  font-weight: 650;
+  background: rgba(9, 105, 218, 0.06);
+}
+
+:root[data-theme="dark"] table.t td.hi-cell { background: rgba(88, 166, 255, 0.08); }

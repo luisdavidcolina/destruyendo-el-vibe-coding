@@ -1,22 +1,39 @@
-/* 01 - Apertura: portada y plan de la ponencia
-   Dev Days 2026, Auditorio Manuel Bemporad, Escuela de Computacion, UCV.
-   Viernes 2 de octubre de 2026, 11:00 AM.
-   PENDIENTE: el titulo de la ponencia y la duracion del turno. */
+/* ==========================================================================
+   01-apertura.js : laminas 01 y 02
+
+   01  Portada. El iceberg a sangre completa y el titulo encima. La marca de
+       GitHub sale de aqui: las condiciones de marca piden que su logo quede
+       menos prominente que la marca propia y que no sugiera respaldo, y esta
+       ponencia lleva opinion propia. Quedan los tres logos institucionales,
+       pequeños, que son los de la casa.
+   02  Quien expone. Veinte segundos, un retrato y cuatro lineas.
+
+   El clip del iceberg todavia no existe. La capa de video queda escrita igual
+   que la escribe el motor, con data-src, y mientras tanto manda el respaldo
+   dibujado en laminas/01-apertura.css, que ya se ve terminado.
+   ========================================================================== */
 window.DECK.push(
 
-/* ─────────────────────────────── 01 Portada ─────────────────────────────── */
+/* ───────────────────────── 01 Portada, el iceberg ───────────────────────── */
 {
-  section: 'Portada',
-  title: 'Portada',
+  section: 'Apertura',
+  title: 'Destruyendo el vibe coding',
   min: '0:00 a 0:20',
   bare: true,
   cinema: true,
   html: `
+  <!-- Misma estructura que arma el motor cuando una lamina declara video.
+       Va escrita aqui para poder marcar el respaldo con la clase berg, que
+       es la que dibuja el hielo y la linea de agua mientras falte el clip.
+       Cuando el archivo exista, el video se carga solo y tapa el respaldo. -->
+  <div class="slide-video">
+    <div class="video-missing berg"></div>
+    <video muted loop playsinline preload="none" data-src="assets/video/iceberg-portada.mp4"></video>
+  </div>
+
   <div class="pad">
-    <div class="cover">
-      <!-- El evento es de la Escuela de Computacion, asi que los tres logos
-           institucionales se quedan. Sobre el fondo oscuro de la portada
-           desaparecerian, por eso van sobre placa blanca. -->
+    <div class="cover portada">
+
       <div class="logos anim z" data-d="1">
         <img src="assets/logos/logo_ucv.png" alt="Universidad Central de Venezuela">
         <span class="sep"></span>
@@ -25,75 +42,60 @@ window.DECK.push(
         <img src="assets/logos/logo_computacion.png" alt="Escuela de Computacion">
       </div>
 
-      <div class="uni anim sr" data-d="2">Dev Days 2026, Caracas (UCV)</div>
-
-      <img class="marca anim z" data-d="3" style="height:66px"
-           src="assets/logos/github-mark-blanco.svg" alt="GitHub">
-
-      <h1 class="anim" data-d="4">
-        <span class="thin">PENDIENTE, antetitulo</span>
-        PENDIENTE
+      <!-- Entra con mascara de abajo hacia arriba, como si emergiera. La
+           animacion ya vive en motion.css para todo h1 dentro de .cover. -->
+      <h1>
+        <span class="a">Destruyendo</span>
+        <span class="b">el vibe coding</span>
       </h1>
 
-      <p class="lede anim" data-d="5">
-        PENDIENTE, una sola frase que diga de que trata la ponencia y a quien le sirve. El
-        publico son estudiantes, entusiastas del codigo y desarrolladores en formacion.
-      </p>
+      <p class="frase anim" data-d="4">Lo que se ve es el prompt.</p>
 
-      <div class="who anim" data-d="7">
-        <div><b>Luisdavid Colina</b>Licenciatura en Computacion, UCV</div>
-        <div><b>Portafolio</b>luisdavidcolina.com</div>
-        <div><b>GitHub</b>github.com/luisdavidcolina</div>
-        <div><b>LinkedIn</b>linkedin.com/in/luisdavidcolina</div>
-        <div><b>Dev Days 2026</b>Auditorio Manuel Bemporad</div>
-        <div><b>Caracas</b>Viernes 2 de octubre de 2026, 11:00 AM</div>
-      </div>
+      <!-- La regla de la casa, aqui haciendo de linea de agua: se traza de
+           izquierda a derecha justo entre las dos frases, y separa lo que se
+           ve de lo que no. -->
+      <div class="rule"></div>
+
+      <p class="frase hondo anim" data-d="9">Debajo esta todo lo demas.</p>
+
+      <div class="uni firma anim" data-d="12">Luisdavid Colina</div>
+
     </div>
   </div>`
 },
 
-/* ────────────────────────── 02 Plan de la ponencia ──────────────────────── */
+/* ───────────────────────────── 02 Quien expone ──────────────────────────── */
 {
-  section: 'Objetivo',
-  title: 'Objetivo de la ponencia',
-  min: '0:20 a 0:45',
+  section: 'Apertura',
+  title: 'Quien expone',
+  min: '0:20 a 0:40',
   html: `
   <div class="pad">
-    <div class="kicker anim" data-d="1">Objetivo</div>
-    <h1 class="title anim" data-d="2">Objetivo de la ponencia</h1>
-    <p class="subtitle anim" data-d="3">
-      PENDIENTE, que se lleva quien escucha.
-    </p>
-    <div class="rule"></div>
+    <div class="body-area quien">
+      <div class="grid g-1-2 gap-lg center-y">
 
-    <div class="body-area">
-      <!-- La linea de tiempo se reparte con flex: un bloque de 2 min lleva
-           flex:2 y uno de 1 min lleva flex:1. data-go salta a esa lamina. -->
-      <div class="anim f" data-d="4">
-        <div class="tl">
-          <div class="tl-seg"     style="flex:1" data-go="3"><span class="n">01</span><span class="l">PENDIENTE</span><span class="m">1 min</span></div>
-          <div class="tl-seg hot" style="flex:2" data-go="4"><span class="n">02</span><span class="l">PENDIENTE</span><span class="m">2 min</span></div>
-          <div class="tl-seg"     style="flex:1" data-go="5"><span class="n">03</span><span class="l">PENDIENTE</span><span class="m">1 min</span></div>
-          <div class="tl-seg"     style="flex:1" data-go="6"><span class="n">04</span><span class="l">Cierre</span><span class="m">1 min</span></div>
-        </div>
-        <div class="tl-axis">
-          <span>0 MIN</span><span>2</span><span>4</span><span>6</span><span>8</span><span>10 MIN</span>
-        </div>
-      </div>
+        <!-- Hueco del retrato. La foto entra como fondo desde la hoja de
+             estilo: si el archivo no esta, el navegador descarta esa capa y
+             queda la silueta, que se lee como sitio reservado y no como un
+             error de carga. -->
+        <figure class="retrato anim z" data-d="1" role="img" aria-label="Retrato de Luisdavid Colina">
+          <span class="foto"></span>
+        </figure>
 
-      <div class="grid g3 gap-lg" style="margin-top:30px">
-        <div class="card anim" data-d="5">
-          <span class="card-ix">PRIMERA PARTE</span>
-          <h3>PENDIENTE</h3>
+        <div class="ficha">
+          <h1 class="title">Luisdavid Colina</h1>
+          <div class="rule"></div>
+
+          <!-- Las tres lineas entran una detras de otra, al ritmo en que se
+               dicen. El ritmo va en CSS porque el motor no tiene pasos dentro
+               de una lamina. La segunda es la que pesa en este auditorio. -->
+          <ul class="lineas">
+            <li class="linea n1">Siete años integrando sistemas de empresa</li>
+            <li class="linea n2">Auxiliar docente y <em>preparador de Matematica Discreta I</em></li>
+            <li class="linea n3">Claude Certified Architect</li>
+          </ul>
         </div>
-        <div class="card anim" data-d="6">
-          <span class="card-ix">SEGUNDA PARTE</span>
-          <h3>PENDIENTE</h3>
-        </div>
-        <div class="card lit anim" data-d="7">
-          <span class="card-ix">TERCERA PARTE</span>
-          <h3>PENDIENTE</h3>
-        </div>
+
       </div>
     </div>
   </div>`

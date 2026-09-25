@@ -1,19 +1,66 @@
 /* ==========================================================================
    fuentes.css : la tipografia viaja dentro de la carpeta
 
-   Antes se le pedia a Google Fonts. Sin internet el navegador caia en la
-   letra del sistema y el diseno cambiaba, ademas de que una hoja remota
+   Nunca se le pide nada a internet. Sin conexion el navegador caeria en la
+   letra del sistema y el diseno cambiaria, ademas de que una hoja remota
    tarda en rendirse y retrasa el primer dibujado. Los archivos estan aqui,
-   asi que se ve igual en el salon, en Linux y en cualquier maquina.
+   asi que el deck se ve igual en el salon, en Linux y en cualquier maquina
+   prestada.
 
-   Source Sans 3, de Adobe, bajo licencia SIL Open Font 1.1. Solo los
-   subconjuntos latinos, que es lo unico que usa el texto.
+   Mona Sans, la tipografia propia de GitHub, bajo licencia SIL Open Font 1.1
+   (la licencia completa viaja al lado, en ofl-mona-sans.txt). El evento es de
+   GitHub, asi que el deck se lee como parte del evento y no como algo ajeno.
 
-   Es una fuente variable: un solo archivo por subconjunto cubre los cinco
-   pesos. Cada regla fija el suyo y el navegador lo instancia del eje.
+   Es una fuente variable. Un solo archivo cubre todo el eje de peso, de 200 a
+   900, en vez de un archivo por peso. El deck pide 300, 400, 500, 550, 600,
+   650, 700 y 900, y con el eje continuo cada uno sale exacto en lugar de
+   redondearse al peso mas cercano, que es lo que pasaba antes.
+
+   Tambien trae eje de tamano optico (opsz, de 1 a 100). El navegador lo mueve
+   solo segun el font-size, asi que los titulares grandes reciben el dibujo de
+   display, con detalle mas fino y espaciado mas cerrado, y el texto chico
+   recibe el dibujo pensado para leerse. Eso ya es el comportamiento por
+   defecto de font-optical-sizing, no hace falta declarar nada.
+
+   La cursiva va en archivo aparte. El deck casi no la usa (solo los
+   comentarios dentro de los bloques de codigo), y al declararla como una cara
+   propia el navegador solo la descarga si aparece en pantalla, ademas de
+   evitar que la incline de mentira.
    ========================================================================== */
 
 @font-face {
+  font-family: "Mona Sans";
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url("../fonts/mona-sans-variable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Mona Sans";
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url("../fonts/mona-sans-variable-italic.woff2") format("woff2");
+}
+
+/* ==========================================================================
+   Respaldo: Source Sans 3
+
+   Los archivos de Source Sans 3 siguen en assets/fonts/ a proposito, con su
+   licencia en ofl.txt. Si el equipo del salon resulta ser tan viejo que no
+   entiende fuentes variables, Mona Sans se dibujaria en su instancia por
+   defecto, que es el peso 200, y todo el deck se veria en ExtraLight, casi
+   invisible proyectado. En ese caso se descomenta el bloque de aqui abajo y
+   se antepone "Source Sans 3" en las tres variables de base.css
+   (--font-display, --font-body y --font-mono). No hay que descargar nada.
+
+   Source Sans 3 tambien es variable, pero se declara peso por peso, que es
+   como venia funcionando antes y no depende del eje. Van los dos subconjuntos
+   latinos, que es lo unico que usa el texto.
+   ==========================================================================
+
+@font-face {
   font-family: "Source Sans 3";
   font-style: normal;
   font-weight: 400;
@@ -102,3 +149,5 @@
   src: url("../fonts/source-sans-3-latin.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
+   ========================================================================== */

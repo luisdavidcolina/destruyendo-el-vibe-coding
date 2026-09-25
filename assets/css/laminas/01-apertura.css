@@ -1,0 +1,241 @@
+/* ==========================================================================
+   laminas/01-apertura.css : lo propio de las laminas 01 y 02
+
+   Solo esta aqui lo que components.css no cubre: el respaldo dibujado del
+   iceberg, el tamaño de la portada sin la marca de GitHub y el ritmo de
+   entrada de las tres lineas de la lamina 02.
+
+   Todos los selectores cuelgan de .portada o de .quien, y llevan una clase
+   de mas a proposito, para que valgan aunque esta hoja se cargue antes que
+   components.css.
+   ========================================================================== */
+
+/* ══════════════════════════════════════════════════════════════════════════
+   01 Portada
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Respaldo del clip ───────────────────────────────────────────────────
+   Mientras no exista assets/video/iceberg-portada.mp4 esto es lo que se
+   proyecta, asi que no puede ser un degradado cualquiera: la linea de agua
+   cae al 52 por ciento y cruza la lamina entera, arriba queda cielo y abajo
+   el azul profundo. Cuando llegue el archivo, el video lo tapa. */
+.video-missing.berg {
+  background:
+    radial-gradient(760px 320px at 64% 50%, rgba(126, 201, 232, 0.18), transparent 70%),
+    radial-gradient(940px 540px at 58% 88%, rgba(18, 94, 133, 0.40), transparent 74%),
+    linear-gradient(180deg,
+      #050D16 0%,
+      #0A1B29 25%,
+      #123247 47%,
+      #0E4058 52%,
+      #0A2A3E 72%,
+      #040F19 100%);
+}
+
+/* La masa de hielo. Un solo recorte: la punta pequeña sobre el agua y el
+   bloque ancho debajo. El relleno se apaga al cruzar el 52 por ciento, que
+   es lo que hace leer la parte de abajo como sumergida. */
+.video-missing.berg::after {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0;
+  clip-path: polygon(
+    46.5% 52%, 51% 41%, 57.5% 26.5%, 62% 35%, 69.5% 52%,
+    81% 61%, 87% 79%, 77% 100%, 33% 100%, 26% 73%, 38.5% 57%
+  );
+  background: linear-gradient(180deg,
+    rgba(236, 248, 255, 0.94) 26%,
+    rgba(208, 236, 250, 0.90) 50%,
+    rgba(104, 184, 218, 0.40) 53%,
+    rgba(44, 128, 168, 0.28) 72%,
+    rgba(14, 62, 94, 0.14) 100%);
+}
+
+/* La luz sobre el agua, por delante del hielo */
+.video-missing.berg::before {
+  content: "";
+  position: absolute;
+  left: -8%;
+  right: -8%;
+  top: 51.2%;
+  height: 10px;
+  z-index: 1;
+  opacity: 0.42;
+  filter: blur(3px);
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(188, 226, 246, 0.34) 26%,
+    rgba(214, 240, 252, 0.52) 58%,
+    transparent 100%);
+}
+
+/* Deriva muy lenta, la unica animacion de atmosfera de toda la ponencia. Es
+   la lamina donde todavia no hay informacion que proteger, y dura los dos
+   segundos que se deja respirar antes de hablar. La escala evita que el
+   desplazamiento descubra el borde. */
+@keyframes bergDeriva {
+  from { transform: translate3d(-1.6%, 0, 0) scale(1.05); }
+  to   { transform: translate3d(1.6%, 0, 0) scale(1.05); }
+}
+
+@keyframes bergAgua {
+  from { opacity: 0.24; transform: translate3d(-1.2%, 0, 0); }
+  to   { opacity: 0.60; transform: translate3d(1.2%, 0, 0); }
+}
+
+.slide.is-active .video-missing.berg          { animation: bergDeriva 38s ease-in-out infinite alternate; }
+.slide.is-active .video-missing.berg::before  { animation: bergAgua 14s ease-in-out infinite alternate; }
+
+/* El motor escribe el respaldo antes del video, y un elemento posicionado se
+   pinta por encima de uno que no lo esta, asi que el clip quedaria tapado el
+   dia que exista. Se levanta el video, y solo en esta lamina. */
+.video-missing.berg + video {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0;
+  z-index: 1;
+}
+
+/* ── El bloque de la portada ─────────────────────────────────────────────── */
+.cover.portada { max-width: 740px; }
+
+/* Los tres logos institucionales se quedan, pequeños. Sin marca de GitHub:
+   la portada es el iceberg y el titulo. */
+.cover.portada .logos { gap: 15px; padding: 9px 16px; margin-bottom: 34px; }
+.cover.portada .logos img { height: 30px; }
+.cover.portada .logos .sep { height: 20px; }
+
+.cover.portada h1 {
+  font-size: 88px;
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  margin-bottom: 24px;
+}
+
+.cover.portada h1 span { display: block; }
+.cover.portada h1 .b { font-weight: 300; color: var(--text-dim); }
+
+/* Las dos frases del iceberg. La de abajo va mas apagada que la de arriba,
+   que es exactamente lo que dice. */
+.cover.portada .frase {
+  font-size: 25px;
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--text);
+  max-width: 560px;
+}
+
+.cover.portada .frase.hondo { color: var(--text-dim); }
+
+/* La linea de agua se traza despues de la primera frase y antes de la
+   segunda, no al principio de la lamina */
+.cover.portada .rule { max-width: 470px; margin: 16px 0 15px; }
+.slide.is-active .cover.portada .rule { animation-delay: 0.78s; }
+
+.cover.portada .firma {
+  margin: 34px 0 0;
+  font-size: 14px;
+  letter-spacing: 0.26em;
+  color: var(--text-dim);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   02 Quien expone
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Hueco del retrato ───────────────────────────────────────────────────
+   La foto va como fondo de .foto. Si el archivo no esta, el navegador
+   descarta esa capa y queda la silueta: un sitio reservado, no un error. */
+.quien .retrato {
+  position: relative;
+  height: 430px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: linear-gradient(168deg, var(--surface) 0%, var(--surface-3) 100%);
+  box-shadow: var(--card-shadow);
+}
+
+.quien .retrato::before,
+.quien .retrato::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  background: rgba(31, 35, 40, 0.12);
+}
+
+.quien .retrato::before { top: 24%; width: 104px; height: 104px; margin-left: -52px; border-radius: 50%; }
+.quien .retrato::after  { top: 53%; width: 224px; height: 210px; margin-left: -112px; border-radius: 112px 112px 0 0; }
+
+:root[data-theme="dark"] .quien .retrato::before,
+:root[data-theme="dark"] .quien .retrato::after { background: rgba(230, 237, 243, 0.10); }
+
+.quien .retrato .foto {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0;
+  z-index: 1;
+  background: url("../../img/retrato-luisdavid.jpg") center 24% / cover no-repeat;
+}
+
+/* ── Las cuatro lineas ───────────────────────────────────────────────────── */
+.quien h1.title { font-size: 52px; margin-bottom: 0; }
+.quien .rule { max-width: 320px; margin: 18px 0 26px; }
+
+.quien .lineas { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+
+.quien .linea {
+  position: relative;
+  padding-left: 26px;
+  font-size: 23px;
+  line-height: 1.4;
+  color: var(--text-dim);
+  opacity: 0;
+}
+
+.quien .linea::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--line);
+}
+
+/* La credencial que pesa en este auditorio lleva el punto encendido */
+.quien .linea.n2::before { background: var(--accent); }
+
+/* Entrada escalonada al ritmo del habla. Con los retardos de data-d las tres
+   caerian en menos de un quinto de segundo, que es ritmo decorativo y no
+   señalizacion: la sala leeria las tres de golpe y dejaria de escuchar. */
+.slide.is-active .quien .linea    { animation: rise 0.58s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.slide.is-active .quien .linea.n1 { animation-delay: 0.70s; }
+.slide.is-active .quien .linea.n2 { animation-delay: 2.00s; }
+.slide.is-active .quien .linea.n3 { animation-delay: 3.30s; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Movimiento reducido e impresion
+   ══════════════════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .slide.is-active .video-missing.berg,
+  .slide.is-active .video-missing.berg::before,
+  .slide.is-active .quien .linea {
+    animation: none !important;
+    transform: none !important;
+  }
+  .slide.is-active .quien .linea { opacity: 1 !important; }
+}
+
+@media print {
+  .video-missing.berg,
+  .video-missing.berg::before { animation: none !important; transform: none !important; }
+
+  .quien .linea {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

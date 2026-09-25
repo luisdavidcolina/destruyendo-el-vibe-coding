@@ -1,0 +1,449 @@
+/* ==========================================================================
+   laminas/02-golpe.css : lo propio de las laminas 03, 04 y 05
+
+   Son las tres laminas del golpe y las que llevan las mejores animaciones de
+   la ponencia. Aqui solo esta lo que components.css no cubre.
+
+   Tres piezas:
+
+   1. .pr     La promesa que se encoge sola, de meses a dias, y el signo de
+              interrogacion que queda encima. La animacion es el argumento.
+   2. .enf    Dos barras enfrentadas sobre un mismo eje. Es una pieza
+              GENERICA, sin nada de METR dentro: la lamina 11 la vuelve a
+              usar tal cual, con otras cifras, y ese eco es el recurso
+              narrativo de la ponencia. Los valores entran por --h, --w y
+              --to en el propio marcado.
+   3. .nv     El contador de nueve segundos reales y la cadena de cuatro
+              pasos que se enciende mientras corre.
+
+   Regla que se respeta en toda la hoja: el estado BASE de cada elemento es
+   el estado FINAL de su animacion, y las animaciones solo escriben el
+   arranque con un fotograma "from". Asi el PDF, el modo sin movimiento y
+   cualquier navegador que no anime muestran la lamina terminada en vez de
+   una lamina en blanco.
+
+   Todo cuelga de .slide.is-active para que el ciclo vuelva a empezar cada
+   vez que se entra a la lamina, que es como funciona el motor.
+   ========================================================================== */
+
+/* Numero entero animable, para que las cifras cuenten con CSS y sin tocar
+   deck.js. Si el navegador no lo soporta, la cifra se queda en su valor
+   final, que es justo lo que hay que leer. */
+@property --enf-n {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+
+/* ── Pie de fuente de la lamina ──────────────────────────────────────────
+   components.css no trae uno. La nota con borde superior pesa demasiado
+   para tres palabras, asi que la fuente va como una linea suelta. */
+.fuente {
+  flex: none;
+  margin-top: 18px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   03  La promesa que se encoge
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.body-area.promesa { justify-content: center; }
+
+.pr {
+  position: relative;
+  height: 120px;
+  margin-top: 34px;
+}
+
+/* La huella de lo que la barra media al empezar. Se queda dibujada, porque
+   sin ella la barra corta no dice nada: lo que se lee es la distancia entre
+   las dos. Va con relleno claro y no solo con el trazo discontinuo, porque
+   un borde de un pixel y medio se pierde en cuanto el videobeam lava el
+   contraste. */
+.pr-huella {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: var(--surface);
+  border: 2px dashed var(--line);
+  border-radius: 14px;
+}
+
+.pr-fill {
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 18%;
+  border-radius: 14px;
+  background: linear-gradient(110deg, var(--accent-br), var(--accent));
+  box-shadow: var(--card-shadow);
+}
+
+.pr-eti {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 17px;
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+}
+
+.pr-eti.larga {
+  right: 4px;
+  bottom: calc(100% + 14px);
+  color: var(--text-faint);
+}
+
+.pr-eti.corta {
+  left: 18%;
+  margin-left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* El remate. Queda centrado sobre la barra ya detenida. */
+.pr-q {
+  position: absolute;
+  left: 9%;
+  bottom: calc(100% + 4px);
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: 132px;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--text);
+}
+
+@keyframes prEncoge   { from { width: 100%; } }
+@keyframes prAparece  { from { opacity: 0; transform: translateY(-50%) translateX(-14px); } }
+@keyframes prRemate   { from { opacity: 0; transform: translateX(-50%) translateY(18px) scale(0.72); } }
+@keyframes prHuella   { from { opacity: 0; } }
+
+.slide.is-active .pr-huella   { animation: prHuella 0.5s ease-out 0.30s both; }
+.slide.is-active .pr-fill     { animation: prEncoge 3.4s cubic-bezier(0.62, 0, 0.30, 1) 0.90s both; }
+.slide.is-active .pr-eti.corta{ animation: prAparece 0.5s cubic-bezier(0.22, 1, 0.36, 1) 4.30s both; }
+.slide.is-active .pr-q        { animation: prRemate 0.62s cubic-bezier(0.22, 1, 0.36, 1) 4.70s both; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   04 y 11  Dos barras enfrentadas sobre un mismo eje
+
+   Pieza reutilizable. Nada de lo que hay aqui menciona METR ni porcentajes:
+   la lamina 11 repite esta misma forma a proposito.
+
+   Marcado esperado:
+
+     <div class="enf">
+       <div class="enf-arriba">
+         <span class="enf-eti">...</span>
+         <span class="enf-cifra" style="--to:20"><i class="sg">+</i><i class="nm"></i><i class="pc">%</i></span>
+         <span class="enf-barra" style="--h:140px"></span>
+       </div>
+       <div class="enf-eje"></div>
+       <div class="enf-abajo">
+         <span class="enf-barra" style="--h:133px"></span>
+         <span class="enf-cifra" style="--to:19"><i class="sg">-</i><i class="nm"></i><i class="pc">%</i></span>
+         <span class="enf-eti">...</span>
+       </div>
+     </div>
+
+   La etiqueta y la cifra viajan pegadas al extremo de su barra mientras
+   crece, que es contiguidad espacial en movimiento: nunca hay que buscar a
+   que barra pertenece cada numero.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.body-area.enf-area { justify-content: center; }
+
+.enf { display: flex; flex-direction: column; }
+
+.enf-arriba,
+.enf-abajo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Las dos mitades llevan alto fijo. Si no lo llevaran, la barra al crecer
+   empujaria al eje y el eje es justo lo unico que no se puede mover: sin un
+   eje quieto las dos barras dejan de estar enfrentadas. */
+.enf-arriba { height: var(--sup, 236px); justify-content: flex-end; }
+.enf-abajo  { height: var(--inf, 229px); justify-content: flex-start; }
+
+/* El eje va en el gris de texto apagado y no en el de los bordes. Es la
+   referencia que separa lo que sube de lo que cae, asi que tiene que
+   seguir ahi cuando el proyector se coma los tonos suaves. */
+.enf-eje {
+  height: 2px;
+  background: var(--text-faint);
+  border-radius: 2px;
+  transform-origin: left center;
+}
+
+.enf-eti {
+  font-size: 18px;
+  letter-spacing: 0.01em;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.enf-cifra {
+  --enf-n: var(--to, 0);
+  counter-reset: enfc var(--enf-n);
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.enf-cifra i { font-style: normal; }
+.enf-cifra .nm::after { content: counter(enfc); }
+.enf-cifra .sg { margin-right: 2px; }
+.enf-cifra .pc { font-size: 0.56em; margin-left: 3px; font-weight: 600; }
+
+.enf-barra {
+  flex: none;
+  width: var(--w, 132px);
+  height: var(--h, 140px);
+  display: block;
+}
+
+.enf-eti, .enf-cifra { flex: none; }
+
+/* Lo que se siente, en el azul de la casa. Lo medido, en rojo. El color no
+   es decoracion: es la unica pista de cual de las dos duele. */
+.enf-arriba .enf-cifra { color: var(--accent); }
+.enf-arriba .enf-barra {
+  border-radius: 10px 10px 0 0;
+  background: linear-gradient(180deg, var(--accent-br), var(--accent));
+  box-shadow: var(--card-shadow);
+}
+
+.enf-abajo .enf-cifra { color: var(--danger); }
+.enf-abajo .enf-barra {
+  border-radius: 0 0 10px 10px;
+  background: var(--danger);
+  box-shadow: var(--card-shadow);
+}
+
+@keyframes enfEje    { from { transform: scaleX(0); } }
+@keyframes enfEntra  { from { opacity: 0; } }
+@keyframes enfCrece  { from { height: 0; } }
+@keyframes enfCuenta { from { --enf-n: 0; } }
+
+.slide.is-active .enf-eje    { animation: enfEje 0.62s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both; }
+.slide.is-active .enf-arriba { animation: enfEntra 0.36s ease-out 0.40s both; }
+
+/* Primero sube la de arriba, rapida y optimista */
+.slide.is-active .enf-arriba .enf-barra,
+.slide.is-active .enf-arriba .enf-cifra {
+  animation: enfCrece 0.95s cubic-bezier(0.16, 1, 0.30, 1) 0.60s both;
+}
+.slide.is-active .enf-arriba .enf-cifra { animation-name: enfCuenta; }
+
+/* Se sostiene un segundo, y entonces aparece la de abajo y cae */
+.slide.is-active .enf-abajo { animation: enfEntra 0.36s ease-out 2.60s both; }
+.slide.is-active .enf-abajo .enf-barra,
+.slide.is-active .enf-abajo .enf-cifra {
+  animation: enfCrece 1.05s cubic-bezier(0.50, 0, 0.20, 1) 2.90s both;
+}
+.slide.is-active .enf-abajo .enf-cifra { animation-name: enfCuenta; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   05  Nueve segundos
+
+   El contador corre de verdad: nueve segundos de reloj, en silencio, frente
+   a la sala. Se hace con una cinta de diez celdas que sube a saltos, no con
+   un numero interpolado, porque una cinta con steps() la mueve cualquier
+   navegador y este es el momento de la ponencia que no puede fallar.
+
+   Las cifras las escribe CSS con un contador, asi que el marcado no lleva
+   ni un digito suelto.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.body-area.nueve { position: relative; justify-content: center; }
+
+.nv-grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 54px;
+  align-items: center;
+}
+
+/* ── El contador ─────────────────────────────────────────────────────────
+   La ventana mide una celda de alto y la cinta se desplaza justo una celda
+   por segundo. --nv-celda manda sobre el alto, el tipo y el recorrido, asi
+   que el tamaño se cambia en un solo sitio. */
+.nv-reloj { --nv-celda: 200px; }
+
+.nv-vent {
+  height: var(--nv-celda);
+  overflow: hidden;
+}
+
+/* La cinta se desplaza con margen y no con transform. Un transform se va a
+   la capa del compositor, y ahi hay motores y modos de captura que no lo
+   adelantan al mismo reloj que el resto: comprobado, el numero se quedaba
+   en cero mientras la cadena si avanzaba. Con margen el paso ocurre en el
+   mismo sitio donde ocurre todo lo demas, y nueve saltos en nueve segundos
+   no le cuestan nada a nadie. */
+.nv-cinta {
+  counter-reset: nvd -1;
+  margin-top: calc(var(--nv-celda) * -9);
+}
+
+.nv-cinta i {
+  display: block;
+  height: var(--nv-celda);
+  line-height: var(--nv-celda);
+  font-family: var(--font-display);
+  font-style: normal;
+  font-size: 208px;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  counter-increment: nvd;
+}
+
+.nv-cinta i::after { content: counter(nvd); }
+
+.nv-u {
+  font-family: var(--font-mono);
+  font-size: 19px;
+  letter-spacing: 0.22em;
+  color: var(--text-faint);
+  margin-top: 6px;
+}
+
+/* ── La cadena ───────────────────────────────────────────────────────────
+   Los cuatro pasos comparten un rail de 2px formado por sus propios bordes
+   izquierdos, asi que al encenderse uno detras de otro el rail se va
+   llenando de arriba hacia abajo sin ningun elemento de mas. */
+.nv-cadena { list-style: none; }
+
+.nv-paso {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 58px;
+  padding-left: 28px;
+  margin-left: 6px;
+  border-left: 2px solid var(--accent);
+  font-size: 19.5px;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.nv-paso::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  margin-top: -7px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* El ultimo paso es la instruccion que borro todo. Va en rojo porque es el
+   unico de los cuatro que hace daño. */
+.nv-paso.fatal { color: var(--danger); border-left-color: var(--danger); }
+
+/* El filo del recuadro va en currentColor para que se apague junto con su
+   paso, en vez de quedarse rojo cuando todavia no le toca. */
+.nv-paso code {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  color: inherit;
+  padding: 4px 11px;
+  border-radius: 8px;
+  border: 1px solid currentColor;
+  background: var(--surface);
+}
+
+/* ── La frase que queda ──────────────────────────────────────────────────
+   Va sobre la lamina entera, para poder aparecer justo cuando el contador y
+   la cadena se apagan. Reutiliza .quote y solo cambia el tamaño y el color
+   del filo. */
+.nv-caja {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.nv-frase {
+  font-size: 40px;
+  line-height: 1.26;
+  border-left-color: var(--danger);
+  max-width: 940px;
+}
+
+@keyframes nvCorre    { from { transform: translate3d(0, 0, 0); } }
+@keyframes nvEnciende { from { opacity: 0.22; color: var(--text-faint); border-left-color: var(--line); transform: translate3d(-10px, 0, 0); } }
+@keyframes nvApagon   { to   { opacity: 0.05; } }
+@keyframes nvFrase    { from { opacity: 0; transform: translate3d(0, 20px, 0); } }
+
+/* Nueve saltos en nueve segundos. El cero se ve al arrancar y el nueve
+   entra exactamente nueve segundos despues. */
+.slide.is-active .nv-cinta { animation: nvCorre 9s steps(9, end) 0.35s both; }
+
+.slide.is-active .nv-paso { animation: nvEnciende 0.46s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.slide.is-active .nv-paso:nth-child(1) { animation-delay: 1.15s; }
+.slide.is-active .nv-paso:nth-child(2) { animation-delay: 3.10s; }
+.slide.is-active .nv-paso:nth-child(3) { animation-delay: 5.10s; }
+.slide.is-active .nv-paso:nth-child(4) { animation-delay: 7.00s; }
+
+/* Al llegar a nueve se apaga todo de golpe y entra la frase */
+.slide.is-active .nv-grid  { animation: nvApagon 0.26s ease-in 9.35s both; }
+.slide.is-active .nv-frase { animation: nvFrase 0.68s cubic-bezier(0.22, 1, 0.36, 1) 9.62s both; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Sin movimiento y en papel
+
+   El estado base de todo lo de arriba ya es el estado final, asi que basta
+   con apagar las animaciones para que la lamina se lea entera. La unica
+   excepcion es el apagon de la 05, que no tiene sentido congelado.
+   ══════════════════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .slide.is-active .pr-huella,
+  .slide.is-active .pr-fill,
+  .slide.is-active .pr-eti.corta,
+  .slide.is-active .pr-q,
+  .slide.is-active .enf-eje,
+  .slide.is-active .enf-arriba,
+  .slide.is-active .enf-abajo,
+  .slide.is-active .enf-barra,
+  .slide.is-active .enf-cifra,
+  .slide.is-active .nv-cinta,
+  .slide.is-active .nv-paso,
+  .slide.is-active .nv-grid,
+  .slide.is-active .nv-frase {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}
+
+@media print {
+  .pr-huella, .pr-fill, .pr-eti, .pr-q,
+  .enf-eje, .enf-arriba, .enf-abajo, .enf-barra, .enf-cifra,
+  .nv-cinta, .nv-paso, .nv-grid, .nv-frase {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  .pr-fill, .enf-barra { box-shadow: none !important; }
+  .nv-paso code { background: #FFFFFF !important; }
+}

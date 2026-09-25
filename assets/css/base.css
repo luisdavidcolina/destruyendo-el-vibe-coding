@@ -47,9 +47,9 @@
   /* ── Tipografia ───────────────────────────────────────────────────────── */
   /* Una sola familia, de trazo uniforme. Los titulos se distinguen por peso y
      tamaño, no por cambiar de tipo. */
-  --font-display: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
-  --font-body:    "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
-  --font-mono:    "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Mona Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-body:    "Mona Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono:    "Mona Sans", "Segoe UI", system-ui, sans-serif;
 
   /* Escala tipografica. Todo subio respecto a la primera version: a diez
      metros de distancia, 13px no se leen. */

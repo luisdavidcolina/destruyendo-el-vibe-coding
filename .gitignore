@@ -17,9 +17,5 @@ compile*.log
 .vercel
 .env*
 
-# Fuera del repositorio publico, por ahora.
-# El guion cita un proyecto de cliente (Simply Pool, colaboracion con Joel), con
-# el detalle de un incidente interno, ademas de rutas del equipo y cifras aun sin
-# verificar. Entra cuando se decida que hacer con eso.
-guion/
+# Las reglas de redaccion viven en la carpeta privada del expositor.
 REGLAS.md

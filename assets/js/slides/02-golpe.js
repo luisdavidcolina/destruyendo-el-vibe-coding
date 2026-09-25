@@ -174,6 +174,26 @@ window.DECK.push(
                cifra suelta y, si el navegador no anima, se lee el nueve. -->
           <div class="nv-seg"><i class="nv-n"></i> segundos</div>
 
+        </div>
+
+        <!-- La columna de la derecha cuenta lo que paso: el titular real de
+             prensa y, debajo, la cadena de cuatro pasos. La columna del nueve
+             queda solo con el caso y el reloj, que es lo unico que tiene que
+             mirar la sala. -->
+        <div class="nv-der">
+
+          <!-- La evidencia, en pantalla desde el primer fotograma. Solo el
+               titular real de prensa, ya recortado en el archivo: sin la barra
+               de navegacion de Hackread ni la ilustracion, que competian con
+               el nueve y ocupaban mas que el dato. La pagina completa sigue en
+               assets/img/nota-pocketos.png por si hace falta. -->
+          <figure class="nv-nota">
+            <div class="nv-marco">
+              <img src="assets/img/tit-pocketos.png" alt="Titular de Hackread: Cursor AI Agent Wipes PocketOS Database and Backups in 9 Seconds">
+            </div>
+            <figcaption class="nv-pie">Hackread, 29 de abril de 2026 &middot; OECD AI Incidents</figcaption>
+          </figure>
+
           <!-- La cadena se enciende paso a paso mientras el reloj corre. El
                ultimo es el unico que hace daño, y por eso es el unico rojo.
                Al parar el reloj se queda encendida entera. -->
@@ -185,17 +205,6 @@ window.DECK.push(
           </ol>
 
         </div>
-
-        <!-- La evidencia, en pantalla desde el primer fotograma. Titular real
-             de prensa. El recorte lo hace el marco: entra la imagen entera y
-             se corta el cuerpo de la nota, que esta en ingles y que nadie
-             alcanza a leer proyectado. -->
-        <figure class="nv-nota">
-          <div class="nv-marco">
-            <img src="assets/img/nota-pocketos.png" alt="Titular de Hackread: Cursor AI Agent Wipes PocketOS Database and Backups in 9 Seconds">
-          </div>
-          <figcaption class="nv-pie">Hackread, 29 de abril de 2026 &middot; OECD AI Incidents</figcaption>
-        </figure>
 
       </div>
 

@@ -474,12 +474,18 @@
 
 .nv-grid {
   display: grid;
-  grid-template-columns: 440px 1fr;
+  grid-template-columns: 58fr 42fr;
   gap: 40px;
   align-items: start;
 }
 
 .nv-izq { min-width: 0; }
+
+/* La columna de la derecha: el titular y, debajo, la cadena. Con la captura ya
+   reducida a una tira, la cadena ocupa el hueco que quedaba debajo de ella y
+   el que quedaba entre las dos columnas. Se reacomodo asi, en vez de agrandar
+   nada para rellenar. */
+.nv-der { min-width: 0; }
 
 /* ── El nombre del caso ────────────────────────────────────────────────── */
 .nv-caso { margin-bottom: 18px; }
@@ -518,9 +524,9 @@
 .nv-seg {
   --nv-n: 9;
   counter-reset: nvs var(--nv-n);
-  margin-bottom: 22px;
+  margin-bottom: 0;
   font-family: var(--font-display);
-  font-size: 48px;
+  font-size: 78px;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1;
@@ -544,7 +550,7 @@
    Los cuatro pasos comparten un rail de 2px formado por sus propios bordes
    izquierdos, asi que al encenderse uno detras de otro el rail se va
    llenando de arriba hacia abajo sin ningun elemento de mas. */
-.nv-cadena { list-style: none; }
+.nv-cadena { list-style: none; margin-top: 34px; }
 
 .nv-paso {
   position: relative;
@@ -588,18 +594,17 @@
 }
 
 /* ── La captura de prensa ────────────────────────────────────────────────
-   El recorte se hace con el marco y no en el archivo: la imagen entra a
-   ancho completo y el marco, mas apaisado que ella, le corta lo de abajo.
-   Queda la marca del medio, la ilustracion y las dos lineas del titular, y
-   se va el cuerpo de la nota, que esta en ingles y que nadie alcanza a leer
-   proyectado.
-
-   La relacion del marco, 2400 por 1290, ES el encuadre. */
+   Solo el titular. Antes entraba la pagina con la barra de navegacion y la
+   ilustracion, ocupaba mas que el dato y el nueve tenia que competir con ella.
+   Ahora la imagen es tit-pocketos.png, ya recortada al titular, y el marco
+   tiene su misma proporcion, 2400 por 435, medida en el archivo. La columna es
+   el 42 por ciento de la lamina y la del nueve el 58: la captura es la prueba
+   y no el foco. Cambiado el 25 de septiembre de 2026. */
 .nv-nota { margin: 0; min-width: 0; }
 
 .nv-marco {
   position: relative;
-  aspect-ratio: 2400 / 1290;
+  aspect-ratio: 2400 / 435;
   overflow: hidden;
   border-radius: 14px;
   border: 1px solid var(--line);

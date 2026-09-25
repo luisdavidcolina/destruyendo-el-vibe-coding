@@ -45,14 +45,14 @@
    de antes dos de las tres lineas partian en dos y dejaban una palabra huerfana
    colgando en el renglon de abajo. */
 .quien .grid.g-1-2 {
-  grid-template-columns: 260px 1fr;
-  gap: 40px;
+  grid-template-columns: 200px 1fr;
+  gap: 44px;
 }
 
 .quien .retrato {
   position: relative;
-  width: 260px;
-  height: 260px;
+  width: 200px;
+  height: 200px;
   overflow: hidden;
   border: none;
   border-radius: 50%;
@@ -81,8 +81,8 @@
   background: rgba(31, 35, 40, 0.12);
 }
 
-.quien .retrato::before { top: 24%; width: 104px; height: 104px; margin-left: -52px; border-radius: 50%; }
-.quien .retrato::after  { top: 53%; width: 224px; height: 210px; margin-left: -112px; border-radius: 112px 112px 0 0; }
+.quien .retrato::before { top: 24%; width: 80px; height: 80px; margin-left: -40px; border-radius: 50%; }
+.quien .retrato::after  { top: 53%; width: 172px; height: 162px; margin-left: -86px; border-radius: 86px 86px 0 0; }
 
 :root[data-theme="dark"] .quien .retrato::before,
 :root[data-theme="dark"] .quien .retrato::after { background: rgba(230, 237, 243, 0.10); }
@@ -140,23 +140,41 @@
   border-top: 1px solid var(--line);
 }
 
-/* Los tres puntos, del mismo color. Antes el de la segunda linea salia azul y
-   los otros dos en el gris mas claro de la paleta: parecian tres estados de
-   una lista de tareas, con el primero desactivado. El unico resalte de la
-   lamina es el azul de la credencial que pesa en este auditorio, y esta en el
-   texto, que es donde se lee. */
-.quien .linea::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 14px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--text-dim);
+/* Cada linea abre con la marca de su casa, como en un perfil de LinkedIn,
+   y no con un punto. Las tres marcas van al mismo alto y en una columna fija
+   de 44 pixeles, para que el texto arranque siempre en el mismo sitio aunque
+   el isotipo de Workforce sea mas ancho que el escudo de la UCV. El
+   pictograma de la tercera va en el gris de cuerpo y a trazo, porque no es
+   una marca sino la suma de las otras dos. */
+.quien .linea {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-left: 0;
+  font-size: 25px;
 }
 
-.quien .linea + .linea::before { top: 45px; }
+.quien .linea .marca {
+  flex: none;
+  width: 44px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.quien .linea svg.marca.maletin {
+  background: none;
+  border-radius: 0;
+  fill: none;
+  stroke: var(--text-dim);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* El escudo de la UCV es oscuro. En tema oscuro se aclara para que no se
+   pierda contra el fondo, sin tocar el isotipo de Workforce, que ya es azul
+   medio y se lee en los dos. */
+:root[data-theme="dark"] .quien .linea img.marca[src*="logo_ucv"] { filter: invert(1) brightness(1.6); }
 
 /* Entrada escalonada al ritmo del habla. Con los retardos de data-d las tres
    caerian en menos de un quinto de segundo, que es ritmo decorativo y no
@@ -198,7 +216,10 @@
 .quien .trayectoria::after {
   left: 66.7%;
   right: 0;
-  background: var(--accent);
+  top: 25px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--text-dim);
   transform: scaleX(0);
   transform-origin: left center;
 }
@@ -229,13 +250,15 @@
   box-shadow: 0 0 0 3px var(--bg);
 }
 
-.quien .tr-hito.fin::before { left: auto; right: 0; background: var(--accent); }
-.quien .tr-hito:nth-child(6)::before { background: var(--accent); }
+/* Un solo resalte en la lamina, y es "Auxiliar docente UCV". El tramo que
+   sigue abierto desde 2023 se distingue por el trazo grueso del eje, no por
+   el azul, que ya tiene dueño. */
+.quien .tr-hito.fin::before { left: auto; right: 0; }
 
 .quien .tr-a {
   display: block;
   font-family: var(--font-mono);
-  font-size: 12.5px;
+  font-size: 14px;
   letter-spacing: 0.04em;
   color: var(--text-dim);
 }
@@ -243,13 +266,13 @@
 .quien .tr-n {
   display: block;
   margin-top: 2px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--text-dim);
 }
 
-.quien .tr-hito.fin .tr-a,
-.quien .tr-hito:nth-child(6) .tr-a { color: var(--accent); }
+.quien .tr-hito.fin .tr-n,
+.quien .tr-hito:nth-child(6) .tr-n { color: var(--text); }
 
 /* Entra despues de la tercera linea, que es la que dice los nueve años.
    El eje aparece, el tramo en acento se traza de izquierda a derecha y los

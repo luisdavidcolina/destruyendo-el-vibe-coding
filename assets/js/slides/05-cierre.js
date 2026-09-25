@@ -140,7 +140,7 @@ window.DECK.push(
   min: 'queda proyectada',
   html: `
   <div class="pad">
-    <h1 class="title sm anim" data-d="2">Todo esta en un solo enlace</h1>
+    <h1 class="title sm anim" data-d="2">Contacto y referencias</h1>
     <div class="rule"></div>
 
     <div class="body-area cierre-contacto">

@@ -3,7 +3,7 @@
 
    Aqui solo esta lo que components.css no cubre: la frase centrada de la
    lamina de corte, las dos columnas del encargo con su encendido por
-   elemento, y las ocho fichas con sus dos tandas.
+   elemento, y las cuatro fichas de la 08 con su entrada escalonada.
 
    Todos los selectores cuelgan de .giro, de .encargo o de .consejos, y
    llevan una clase de mas a proposito, para que valgan aunque esta hoja se
@@ -257,22 +257,25 @@
 }
 
 /* ── Cada ficha entra cuando le toca ──────────────────────────────────────
-   No entran juntas, y tampoco esperan a que se las nombre una por una. Las
-   cuatro de golpe se leen de corrido mientras el expositor todavia esta en el
-   chiste del lenguaje, y la sala deja de escuchar. Encadenadas a los tramos
-   exactos del guion, un minuto que se adelante deja fichas sin aparecer.
+   Entran una detras de otra con un segundo de distancia, y a los cinco
+   segundos la lamina esta completa. Antes la tercera y la cuarta entraban a
+   los 9 y a los 13 segundos, calculadas sobre el guion: quien miraba la
+   lamina veia la mitad de abajo vacia durante trece segundos, y si el
+   expositor iba mas rapido que el guion, esas dos fichas nunca llegaban a
+   verse.
 
-   El escalonado de cuatro segundos resuelve las dos cosas: marca el orden de
-   las reglas, que es lo que la animacion tiene que aclarar, y a los trece
-   segundos la lamina esta completa pase lo que pase con el reloj. */
+   El escalonado sigue marcando el orden de las reglas, que es lo que la
+   animacion tiene que aclarar. Lo que marca cual manda no es el orden de
+   entrada sino el resalte: solo la primera lleva la clase lit y su barra de
+   acento. Cambiado el 25 de septiembre de 2026. */
 .slide.is-active .consejos .ficha {
   animation: rise 0.62s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .slide.is-active .consejos .f1 { animation-delay: 1.0s; }
-.slide.is-active .consejos .f2 { animation-delay: 5.0s; }
-.slide.is-active .consejos .f3 { animation-delay: 9.0s; }
-.slide.is-active .consejos .f4 { animation-delay: 13.0s; }
+.slide.is-active .consejos .f2 { animation-delay: 2.0s; }
+.slide.is-active .consejos .f3 { animation-delay: 3.0s; }
+.slide.is-active .consejos .f4 { animation-delay: 4.0s; }
 
 /* ══════════════════════════════════════════════════════════════════════════
    Movimiento reducido e impresion

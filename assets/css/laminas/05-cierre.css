@@ -1,0 +1,158 @@
+/* ==========================================================================
+   05-cierre.css : laminas 11, 12, 13 y 14
+
+   La 12 no trae estilos propios: reutiliza el componente .enf de la lamina 04
+   tal cual, que es justamente lo que hace funcionar el eco visual.
+   ========================================================================== */
+
+/* ── La pila de capas, lamina 11 ─────────────────────────────────────────
+   Se dibuja de arriba hacia abajo, con la capa nueva arriba. Cada franja es
+   mas ancha que la de encima, porque lo de abajo sostiene a lo de arriba y
+   esa es exactamente la idea que la lamina defiende. */
+.pila { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+
+.cp {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  padding: 9px 20px;
+  box-shadow: var(--card-shadow);
+}
+
+/* Cada capa mas abajo, un poco mas ancha */
+.cp:nth-child(1) { width: 62%; }
+.cp:nth-child(2) { width: 68%; }
+.cp:nth-child(3) { width: 74%; }
+.cp:nth-child(4) { width: 80%; }
+.cp:nth-child(5) { width: 86%; }
+.cp:nth-child(6) { width: 92%; }
+
+.cp-a {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+  flex: none;
+  width: 48px;
+}
+
+.cp-n { font-size: 15.5px; color: var(--text-dim); }
+
+/* La capa de ahora se distingue, pero no se corona: el argumento de la lamina
+   es que no es mejor que las de abajo, solo es la ultima */
+.cp.ahora {
+  background: var(--surface);
+  border-color: var(--accent);
+  box-shadow: var(--glow);
+}
+
+.cp.ahora .cp-a { color: var(--accent); }
+.cp.ahora .cp-n { color: var(--text); font-weight: 650; }
+
+/* Entran de abajo hacia arriba, en el orden en que ocurrieron */
+.slide.is-active .cp { opacity: 0; animation: rise 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.slide.is-active .cp:nth-child(6) { animation-delay: 0.30s; }
+.slide.is-active .cp:nth-child(5) { animation-delay: 0.42s; }
+.slide.is-active .cp:nth-child(4) { animation-delay: 0.54s; }
+.slide.is-active .cp:nth-child(3) { animation-delay: 0.66s; }
+.slide.is-active .cp:nth-child(2) { animation-delay: 0.78s; }
+.slide.is-active .cp:nth-child(1) { animation-delay: 0.94s; }
+
+/* ── La franja de certificaciones ────────────────────────────────────────
+   Nombres sueltos, sin precios ni explicacion. Lo que dice la franja es que
+   hay una fiebre, no cual conviene. */
+.credenciales {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.cr-t {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-right: 6px;
+}
+
+.cr {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--text-dim);
+  background: var(--surface-3);
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+
+/* ── La lamina de cierre, oscura ─────────────────────────────────────────── */
+.final { display: flex; flex-direction: column; justify-content: center; height: 100%; max-width: 900px; }
+
+.fin-frase {
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 52px;
+}
+
+/* La cita se compone igual que la de Karpathy en la lamina 03, para que las
+   dos se lean como un par separado por nueve minutos */
+.fin-cita { border-left: 3px solid var(--accent); padding-left: 22px; }
+
+.fin-cita p {
+  font-family: var(--font-display);
+  font-size: 23px;
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+
+.fin-cita span {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* ── El codigo de la lamina 14 ───────────────────────────────────────────
+   Va grande porque un codigo proyectado se lee desde unas diez veces su
+   ancho, y la direccion escrita va debajo para quien este mas atras. */
+.qr-bloque { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+
+.qr-bloque img {
+  width: 208px;
+  height: 208px;
+  display: block;
+  background: #FFFFFF;
+  padding: 12px;
+  border-radius: var(--r);
+  box-shadow: var(--card-shadow);
+}
+
+.qr-url {
+  font-family: var(--font-mono);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.qr-mas {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--text-faint);
+}

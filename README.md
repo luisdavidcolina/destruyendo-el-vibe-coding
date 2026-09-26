@@ -76,7 +76,7 @@ durante las preguntas. Las de corte van en fondo oscuro a propósito: la 01, la 
 | 04 | El golpe | El agente tenía permiso |
 | 05 | El golpe | La sensación no sirve para medir |
 | 06 | La resolución | ¿Entonces la IA es el problema? |
-| 07 | La resolución | Prompts vs. encargos |
+| 07 | La resolución | Prompts vs. Encargos |
 | 08 | La resolución | Cómo se trabaja con agentes |
 | 09 | Orquestación | No más vibe coding ni pérdida de tiempo |
 | 10 | Lo construido | Lo que automaticé para estudiar |
@@ -106,7 +106,7 @@ lenguajes vienen de Simple Icons, CC0, y los de GitHub de Primer Octicons, MIT.
 | 04 | El golpe | El agente tenía permiso |
 | 05 | El golpe | La sensación no sirve para medir |
 | 06 | La resolución | ¿Entonces la IA es el problema? |
-| 07 | La resolución | Prompts vs. encargos |
+| 07 | La resolución | Prompts vs. Encargos |
 | 08 | La resolución | Cuatro reglas, y la primera manda |
 | 09 | Orquestación | No más vibe coding ni pérdida de tiempo |
 | 10 | Lo construido | Seis meses contra cinco semanas |

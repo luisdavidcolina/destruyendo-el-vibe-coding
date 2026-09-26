@@ -184,7 +184,7 @@ Todo lo que viene sirve para cualquier modelo y cualquier lenguaje.
 
 ---
 
-## 07 | Prompts vs. encargos | 3:47 a 4:18
+## 07 | Prompts vs. Encargos | 3:47 a 4:18
 
 **En pantalla.** Arriba, chico, "¿Ingeniería de prompts?" entra y se tacha. A la izquierda un chat que se
 escribe solo, "arregla el login", y se prenden doce archivos en rojo: doce archivos sin probar. A la derecha el archivo de instrucciones de Copilot con contexto, objetivo, límites y
@@ -323,7 +323,7 @@ expositor. Sistema de 2026: del 19 de agosto al 24 de septiembre, 1.148 commits,
 
 ---
 
-## 12 | Ninguna capa borró la de abajo | 7:36 a 8:16
+## 12 | Ninguna capa borró la de abajo | 7:36 a 8:38
 
 **En pantalla.** Una pila de capas que se construye de abajo hacia arriba, con los logos de cada
 época: tarjetas, ensamblador, alto nivel, bibliotecas, nube y agentes. Al lado, el titular de
@@ -334,6 +334,11 @@ confirma. Abajo, la frase.
 
 Entonces, ¿vale la pena seguir estudiando? Cada capa subió el nivel de abstracción, y ninguna quitó
 la necesidad de entender la de abajo.
+
+**Acotación, al pasar por la capa de la nube.** En esta capa yo metería también las plataformas
+no-code, como WordPress o n8n, que permitían programar sin escribir código. Hoy también se programa
+sin escribir código, pero ya no con esas plataformas. Y aquí entran los servicios que se usan
+directamente: la infraestructura como servicio, IaaS, y el software como servicio, SaaS.
 
 ¿Por qué en Organización y Estructura del Computador nos hacen ver ensamblador? Porque la capa de
 abajo es la forma real de encontrar los errores y los límites de la de arriba. Sin ella no se
@@ -350,7 +355,7 @@ IA. 85 por ciento de los junior dice que la herramienta mejoró su comprensión.
 
 ---
 
-## 13 | Lo que hoy se certifica | 8:16 a 8:44
+## 13 | Lo que hoy se certifica | 8:38 a 9:06
 
 **En pantalla.** Seis tarjetas con logo: GH-300 de GitHub Copilot, AI-103 de Microsoft, Claude
 Certified de Anthropic, AI Practitioner de Amazon, ML Engineer de Google Cloud y RAG y agentes de
@@ -373,7 +378,7 @@ profesional en Coursera. Foro Económico Mundial, Future of Jobs Report 2025, p�
 
 ---
 
-## 14 | Reflexión final | 8:44 a 9:02
+## 14 | Reflexión final | 9:06 a 9:24
 
 **En pantalla.** Sobre fondo oscuro: "El que cree que ya sabe usar la IA es el que peor la está
 usando". Debajo, la cita de Ken Thompson con quién fue.
@@ -391,7 +396,7 @@ más productivos fue tirar a la basura mil líneas de código".
 
 ---
 
-## 15 | Es hora de que cumplan los suyos | 9:02 a 9:12
+## 15 | Es hora de que cumplan los suyos | 9:24 a 9:34
 
 **En pantalla.** Las tres líneas, una por una, y el calendario de contribuciones que se enciende en
 verde en el último tramo.
@@ -427,21 +432,21 @@ de diez minutos.
 | 04 | El agente tenía permiso | 73 | n1: 19 | 0:03 | 0:41 | 1:15 a 1:56 |
 | 05 | La sensación no sirve para medir | 185 |  | 0:01 | 1:18 | 1:56 a 3:14 |
 | 06 | ¿Entonces la IA es el problema? | 75 |  | 0:02 | 0:33 | 3:14 a 3:47 |
-| 07 | Prompts vs. encargos | 74 |  |  | 0:31 | 3:47 a 4:18 |
+| 07 | Prompts vs. Encargos | 74 |  |  | 0:31 | 3:47 a 4:18 |
 | 08 | Cómo se trabaja con agentes | 138 | n1: 22, n2: 7 | 0:01 | 1:10 | 4:18 a 5:28 |
 | 09 | No más vibe coding ni pérdida de tiempo | 86 | n2: 33, n3: 16 |  | 0:56 | 5:28 a 6:23 |
 | 10 | Lo que automaticé para estudiar | 93 |  | 0:01 | 0:39 | 6:23 a 7:03 |
 | 11 | Seis meses contra cinco semanas | 81 |  |  | 0:34 | 7:03 a 7:36 |
-| 12 | Ninguna capa borró la de abajo | 95 |  |  | 0:39 | 7:36 a 8:16 |
-| 13 | Lo que hoy se certifica | 47 | n1: 21 |  | 0:28 | 8:16 a 8:44 |
-| 14 | Reflexión final | 38 |  | 0:02 | 0:18 | 8:44 a 9:02 |
-| 15 | Es hora de que cumplan los suyos | 21 |  | 0:02 | 0:11 | 9:02 a 9:12 |
+| 12 | Ninguna capa borró la de abajo | 148 |  |  | 1:01 | 7:36 a 8:38 |
+| 13 | Lo que hoy se certifica | 47 | n1: 21 |  | 0:28 | 8:38 a 9:06 |
+| 14 | Reflexión final | 38 |  | 0:02 | 0:18 | 9:06 a 9:24 |
+| 15 | Es hora de que cumplan los suyos | 21 |  | 0:02 | 0:11 | 9:24 a 9:34 |
 | 16 | Contacto y referencias | | | | queda proyectada | |
 
-**Todo dicho, con los opcionales: 9:12.**
-Soltando hasta el nivel 1: 8:47.
-Soltando hasta el nivel 2: 8:22.
-Soltando hasta el nivel 3: 8:16.
+**Todo dicho, con los opcionales: 9:34.**
+Soltando hasta el nivel 1: 9:09.
+Soltando hasta el nivel 2: 8:44.
+Soltando hasta el nivel 3: 8:38.
 
 **Si se va tarde,** se sueltan los OPCIONAL en orden: primero todos los de nivel 1, después los de
 nivel 2, después los de nivel 3. El cronómetro de la barra (tecla R) se pone ámbar en el minuto 8

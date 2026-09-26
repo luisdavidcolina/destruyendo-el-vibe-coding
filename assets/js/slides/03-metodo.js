@@ -10,10 +10,8 @@
    07  El encargo es el trabajo. La peticion pobre al lado del encargo
        completo, cada uno con su resultado. Los cuatro elementos se encienden
        uno por uno y con cada uno aparece la parte del resultado que produce.
-   08  Cuatro fichas, y cada una dice algo entero. Dos palabras sueltas no
-       significan nada para quien mira la lamina sin oir al expositor, asi
-       que la ficha lleva su predicado. Los otros cuatro consejos van
-       hablados y no llevan ficha.
+   08  Asi trabajo con agentes. El microfono, las reglas del repositorio y lo
+       que evalua hoy el GH-300. El detalle esta sobre la lamina.
 
    Los ritmos de encendido viven en laminas/03-metodo.css, porque el motor no
    tiene pasos dentro de una lamina. Estan calculados sobre los tramos del
@@ -107,63 +105,63 @@ window.DECK.push(
   </div>`
 },
 
-/* ───────────────── 08 Cuatro reglas, en concreto ──────────────── */
+/* ───────────────── 08 Asi trabajo con agentes ──────────────── */
+/* Rehecha entera el 25 de septiembre por la noche. La anterior eran cuatro
+   tarjetas iguales con un icono, que es la rejilla de plantilla que el
+   expositor rechazo. Esta tiene tres piezas y cada una es de otra naturaleza:
+
+   1. La foto real de un microfono, con un boton de grabar que late y la onda
+      de la voz. Es el consejo que nadie espera: el encargo se dicta, no se
+      escribe, y dictado sale mas largo y con mas contexto. La foto es un
+      Shure MV7 de Panos Sakalakis, CC BY 2.0, citada en la ultima lamina.
+   2. Las reglas contra el desastre, escritas como la pantalla de ajustes de
+      un repositorio de GitHub: tres interruptores que se encienden uno por
+      uno. Configurar es exactamente lo que se hace con ellas.
+   3. Lo que evalua hoy el examen de GitHub Copilot, GH-300, en su version
+      vigente del 7 de agosto de 2026: modo agente, subagentes, MCP, la CLI,
+      la revision de codigo y los archivos de instrucciones. Son los conceptos
+      actuales que el expositor pidio que aparecieran. La CLI es el consejo
+      de pasar del navegador a la terminal, sin enfasis.
+
+   El chiste del lenguaje abre esta lamina hablado y no se escribe. */
 {
   section: 'La resolución',
-  title: 'Cuatro reglas, y la primera manda',
-  min: '4:30 a 5:30',
+  title: 'Así trabajo con agentes',
+  min: '4:10 a 5:10',
   html: `
   <div class="pad">
-    <h1 class="title">Cuatro reglas, y la primera manda</h1>
+    <h1 class="title">Así trabajo con agentes</h1>
     <div class="rule"></div>
 
-    <!-- Cuatro fichas y ninguna mas, cada una con un predicado que se entiende
-         solo. El orden es el del guion: primero lo que evita un desastre y
-         despues lo que da velocidad. La primera lleva la barra de acento
-         porque es la leccion literal de la lamina 05 y la unica de la lista
-         que no es opcional.
+    <div class="body-area oficio">
+      <div class="of-grid">
 
-         Las otras cuatro reglas del guion van habladas y no llevan ficha, y
-         el chiste del lenguaje tampoco se escribe: leido pierde el tiempo de
-         entrega y ademas gasta presupuesto de texto. -->
-    <div class="body-area consejos">
-      <div class="grid g2 gap-lg">
-
-        <article class="ficha card lit f1">
-          <div class="cab">
-            <span class="ico"><svg viewBox="0 0 24 24"><rect x="4.6" y="10.4" width="14.8" height="9.6" rx="2.2"/><path d="M8.2 10.4V7.8a3.8 3.8 0 0 1 7.6 0v2.6"/></svg></span>
-            <span class="n">01</span>
+        <figure class="of-mic">
+          <img src="assets/img/microfono.jpg" alt="Micrófono Shure MV7">
+          <div class="of-rec" aria-hidden="true">
+            <span class="of-punto"></span>
+            <span class="of-onda"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
           </div>
-          <h3>Alcance mínimo</h3>
-          <p>ningún permiso de más</p>
-        </article>
+          <figcaption>Dicto el encargo</figcaption>
+        </figure>
 
-        <article class="ficha card f2">
-          <div class="cab">
-            <span class="ico"><svg viewBox="0 0 24 24"><path d="M2.8 12S6.2 6 12 6s9.2 6 9.2 6-3.4 6-9.2 6-9.2-6-9.2-6z"/><circle cx="12" cy="12" r="2.9"/></svg></span>
-            <span class="n">02</span>
-          </div>
-          <h3>Revisión humana</h3>
-          <p>antes de integrar</p>
-        </article>
+        <div class="of-der">
+          <section class="of-panel">
+            <h3><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0a8.2 8.2 0 0 1 .701.031C9.444.095 9.99.645 10.16 1.29l.288 1.107c.018.066.079.158.212.224.231.114.454.243.668.386.123.082.233.09.299.071l1.103-.303c.644-.176 1.392.021 1.82.63.27.385.506.792.704 1.218.315.675.111 1.422-.364 1.891l-.814.806c-.049.048-.098.147-.088.294.016.257.016.515 0 .772-.01.147.038.246.088.294l.814.806c.475.469.679 1.216.364 1.891a7.977 7.977 0 0 1-.704 1.217c-.428.61-1.176.807-1.82.63l-1.102-.302c-.067-.019-.177-.011-.3.071a5.909 5.909 0 0 1-.668.386c-.133.066-.194.158-.211.224l-.29 1.106c-.168.646-.715 1.196-1.458 1.26a8.006 8.006 0 0 1-1.402 0c-.743-.064-1.289-.614-1.458-1.26l-.289-1.106c-.018-.066-.079-.158-.212-.224a5.738 5.738 0 0 1-.668-.386c-.123-.082-.233-.09-.299-.071l-1.103.303c-.644.176-1.392-.021-1.82-.63a8.12 8.12 0 0 1-.704-1.218c-.315-.675-.111-1.422.363-1.891l.815-.806c.05-.048.098-.147.088-.294a6.214 6.214 0 0 1 0-.772c.01-.147-.038-.246-.088-.294l-.815-.806C.635 6.045.431 5.298.746 4.623a7.92 7.92 0 0 1 .704-1.217c.428-.61 1.176-.807 1.82-.63l1.102.302c.067.019.177.011.3-.071.214-.143.437-.272.668-.386.133-.066.194-.158.211-.224l.29-1.106C6.009.645 6.556.095 7.299.03 7.53.01 7.764 0 8 0Zm-.571 1.525c-.036.003-.108.036-.137.146l-.289 1.105c-.147.561-.549.967-.998 1.189-.173.086-.34.183-.5.29-.417.278-.97.423-1.529.27l-1.103-.303c-.109-.03-.175.016-.195.045-.22.312-.412.644-.573.99-.014.031-.021.11.059.19l.815.806c.411.406.562.957.53 1.456a4.709 4.709 0 0 0 0 .582c.032.499-.119 1.05-.53 1.456l-.815.806c-.081.08-.073.159-.059.19.162.346.353.677.573.989.02.03.085.076.195.046l1.102-.303c.56-.153 1.113-.008 1.53.27.161.107.328.204.501.29.447.222.85.629.997 1.189l.289 1.105c.029.109.101.143.137.146a6.6 6.6 0 0 0 1.142 0c.036-.003.108-.036.137-.146l.289-1.105c.147-.561.549-.967.998-1.189.173-.086.34-.183.5-.29.417-.278.97-.423 1.529-.27l1.103.303c.109.029.175-.016.195-.045.22-.313.411-.644.573-.99.014-.031.021-.11-.059-.19l-.815-.806c-.411-.406-.562-.957-.53-1.456a4.709 4.709 0 0 0 0-.582c-.032-.499.119-1.05.53-1.456l.815-.806c.081-.08.073-.159.059-.19a6.464 6.464 0 0 0-.573-.989c-.02-.03-.085-.076-.195-.046l-1.102.303c-.56.153-1.113.008-1.53-.27a4.44 4.44 0 0 0-.501-.29c-.447-.222-.85-.629-.997-1.189l-.289-1.105c-.029-.11-.101-.143-.137-.146a6.6 6.6 0 0 0-1.142 0ZM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM9.5 8a1.5 1.5 0 1 0-3.001.001A1.5 1.5 0 0 0 9.5 8Z"/></svg>Reglas del repositorio</h3>
+            <ul class="of-reglas">
+              <li class="r1"><span class="of-tg" aria-hidden="true"></span>Alcance mínimo por agente</li>
+              <li class="r2"><span class="of-tg" aria-hidden="true"></span>Revisión humana antes de integrar</li>
+              <li class="r3"><span class="of-tg" aria-hidden="true"></span>Piezas pequeñas con criterio de aceptación</li>
+            </ul>
+          </section>
 
-        <article class="ficha card f3">
-          <div class="cab">
-            <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3.4l7.4 4.2v8.8L12 20.6l-7.4-4.2V7.6z"/><path d="M4.6 7.6L12 11.8l7.4-4.2"/><path d="M12 11.8v8.8"/></svg></span>
-            <span class="n">03</span>
-          </div>
-          <h3>Piezas pequeñas</h3>
-          <p>con criterio de aceptación</p>
-        </article>
-
-        <article class="ficha card f4">
-          <div class="cab">
-            <span class="ico"><svg viewBox="0 0 24 24"><rect x="3.2" y="4.8" width="17.6" height="14.4" rx="2.2"/><path d="M7.6 10.2l2.7 2.6-2.7 2.6"/><path d="M12.8 15.4h4"/></svg></span>
-            <span class="n">04</span>
-          </div>
-          <h3>Del navegador a la terminal</h3>
-          <p>donde el agente ve el proyecto</p>
-        </article>
+          <section class="of-panel">
+            <h3><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M7.998 15.035c-4.562 0-7.873-2.914-7.998-3.749V9.338c.085-.628.677-1.686 1.588-2.065.013-.07.024-.143.036-.218.029-.183.06-.384.126-.612-.201-.508-.254-1.084-.254-1.656 0-.87.128-1.769.693-2.484.579-.733 1.494-1.124 2.724-1.261 1.206-.134 2.262.034 2.944.765.05.053.096.108.139.165.044-.057.094-.112.143-.165.682-.731 1.738-.899 2.944-.765 1.23.137 2.145.528 2.724 1.261.566.715.693 1.614.693 2.484 0 .572-.053 1.148-.254 1.656.066.228.098.429.126.612.012.076.024.148.037.218.924.385 1.522 1.471 1.591 2.095v1.872c0 .766-3.351 3.795-8.002 3.795Zm0-1.485c2.28 0 4.584-1.11 5.002-1.433V7.862l-.023-.116c-.49.21-1.075.291-1.727.291-1.146 0-2.059-.327-2.71-.991A3.222 3.222 0 0 1 8 6.303a3.24 3.24 0 0 1-.544.743c-.65.664-1.563.991-2.71.991-.652 0-1.236-.081-1.727-.291l-.023.116v4.255c.419.323 2.722 1.433 5.002 1.433ZM6.762 2.83c-.193-.206-.637-.413-1.682-.297-1.019.113-1.479.404-1.713.7-.247.312-.369.789-.369 1.554 0 .793.129 1.171.308 1.371.162.181.519.379 1.442.379.853 0 1.339-.235 1.638-.54.315-.322.527-.827.617-1.553.117-.935-.037-1.395-.241-1.614Zm4.155-.297c-1.044-.116-1.488.091-1.681.297-.204.219-.359.679-.242 1.614.091.726.303 1.231.618 1.553.299.305.784.54 1.638.54.922 0 1.28-.198 1.442-.379.179-.2.308-.578.308-1.371 0-.765-.123-1.242-.37-1.554-.233-.296-.693-.587-1.713-.7Z"/><path d="M6.25 9.037a.75.75 0 0 1 .75.75v1.501a.75.75 0 0 1-1.5 0V9.787a.75.75 0 0 1 .75-.75Zm4.25.75v1.501a.75.75 0 0 1-1.5 0V9.787a.75.75 0 0 1 1.5 0Z"/></svg>Lo que evalúa el GH-300</h3>
+            <div class="of-chips">
+              <span>Modo agente</span><span>Subagentes</span><span>MCP</span><span>CLI</span><span>Revisión de código</span><span>Instrucciones</span>
+            </div>
+          </section>
+        </div>
 
       </div>
     </div>

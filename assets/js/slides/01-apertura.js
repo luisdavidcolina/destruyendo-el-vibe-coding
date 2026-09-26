@@ -166,7 +166,7 @@ window.DECK.push(
                escudo de la UCV. La tercera no es de ninguna casa, es la suma
                de todas, y lleva el pictograma de un maletin. -->
           <ul class="lineas">
-            <li class="linea n1"><img class="marca" src="assets/logos/workforce.svg" alt="Workforce.com"><span>Integration Manager en Workforce.com</span></li>
+            <li class="linea n1"><img class="marca" src="assets/logos/workforce.svg" alt="Workforce.com"><span>Integration Administrator en Workforce.com</span></li>
             <li class="linea n2"><img class="marca" src="assets/logos/logo_ucv.png" alt="UCV"><span><em>Auxiliar docente UCV</em>, preparador de Matemática Discreta I</span></li>
             <li class="linea n3"><svg class="marca maletin" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8.5 7V5.5A1.5 1.5 0 0 1 10 4h4a1.5 1.5 0 0 1 1.5 1.5V7M3 12.5h18"/></svg><span>Nueve años profesionales en tecnología, seis construyendo sistemas</span></li>
           </ul>

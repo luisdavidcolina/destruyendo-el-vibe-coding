@@ -446,3 +446,150 @@
   line-height: 1.5;
   color: var(--text-dim);
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   11 y 12 rehechas el 25 de septiembre por la noche. Las reglas .pila, .cp,
+   .credenciales y .cr de arriba quedan sin uso y no se borran.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── 11 Las bases ─────────────────────────────────────────────────────── */
+.bases .bs-grid { display: grid; grid-template-columns: 56fr 44fr; gap: 34px; align-items: stretch; }
+
+.pila2 { display: flex; flex-direction: column; gap: 8px; }
+
+.c2 {
+  display: grid;
+  grid-template-columns: 74px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  height: 52px;
+  padding: 0 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 6px 14px -12px rgba(31, 35, 40, 0.5);
+}
+
+/* Ancho que crece hacia abajo, como una piramide: la de abajo sostiene */
+.c2.c6 { margin: 0 60px; }
+.c2.c5 { margin: 0 48px; }
+.c2.c4 { margin: 0 36px; }
+.c2.c3 { margin: 0 24px; }
+.c2.c2b { margin: 0 12px; }
+.c2.c1 { margin: 0; }
+
+.c2.ahora { border: 2px solid var(--accent); }
+.c2.ahora .c2-a, .c2.ahora .c2-n { color: var(--accent); }
+
+.c2-a { font-family: var(--font-mono); font-size: 18px; font-weight: 650; color: var(--text); }
+.c2-n { font-size: 22px; font-weight: 600; color: var(--text); }
+.c2-l { display: flex; align-items: center; gap: 12px; }
+.c2-l .cp-logo { height: 28px; width: 28px; object-fit: contain; display: block; }
+.c2-l .cp-logo.ancho { width: auto; height: 22px; }
+
+:root[data-theme="dark"] .c2-l svg.cp-logo.cop { fill: #E6EDF3; }
+:root[data-theme="dark"] .c2-l svg.cp-logo.chip { stroke: #C9D1D9; }
+:root[data-theme="dark"] .c2-l img.cp-logo[src*="aws"],
+:root[data-theme="dark"] .ct-logo[src*="aws"] { filter: brightness(0) invert(1); opacity: 0.92; }
+
+/* Se construye de abajo hacia arriba, una capa encima de la otra */
+@keyframes c2Pone { from { opacity: 0; transform: translate3d(0, -18px, 0); } to { opacity: 1; transform: none; } }
+.slide.is-active .c2 { animation: c2Pone 0.45s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.slide.is-active .c2.c1  { animation-delay: 0.30s; }
+.slide.is-active .c2.c2b { animation-delay: 0.60s; }
+.slide.is-active .c2.c3  { animation-delay: 0.90s; }
+.slide.is-active .c2.c4  { animation-delay: 1.20s; }
+.slide.is-active .c2.c5  { animation-delay: 1.50s; }
+.slide.is-active .c2.c6  { animation-delay: 1.80s; }
+
+/* El dato de BairesDev */
+.bs-nota {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--card-shadow);
+}
+
+.bs-tit { padding: 12px 14px; background: #FFFFFF; border: 1px solid var(--line); border-radius: 8px; }
+.bs-tit img { display: block; width: 100%; height: auto; }
+
+.bs-dato { display: grid; grid-template-columns: 92px 1fr; grid-template-rows: auto auto; column-gap: 14px; align-items: center; }
+.bs-dato b { grid-row: 1 / span 2; font-family: var(--font-display); font-size: 40px; font-weight: 800; letter-spacing: -0.03em; }
+.bs-dato.j b { color: var(--accent); }
+.bs-dato.s b { color: var(--danger); }
+.bs-barra { display: block; height: 14px; border-radius: 7px; background: var(--line); overflow: hidden; }
+.bs-barra i { display: block; height: 100%; width: var(--w); border-radius: 7px; transform-origin: left center; }
+.bs-dato.j .bs-barra i { background: var(--accent); }
+.bs-dato.s .bs-barra i { background: var(--danger); }
+.bs-eti { font-size: 19px; color: var(--text); margin-top: 6px; }
+
+.bs-nota figcaption { font-size: 18px; font-weight: 500; color: var(--text); padding-left: 12px; border-left: 3px solid var(--accent); }
+
+@keyframes bsCrece { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes bsEntra { from { opacity: 0; } to { opacity: 1; } }
+.slide.is-active .bs-nota { animation: bsEntra 0.5s ease-out 0.4s both; }
+.slide.is-active .bs-dato.j .bs-barra i { animation: bsCrece 0.9s cubic-bezier(0.22, 1, 0.36, 1) 2.4s both; }
+.slide.is-active .bs-dato.s .bs-barra i { animation: bsCrece 0.9s cubic-bezier(0.22, 1, 0.36, 1) 3.2s both; }
+
+.bs-frase {
+  margin-top: 22px;
+  padding-left: 18px;
+  border-left: 4px solid var(--accent);
+  font-family: var(--font-display);
+  font-size: 27px;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--text);
+}
+.slide.is-active .bs-frase { animation: bsEntra 0.6s ease-out 4.2s both; }
+
+/* ── 12 Las certificaciones ───────────────────────────────────────────── */
+.certs { justify-content: center; }
+.ct-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+.ct {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 186px;
+  padding: 22px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--card-shadow);
+}
+
+.ct.lit { border: 2px solid var(--accent); }
+.ct-logo { height: 40px; width: 40px; object-fit: contain; object-position: left center; margin-bottom: 12px; }
+.ct-logo.ancho { width: auto; height: 30px; margin: 5px 0 17px; }
+.ct b { font-family: var(--font-display); font-size: 28px; font-weight: 750; letter-spacing: -0.02em; color: var(--text); }
+.ct span { font-size: 21px; color: var(--text); }
+.ct i { font-style: normal; font-size: 18px; color: var(--text-dim); margin-top: 4px; }
+
+:root[data-theme="dark"] .ct-logo[src*="github-mark"],
+:root[data-theme="dark"] .ct-logo[src*="anthropic"] { filter: invert(1); }
+
+@keyframes ctSube { from { opacity: 0; transform: translate3d(0, 16px, 0); } to { opacity: 1; transform: none; } }
+.slide.is-active .ct { animation: ctSube 0.45s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.slide.is-active .ct:nth-child(1) { animation-delay: 0.3s; }
+.slide.is-active .ct:nth-child(2) { animation-delay: 0.5s; }
+.slide.is-active .ct:nth-child(3) { animation-delay: 0.7s; }
+.slide.is-active .ct:nth-child(4) { animation-delay: 0.9s; }
+.slide.is-active .ct:nth-child(5) { animation-delay: 1.1s; }
+.slide.is-active .ct:nth-child(6) { animation-delay: 1.3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .slide.is-active .c2, .slide.is-active .bs-nota, .slide.is-active .bs-frase, .slide.is-active .ct { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .slide.is-active .bs-barra i { animation: none !important; transform: none !important; }
+}
+
+@media print {
+  .c2, .bs-nota, .bs-frase, .ct { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .bs-barra i { animation: none !important; transform: none !important; }
+}

@@ -1,4 +1,4 @@
-/* 05 - Tercer acto y cierre: laminas 11, 12, 13 y 14
+/* 05 - Tercer acto y cierre: laminas 11 a 15
 
    11 La pila de capas. Los nombres van al hueso, una o dos palabras, porque
       lo que argumenta es la pila con sus anos y no la redaccion de cada
@@ -15,87 +15,82 @@
    decision de base.css, asi que aqui tampoco se escribe. */
 window.DECK.push(
 
-/* ─────────────── 11 Ninguna capa borro la de abajo ─────────────── */
+/* ─────────────── 11 Ninguna capa borro la de abajo ───────────────
+   Rehecha el 25 de septiembre por la noche. El expositor sentia que la 11 y
+   la 12 aportaban poca informacion cada una por su lado. Quedan asi:
+
+   11 Las bases. La pila de capas con los logos de lo que se usaba en cada
+      una, que se construye de abajo hacia arriba, porque asi se construyo la
+      disciplina. A la derecha el titular real de BairesDev y sus dos cifras.
+      Abajo la frase aprobada para esta parte.
+   12 Las certificaciones, cada una con su logo, que valida y quien la da.
+
+   Los logos de lenguajes y bibliotecas son de Simple Icons, licencia CC0.
+   El de Copilot es de Primer Octicons. */
 {
-  section: 'Las capas y sus modas',
+  section: 'Las bases',
   title: 'Ninguna capa borró la de abajo',
-  min: '8:05 a 8:40',
+  min: '8:05 a 8:45',
   html: `
   <div class="pad">
-    <h1 class="title anim" data-d="2">Ninguna capa borró la de abajo</h1>
+    <h1 class="title">Ninguna capa borró la de abajo</h1>
     <div class="rule"></div>
 
-    <div class="body-area">
-      <div class="pila anim f" data-d="3">
-        <div class="cp ahora"><span class="cp-i"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="18" r="2.4"/><circle cx="19" cy="18" r="2.4"/><path d="M12 7.4v4.2M12 11.6L6.4 16M12 11.6L17.6 16"/></svg></span><span class="cp-a">ahora</span><span class="cp-n">Agentes</span></div>
-        <div class="cp"><span class="cp-i"><svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 000-8 6 6 0 00-11.6 2A3.5 3.5 0 006 18z"/></svg></span><span class="cp-a">2010</span><span class="cp-n">Nube</span></div>
-        <div class="cp"><span class="cp-i"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="7" rx="1"/><rect x="13" y="4" width="8" height="7" rx="1"/><rect x="3" y="13" width="8" height="7" rx="1"/><rect x="13" y="13" width="8" height="7" rx="1"/></svg></span><span class="cp-a">1990</span><span class="cp-n">Bibliotecas</span></div>
-        <div class="cp"><span class="cp-i"><svg viewBox="0 0 24 24"><path d="M9 4c-2 0-2 3-2 4s0 4-3 4c3 0 3 3 3 4s0 4 2 4"/><path d="M15 4c2 0 2 3 2 4s0 4 3 4c-3 0-3 3-3 4s0 4-2 4"/></svg></span><span class="cp-a">1957</span><span class="cp-n">Alto nivel</span></div>
-        <div class="cp"><span class="cp-i"><svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1"/><path d="M10 7V4M14 7V4M10 20v-3M14 20v-3M7 10H4M7 14H4M20 10h-3M20 14h-3"/></svg></span><span class="cp-a">1950</span><span class="cp-n">Ensamblador</span></div>
-        <div class="cp"><span class="cp-i"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><circle cx="7.5" cy="10" r="1.1"/><circle cx="11" cy="10" r="1.1"/><circle cx="14.5" cy="10" r="1.1"/><circle cx="7.5" cy="14" r="1.1"/><circle cx="14.5" cy="14" r="1.1"/></svg></span><span class="cp-a">1940</span><span class="cp-n">Tarjetas</span></div>
+    <div class="body-area bases">
+      <div class="bs-grid">
+
+        <div class="pila2">
+          <div class="c2 c6 ahora"><span class="c2-a">ahora</span><span class="c2-n">Agentes</span><span class="c2-l"><svg class="cp-logo cop" viewBox="0 0 16 16" fill="#1F2328" aria-hidden="true"><path d="M7.998 15.035c-4.562 0-7.873-2.914-7.998-3.749V9.338c.085-.628.677-1.686 1.588-2.065.013-.07.024-.143.036-.218.029-.183.06-.384.126-.612-.201-.508-.254-1.084-.254-1.656 0-.87.128-1.769.693-2.484.579-.733 1.494-1.124 2.724-1.261 1.206-.134 2.262.034 2.944.765.05.053.096.108.139.165.044-.057.094-.112.143-.165.682-.731 1.738-.899 2.944-.765 1.23.137 2.145.528 2.724 1.261.566.715.693 1.614.693 2.484 0 .572-.053 1.148-.254 1.656.066.228.098.429.126.612.012.076.024.148.037.218.924.385 1.522 1.471 1.591 2.095v1.872c0 .766-3.351 3.795-8.002 3.795Zm0-1.485c2.28 0 4.584-1.11 5.002-1.433V7.862l-.023-.116c-.49.21-1.075.291-1.727.291-1.146 0-2.059-.327-2.71-.991A3.222 3.222 0 0 1 8 6.303a3.24 3.24 0 0 1-.544.743c-.65.664-1.563.991-2.71.991-.652 0-1.236-.081-1.727-.291l-.023.116v4.255c.419.323 2.722 1.433 5.002 1.433ZM6.762 2.83c-.193-.206-.637-.413-1.682-.297-1.019.113-1.479.404-1.713.7-.247.312-.369.789-.369 1.554 0 .793.129 1.171.308 1.371.162.181.519.379 1.442.379.853 0 1.339-.235 1.638-.54.315-.322.527-.827.617-1.553.117-.935-.037-1.395-.241-1.614Zm4.155-.297c-1.044-.116-1.488.091-1.681.297-.204.219-.359.679-.242 1.614.091.726.303 1.231.618 1.553.299.305.784.54 1.638.54.922 0 1.28-.198 1.442-.379.179-.2.308-.578.308-1.371 0-.765-.123-1.242-.37-1.554-.233-.296-.693-.587-1.713-.7Z"/><path d="M6.25 9.037a.75.75 0 0 1 .75.75v1.501a.75.75 0 0 1-1.5 0V9.787a.75.75 0 0 1 .75-.75Zm4.25.75v1.501a.75.75 0 0 1-1.5 0V9.787a.75.75 0 0 1 1.5 0Z"/></svg></span></div>
+          <div class="c2 c5"><span class="c2-a">2010</span><span class="c2-n">Nube</span><span class="c2-l"><img class="cp-logo ancho" src="assets/logos/aws.svg" alt=""><img class="cp-logo" src="assets/logos/google-cloud.svg" alt=""><img class="cp-logo" src="assets/logos/microsoft.svg" alt=""></span></div>
+          <div class="c2 c4"><span class="c2-a">1990</span><span class="c2-n">Bibliotecas</span><span class="c2-l"><img class="cp-logo" src="assets/logos/si-react.svg" alt=""><img class="cp-logo" src="assets/logos/si-npm.svg" alt=""></span></div>
+          <div class="c2 c3"><span class="c2-a">1957</span><span class="c2-n">Alto nivel</span><span class="c2-l"><img class="cp-logo" src="assets/logos/si-python.svg" alt=""><img class="cp-logo" src="assets/logos/si-javascript.svg" alt=""><img class="cp-logo" src="assets/logos/si-php.svg" alt=""></span></div>
+          <div class="c2 c2b"><span class="c2-a">1950</span><span class="c2-n">Ensamblador</span><span class="c2-l"><svg class="cp-logo cop" viewBox="0 0 16 16" fill="#1F2328" aria-hidden="true"><path d="M6.5.75V2h3V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75V5h1.25a.75.75 0 0 1 0 1.5H14v3h1.25a.75.75 0 0 1 0 1.5H14v1.25A1.75 1.75 0 0 1 12.25 14H11v1.25a.75.75 0 0 1-1.5 0V14h-3v1.25a.75.75 0 0 1-1.5 0V14H3.75A1.75 1.75 0 0 1 2 12.25V11H.75a.75.75 0 0 1 0-1.5H2v-3H.75a.75.75 0 0 1 0-1.5H2V3.75C2 2.784 2.784 2 3.75 2H5V.75a.75.75 0 0 1 1.5 0Zm5.75 11.75a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25ZM5.75 5h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-4.5A.75.75 0 0 1 5.75 5Zm.75 4.5h3v-3h-3Z"/></svg></span></div>
+          <div class="c2 c1"><span class="c2-a">1940</span><span class="c2-n">Tarjetas</span><span class="c2-l"><img class="cp-logo ancho" src="assets/logos/ibm.svg" alt=""></span></div>
+        </div>
+
+        <!-- El dato de BairesDev con su titular real en ingles, que es la
+             prueba, y las dos cifras como barras horizontales. La de los
+             junior casi llena la fila y la de los senior casi no arranca: la
+             distancia es el argumento. -->
+        <figure class="bs-nota">
+          <div class="bs-tit"><img src="assets/img/tit-bairesdev.png" alt="Titular de BairesDev: Only 16% of Senior Developers Say Junior Engineers Fully Understand AI-Generated Code"></div>
+          <div class="bs-dato j"><b>85 %</b><span class="bs-barra"><i style="--w:85%"></i></span><span class="bs-eti">junior dice entender</span></div>
+          <div class="bs-dato s"><b>16 %</b><span class="bs-barra"><i style="--w:16%"></i></span><span class="bs-eti">senior lo confirma</span></div>
+          <figcaption>BairesDev, junio de 2026</figcaption>
+        </figure>
+
       </div>
 
-      <!-- La franja no lleva rotulo escrito: el sello de la izquierda dice
-           que son credenciales sin gastar una sola palabra, y de que van se
-           cuenta hablando. Los nombres largos quedan en su codigo o en su
-           marca, que es como aparecen en las ofertas de trabajo. -->
-      <div class="credenciales anim" data-d="6">
-        <span class="cr-sello"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.4"/><path d="M8.4 13.4L7 21l5-2.5 5 2.5-1.4-7.6"/></svg></span>
-        <span class="cr"><img class="cr-logo" src="assets/logos/github.svg" alt="">GH-300</span>
-        <span class="cr"><img class="cr-logo" src="assets/logos/microsoft.svg" alt="">AI-103</span>
-        <span class="cr"><img class="cr-logo" src="assets/logos/anthropic.svg" alt="">Claude</span>
-        <span class="cr"><img class="cr-logo ancho" src="assets/logos/aws.svg" alt="">AWS</span>
-        <span class="cr"><img class="cr-logo" src="assets/logos/google-cloud.svg" alt="">Google</span>
-        <span class="cr"><img class="cr-logo ancho" src="assets/logos/ibm.svg" alt="">IBM</span>
-      </div>
+      <p class="bs-frase">La IA no reemplaza al que estudia. Reemplaza al que dejó de hacerlo.</p>
     </div>
   </div>`
 },
 
-/* ─────────────── 12 Creen que entienden, y no ─────────────── */
+/* ─────────────── 12 Lo que hoy se certifica ───────────────
+   Seis tarjetas, verificadas en la pagina oficial de cada una el 25 de
+   septiembre de 2026. Precio solo donde la pagina lo publica en texto: AWS
+   100 USD y Google 200 USD. Las de Microsoft y GitHub dependen del pais. Las
+   de Anthropic son para organizaciones del Claude Partner Network. Un solo
+   resalte, el GH-300, que es la de la casa en un evento de GitHub. */
 {
   section: 'Las bases',
-  title: 'Creen que entienden, y no',
-  min: '8:40 a 9:10',
+  title: 'Lo que hoy se certifica',
+  min: '8:45 a 9:15',
   html: `
   <div class="pad">
-    <h1 class="title">Creen que entienden, y no</h1>
+    <h1 class="title">Lo que hoy se certifica</h1>
     <div class="rule"></div>
 
-    <!-- Misma pieza .enf de la lamina 04. Mismas clases, mismo orden, mismos
-         altos de mitad y mismos tiempos de animacion. Lo unico que cambia son
-         los datos, que es justo lo que la pieza recibe por el marcado.
-
-         La barra de arriba mide 132 pixeles, exactamente la misma que la de
-         la 04, asi que el eje cae en el mismo punto de la pantalla y la sala
-         ve arrancar la misma imagen de hace nueve minutos. La de abajo baja a
-         25, que es lo que le toca por proporcion frente a 132. Que la mitad
-         inferior quede casi vacia no es un descuido: es el argumento.
-
-         No lleva el signo .sg que si llevan las barras de la 04, porque alli
-         los numeros son variaciones y aqui son proporciones. Un mas o un
-         menos delante diria algo falso. -->
-    <div class="body-area enf-area">
-      <div class="enf">
-
-        <div class="enf-arriba">
-          <span class="enf-eti">Los junior que dicen entender</span>
-          <span class="enf-cifra" style="--to:85"><i class="nm"></i><i class="pc">%</i></span>
-          <span class="enf-barra" style="--h:132px"></span>
-        </div>
-
-        <div class="enf-eje"></div>
-
-        <div class="enf-abajo">
-          <span class="enf-barra" style="--h:25px"></span>
-          <span class="enf-cifra" style="--to:16"><i class="nm"></i><i class="pc">%</i></span>
-          <span class="enf-eti">Los senior que lo confirman</span>
-        </div>
-
+    <div class="body-area certs">
+      <div class="ct-grid">
+        <article class="ct lit"><img class="ct-logo" src="assets/logos/github-mark.svg" alt=""><b>GH-300</b><span>GitHub Copilot</span><i>GitHub, intermedio</i></article>
+        <article class="ct"><img class="ct-logo" src="assets/logos/microsoft.svg" alt=""><b>AI-103</b><span>Agentes en Azure</span><i>Microsoft, intermedio</i></article>
+        <article class="ct"><img class="ct-logo" src="assets/logos/anthropic.svg" alt=""><b>Claude Certified</b><span>Cuatro exámenes</span><i>Anthropic, empresas socias</i></article>
+        <article class="ct"><img class="ct-logo ancho" src="assets/logos/aws.svg" alt=""><b>AI Practitioner</b><span>Fundamentos de IA</span><i>Amazon, 100 USD</i></article>
+        <article class="ct"><img class="ct-logo" src="assets/logos/google-cloud.svg" alt=""><b>ML Engineer</b><span>Aprendizaje automático</span><i>Google Cloud, 200 USD</i></article>
+        <article class="ct"><img class="ct-logo ancho" src="assets/logos/ibm.svg" alt=""><b>RAG y agentes</b><span>Certificado profesional</span><i>IBM en Coursera</i></article>
       </div>
     </div>
-
-    <div class="fuente anim" data-d="8">BairesDev, Dev Barometer, 1.569 desarrolladores en 77 países, 2026</div>
   </div>`
 },
 

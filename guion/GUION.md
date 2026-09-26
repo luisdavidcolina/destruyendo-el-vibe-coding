@@ -259,30 +259,35 @@ el uso de sistemas multiagente creció 327 por ciento en cuatro meses de 2025.
 
 ---
 
-## 10 | Lo que automaticé para estudiar | 5:43 a 6:11
+## 10 | Lo que automaticé para estudiar | 5:43 a 6:23
 
-**En pantalla.** Seis capturas reales que entran una por una: el archivo con 1.936 archivos, el plan
-de estudio del día, la clase interactiva de Discreta en video, una guía propia en LaTeX, el panel
-del bot y la portada de esta ponencia.
+**En pantalla.** Cinco piezas reales que entran una por una: el archivo con 1.936 archivos, el plan
+de estudio del día, la clase interactiva de Discreta en video y una guía propia en LaTeX. A la
+derecha, en toda la columna, el bot respondiendo en vivo: se le pide la nota informativa de
+Seguridad en Redes y lo que queda pendiente hasta el 21 de octubre.
 
 **Qué decir.**
 
 Esto es lo que hago para estudiar, rapidísimo. La misma herramienta lee los archivos de la
 computadora y los ordena: casi dos mil archivos de la carrera, buscables. De ahí sale el plan de
-estudio del día, las clases interactivas de la preparaduría, las guías en LaTeX y un bot que me
-responde por WhatsApp.
+estudio del día, las clases interactivas de la preparaduría y las guías en LaTeX. Y a la derecha,
+mi bot, el mismo que me responde por WhatsApp: le pido la nota de una materia y me la busca, le
+pregunto qué tengo pendiente y lo saca de mi calendario.
 
 [silencio 1 s] Y esta ponencia es un archivo HTML. No hay PowerPoint.
 
-**Datos exactos.** 1.936 archivos indexados en el archivo del diario. Clase de Lógica de
+**Datos exactos.** 1.936 archivos indexados en el archivo del diario. El bot, grabado el 25 de
+septiembre de 2026, respondió con un enlace temporal a la nota y con el Parcial 4 de Discretas y
+esta ponencia como pendientes. Clase de Lógica de
 Predicados, 77 láminas, con simulador de valores de verdad. Guía "Introducción a la ciencia", 63
 páginas.
 
 ---
 
-## 11 | Seis meses contra cinco semanas | 6:11 a 6:45
+## 11 | Seis meses contra cinco semanas | 6:23 a 6:56
 
-**En pantalla.** Dos proyectos con su captura en funcionamiento. Una plataforma de empleo de 2022:
+**En pantalla.** Dos proyectos con su captura: la portada original de la plataforma de empleo, con
+su buscador, y el escritorio del administrador del sistema de natación. Una plataforma de 2022:
 seis personas, seis meses, 779 commits. Un sistema de gestión de escuelas de natación de 2026: una
 persona, cinco semanas, 1.148 commits. Abajo, el archivo digital de la Facultad.
 
@@ -304,7 +309,7 @@ expositor. Sistema de 2026: del 19 de agosto al 24 de septiembre, 1.148 commits,
 
 ---
 
-## 12 | Ninguna capa borró la de abajo | 6:45 a 7:24
+## 12 | Ninguna capa borró la de abajo | 6:56 a 7:36
 
 **En pantalla.** Una pila de capas que se construye de abajo hacia arriba, con los logos de cada
 época: tarjetas, ensamblador, alto nivel, bibliotecas, nube y agentes. Al lado, el titular de
@@ -331,7 +336,7 @@ IA. 85 por ciento de los junior dice que la herramienta mejoró su comprensión.
 
 ---
 
-## 13 | Lo que hoy se certifica | 7:24 a 7:52
+## 13 | Lo que hoy se certifica | 7:36 a 8:04
 
 **En pantalla.** Seis tarjetas con logo: GH-300 de GitHub Copilot, AI-103 de Microsoft, Claude
 Certified de Anthropic, AI Practitioner de Amazon, ML Engineer de Google Cloud y RAG y agentes de
@@ -354,7 +359,7 @@ profesional en Coursera. Foro Económico Mundial, Future of Jobs Report 2025, p�
 
 ---
 
-## 14 | Reflexión final | 7:52 a 8:10
+## 14 | Reflexión final | 8:04 a 8:22
 
 **En pantalla.** Sobre fondo oscuro: "El que cree que ya sabe usar la IA es el que peor la está
 usando". Debajo, la cita de Ken Thompson con quién fue.
@@ -372,7 +377,7 @@ más productivos fue tirar a la basura mil líneas de código".
 
 ---
 
-## 15 | Es hora de que cumplan los suyos | 8:10 a 8:21
+## 15 | Es hora de que cumplan los suyos | 8:22 a 8:32
 
 **En pantalla.** Las tres líneas, una por una, y el calendario de contribuciones que se enciende en
 verde en el último tramo.
@@ -411,18 +416,18 @@ de diez minutos.
 | 07 | El encargo es el trabajo | 58 |  |  | 0:24 | 3:20 a 3:44 |
 | 08 | Así trabajo con agentes | 109 | n1: 20, n2: 23 | 0:01 | 1:04 | 3:44 a 4:47 |
 | 09 | Aquí no hay espera muerta | 86 | n2: 33, n3: 16 |  | 0:56 | 4:47 a 5:43 |
-| 10 | Lo que automaticé para estudiar | 65 |  | 0:01 | 0:28 | 5:43 a 6:11 |
-| 11 | Seis meses contra cinco semanas | 81 |  |  | 0:34 | 6:11 a 6:45 |
-| 12 | Ninguna capa borró la de abajo | 95 |  |  | 0:39 | 6:45 a 7:24 |
-| 13 | Lo que hoy se certifica | 47 | n1: 21 |  | 0:28 | 7:24 a 7:52 |
-| 14 | Reflexión final | 38 |  | 0:02 | 0:18 | 7:52 a 8:10 |
-| 15 | Es hora de que cumplan los suyos | 21 |  | 0:02 | 0:11 | 8:10 a 8:21 |
+| 10 | Lo que automaticé para estudiar | 93 |  | 0:01 | 0:39 | 5:43 a 6:23 |
+| 11 | Seis meses contra cinco semanas | 81 |  |  | 0:34 | 6:23 a 6:56 |
+| 12 | Ninguna capa borró la de abajo | 95 |  |  | 0:39 | 6:56 a 7:36 |
+| 13 | Lo que hoy se certifica | 47 | n1: 21 |  | 0:28 | 7:36 a 8:04 |
+| 14 | Reflexión final | 38 |  | 0:02 | 0:18 | 8:04 a 8:22 |
+| 15 | Es hora de que cumplan los suyos | 21 |  | 0:02 | 0:11 | 8:22 a 8:32 |
 | 16 | Contacto y referencias | | | | queda proyectada | |
 
-**Todo dicho, con los opcionales: 8:21.**
-Soltando hasta el nivel 1: 7:44.
-Soltando hasta el nivel 2: 7:13.
-Soltando hasta el nivel 3: 7:07.
+**Todo dicho, con los opcionales: 8:32.**
+Soltando hasta el nivel 1: 7:56.
+Soltando hasta el nivel 2: 7:25.
+Soltando hasta el nivel 3: 7:18.
 
 **Si se va tarde,** se sueltan los OPCIONAL en orden: primero todos los de nivel 1, después los de
 nivel 2, después los de nivel 3. El cronómetro de la barra (tecla R) se pone ámbar en el minuto 8

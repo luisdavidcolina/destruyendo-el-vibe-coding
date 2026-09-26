@@ -107,8 +107,8 @@ window.DECK.push(
 
     <div class="body-area auto">
       <div class="au-grid">
-        <figure class="au"><div class="au-img"><img src="assets/img/auto-archivo.jpg" alt="Archivo del diario con 1.936 archivos indexados"></div><figcaption><b>1.936 archivos</b> ordenados con IA</figcaption></figure>
-        <figure class="au"><div class="au-img"><img src="assets/img/auto-plan.jpg" alt="Plan de estudio del día en el calendario"></div><figcaption><b>Plan de estudio</b> diario</figcaption></figure>
+        <figure class="au"><div class="au-img"><img src="assets/img/auto-archivo.jpg" alt="Explorador de archivos con las carpetas del semestre por materia"></div><figcaption><b>El semestre</b> ordenado con IA</figcaption></figure>
+        <figure class="au"><div class="au-img"><img src="assets/img/auto-plan.jpg" alt="Plan de estudio del día en el calendario"></div><figcaption><b>Plan de estudio</b> del día</figcaption></figure>
         <!-- El bot ocupa la columna entera: es la unica pieza que se ve
              trabajando en tiempo real. Se le pide la nota informativa de una
              materia y lo que queda pendiente, y responde con datos del propio

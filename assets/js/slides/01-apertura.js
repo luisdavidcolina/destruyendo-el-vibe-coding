@@ -84,7 +84,7 @@ window.DECK.push(
         <img src="assets/logos/github-mark-blanco.svg" alt="GitHub">
         <div class="ev-tx">
           <b>DEV DAYS 2026</b>
-          <span>Auditorio Manuel Bemporad, 2 de octubre, 2026</span>
+          <span>Auditorio Manuel Bemporad, Facultad de Ciencias UCV, 2 de octubre de 2026</span>
         </div>
       </div>
 

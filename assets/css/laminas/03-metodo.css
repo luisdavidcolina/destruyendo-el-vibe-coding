@@ -664,3 +664,12 @@
 }
 .encargo .salida .chip { font-size: 16.5px; padding: 7px 12px; } .encargo .salida .chips { gap: 8px; flex-wrap: nowrap; }
 .slide.is-active .encargo .salida.mala.anim { animation-delay: 4.3s !important; }
+
+/* 08: tercera fila, Claude, con los chips en el tono de Anthropic. Y el
+   flujo con cuatro puntos. */
+.of-examen .of-chips.cl span { border-color: #C96442; color: #B4532A; background: rgba(201, 100, 66, 0.08); }
+:root[data-theme="dark"] .of-examen .of-chips.cl span { color: #E8906D; border-color: #E8906D; }
+:root[data-theme="dark"] .of-examen .of-ex img[src*="anthropic"] { filter: invert(1); }
+.of-examen .of-fila + .of-fila { margin-top: 10px; padding-top: 10px; }
+.of-flujo ul { gap: 12px; }
+.slide.is-active .of-flujo li:nth-child(4) { animation-delay: 6.2s; }

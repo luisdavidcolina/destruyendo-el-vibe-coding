@@ -160,7 +160,19 @@ window.DECK.push(
       </div>
     </div>
 
-    <p class="met-ajuste">En febrero de 2026 METR volvió a medir con modelos posteriores y publicó los datos nuevos.</p>
+    <!-- 2026. Pedido el 25 de septiembre por la noche: hablar solo del dato
+         viejo cuando hay uno nuevo sonaba raro. METR, 24 de febrero de 2026:
+         los mismos programadores, con herramientas nuevas, estimado 18 por
+         ciento mas rapidos. La propia METR advierte que la medicion ya no es
+         confiable porque muchos no aceptan trabajar sin IA y no pueden medir
+         bien a quien usa varios agentes a la vez. Esa advertencia es el
+         puente a la segunda mitad de la charla. -->
+    <div class="met-2026">
+      <span class="m26-a">2026</span>
+      <span class="m26-n">18&nbsp;%</span>
+      <span class="m26-l">más rápidos con herramientas nuevas</span>
+      <span class="m26-t">METR ya no puede medirlo bien: muchos trabajan con varios agentes a la vez.</span>
+    </div>
   </div>`
 },
 

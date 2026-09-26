@@ -196,10 +196,10 @@ a todos los que trabajen ahí.
 
 ---
 
-## 08 | Así trabajo con agentes | 3:44 a 4:47
+## 08 | Cómo se trabaja con agentes | 3:44 a 4:49
 
-**En pantalla.** La foto de un micrófono con el botón de grabar encendido: dicto el encargo. Mi
-flujo: del issue al pull request, apruebo desde el teléfono, modelo pequeño para lo rutinario. Las
+**En pantalla.** La foto de un micrófono con el botón de grabar encendido: dictar el encargo. El
+flujo: del issue al pull request, aprobar desde el teléfono, modelo pequeño para lo rutinario. Las
 reglas del repositorio como interruptores que se encienden. Y el temario del examen de GitHub
 Copilot.
 
@@ -212,13 +212,14 @@ agente.
 Y el lenguaje sigue importando: se escoge el que mejor se adapta al proyecto y el que mejor maneja
 el modelo.
 
-Mi primer consejo: no escribo los encargos, los dicto. Hablando salen más largos y con más contexto,
-y esta ponencia se dirigió así.
+Primer consejo: los encargos no se escriben, se dictan. Hablando salen más largos y con más
+contexto. Esta ponencia se dirigió así.
 
-Tomo una tarea, el agente la trabaja y me devuelve un pull request, y lo reviso desde el teléfono.
-Tres reglas no se negocian: permisos mínimos, revisión humana y piezas pequeñas.
+El flujo es este: se asigna una tarea, el agente la trabaja y devuelve un pull request, y se revisa
+incluso desde el teléfono. Tres reglas no se negocian: permisos mínimos, revisión humana y piezas
+pequeñas.
 
-**OPCIONAL, nivel 2.** Las tareas que se repiten las guardo como skills, instrucciones que se
+**OPCIONAL, nivel 2.** Las tareas que se repiten se guardan como skills, instrucciones que se
 escriben una vez. Y todo queda registrado en un servidor propio.
 
 **OPCIONAL, nivel 1.** Lo de la derecha es lo que evalúa hoy el examen de Copilot: modo agente,
@@ -230,7 +231,7 @@ instrucciones. Foto del micrófono: Panos Sakalakis, CC BY 2.0.
 
 ---
 
-## 09 | Aquí no hay espera muerta | 4:47 a 5:43
+## 09 | No más vibe coding ni pérdida de tiempo | 4:49 a 5:45
 
 **En pantalla.** Un tablero Kanban con la cara de GitHub Projects. Disponibles, en curso y hechas.
 Tres agentes de Copilot con identificador toman historias a la vez. Llega una cuarta con un
@@ -259,7 +260,7 @@ el uso de sistemas multiagente creció 327 por ciento en cuatro meses de 2025.
 
 ---
 
-## 10 | Lo que automaticé para estudiar | 5:43 a 6:23
+## 10 | Lo que automaticé para estudiar | 5:45 a 6:24
 
 **En pantalla.** Cinco piezas reales que entran una por una: el archivo con 1.936 archivos, el plan
 de estudio del día, la clase interactiva de Discreta en video y una guía propia en LaTeX. A la
@@ -284,7 +285,7 @@ páginas.
 
 ---
 
-## 11 | Seis meses contra cinco semanas | 6:23 a 6:56
+## 11 | Seis meses contra cinco semanas | 6:24 a 6:58
 
 **En pantalla.** Dos proyectos con su captura: la portada original de la plataforma de empleo, con
 su buscador, y el escritorio del administrador del sistema de natación. Una plataforma de 2022:
@@ -309,7 +310,7 @@ expositor. Sistema de 2026: del 19 de agosto al 24 de septiembre, 1.148 commits,
 
 ---
 
-## 12 | Ninguna capa borró la de abajo | 6:56 a 7:36
+## 12 | Ninguna capa borró la de abajo | 6:58 a 7:37
 
 **En pantalla.** Una pila de capas que se construye de abajo hacia arriba, con los logos de cada
 época: tarjetas, ensamblador, alto nivel, bibliotecas, nube y agentes. Al lado, el titular de
@@ -336,7 +337,7 @@ IA. 85 por ciento de los junior dice que la herramienta mejoró su comprensión.
 
 ---
 
-## 13 | Lo que hoy se certifica | 7:36 a 8:04
+## 13 | Lo que hoy se certifica | 7:37 a 8:05
 
 **En pantalla.** Seis tarjetas con logo: GH-300 de GitHub Copilot, AI-103 de Microsoft, Claude
 Certified de Anthropic, AI Practitioner de Amazon, ML Engineer de Google Cloud y RAG y agentes de
@@ -359,7 +360,7 @@ profesional en Coursera. Foro Económico Mundial, Future of Jobs Report 2025, p�
 
 ---
 
-## 14 | Reflexión final | 8:04 a 8:22
+## 14 | Reflexión final | 8:05 a 8:23
 
 **En pantalla.** Sobre fondo oscuro: "El que cree que ya sabe usar la IA es el que peor la está
 usando". Debajo, la cita de Ken Thompson con quién fue.
@@ -377,7 +378,7 @@ más productivos fue tirar a la basura mil líneas de código".
 
 ---
 
-## 15 | Es hora de que cumplan los suyos | 8:22 a 8:32
+## 15 | Es hora de que cumplan los suyos | 8:23 a 8:34
 
 **En pantalla.** Las tres líneas, una por una, y el calendario de contribuciones que se enciende en
 verde en el último tramo.
@@ -414,20 +415,20 @@ de diez minutos.
 | 05 | El agente tenía permiso | 73 | n1: 19 | 0:03 | 0:41 | 2:05 a 2:47 |
 | 06 | ¿Entonces la IA es el problema? | 75 |  | 0:02 | 0:33 | 2:47 a 3:20 |
 | 07 | El encargo es el trabajo | 58 |  |  | 0:24 | 3:20 a 3:44 |
-| 08 | Así trabajo con agentes | 109 | n1: 20, n2: 23 | 0:01 | 1:04 | 3:44 a 4:47 |
-| 09 | Aquí no hay espera muerta | 86 | n2: 33, n3: 16 |  | 0:56 | 4:47 a 5:43 |
-| 10 | Lo que automaticé para estudiar | 93 |  | 0:01 | 0:39 | 5:43 a 6:23 |
-| 11 | Seis meses contra cinco semanas | 81 |  |  | 0:34 | 6:23 a 6:56 |
-| 12 | Ninguna capa borró la de abajo | 95 |  |  | 0:39 | 6:56 a 7:36 |
-| 13 | Lo que hoy se certifica | 47 | n1: 21 |  | 0:28 | 7:36 a 8:04 |
-| 14 | Reflexión final | 38 |  | 0:02 | 0:18 | 8:04 a 8:22 |
-| 15 | Es hora de que cumplan los suyos | 21 |  | 0:02 | 0:11 | 8:22 a 8:32 |
+| 08 | Cómo se trabaja con agentes | 113 | n1: 20, n2: 23 | 0:01 | 1:06 | 3:44 a 4:49 |
+| 09 | No más vibe coding ni pérdida de tiempo | 86 | n2: 33, n3: 16 |  | 0:56 | 4:49 a 5:45 |
+| 10 | Lo que automaticé para estudiar | 93 |  | 0:01 | 0:39 | 5:45 a 6:24 |
+| 11 | Seis meses contra cinco semanas | 81 |  |  | 0:34 | 6:24 a 6:58 |
+| 12 | Ninguna capa borró la de abajo | 95 |  |  | 0:39 | 6:58 a 7:37 |
+| 13 | Lo que hoy se certifica | 47 | n1: 21 |  | 0:28 | 7:37 a 8:05 |
+| 14 | Reflexión final | 38 |  | 0:02 | 0:18 | 8:05 a 8:23 |
+| 15 | Es hora de que cumplan los suyos | 21 |  | 0:02 | 0:11 | 8:23 a 8:34 |
 | 16 | Contacto y referencias | | | | queda proyectada | |
 
-**Todo dicho, con los opcionales: 8:32.**
-Soltando hasta el nivel 1: 7:56.
-Soltando hasta el nivel 2: 7:25.
-Soltando hasta el nivel 3: 7:18.
+**Todo dicho, con los opcionales: 8:34.**
+Soltando hasta el nivel 1: 7:57.
+Soltando hasta el nivel 2: 7:26.
+Soltando hasta el nivel 3: 7:20.
 
 **Si se va tarde,** se sueltan los OPCIONAL en orden: primero todos los de nivel 1, después los de
 nivel 2, después los de nivel 3. El cronómetro de la barra (tecla R) se pone ámbar en el minuto 8

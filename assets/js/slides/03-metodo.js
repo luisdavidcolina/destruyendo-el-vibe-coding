@@ -129,11 +129,11 @@ window.DECK.push(
    El chiste del lenguaje abre esta lamina hablado y no se escribe. */
 {
   section: 'La resolución',
-  title: 'Así trabajo con agentes',
+  title: 'Cómo se trabaja con agentes',
   min: '4:10 a 5:10',
   html: `
   <div class="pad">
-    <h1 class="title">Así trabajo con agentes</h1>
+    <h1 class="title">Cómo se trabaja con agentes</h1>
     <div class="rule"></div>
 
     <div class="body-area oficio">
@@ -146,7 +146,7 @@ window.DECK.push(
             <span class="of-punto"></span>
             <span class="of-onda"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
           </div>
-          <figcaption>Dicto el encargo</figcaption>
+          <figcaption>Dictar el encargo</figcaption>
         </figure>
 
           <!-- Mi flujo: tres consejos mas, de como trabaja el expositor. El
@@ -154,10 +154,10 @@ window.DECK.push(
                aprobar desde el telefono, y el modelo pequeño para lo que se
                repite. El detalle de cada uno va hablado. -->
           <section class="of-panel of-flujo">
-            <h3>Mi flujo</h3>
+            <h3>El flujo</h3>
             <ul>
               <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z"/></svg>Del issue al pull request</li>
-              <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.75 0h8.5C13.216 0 14 .784 14 1.75v12.5A1.75 1.75 0 0 1 12.25 16h-8.5A1.75 1.75 0 0 1 2 14.25V1.75C2 .784 2.784 0 3.75 0ZM3.5 1.75v12.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25ZM8 13a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>Apruebo desde el teléfono</li>
+              <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.75 0h8.5C13.216 0 14 .784 14 1.75v12.5A1.75 1.75 0 0 1 12.25 16h-8.5A1.75 1.75 0 0 1 2 14.25V1.75C2 .784 2.784 0 3.75 0ZM3.5 1.75v12.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25ZM8 13a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>Aprobar desde el teléfono</li>
               <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5.75V2h3V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75V5h1.25a.75.75 0 0 1 0 1.5H14v3h1.25a.75.75 0 0 1 0 1.5H14v1.25A1.75 1.75 0 0 1 12.25 14H11v1.25a.75.75 0 0 1-1.5 0V14h-3v1.25a.75.75 0 0 1-1.5 0V14H3.75A1.75 1.75 0 0 1 2 12.25V11H.75a.75.75 0 0 1 0-1.5H2v-3H.75a.75.75 0 0 1 0-1.5H2V3.75C2 2.784 2.784 2 3.75 2H5V.75a.75.75 0 0 1 1.5 0Zm5.75 11.75a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25ZM5.75 5h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-4.5A.75.75 0 0 1 5.75 5Zm.75 4.5h3v-3h-3Z"/></svg>Modelo pequeño para lo rutinario</li>
             </ul>
           </section>

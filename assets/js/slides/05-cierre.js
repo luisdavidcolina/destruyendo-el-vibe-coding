@@ -54,7 +54,7 @@ window.DECK.push(
              distancia es el argumento. -->
         <figure class="bs-nota">
           <div class="bs-tit"><img src="assets/img/tit-bairesdev.png" alt="Titular de BairesDev: Only 16% of Senior Developers Say Junior Engineers Fully Understand AI-Generated Code"></div>
-          <div class="bs-dato j"><b>85 %</b><span class="bs-barra"><i style="--w:85%"></i></span><span class="bs-eti">junior dice entender</span></div>
+          <div class="bs-dato j"><b>85 %</b><span class="bs-barra"><i style="--w:85%"></i></span><span class="bs-eti">junior dice entender mejor</span></div>
           <div class="bs-dato s"><b>16 %</b><span class="bs-barra"><i style="--w:16%"></i></span><span class="bs-eti">senior lo confirma</span></div>
           <figcaption>BairesDev, junio de 2026</figcaption>
         </figure>

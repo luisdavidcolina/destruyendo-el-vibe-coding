@@ -20,8 +20,8 @@ if (!String.prototype.padStart) {
   var DECK = window.DECK || [];
   // PENDIENTE: ajustar los dos al tope real del evento. Se apunta bastante por
   // debajo del tope, porque la estimacion propia falla hacia arriba.
-  var TARGET_MIN = 10;              // objetivo real de la ponencia
-  var HARD_MIN   = 15;              // tope del evento
+  var TARGET_MIN = 9;               // objetivo real de la ponencia, con margen
+  var HARD_MIN   = 10;              // tope del evento: Dev Days da diez minutos
   var root = document.getElementById('deck');
   if (!root || !DECK.length) return;
 
@@ -239,7 +239,9 @@ if (!String.prototype.padStart) {
     hudTO = setTimeout(function () { hud.classList.remove('show'); }, 2200);
   }
 
-  /* ── Cronometro con presupuesto de 15 minutos ───────────────────────────── */
+  /* ── Cronometro con presupuesto de 10 minutos ─────────────────────────────
+     Heredado de la expo de IoT con 15 minutos. Aqui el tope es 10: verde
+     hasta el minuto 8, ambar de 8 a 10, y rojo desde el 10. */
   var tEl = document.getElementById('timer');
   var t0 = null, tInt = null;
 
@@ -253,11 +255,9 @@ if (!String.prototype.padStart) {
     var el = Date.now() - t0;
     tEl.textContent = fmt(el);
     var min = el / 60000;
-    // Verde hasta el minuto 9, ambar entre el objetivo y el tope, rojo pasado el 12
-    var alerta = TARGET_MIN + (HARD_MIN - TARGET_MIN) * 0.4;   // 12 min
     tEl.classList.toggle('run',  min < TARGET_MIN - 1);
-    tEl.classList.toggle('warn', min >= TARGET_MIN - 1 && min < alerta);
-    tEl.classList.toggle('over', min >= alerta);
+    tEl.classList.toggle('warn', min >= TARGET_MIN - 1 && min < HARD_MIN);
+    tEl.classList.toggle('over', min >= HARD_MIN);
   }
 
   function toggleTimer() {

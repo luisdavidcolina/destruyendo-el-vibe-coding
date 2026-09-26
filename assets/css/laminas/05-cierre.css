@@ -616,3 +616,7 @@
 .cierre-contacto .qr-marco img { width: 232px; height: 232px; }
 .cierre-contacto .enlaces { gap: 7px; }
 .cierre-contacto .enl { padding: 8px 14px; }
+
+/* 15: los dias sueltos de los años anteriores, fijos desde que entra la
+   franja. Pedido el 25 de septiembre por la noche. */
+.cj-c.p { fill: var(--t); }

@@ -123,7 +123,8 @@ window.DECK.push(
 
    Debajo, una franja del calendario de contribuciones de GitHub. Casi toda
    en gris, que son los años en que los objetivos estaban en mente y no se
-   hacian. El ultimo tramo se enciende en verde cuando entra la segunda
+   hacian, con pocos dias sueltos en verde apagado, que es lo que se alcanzaba
+   a hacer. El ultimo tramo se enciende en verde cuando entra la segunda
    linea, la de "este año los termine todos". No es textura de fondo, es el
    dato dibujado: mucho tiempo esperando y poco tiempo haciendolo.
 
@@ -148,6 +149,10 @@ window.DECK.push(
         for (var c = 0; c < cols; c++) {
           for (var f = 0; f < filas; f++) {
             var cls = 'cj-c', estilo = '';
+            // Antes del ultimo tramo, pocos dias sueltos en verde apagado:
+            // en esos años algo se hacia, pero poco.
+            x = (x * 48271) % 2147483647;
+            if (c < cols - verdes && x % 100 < 7) { cls += ' p'; estilo = ' style="--t:' + (x % 2 ? '#0E4429' : '#006D32') + '"'; }
             if (c >= cols - verdes) {
               x = (x * 48271) % 2147483647;
               var t = tonos[1 + (x % 3)];

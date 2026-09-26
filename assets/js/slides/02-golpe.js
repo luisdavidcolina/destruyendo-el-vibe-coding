@@ -89,7 +89,7 @@ window.DECK.push(
         <blockquote class="quote ice-cita">
           <b>vibe coding</b>
           &ldquo;Entregarse a las vibras y olvidar que el código existe&rdquo;
-          <span class="who">Andrej Karpathy, 2025</span>
+          <span class="who">Andrej Karpathy, cofundador de OpenAI, 2025</span>
         </blockquote>
 
         <div class="ice-rej">
@@ -98,8 +98,8 @@ window.DECK.push(
           <span>Criterio de aceptación</span>
           <span>Permisos del agente</span>
           <span>Revisión humana</span>
-          <span>Pruebas que corren</span>
-          <span>Elegir el modelo</span>
+          <span>Pruebas automáticas</span>
+          <span>Elegir modelo</span>
           <span>Leer el resultado</span>
         </div>
       </div>

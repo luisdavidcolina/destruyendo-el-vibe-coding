@@ -547,59 +547,11 @@ table.t td.hi-cell {
 .au.bot .au-img video { object-fit: contain; object-position: center top; background: #FFFFFF; }
 .slide.is-active .au.bot { animation-delay: 0.6s; }
 
-/* El reinicio del bucle: durante un fotograma se apagan todas las
-   animaciones del tablero y al volver arrancan de cero. */
-.tablero.reinicia *, .tablero.reinicia *::after { animation: none !important; }
-
-/* ══════════════════════════════════════════════════════════════════════════
-   El tablero con mejor animacion, 25 de septiembre por la noche.
-   1. Las tarjetas en curso viajan desde la columna de Disponibles: se ve al
-      agente tomar la historia, no solo aparecer.
-   2. Mientras trabaja, cada una tiene una barra de avance en el color de su
-      agente, y el icono de Copilot late.
-   Todo se repite con el bucle de nueve segundos del tablero.
-   ══════════════════════════════════════════════════════════════════════════ */
-@keyframes tomarCol {
-  0%   { opacity: 0; transform: translate3d(calc(-100% - 16px), 0, 0) scale(0.96); }
-  25%  { opacity: 1; }
-  100% { opacity: 1; transform: none; }
-}
-.slide.is-active .tb-card.ent { animation: tomarCol 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
-.slide.is-active .tb-card.e1  { animation-delay: 0.7s; }
-.slide.is-active .tb-card.e2  { animation-delay: 1.2s; }
-.slide.is-active .tb-card.e3  {
-  animation: tomarCol 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.7s both,
-             alerta 1.3s ease-in-out 3.6s both;
-}
-.slide.is-active .tb-card.dup { animation-delay: 2.8s; }
-.slide.is-active .tb-card.dup::after { animation-delay: 4.3s; }
-.slide.is-active .tb-aviso { animation-delay: 4.6s; }
-
-.tb-card.ent { overflow: hidden; }
-.tb-card.ent::before {
-  content: "";
-  position: absolute;
-  left: 0; bottom: 0;
-  height: 4px;
-  width: 100%;
-  transform: scaleX(0);
-  transform-origin: left center;
-}
-.tb-card.ag1::before { background: var(--accent); }
-.tb-card.ag2::before { background: var(--gold); }
-.tb-card.ag3::before { background: var(--accent-2); }
-@keyframes avance { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-.slide.is-active .tb-card.e1::before { animation: avance 6.5s linear 1.5s both; }
-.slide.is-active .tb-card.e2::before { animation: avance 5.5s linear 2.0s both; }
-.slide.is-active .tb-card.e3::before { animation: avance 6.0s linear 2.5s both; }
-
-@keyframes late { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.22); } }
-.slide.is-active .tb-card.ent .tb-cop { animation: late 1.1s ease-in-out 1.6s infinite; transform-origin: center; }
-
-@media (prefers-reduced-motion: reduce) {
-  .slide.is-active .tb-card.ent::before { animation: none; transform: scaleX(0.7); }
-  .slide.is-active .tb-card.ent .tb-cop { animation: none; }
-}
-@media print {
-  .tb-card.ent::before { transform: scaleX(0.7); }
-}
+/* Con el tablero funcionando (tablero.js le pone la clase vivo), el choque
+   lo anima el script en su paso del ciclo. Las animaciones de CSS de la
+   version estatica no aplican ahi. */
+.tablero.vivo .tb-card.dup, .tablero.vivo .tb-card.dup::after, .tablero.vivo .tb-aviso { animation: none !important; opacity: 1; }
+.tablero.vivo .tb-col { position: relative; }
+/* Sin el destello rojo de la version estatica: el choque ahora es un paso
+   del ciclo, no un aviso sobre la tarjeta de copilot-3. */
+.slide.is-active .tablero.vivo .tb-card.e3 { animation: tomar 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1.25s both; }

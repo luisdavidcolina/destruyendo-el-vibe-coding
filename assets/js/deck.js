@@ -187,16 +187,14 @@ if (!String.prototype.padStart) {
       }, 1500));
     }
 
-    // 1b. El tablero Kanban de la lamina 09 se repite en bucle: cada 11
-    //     segundos la secuencia de agentes y el choque vuelven a empezar.
-    //     Pedido el 25 de septiembre por la noche.
+    // 1b. El tablero Kanban de la lamina 09, funcionando: las tarjetas se
+    //     mueven de columna y entran historias nuevas, en bucle. Vive en
+    //     tablero.js. Sus temporizadores van a la misma lista que los demas,
+    //     asi que se cortan al salir de la lamina.
     var tab = slide.querySelector('[data-widget="tablero"]');
-    if (tab) {
-      timers.push(setInterval(function () {
-        tab.classList.add('reinicia');
-        void tab.offsetWidth;
-        tab.classList.remove('reinicia');
-      }, 11000));
+    var quieto = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (tab && window.TABLERO && !quieto) {
+      window.TABLERO(tab, function (fn, ms) { timers.push(setTimeout(fn, ms)); });
     }
 
     // 2. Numeros que cuentan hacia arriba al entrar la lamina

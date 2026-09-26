@@ -262,8 +262,9 @@ el uso de sistemas multiagente creció 327 por ciento en cuatro meses de 2025.
 
 ## 10 | Lo que automaticé para estudiar | 5:45 a 6:24
 
-**En pantalla.** Cinco piezas reales que entran una por una: el archivo con 1.936 archivos, el plan
-de estudio del día, la clase interactiva de Discreta en video y una guía propia en LaTeX. A la
+**En pantalla.** Cinco piezas reales que entran una por una: el explorador de archivos recorriendo
+la carrera ordenada (semestres anteriores, un semestre, una materia por dentro), el plan de estudio
+del día, la clase interactiva de Discreta en video y una guía propia en LaTeX. A la
 derecha, en toda la columna, el bot respondiendo en vivo: se le pide la nota informativa de
 Seguridad en Redes y lo que queda pendiente hasta el 21 de octubre.
 

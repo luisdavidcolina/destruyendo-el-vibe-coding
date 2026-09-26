@@ -107,7 +107,7 @@ window.DECK.push(
 
     <div class="body-area auto">
       <div class="au-grid">
-        <figure class="au"><div class="au-img"><img src="assets/img/auto-archivo.jpg" alt="Explorador de archivos con las carpetas del semestre por materia"></div><figcaption><b>El semestre</b> ordenado con IA</figcaption></figure>
+        <figure class="au"><div class="au-img"><video poster="assets/video/semestre.jpg" muted loop playsinline preload="none" data-src="assets/video/semestre.webm"></video></div><figcaption><b>La carrera</b> ordenada con IA</figcaption></figure>
         <figure class="au"><div class="au-img"><img src="assets/img/auto-plan.jpg" alt="Plan de estudio del día en el calendario"></div><figcaption><b>Plan de estudio</b> del día</figcaption></figure>
         <!-- El bot ocupa la columna entera: es la unica pieza que se ve
              trabajando en tiempo real. Se le pide la nota informativa de una

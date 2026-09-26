@@ -907,3 +907,8 @@
   .ice-escena .ice-punta, .ice-escena .ice-caja, .ice-escena .ice-cita,
   .ice-escena .ice-masa, .ice-escena .ice-rej span { animation: none !important; opacity: 1 !important; transform: none !important; }
 }
+
+/* 04: las dos lineas de fuente al color de texto y a cuerpo de lectura.
+   En gris el videobeam las lavaba. 25 de septiembre por la noche. */
+.enf-area .met-nota figcaption, .met-nota figcaption { color: var(--text); font-size: 21px; font-weight: 500; }
+.met-ajuste { color: var(--text); font-size: 21px; font-weight: 500; }

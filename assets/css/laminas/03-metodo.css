@@ -339,9 +339,24 @@
   flex: 1;
   min-height: 0;
   display: grid;
-  grid-template-columns: 43fr 57fr;
-  gap: 30px;
+  grid-template-columns: 40fr 60fr;
+  gap: 28px;
 }
+
+/* Columna izquierda: la foto arriba, mas chica, y Mi flujo debajo */
+.of-izq { display: flex; flex-direction: column; gap: 20px; min-height: 0; }
+.of-izq .of-mic { flex: none; height: 250px; }
+
+.of-flujo { flex: 1; }
+.of-flujo ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.of-flujo li { display: flex; align-items: center; gap: 14px; font-size: 21px; line-height: 1.2; color: var(--text); }
+.of-flujo li svg { width: 24px; height: 24px; flex: none; fill: var(--accent); }
+
+@keyframes ofFlujo { from { opacity: 0; transform: translate3d(-10px, 0, 0); } to { opacity: 1; transform: none; } }
+.slide.is-active .of-flujo li { animation: ofFlujo 0.4s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.slide.is-active .of-flujo li:nth-child(1) { animation-delay: 5.0s; }
+.slide.is-active .of-flujo li:nth-child(2) { animation-delay: 5.4s; }
+.slide.is-active .of-flujo li:nth-child(3) { animation-delay: 5.8s; }
 
 /* ── El microfono ─────────────────────────────────────────────────────── */
 .of-mic {
@@ -379,11 +394,11 @@
 
 .of-mic figcaption {
   position: absolute;
-  left: 26px;
-  bottom: 22px;
+  left: 22px;
+  bottom: 16px;
   z-index: 2;
   font-family: var(--font-display);
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: #FFFFFF;
@@ -392,8 +407,8 @@
 /* El boton de grabar y la onda de la voz, arriba a la izquierda de la foto */
 .of-rec {
   position: absolute;
-  top: 22px;
-  left: 22px;
+  top: 16px;
+  left: 16px;
   z-index: 2;
   display: flex;
   align-items: center;
@@ -528,13 +543,13 @@
 
 @media (prefers-reduced-motion: reduce) {
   .slide.is-active .of-mic img, .slide.is-active .of-punto, .slide.is-active .of-onda i,
-  .slide.is-active .of-chips span { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .slide.is-active .of-chips span, .slide.is-active .of-flujo li { animation: none !important; opacity: 1 !important; transform: none !important; }
   .slide.is-active .of-reglas li .of-tg { animation: none !important; background: #1F883D !important; }
   .slide.is-active .of-reglas li .of-tg::after { animation: none !important; transform: translateX(20px) !important; }
 }
 
 @media print {
-  .of-mic img, .of-punto, .of-onda i, .of-chips span { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .of-mic img, .of-punto, .of-onda i, .of-chips span, .of-flujo li { animation: none !important; opacity: 1 !important; transform: none !important; }
   .of-reglas li .of-tg { animation: none !important; background: #1F883D !important; }
   .of-reglas li .of-tg::after { animation: none !important; transform: translateX(20px) !important; }
 }

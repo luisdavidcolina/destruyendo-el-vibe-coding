@@ -571,3 +571,96 @@
 .of-der { gap: 18px; }
 .of-reglas { gap: 10px; }
 .of-panel h3 { margin-bottom: 10px; padding-bottom: 10px; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   07 con mas vida, 25 de septiembre por la noche.
+   Arriba "Ingenieria de prompts" se tacha. El chat se escribe solo y debajo
+   se prenden doce archivos en rojo, que es literalmente lo que devuelve la
+   peticion pobre. Todo mas grande: la lamina tenia un hueco arriba y otro
+   abajo.
+   ══════════════════════════════════════════════════════════════════════════ */
+.encargo { justify-content: center; gap: 26px; }
+
+.enc-tacha { margin: 0; }
+.enc-tacha .tx {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-dim);
+}
+.enc-tacha .raya {
+  position: absolute;
+  left: -6px; right: -6px;
+  top: 54%;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--danger);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+@keyframes encTacha { to { transform: scaleX(1); } }
+@keyframes encEntra { from { opacity: 0; transform: translate3d(0, 10px, 0); } to { opacity: 1; transform: none; } }
+.slide.is-active .enc-tacha .tx { animation: encEntra 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
+.slide.is-active .enc-tacha .raya { animation: encTacha 0.5s cubic-bezier(0.65, 0, 0.35, 1) 1.0s both; }
+
+.encargo .code .ln { font-size: 21px; padding: 9px 20px; }
+.encargo .code .et { font-size: 19px; width: 150px; }
+.encargo .salida.mala .rs { font-size: 23px; }
+.encargo .salida .chip { font-size: 18px; padding: 8px 15px; }
+.encargo .salida .fl svg { stroke: var(--text-dim); }
+
+/* El chat se escribe letra por letra */
+.encargo .ev.escribe {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(0 100% 0 0);
+}
+@keyframes encEscribe { to { clip-path: inset(0 0 0 0); } }
+.slide.is-active .encargo .ev.escribe { animation: encEscribe 0.9s steps(16, end) 1.7s both; }
+
+/* Los doce archivos */
+.enc-archivos {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  padding: 6px 20px 18px;
+}
+.enc-archivos i {
+  display: block;
+  height: 34px;
+  border-radius: 4px 12px 4px 4px;
+  border: 2px solid var(--danger);
+  background: rgba(207, 34, 41, 0.14);
+  opacity: 0;
+}
+@keyframes encArchivo { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: none; } }
+.slide.is-active .enc-archivos i { animation: encArchivo 0.22s ease-out both; }
+.slide.is-active .enc-archivos i:nth-child(1) { animation-delay: 2.80s; }
+.slide.is-active .enc-archivos i:nth-child(2) { animation-delay: 2.92s; }
+.slide.is-active .enc-archivos i:nth-child(3) { animation-delay: 3.04s; }
+.slide.is-active .enc-archivos i:nth-child(4) { animation-delay: 3.16s; }
+.slide.is-active .enc-archivos i:nth-child(5) { animation-delay: 3.28s; }
+.slide.is-active .enc-archivos i:nth-child(6) { animation-delay: 3.40s; }
+.slide.is-active .enc-archivos i:nth-child(7) { animation-delay: 3.52s; }
+.slide.is-active .enc-archivos i:nth-child(8) { animation-delay: 3.64s; }
+.slide.is-active .enc-archivos i:nth-child(9) { animation-delay: 3.76s; }
+.slide.is-active .enc-archivos i:nth-child(10) { animation-delay: 3.88s; }
+.slide.is-active .enc-archivos i:nth-child(11) { animation-delay: 4.00s; }
+.slide.is-active .enc-archivos i:nth-child(12) { animation-delay: 4.12s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .slide.is-active .enc-tacha .tx, .slide.is-active .enc-archivos i { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .slide.is-active .enc-tacha .raya { animation: none !important; transform: none !important; }
+  .slide.is-active .encargo .ev.escribe { animation: none !important; clip-path: none !important; }
+}
+@media print {
+  .enc-tacha .tx, .enc-archivos i { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .enc-tacha .raya { animation: none !important; transform: none !important; }
+  .encargo .ev.escribe { animation: none !important; clip-path: none !important; }
+}
+.encargo .salida .chip { font-size: 16.5px; padding: 7px 12px; } .encargo .salida .chips { gap: 8px; flex-wrap: nowrap; }
+.slide.is-active .encargo .salida.mala.anim { animation-delay: 4.3s !important; }

@@ -54,6 +54,11 @@ window.DECK.push(
     <div class="rule"></div>
 
     <div class="body-area encargo">
+      <!-- Lo que se tacha: el nombre de moda. Pedido el 25 de septiembre por
+           la noche. Entra y se tacha antes de que aparezcan los dos paneles,
+           y queda tachado toda la lamina. -->
+      <p class="enc-tacha"><span class="tx">Ingeniería de prompts<i class="raya" aria-hidden="true"></i></span></p>
+
       <div class="grid g-5-7 gap-lg">
 
         <!-- Izquierda: la peticion pobre. El bloque se estira hasta el alto
@@ -65,7 +70,9 @@ window.DECK.push(
               <span class="dot"></span><span class="dot"></span>
               <span class="nm">chat</span>
             </div>
-            <pre><span class="ln sola"><span class="pr d">&gt;</span><span class="ev v">arregla el login</span></span></pre>
+            <pre><span class="ln sola"><span class="pr d">&gt;</span><span class="ev v escribe">arregla el login</span></span></pre>
+            <!-- Doce archivos tocados, uno por uno, en rojo: lo que devuelve la peticion pobre. -->
+            <div class="enc-archivos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
           </div>
 
           <div class="salida mala anim" data-d="3">
@@ -83,8 +90,8 @@ window.DECK.push(
               <span class="dot"></span><span class="dot"></span>
               <span class="nm">.github/copilot-instructions.md</span>
             </div>
-            <pre><span class="ln e1"><span class="et k">contexto</span><span class="ev v">src/auth, estilo del repo</span></span
-              ><span class="ln e2"><span class="et k">objetivo</span><span class="ev v">la sesión caduca en 30 min</span></span
+            <pre><span class="ln e1"><span class="et k">contexto</span><span class="ev v">src/auth y estilo del repo</span></span
+              ><span class="ln e2"><span class="et k">objetivo</span><span class="ev v">sesión de 30 min</span></span
               ><span class="ln e3"><span class="et k">límites</span><span class="ev v">no tocar el esquema</span></span
               ><span class="ln e4"><span class="et k">verificación</span><span class="ev v">correr la prueba nueva</span></span></pre>
           </div>

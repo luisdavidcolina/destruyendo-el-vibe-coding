@@ -553,3 +553,21 @@
   .of-reglas li .of-tg { animation: none !important; background: #1F883D !important; }
   .of-reglas li .of-tg::after { animation: none !important; transform: translateX(20px) !important; }
 }
+
+/* 08: el panel de examenes con dos filas, GH-300 y AI-103, cada una con su
+   logo. Los chips del AI-103 van en el azul de Microsoft. */
+.of-examen .of-fila { display: flex; align-items: center; gap: 16px; }
+.of-examen .of-fila + .of-fila { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+.of-examen .of-ex { flex: none; width: 118px; display: inline-flex; align-items: center; gap: 9px; font-family: var(--font-display); font-size: 20px; font-weight: 750; color: var(--text); }
+.of-examen .of-ex svg, .of-examen .of-ex img { width: 22px; height: 22px; fill: var(--text); flex: none; }
+.of-der .of-panel.of-examen .of-chips { flex: 1; align-content: flex-start; gap: 10px; }
+.of-examen .of-chips span { font-size: 19px; padding: 7px 14px; }
+.of-examen .of-chips.ms span { border-color: #0078D4; color: #0067B8; background: rgba(0, 120, 212, 0.07); }
+:root[data-theme="dark"] .of-examen .of-chips.ms span { color: #4CC2FF; border-color: #4CC2FF; }
+.of-der .of-panel.of-examen { justify-content: center; }
+.of-examen .of-chips span { font-size: 17px; padding: 5px 12px; }
+.of-der .of-panel.of-examen .of-chips { gap: 8px; }
+.of-examen .of-fila + .of-fila { margin-top: 12px; padding-top: 12px; }
+.of-der { gap: 18px; }
+.of-reglas { gap: 10px; }
+.of-panel h3 { margin-bottom: 10px; padding-bottom: 10px; }

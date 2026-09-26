@@ -620,3 +620,18 @@
 /* 15: los dias sueltos de los años anteriores, fijos desde que entra la
    franja. Pedido el 25 de septiembre por la noche. */
 .cj-c.p { fill: var(--t); }
+
+/* Contacto: el agradecimiento grande arriba a la derecha, a la altura del
+   titulo. Es lo ultimo que se dice y la lamina queda proyectada con el. */
+.gracias {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 78px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--accent);
+}

@@ -193,6 +193,7 @@ window.DECK.push(
   html: `
   <div class="pad">
     <h1 class="title sm anim" data-d="2">Contacto y referencias</h1>
+    <p class="gracias anim" data-d="4">Gracias</p>
     <div class="rule"></div>
 
     <div class="body-area cierre-contacto">

@@ -912,3 +912,10 @@
    En gris el videobeam las lavaba. 25 de septiembre por la noche. */
 .enf-area .met-nota figcaption, .met-nota figcaption { color: var(--text); font-size: 21px; font-weight: 500; }
 .met-ajuste { color: var(--text); font-size: 21px; font-weight: 500; }
+
+/* 05: el logo de PocketOS, del sitio oficial pocketos.ai. Viene sobre negro
+   opaco, asi que va como insignia redondeada al lado del nombre, que sigue
+   siendo el que manda. */
+.nv-caso { display: flex; align-items: center; gap: 20px; }
+.nv-caso-tx { display: flex; flex-direction: column; }
+.nv-logo { height: 64px; width: auto; border-radius: 12px; display: block; box-shadow: 0 10px 22px -14px rgba(0, 0, 0, 0.6); }

@@ -182,8 +182,11 @@ window.DECK.push(
           <!-- El nombre del caso es informacion principal, asi que va a
                cuerpo de informacion principal y no de pie de foto. -->
           <div class="nv-caso">
-            <span class="nv-marca">PocketOS</span>
-            <span class="nv-giro">Alquiler de vehículos</span>
+            <img class="nv-logo" src="assets/logos/pocketos.png" alt="Logo de PocketOS">
+            <span class="nv-caso-tx">
+              <span class="nv-marca">PocketOS</span>
+              <span class="nv-giro">Alquiler de vehículos</span>
+            </span>
           </div>
 
           <!-- El numero y la palabra son UNA sola unidad tipografica, en una

@@ -38,24 +38,24 @@
 .tb-top {
   flex: none;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 12px;
   margin-bottom: 15px;
   padding-bottom: 11px;
   border-bottom: 1px solid var(--line);
 }
 
-.tb-nom { font-size: 16px; font-weight: 650; color: var(--text); letter-spacing: -0.01em; }
+.tb-nom { font-size: 19px; font-weight: 650; color: var(--text); letter-spacing: -0.01em; }
 
 /* La cifra es evidencia, no un rotulo de widget: va al color de acento y a un
    tamano que se lee desde el fondo del salon. */
 .tb-num {
   margin-left: auto;
   font-family: var(--font-mono);
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 650;
   color: var(--accent);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
 }
 
 .tb-cols {
@@ -80,18 +80,22 @@
 }
 
 .tb-h {
+  display: flex;
+  align-items: center;
+  gap: 9px;
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.16em;
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--text-dim);
+  color: var(--text);
 }
 
 .tb-nota {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.2;
   color: var(--text);
 }
@@ -123,16 +127,20 @@
   border-radius: var(--r-sm);
   padding: 13px 14px;
   font-family: var(--font-mono);
-  font-size: 15px;
-  color: var(--text-dim);
+  font-size: 17px;
+  color: var(--text);
 }
 
-.tb-card b { font-weight: 600; color: inherit; }
+.tb-card b { font-weight: 650; color: inherit; margin-right: auto; }
 
 .tb-card i {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   font-style: normal;
-  font-size: 12.5px;
-  letter-spacing: 0.04em;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   color: var(--text-dim);
 }
 
@@ -383,4 +391,44 @@ table.t td.hi-cell {
     opacity: 1 !important;
     transform: none !important;
   }
+}
+
+/* ── La cara de GitHub Projects ──────────────────────────────────────────
+   Iconos de Primer Octicons, el sistema de iconos de GitHub, con sus colores
+   de estado: issue abierto en verde, cerrado en morado, rechazo en rojo. El
+   punto de cada columna es el mismo codigo de color que usa Projects para
+   Todo, In progress y Done. */
+.tb-ico { width: 20px; height: 20px; fill: var(--text-dim); flex: none; }
+.tb-iss { width: 18px; height: 18px; flex: none; fill: currentColor; }
+.tb-iss.abierto { fill: #1A7F37; }
+.tb-iss.cerrado { fill: #8250DF; }
+:root[data-theme="dark"] .tb-iss.abierto { fill: #3FB950; }
+:root[data-theme="dark"] .tb-iss.cerrado { fill: #A371F7; }
+.tb-cop { width: 17px; height: 17px; fill: currentColor; flex: none; }
+
+.tb-est { display: inline-block; width: 12px; height: 12px; border-radius: 50%; border: 2px solid; flex: none; }
+.tb-est.todo  { border-color: #1A7F37; background: rgba(26, 127, 55, 0.14); }
+.tb-est.curso { border-color: #BF8700; background: rgba(191, 135, 0, 0.16); }
+.tb-est.hecho { border-color: #8250DF; background: rgba(130, 80, 223, 0.14); }
+
+/* Las hechas se distinguen por el icono morado de cerrado, que ya dice
+   "terminado" en el idioma de GitHub. El visto dibujado de antes sobra. */
+.tb-card.ok::after { display: none; }
+.tb-card.ok { border-left-color: #8250DF; }
+:root[data-theme="dark"] .tb-card.ok { border-left-color: #A371F7; }
+
+/* ── La frase ─────────────────────────────────────────────────────────────
+   Bajo el tablero, la frase aprobada para esta parte. En lugar de la fuente
+   suelta que habia antes. Entra al final, cuando el choque ya ocurrio. */
+.tb-frase {
+  flex: none;
+  margin-top: 20px;
+  padding-left: 18px;
+  border-left: 4px solid var(--accent);
+  font-family: var(--font-display);
+  font-size: 27px;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--text);
 }

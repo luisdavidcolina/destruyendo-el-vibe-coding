@@ -51,11 +51,11 @@ window.DECK.push(
    las dos zonas, que el agua ya dice. */
 {
   section: 'El golpe',
-  title: 'Lo que decide está debajo',
+  title: 'Lo que importa está debajo',
   min: '0:40 a 1:20',
   html: `
   <div class="pad">
-    <h1 class="title">Lo que decide está debajo</h1>
+    <h1 class="title">Lo que importa está debajo</h1>
     <div class="rule"></div>
 
     <div class="body-area ice-area">

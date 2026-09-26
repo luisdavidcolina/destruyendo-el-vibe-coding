@@ -77,7 +77,7 @@ desde 2019, con IntelliPOS en Perú.
 
 ---
 
-## 03 | Lo que decide está debajo | 0:23 a 1:15
+## 03 | Lo que importa está debajo | 0:23 a 1:15
 
 **En pantalla.** Un iceberg. En la punta, sobre el agua, una sola caja: escribir la petición. En la
 masa sumergida, ocho cajas que aparecen una por una. Arriba a la derecha, la cita de Karpathy.
@@ -184,7 +184,7 @@ Todo lo que viene sirve para cualquier modelo y cualquier lenguaje.
 
 ---
 
-## 07 | El encargo es el trabajo | 3:47 a 4:18
+## 07 | Prompts vs. encargos | 3:47 a 4:18
 
 **En pantalla.** Arriba, chico, "¿Ingeniería de prompts?" entra y se tacha. A la izquierda un chat que se
 escribe solo, "arregla el login", y se prenden doce archivos en rojo: doce archivos sin probar. A la derecha el archivo de instrucciones de Copilot con contexto, objetivo, límites y
@@ -423,11 +423,11 @@ de diez minutos.
 |---|---|---|---|---|---|---|
 | 01 | Destruyendo el vibe coding | 5 |  | 0:02 | 0:04 | 0:00 a 0:04 |
 | 02 | Luisdavid Colina | 45 |  |  | 0:19 | 0:04 a 0:23 |
-| 03 | Lo que decide está debajo | 108 | n2: 19 |  | 0:53 | 0:23 a 1:15 |
+| 03 | Lo que importa está debajo | 108 | n2: 19 |  | 0:53 | 0:23 a 1:15 |
 | 04 | El agente tenía permiso | 73 | n1: 19 | 0:03 | 0:41 | 1:15 a 1:56 |
 | 05 | La sensación no sirve para medir | 185 |  | 0:01 | 1:18 | 1:56 a 3:14 |
 | 06 | ¿Entonces la IA es el problema? | 75 |  | 0:02 | 0:33 | 3:14 a 3:47 |
-| 07 | El encargo es el trabajo | 74 |  |  | 0:31 | 3:47 a 4:18 |
+| 07 | Prompts vs. encargos | 74 |  |  | 0:31 | 3:47 a 4:18 |
 | 08 | Cómo se trabaja con agentes | 138 | n1: 22, n2: 7 | 0:01 | 1:10 | 4:18 a 5:28 |
 | 09 | No más vibe coding ni pérdida de tiempo | 86 | n2: 33, n3: 16 |  | 0:56 | 5:28 a 6:23 |
 | 10 | Lo que automaticé para estudiar | 93 |  | 0:01 | 0:39 | 6:23 a 7:03 |

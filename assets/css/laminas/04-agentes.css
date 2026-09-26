@@ -546,3 +546,7 @@ table.t td.hi-cell {
 .au.bot .au-img { background: #F472B6; }
 .au.bot .au-img video { object-fit: contain; object-position: center top; background: #FFFFFF; }
 .slide.is-active .au.bot { animation-delay: 0.6s; }
+
+/* El reinicio del bucle: durante un fotograma se apagan todas las
+   animaciones del tablero y al volver arrancan de cero. */
+.tablero.reinicia *, .tablero.reinicia *::after { animation: none !important; }

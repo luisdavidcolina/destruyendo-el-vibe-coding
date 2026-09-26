@@ -47,11 +47,11 @@ window.DECK.push(
 /* ───────────────────── 07 El encargo es el trabajo ──────────────────────── */
 {
   section: 'La resolución',
-  title: 'El encargo es el trabajo',
+  title: 'Prompts vs. encargos',
   min: '3:30 a 4:30',
   html: `
   <div class="pad">
-    <h1 class="title">El encargo es el trabajo</h1>
+    <h1 class="title">Prompts vs. encargos</h1>
     <div class="rule"></div>
 
     <div class="body-area encargo">

@@ -700,3 +700,45 @@
 .enc-archivos { grid-template-columns: repeat(4, 1fr); gap: 14px; padding: 8px 22px 22px; }
 .enc-archivos i { height: 76px; }
 .enc-archivos i { height: 56px; } .enc-archivos { gap: 12px; padding: 4px 22px 18px; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   08 redistribuida, 25 de septiembre por la noche: el microfono pierde
+   jerarquia (era lo mas grande de la lamina), y los cuatro paneles reparten
+   su alto sin huecos. Los pasos de Workflows se unen con una linea que se
+   dibuja mientras entran, porque son un flujo.
+   ══════════════════════════════════════════════════════════════════════════ */
+.oficio .of-grid { grid-template-columns: 42fr 58fr; }
+.of-izq .of-mic { height: 168px; }
+.of-mic figcaption { font-size: 23px; bottom: 12px; left: 18px; }
+.of-rec { top: 12px; left: 12px; padding: 7px 12px 7px 9px; gap: 10px; }
+.of-punto { width: 22px; height: 22px; }
+.of-onda { height: 22px; }
+
+.of-flujo { display: flex; flex-direction: column; }
+.of-flujo ul { position: relative; flex: 1; justify-content: space-evenly; gap: 0; }
+.of-flujo li { font-size: 23px; position: relative; z-index: 1; }
+.of-flujo li svg { width: 26px; height: 26px; background: var(--surface); padding: 3px 0; box-sizing: content-box; }
+.of-flujo ul::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 12%;
+  bottom: 12%;
+  width: 2px;
+  background: var(--accent);
+  opacity: 0.45;
+  transform: scaleY(0);
+  transform-origin: top center;
+}
+@keyframes ofLinea { to { transform: scaleY(1); } }
+.slide.is-active .of-flujo ul::before { animation: ofLinea 1.8s ease-in-out 5.0s forwards; }
+
+.of-der .of-panel { flex: 1; display: flex; flex-direction: column; }
+.of-reglas { flex: 1; justify-content: space-evenly; gap: 0; }
+.of-reglas li { font-size: 23px; }
+.of-der .of-panel.of-examen { justify-content: flex-start; }
+.of-examen .of-fila { flex: 1; }
+.of-examen .of-fila + .of-fila { margin-top: 0; padding-top: 0; }
+
+@media (prefers-reduced-motion: reduce) { .slide.is-active .of-flujo ul::before { animation: none; transform: none; } }
+@media print { .of-flujo ul::before { transform: none; } }

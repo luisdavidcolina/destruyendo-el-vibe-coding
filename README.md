@@ -72,13 +72,13 @@ durante las preguntas. Las de corte van en fondo oscuro a propósito: la 01, la 
 |---|---|---|
 | 01 | Apertura | Destruyendo el vibe coding |
 | 02 | Apertura | Luisdavid Colina |
-| 03 | El golpe | Lo que decide está debajo |
-| 04 | El golpe | La sensación no sirve para medir |
-| 05 | El golpe | El agente tenía permiso |
+| 03 | El golpe | Lo que importa está debajo |
+| 04 | El golpe | El agente tenía permiso |
+| 05 | El golpe | La sensación no sirve para medir |
 | 06 | La resolución | ¿Entonces la IA es el problema? |
-| 07 | La resolución | El encargo es el trabajo |
-| 08 | La resolución | Así trabajo con agentes |
-| 09 | Orquestación | Aquí no hay espera muerta |
+| 07 | La resolución | Prompts vs. encargos |
+| 08 | La resolución | Cómo se trabaja con agentes |
+| 09 | Orquestación | No más vibe coding ni pérdida de tiempo |
 | 10 | Lo construido | Lo que automaticé para estudiar |
 | 11 | Lo construido | Seis meses contra cinco semanas |
 | 12 | Las bases | Ninguna capa borró la de abajo |
@@ -102,13 +102,13 @@ lenguajes vienen de Simple Icons, CC0, y los de GitHub de Primer Octicons, MIT.
 ---|---|---|
 | 01 | Apertura | Destruyendo el vibe coding |
 | 02 | Apertura | Luisdavid Colina |
-| 03 | El golpe | Lo que decide está debajo |
-| 04 | El golpe | La sensación no sirve para medir |
-| 05 | El golpe | El agente tenía permiso |
+| 03 | El golpe | Lo que importa está debajo |
+| 04 | El golpe | El agente tenía permiso |
+| 05 | El golpe | La sensación no sirve para medir |
 | 06 | La resolución | ¿Entonces la IA es el problema? |
-| 07 | La resolución | El encargo es el trabajo |
+| 07 | La resolución | Prompts vs. encargos |
 | 08 | La resolución | Cuatro reglas, y la primera manda |
-| 09 | Orquestación | Aquí no hay espera muerta |
+| 09 | Orquestación | No más vibe coding ni pérdida de tiempo |
 | 10 | Lo construido | Seis meses contra cinco semanas |
 | 11 | Las capas y sus modas | Ninguna capa borró la de abajo |
 | 12 | Las bases | Creen que entienden, y no |

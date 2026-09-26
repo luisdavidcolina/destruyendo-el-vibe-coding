@@ -187,6 +187,18 @@ if (!String.prototype.padStart) {
       }, 1500));
     }
 
+    // 1b. El tablero Kanban de la lamina 09 se repite en bucle: cada 9
+    //     segundos la secuencia de agentes y el choque vuelven a empezar.
+    //     Pedido el 25 de septiembre por la noche.
+    var tab = slide.querySelector('[data-widget="tablero"]');
+    if (tab) {
+      timers.push(setInterval(function () {
+        tab.classList.add('reinicia');
+        void tab.offsetWidth;
+        tab.classList.remove('reinicia');
+      }, 9000));
+    }
+
     // 2. Numeros que cuentan hacia arriba al entrar la lamina
     var cifras = Array.prototype.slice.call(slide.querySelectorAll('[data-count]'));
     cifras.forEach(function (el, idx) {

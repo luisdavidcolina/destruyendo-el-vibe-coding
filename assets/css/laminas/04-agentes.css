@@ -432,3 +432,109 @@ table.t td.hi-cell {
   letter-spacing: -0.015em;
   color: var(--text);
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   10 y 11, la antigua 10 dividida en dos el 25 de septiembre por la noche.
+   Las reglas .reglas y .rafaga de arriba quedan sin uso y no se borran.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── 10 Lo que automatice para estudiar ──────────────────────────────── */
+.au-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr 1fr; gap: 22px; flex: 1; min-height: 0; }
+
+.au {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.au.lit { border: 2px solid var(--accent); }
+
+.au-img { position: relative; flex: 1; min-height: 0; overflow: hidden; background: #0D1117; }
+.au-img img, .au-img video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+
+.au figcaption {
+  white-space: nowrap;
+  flex: none;
+  padding: 12px 16px 14px;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--text);
+  border-top: 1px solid var(--line);
+}
+
+.au figcaption b { font-weight: 700; }
+
+/* Cada pieza entra una detras de otra, al ritmo en que se nombran */
+@keyframes auEntra { from { opacity: 0; transform: translate3d(0, 14px, 0) scale(0.98); } to { opacity: 1; transform: none; } }
+.slide.is-active .au { animation: auEntra 0.45s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.slide.is-active .au:nth-child(1) { animation-delay: 0.3s; }
+.slide.is-active .au:nth-child(2) { animation-delay: 0.9s; }
+.slide.is-active .au:nth-child(3) { animation-delay: 1.5s; }
+.slide.is-active .au:nth-child(4) { animation-delay: 2.1s; }
+.slide.is-active .au:nth-child(5) { animation-delay: 2.7s; }
+.slide.is-active .au:nth-child(6) { animation-delay: 3.3s; }
+
+/* Un paneo lento dentro de cada captura, para que no se queden muertas */
+@keyframes auPaneo { from { transform: scale(1.0); } to { transform: scale(1.08); } }
+.slide.is-active .au-img img { animation: auPaneo 12s ease-out 0.5s both; transform-origin: top center; }
+
+/* ── 11 Seis meses contra cinco semanas ──────────────────────────────── */
+.compara { gap: 16px; justify-content: flex-start; }
+.cm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+
+.cm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--card-shadow);
+}
+
+.cm.ahora { border: 2px solid var(--accent); }
+.cm-img { height: 262px; overflow: hidden; border-radius: 10px; border: 1px solid var(--line); }
+.cm-img img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
+
+.cm h3 { margin: 2px 0 0; font-family: var(--font-display); font-size: 23px; font-weight: 700; color: var(--text); }
+
+.cm-num { display: flex; justify-content: space-between; gap: 12px; }
+.cm-num span { font-size: 18px; color: var(--text); }
+.cm-num b { display: block; font-family: var(--font-display); font-size: 40px; font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
+.cm.antes .cm-num b { color: var(--text-dim); }
+.cm.ahora .cm-num b { color: var(--accent); }
+
+.cm-archivo {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--ok);
+  border-radius: 12px;
+}
+
+.cm-archivo img { height: 50px; width: 84px; object-fit: cover; object-position: center 22%; border-radius: 6px; }
+.cm-archivo b { font-size: 21px; font-weight: 700; color: var(--text); margin-right: auto; }
+.cm-archivo span { font-size: 18px; font-weight: 600; color: var(--text); padding: 6px 12px; border-radius: 999px; background: var(--on-bg, rgba(26, 127, 55, 0.08)); border: 1px solid var(--line); }
+
+@keyframes cmEntra { from { opacity: 0; transform: translate3d(0, 16px, 0); } to { opacity: 1; transform: none; } }
+.slide.is-active .cm.antes { animation: cmEntra 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both; }
+.slide.is-active .cm.ahora { animation: cmEntra 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1.6s both; }
+.slide.is-active .cm-archivo { animation: cmEntra 0.5s cubic-bezier(0.22, 1, 0.36, 1) 3.2s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .slide.is-active .au, .slide.is-active .au-img img, .slide.is-active .cm, .slide.is-active .cm-archivo { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+@media print {
+  .au, .au-img img, .cm, .cm-archivo { animation: none !important; opacity: 1 !important; transform: none !important; }
+}

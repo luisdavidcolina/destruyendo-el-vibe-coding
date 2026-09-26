@@ -1,4 +1,4 @@
-/* 04 - Orquestacion y lo construido: laminas 09 y 10
+/* 04 - Orquestacion y lo construido: laminas 09, 10 y 11
    La 09 es el nucleo tecnico de la ponencia y la 10 es la que paga el engano
    del primer acto. Las dos llevan evidencia propia, no consejos.
 
@@ -82,62 +82,79 @@ window.DECK.push(
   </div>`
 },
 
-/* ─────────────── 10 Esto lo hizo una persona ─────────────────────────────
-   PENDIENTE DE PERMISO. El sistema de 2026 es de un cliente y todavia no hay
-   autorizacion para nombrarlo en una sala llena. El nombre real es:
+/* ─────────────── 10 Lo que automatice para estudiar ─────────────────────
+   La 10 anterior se dividio en dos el 25 de septiembre por la noche, por
+   decision del expositor y en el orden de su resumen del evento: primero las
+   automatizaciones de estudio y trabajo, despues la comparacion de proyectos.
 
-       Simply Pool
+   Seis piezas reales, cada una con su captura:
+   1. El archivo de su diario: 1.936 archivos de la carrera indexados
+   2. El plan de estudio del dia, en el calendario del diario
+   3. La clase interactiva de Matematica Discreta I, grabada en uso: se
+      asignan valores de verdad hasta encontrar el contraejemplo
+   4. Una guia propia en LaTeX, portada y pagina interior
+   5. El panel de su bot, conectado a WhatsApp
+   6. Esta misma ponencia, que es un archivo HTML
+   El detalle de cada una se dice hablando, y rapido. */
+{
+  section: 'Lo construido',
+  title: 'Lo que automaticé para estudiar',
+  min: '7:05 a 7:45',
+  html: `
+  <div class="pad">
+    <h1 class="title">Lo que automaticé para estudiar</h1>
+    <div class="rule"></div>
 
-   Se deja escrito aqui y comentado. En cuanto Joel confirme, se sustituye
-   "Sistema de gestion, 2026" por "Simply Pool, 2026" en la cabecera de la
-   tabla y se borra esta nota. Hasta entonces la comparacion funciona igual,
-   que es lo que dice el guion. */
+    <div class="body-area auto">
+      <div class="au-grid">
+        <figure class="au"><div class="au-img"><img src="assets/img/auto-archivo.jpg" alt="Archivo del diario con 1.936 archivos indexados"></div><figcaption><b>1.936 archivos</b> ordenados con IA</figcaption></figure>
+        <figure class="au"><div class="au-img"><img src="assets/img/auto-plan.jpg" alt="Plan de estudio del día en el calendario"></div><figcaption><b>Plan de estudio</b> diario</figcaption></figure>
+        <figure class="au lit"><div class="au-img"><video poster="assets/video/prepa-calculadora.jpg" muted loop playsinline preload="none" data-src="assets/video/prepa-calculadora.webm"></video></div><figcaption><b>Clase interactiva</b> de Discreta</figcaption></figure>
+        <figure class="au"><div class="au-img"><img src="assets/img/auto-latex.jpg" alt="Guía propia en LaTeX"></div><figcaption><b>Guías propias</b> en LaTeX</figcaption></figure>
+        <figure class="au"><div class="au-img"><img src="assets/img/auto-bot.jpg" alt="Panel del bot"></div><figcaption><b>Mi bot</b> en WhatsApp</figcaption></figure>
+        <figure class="au"><div class="au-img"><img src="assets/img/auto-ponencia.jpg" alt="Portada de esta ponencia"></div><figcaption><b>Esta ponencia</b> es un HTML</figcaption></figure>
+      </div>
+    </div>
+  </div>`
+},
+
+/* ─────────────── 11 Seis meses contra cinco semanas ────────────────────
+   Los dos proyectos, cada uno con su captura en funcionamiento y sus tres
+   numeros. El de 2026 se describe por lo que hace, sin nombrar a la empresa,
+   por decision del expositor. La captura es la tabla de alumnos con datos de
+   demostracion, recortada sin la marca ni el correo.
+
+   Abajo, el archivo digital de la Facultad, que cierra el arco con la lamina
+   del incidente: gasto limitado, credenciales encerradas y aprobacion
+   humana antes de cambiar un registro. */
 {
   section: 'Lo construido',
   title: 'Seis meses contra cinco semanas',
-  min: '7:05 a 8:05',
+  min: '7:45 a 8:25',
   html: `
   <div class="pad">
-    <h1 class="title anim" data-d="2">Seis meses contra cinco semanas</h1>
+    <h1 class="title">Seis meses contra cinco semanas</h1>
     <div class="rule"></div>
 
-    <div class="body-area">
-      <!-- La tabla es el argumento entero de la lamina. Se conservan las tres
-           filas y las dos columnas, y lo que se acorto son las etiquetas. -->
-      <table class="t compact anim f" data-d="3" style="max-width:860px">
-        <thead>
-          <tr>
-            <th></th>
-            <th style="width:270px">DreamJob, 2022</th>
-            <!-- Simply Pool: falta el permiso del cliente para nombrarlo -->
-            <th style="width:270px">Sistema de gestión, 2026</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Personas</td><td>Seis</td><td class="hi-cell">Una</td></tr>
-          <tr><td>Tiempo</td><td>Seis meses</td><td class="hi-cell">Cinco semanas</td></tr>
-          <tr><td>Commits</td><td>779</td><td class="hi-cell">1.148</td></tr>
-        </tbody>
-      </table>
+    <div class="body-area compara">
+      <div class="cm-grid">
+        <article class="cm antes">
+          <div class="cm-img"><img src="assets/img/sis-dreamjob.jpg" alt="Plataforma de empleo en funcionamiento"></div>
+          <h3>Plataforma de empleo, 2022</h3>
+          <div class="cm-num"><span><b>6</b> personas</span><span><b>6</b> meses</span><span><b>779</b> commits</span></div>
+        </article>
 
-      <div class="grid g2 gap-lg" style="margin-top:26px">
-        <div class="card lit anim" data-d="5">
-          <span class="card-ix">ARCHIVO DIGITAL</span>
-          <ul class="reglas">
-            <li>Gasto limitado</li>
-            <li>Credenciales encerradas</li>
-            <li>Aprobación humana</li>
-          </ul>
-        </div>
-        <!-- La rafaga va a una palabra por renglon. La frase de cada pieza se
-             dice hablando, y el numero de orden ahora lo dibuja el CSS. -->
-        <div class="rafaga anim" data-d="6">
-          <div class="rf">Carpetas</div>
-          <div class="rf">Guías</div>
-          <div class="rf">Preparaduría</div>
-          <div class="rf">WhatsApp</div>
-          <div class="rf">Cliente</div>
-        </div>
+        <article class="cm ahora">
+          <div class="cm-img"><img src="assets/img/sis-gestion.jpg" alt="Sistema de gestión en funcionamiento, con datos de demostración"></div>
+          <h3>Gestión de escuelas de natación, 2026</h3>
+          <div class="cm-num"><span><b>1</b> persona</span><span><b>5</b> semanas</span><span><b>1.148</b> commits</span></div>
+        </article>
+      </div>
+
+      <div class="cm-archivo">
+        <img src="assets/img/sis-archivo-ucv.png" alt="Archivo digital de la Facultad de Ciencias">
+        <b>Archivo digital de la Facultad</b>
+        <span>Gasto limitado</span><span>Credenciales encerradas</span><span>Aprobación humana</span>
       </div>
     </div>
   </div>`

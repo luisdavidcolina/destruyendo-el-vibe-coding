@@ -538,3 +538,11 @@ table.t td.hi-cell {
 @media print {
   .au, .au-img img, .cm, .cm-archivo { animation: none !important; opacity: 1 !important; transform: none !important; }
 }
+
+/* El bot ocupa la tercera columna entera, de arriba abajo. El video es
+   vertical, asi que se muestra entero y centrado sobre el color del chat. */
+.au-grid { grid-template-columns: 1fr 1fr 0.86fr; }
+.au.bot { grid-column: 3; grid-row: 1 / span 2; }
+.au.bot .au-img { background: #F472B6; }
+.au.bot .au-img video { object-fit: contain; object-position: center top; background: #FFFFFF; }
+.slide.is-active .au.bot { animation-delay: 0.6s; }

@@ -93,9 +93,9 @@ window.DECK.push(
    3. La clase interactiva de Matematica Discreta I, grabada en uso: se
       asignan valores de verdad hasta encontrar el contraejemplo
    4. Una guia propia en LaTeX, portada y pagina interior
-   5. El panel de su bot, conectado a WhatsApp
-   6. Esta misma ponencia, que es un archivo HTML
-   El detalle de cada una se dice hablando, y rapido. */
+   5. Su bot respondiendo en vivo, grabado: ocupa la columna entera
+   Que esta ponencia es un archivo HTML se dice hablando, por decision del
+   expositor. El detalle de cada pieza se dice hablando, y rapido. */
 {
   section: 'Lo construido',
   title: 'Lo que automaticé para estudiar',
@@ -109,10 +109,13 @@ window.DECK.push(
       <div class="au-grid">
         <figure class="au"><div class="au-img"><img src="assets/img/auto-archivo.jpg" alt="Archivo del diario con 1.936 archivos indexados"></div><figcaption><b>1.936 archivos</b> ordenados con IA</figcaption></figure>
         <figure class="au"><div class="au-img"><img src="assets/img/auto-plan.jpg" alt="Plan de estudio del día en el calendario"></div><figcaption><b>Plan de estudio</b> diario</figcaption></figure>
-        <figure class="au lit"><div class="au-img"><video poster="assets/video/prepa-calculadora.jpg" muted loop playsinline preload="none" data-src="assets/video/prepa-calculadora.webm"></video></div><figcaption><b>Clase interactiva</b> de Discreta</figcaption></figure>
+        <!-- El bot ocupa la columna entera: es la unica pieza que se ve
+             trabajando en tiempo real. Se le pide la nota informativa de una
+             materia y lo que queda pendiente, y responde con datos del propio
+             diario. Grabado el 25 de septiembre de 2026. -->
+        <figure class="au bot lit"><div class="au-img"><video poster="assets/video/bot-chat.jpg" muted loop playsinline preload="none" data-src="assets/video/bot-chat.webm"></video></div><figcaption><b>Mi bot</b>, el mismo de WhatsApp</figcaption></figure>
+        <figure class="au"><div class="au-img"><video poster="assets/video/prepa-calculadora.jpg" muted loop playsinline preload="none" data-src="assets/video/prepa-calculadora.webm"></video></div><figcaption><b>Clase interactiva</b> de Discreta</figcaption></figure>
         <figure class="au"><div class="au-img"><img src="assets/img/auto-latex.jpg" alt="Guía propia en LaTeX"></div><figcaption><b>Guías propias</b> en LaTeX</figcaption></figure>
-        <figure class="au"><div class="au-img"><img src="assets/img/auto-bot.jpg" alt="Panel del bot"></div><figcaption><b>Mi bot</b> en WhatsApp</figcaption></figure>
-        <figure class="au"><div class="au-img"><img src="assets/img/auto-ponencia.jpg" alt="Portada de esta ponencia"></div><figcaption><b>Esta ponencia</b> es un HTML</figcaption></figure>
       </div>
     </div>
   </div>`

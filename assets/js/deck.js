@@ -129,28 +129,32 @@ if (!String.prototype.padStart) {
   function prev() { show(cur - 1); }
 
   /* ── Video: carga perezosa y respaldo silencioso ────────────────────────── */
+  // Una lamina puede llevar mas de un video (la 10 lleva dos), asi que las
+  // tres funciones recorren todos los que tenga, no solo el primero.
+  function videos(slide) { return Array.prototype.slice.call(slide.querySelectorAll('video[data-src]')); }
+
   function prime(slide) {
-    var v = slide.querySelector('video');
-    if (!v || v.dataset.primed) return;
-    v.dataset.primed = '1';
-    v.src = v.dataset.src;
-    v.load();
-    v.addEventListener('loadeddata', function () { v.classList.add('ready'); });
-    // Si el archivo no existe, el error se traga aqui y queda el fondo de respaldo
-    v.addEventListener('error', function () { v.style.display = 'none'; });
+    videos(slide).forEach(function (v) {
+      if (v.dataset.primed) return;
+      v.dataset.primed = '1';
+      v.src = v.dataset.src;
+      v.load();
+      v.addEventListener('loadeddata', function () { v.classList.add('ready'); });
+      // Si el archivo no existe, el error se traga aqui y queda el fondo de respaldo
+      v.addEventListener('error', function () { v.style.display = 'none'; });
+    });
   }
 
   function playVideo(slide) {
-    var v = slide.querySelector('video');
-    if (!v) return;
     prime(slide);
-    var p = v.play();
-    if (p && p.catch) p.catch(function () {});
+    videos(slide).forEach(function (v) {
+      var p = v.play();
+      if (p && p.catch) p.catch(function () {});
+    });
   }
 
   function stopVideo(slide) {
-    var v = slide.querySelector('video');
-    if (v) { try { v.pause(); v.currentTime = 0; } catch (e) {} }
+    videos(slide).forEach(function (v) { try { v.pause(); v.currentTime = 0; } catch (e) {} });
   }
 
   /* ── Widgets vivos de cada lamina ───────────────────────────────────────── */

@@ -684,3 +684,19 @@
 .encargo .salida.mala .rs { font-size: 26px; }
 .encargo .salida .chip { font-size: 18px; padding: 9px 14px; }
 .encargo .salida .chip { font-size: 16.5px; padding: 9px 12px; }
+/* 07: la pregunta tachada va chica, como un comentario al margen, y los dos
+   paneles crecen hasta el pie de la lamina. Dentro de cada panel las lineas
+   se reparten el alto, para que no quede franja vacia abajo. */
+.enc-tacha .tx { font-size: 32px; font-weight: 600; letter-spacing: -0.01em; }
+.enc-tacha .raya { height: 4px; top: 52%; }
+.encargo { gap: 22px; padding-top: 0; }
+.encargo .grid { flex: 1; min-height: 0; }
+.encargo .col .code pre { display: flex; flex-direction: column; justify-content: space-evenly; }
+.encargo .col .code pre { justify-content: flex-start; }
+.encargo .col .code pre .ln:not(.sola) { flex: 1; align-items: center; }
+.encargo .col .code pre .ln.sola { padding-top: 22px; }
+.enc-tacha .tx { font-size: 28px; }
+.enc-tacha .tx { font-size: 24px; }
+.enc-archivos { grid-template-columns: repeat(4, 1fr); gap: 14px; padding: 8px 22px 22px; }
+.enc-archivos i { height: 76px; }
+.enc-archivos i { height: 56px; } .enc-archivos { gap: 12px; padding: 4px 22px 18px; }

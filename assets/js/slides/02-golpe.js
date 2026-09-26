@@ -107,75 +107,6 @@ window.DECK.push(
   </div>`
 },
 
-/* ────────────────────────── 04 El experimento de METR ────────────────────── */
-{
-  section: 'El golpe',
-  title: 'El experimento de METR',
-  min: '1:20 a 2:20',
-  html: `
-  <div class="pad">
-    <h1 class="title">La sensación no sirve para medir</h1>
-    <div class="rule"></div>
-
-    <div class="body-area met-area">
-      <div class="met-grid">
-
-        <!-- La captura de la pagina de METR. Ocupa el flanco izquierdo, que
-             antes eran cuatrocientos noventa pixeles muertos, y sostiene la
-             cifra con la fuente a la vista: el titulo del estudio, el resumen
-             donde se lee el 19 por ciento y la nota de actualizacion. El
-             recorte lo hace el marco, no el archivo. -->
-        <figure class="met-nota">
-          <div class="met-marco">
-            <img src="assets/img/nota-metr.png" alt="Página de METR con el estudio Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity">
-          </div>
-          <figcaption class="met-pie">METR, ensayo controlado aleatorizado. Julio de 2025.</figcaption>
-        </figure>
-
-        <!-- Pieza .enf, generica y reutilizable. Los valores entran por
-             atributos: --to es la cifra y --h el alto de la barra. Como los
-             dos porcentajes son casi iguales en magnitud, las dos barras
-             salen casi identicas y lo unico que las separa es la direccion,
-             que es exactamente el punto. Las cifras estan completas desde el
-             primer fotograma: un contador que sube proyecta cifras falsas
-             mientras el expositor dice la verdadera. -->
-        <div class="enf">
-
-          <div class="enf-arriba">
-            <span class="enf-eti">Lo que sintieron</span>
-            <span class="enf-cifra" style="--to:20"><i class="sg">+</i><i class="nm"></i><i class="pc">%</i></span>
-            <span class="enf-barra" style="--h:124px"></span>
-          </div>
-
-          <div class="enf-eje"></div>
-
-          <div class="enf-abajo">
-            <span class="enf-barra" style="--h:118px"></span>
-            <span class="enf-cifra" style="--to:19"><i class="sg">&minus;</i><i class="nm"></i><i class="pc">%</i></span>
-            <span class="enf-eti">Lo que se midió</span>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-
-    <!-- 2026. Pedido el 25 de septiembre por la noche: hablar solo del dato
-         viejo cuando hay uno nuevo sonaba raro. METR, 24 de febrero de 2026:
-         los mismos programadores, con herramientas nuevas, estimado 18 por
-         ciento mas rapidos. La propia METR advierte que la medicion ya no es
-         confiable porque muchos no aceptan trabajar sin IA y no pueden medir
-         bien a quien usa varios agentes a la vez. Esa advertencia es el
-         puente a la segunda mitad de la charla. -->
-    <div class="met-2026">
-      <span class="m26-a">2026</span>
-      <span class="m26-n">18&nbsp;%</span>
-      <span class="m26-l">más rápidos con herramientas nuevas</span>
-      <span class="m26-t">METR ya no puede medirlo bien: muchos trabajan con varios agentes a la vez.</span>
-    </div>
-  </div>`
-},
-
 /* ───────────────────────────── 05 Nueve segundos ─────────────────────────── */
 {
   section: 'El golpe',
@@ -254,6 +185,75 @@ window.DECK.push(
         <p class="nv-frase">La IA hace en segundos lo que no deberías haberle pedido.</p>
       </div>
 
+    </div>
+  </div>`
+},
+
+/* ────────────────────────── 04 El experimento de METR ────────────────────── */
+{
+  section: 'El golpe',
+  title: 'El experimento de METR',
+  min: '2:05 a 3:00',
+  html: `
+  <div class="pad">
+    <h1 class="title">La sensación no sirve para medir</h1>
+    <div class="rule"></div>
+
+    <div class="body-area met-area">
+      <div class="met-grid">
+
+        <!-- La captura de la pagina de METR. Ocupa el flanco izquierdo, que
+             antes eran cuatrocientos noventa pixeles muertos, y sostiene la
+             cifra con la fuente a la vista: el titulo del estudio, el resumen
+             donde se lee el 19 por ciento y la nota de actualizacion. El
+             recorte lo hace el marco, no el archivo. -->
+        <figure class="met-nota">
+          <div class="met-marco">
+            <img src="assets/img/nota-metr.png" alt="Página de METR con el estudio Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity">
+          </div>
+          <figcaption class="met-pie">METR, ensayo controlado aleatorizado. Julio de 2025.</figcaption>
+        </figure>
+
+        <!-- Pieza .enf, generica y reutilizable. Los valores entran por
+             atributos: --to es la cifra y --h el alto de la barra. Como los
+             dos porcentajes son casi iguales en magnitud, las dos barras
+             salen casi identicas y lo unico que las separa es la direccion,
+             que es exactamente el punto. Las cifras estan completas desde el
+             primer fotograma: un contador que sube proyecta cifras falsas
+             mientras el expositor dice la verdadera. -->
+        <div class="enf">
+
+          <div class="enf-arriba">
+            <span class="enf-eti">Lo que sintieron</span>
+            <span class="enf-cifra" style="--to:20"><i class="sg">+</i><i class="nm"></i><i class="pc">%</i></span>
+            <span class="enf-barra" style="--h:124px"></span>
+          </div>
+
+          <div class="enf-eje"></div>
+
+          <div class="enf-abajo">
+            <span class="enf-barra" style="--h:118px"></span>
+            <span class="enf-cifra" style="--to:19"><i class="sg">&minus;</i><i class="nm"></i><i class="pc">%</i></span>
+            <span class="enf-eti">Lo que se midió</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2026. Pedido el 25 de septiembre por la noche: hablar solo del dato
+         viejo cuando hay uno nuevo sonaba raro. METR, 24 de febrero de 2026:
+         los mismos programadores, con herramientas nuevas, estimado 18 por
+         ciento mas rapidos. La propia METR advierte que la medicion ya no es
+         confiable porque muchos no aceptan trabajar sin IA y no pueden medir
+         bien a quien usa varios agentes a la vez. Esa advertencia es el
+         puente a la segunda mitad de la charla. -->
+    <div class="met-2026">
+      <span class="m26-a">2026</span>
+      <span class="m26-n">18&nbsp;%</span>
+      <span class="m26-l">más rápidos con herramientas nuevas</span>
+      <span class="m26-t">METR ya no puede medirlo bien: muchos trabajan con varios agentes a la vez.</span>
     </div>
   </div>`
 }

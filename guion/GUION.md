@@ -77,7 +77,7 @@ desde 2019, con IntelliPOS en Perú.
 
 ---
 
-## 03 | Lo que decide está debajo | 0:23 a 1:13
+## 03 | Lo que decide está debajo | 0:23 a 1:15
 
 **En pantalla.** Un iceberg. En la punta, sobre el agua, una sola caja: escribir la petición. En la
 masa sumergida, ocho cajas que aparecen una por una. Arriba a la derecha, la cita de Karpathy.
@@ -91,8 +91,8 @@ dejar que las cosas fluyan y que la máquina haga el trabajo.
 El término lo puso Andrej Karpathy, cofundador de OpenAI, a principios de 2025. Y lo definió así:
 entregarse a las vibras y olvidar que el código existe.
 
-Todos tenemos metido que así se programa mejor, y sobre todo más rápido. [silencio 1 s] ¿Y si les
-digo que puede hacerlos trabajar más, y ni siquiera se nota?
+Todos tenemos metido que así se programa mejor, y sobre todo más rápido. Pero lo que no se ve,
+lo que está debajo, es lo que decide. Y cuando nadie lo mira, puede salir muy caro.
 
 **OPCIONAL, nivel 2.** Lo que se ve es la punta: escribir la petición. Lo que decide si el resultado
 sirve está debajo.
@@ -102,38 +102,7 @@ diccionario Collins.
 
 ---
 
-## 04 | La sensación no sirve para medir | 1:13 a 2:21
-
-**En pantalla.** La página real del estudio de METR, en inglés. Dos barras sobre un mismo eje: más
-20 por ciento lo que sintieron, menos 19 por ciento lo que se midió. Abajo entra la franja de 2026:
-18 por ciento más rápidos con herramientas nuevas, y que METR ya no puede medirlo bien.
-
-**Qué decir.**
-
-Esto no es una opinión. METR hizo un experimento controlado con programadores experimentados,
-trabajando en sus propios proyectos, con y sin inteligencia artificial. Sintieron que iban un 20
-por ciento más rápido. Se midió, y fueron un 19 por ciento más lentos.
-
-¿Por qué? Porque la herramienta acelera lo fácil, y lo difícil no. McKinsey lo encontró igual: casi
-la mitad de ahorro en tareas rutinarias, y menos del diez por ciento en las complejas.
-
-Y a todos nos ha pasado. ¿Cuánto tiempo hemos perdido peleando con la inteligencia artificial por
-un cambio que habríamos hecho más rápido nosotros mismos?
-
-En febrero de 2026 METR volvió a medir con herramientas más nuevas: los mismos programadores salieron
-un 18 por ciento más rápidos. Pero la propia METR avisa que ya no lo puede medir bien, porque muchos
-ya no aceptan trabajar sin IA y otros trabajan con varios agentes a la vez. Y eso es justo de lo que
-trata la segunda mitad de esta charla.
-
-**Datos exactos.** METR, julio de 2025, ensayo controlado aleatorizado: 19 por ciento más lentos,
-estimaban 20 por ciento más rápidos. METR, 24 de febrero de 2026: para los programadores del estudio
-original, 18 por ciento más rápidos (intervalo de menos 38 a más 9), y para los nuevos, 4 por ciento.
-METR lo llama evidencia muy débil por efectos de selección. McKinsey, 4.500 desarrolladores en 150 empresas: 46 por ciento menos de tiempo en
-tareas rutinarias, menos de 10 en las de alta complejidad.
-
----
-
-## 05 | El agente tenía permiso | 2:21 a 3:02
+## 04 | El agente tenía permiso | 1:15 a 1:56
 
 **En pantalla.** PocketOS, alquiler de vehículos. Un reloj que corre de verdad hasta nueve. Al lado,
 el titular de Hackread y la cadena de cuatro pasos. Al parar el reloj entran lo que costó y la
@@ -162,7 +131,41 @@ IBM, Cost of a Data Breach Report 2026: una filtración cuesta en promedio 4,99 
 
 ---
 
-## 06 | ¿Entonces la IA es el problema? | 3:02 a 3:35
+## 05 | La sensación no sirve para medir | 1:56 a 3:14
+
+**En pantalla.** La página real del estudio de METR, en inglés. Dos barras sobre un mismo eje: más
+20 por ciento lo que sintieron, menos 19 por ciento lo que se midió. Abajo entra la franja de 2026:
+18 por ciento más rápidos con herramientas nuevas, y que METR ya no puede medirlo bien.
+
+**Qué decir.**
+
+Y ahora lo de la velocidad. ¿Y si les digo que puede hacerlos trabajar más, y ni siquiera se nota?
+[silencio 1 s]
+
+Esto no es una opinión. METR hizo un experimento controlado con programadores experimentados,
+trabajando en sus propios proyectos, con y sin inteligencia artificial. Sintieron que iban un 20
+por ciento más rápido. Se midió, y fueron un 19 por ciento más lentos.
+
+¿Por qué? Porque la herramienta acelera lo fácil, y lo difícil no. McKinsey lo encontró igual: casi
+la mitad de ahorro en tareas rutinarias, y menos del diez por ciento en las complejas.
+
+Y a todos nos ha pasado. ¿Cuánto tiempo hemos perdido peleando con la inteligencia artificial por
+un cambio que habríamos hecho más rápido nosotros mismos?
+
+En febrero de 2026 METR volvió a medir con herramientas más nuevas: los mismos programadores salieron
+un 18 por ciento más rápidos. Pero la propia METR avisa que ya no lo puede medir bien, porque muchos
+ya no aceptan trabajar sin IA y otros trabajan con varios agentes a la vez. Y eso es justo de lo que
+trata la segunda mitad de esta charla.
+
+**Datos exactos.** METR, julio de 2025, ensayo controlado aleatorizado: 19 por ciento más lentos,
+estimaban 20 por ciento más rápidos. METR, 24 de febrero de 2026: para los programadores del estudio
+original, 18 por ciento más rápidos (intervalo de menos 38 a más 9), y para los nuevos, 4 por ciento.
+METR lo llama evidencia muy débil por efectos de selección. McKinsey, 4.500 desarrolladores en 150 empresas: 46 por ciento menos de tiempo en
+tareas rutinarias, menos de 10 en las de alta complejidad.
+
+---
+
+## 06 | ¿Entonces la IA es el problema? | 3:14 a 3:47
 
 **En pantalla.** Solo la pregunta, sobre fondo oscuro.
 
@@ -181,9 +184,9 @@ Todo lo que viene sirve para cualquier modelo y cualquier lenguaje.
 
 ---
 
-## 07 | El encargo es el trabajo | 3:35 a 4:06
+## 07 | El encargo es el trabajo | 3:47 a 4:18
 
-**En pantalla.** Arriba, "Ingeniería de prompts" entra y se tacha. A la izquierda un chat que se
+**En pantalla.** Arriba, chico, "¿Ingeniería de prompts?" entra y se tacha. A la izquierda un chat que se
 escribe solo, "arregla el login", y se prenden doce archivos en rojo: doce archivos sin probar. A la derecha el archivo de instrucciones de Copilot con contexto, objetivo, límites y
 verificación, y su resultado: un archivo, sesión corregida, esquema intacto, pruebas en verde.
 
@@ -201,10 +204,10 @@ a todos los que trabajen ahí.
 
 ---
 
-## 08 | Cómo se trabaja con agentes | 4:06 a 5:16
+## 08 | Cómo se trabaja con agentes | 4:18 a 5:28
 
-**En pantalla.** La foto de un micrófono con el botón de grabar encendido: dictar el encargo. El
-flujo: del issue al PR, aprobar desde el teléfono, modelo según la tarea y skills reutilizables. Las
+**En pantalla.** La foto de un micrófono con el botón de grabar encendido: dictar el encargo.
+Workflows: del issue al PR, aprobar desde el teléfono, modelo según la tarea y skills reutilizables. Las
 reglas como interruptores que se encienden. Y lo que evalúan hoy tres certificaciones: GH-300,
 AI-103 y la de Claude.
 
@@ -220,7 +223,7 @@ el modelo.
 Primer consejo: los encargos no se escriben, se dictan. Hablando salen más largos y con más
 contexto. Esta ponencia se dirigió así.
 
-El flujo es este: se asigna una tarea, el agente la trabaja y devuelve un pull request, y se revisa
+El workflow es este: se asigna una tarea, el agente la trabaja y devuelve un pull request, y se revisa
 incluso desde el teléfono. Tres reglas no se negocian: permisos mínimos, revisión humana y piezas
 pequeñas.
 
@@ -240,7 +243,7 @@ micrófono: Panos Sakalakis, CC BY 2.0.
 
 ---
 
-## 09 | No más vibe coding ni pérdida de tiempo | 5:16 a 6:11
+## 09 | No más vibe coding ni pérdida de tiempo | 5:28 a 6:23
 
 **En pantalla.** Un tablero Kanban con la cara de GitHub Projects. Disponibles, en curso y hechas.
 Tres agentes de Copilot con identificador toman historias a la vez. Llega una cuarta con un
@@ -269,7 +272,7 @@ el uso de sistemas multiagente creció 327 por ciento en cuatro meses de 2025.
 
 ---
 
-## 10 | Lo que automaticé para estudiar | 6:11 a 6:51
+## 10 | Lo que automaticé para estudiar | 6:23 a 7:03
 
 **En pantalla.** Cinco piezas reales que entran una por una: el explorador de archivos recorriendo
 la carrera ordenada (semestres anteriores, un semestre, una materia por dentro), el plan de estudio
@@ -295,7 +298,7 @@ páginas.
 
 ---
 
-## 11 | Seis meses contra cinco semanas | 6:51 a 7:24
+## 11 | Seis meses contra cinco semanas | 7:03 a 7:36
 
 **En pantalla.** Dos proyectos con su captura: la portada original de la plataforma de empleo, con
 su buscador, y el escritorio del administrador del sistema de natación. Una plataforma de 2022:
@@ -320,7 +323,7 @@ expositor. Sistema de 2026: del 19 de agosto al 24 de septiembre, 1.148 commits,
 
 ---
 
-## 12 | Ninguna capa borró la de abajo | 7:24 a 8:04
+## 12 | Ninguna capa borró la de abajo | 7:36 a 8:16
 
 **En pantalla.** Una pila de capas que se construye de abajo hacia arriba, con los logos de cada
 época: tarjetas, ensamblador, alto nivel, bibliotecas, nube y agentes. Al lado, el titular de
@@ -347,7 +350,7 @@ IA. 85 por ciento de los junior dice que la herramienta mejoró su comprensión.
 
 ---
 
-## 13 | Lo que hoy se certifica | 8:04 a 8:32
+## 13 | Lo que hoy se certifica | 8:16 a 8:44
 
 **En pantalla.** Seis tarjetas con logo: GH-300 de GitHub Copilot, AI-103 de Microsoft, Claude
 Certified de Anthropic, AI Practitioner de Amazon, ML Engineer de Google Cloud y RAG y agentes de
@@ -370,7 +373,7 @@ profesional en Coursera. Foro Económico Mundial, Future of Jobs Report 2025, p�
 
 ---
 
-## 14 | Reflexión final | 8:32 a 8:50
+## 14 | Reflexión final | 8:44 a 9:02
 
 **En pantalla.** Sobre fondo oscuro: "El que cree que ya sabe usar la IA es el que peor la está
 usando". Debajo, la cita de Ken Thompson con quién fue.
@@ -388,7 +391,7 @@ más productivos fue tirar a la basura mil líneas de código".
 
 ---
 
-## 15 | Es hora de que cumplan los suyos | 8:50 a 9:00
+## 15 | Es hora de que cumplan los suyos | 9:02 a 9:12
 
 **En pantalla.** Las tres líneas, una por una, y el calendario de contribuciones que se enciende en
 verde en el último tramo.
@@ -420,25 +423,25 @@ de diez minutos.
 |---|---|---|---|---|---|---|
 | 01 | Destruyendo el vibe coding | 5 |  | 0:02 | 0:04 | 0:00 a 0:04 |
 | 02 | Luisdavid Colina | 45 |  |  | 0:19 | 0:04 a 0:23 |
-| 03 | Lo que decide está debajo | 99 | n2: 19 | 0:01 | 0:50 | 0:23 a 1:13 |
-| 04 | La sensación no sirve para medir | 165 |  |  | 1:08 | 1:13 a 2:21 |
-| 05 | El agente tenía permiso | 73 | n1: 19 | 0:03 | 0:41 | 2:21 a 3:02 |
-| 06 | ¿Entonces la IA es el problema? | 75 |  | 0:02 | 0:33 | 3:02 a 3:35 |
-| 07 | El encargo es el trabajo | 74 |  |  | 0:31 | 3:35 a 4:06 |
-| 08 | Cómo se trabaja con agentes | 138 | n1: 22, n2: 7 | 0:01 | 1:10 | 4:06 a 5:16 |
-| 09 | No más vibe coding ni pérdida de tiempo | 86 | n2: 33, n3: 16 |  | 0:56 | 5:16 a 6:11 |
-| 10 | Lo que automaticé para estudiar | 93 |  | 0:01 | 0:39 | 6:11 a 6:51 |
-| 11 | Seis meses contra cinco semanas | 81 |  |  | 0:34 | 6:51 a 7:24 |
-| 12 | Ninguna capa borró la de abajo | 95 |  |  | 0:39 | 7:24 a 8:04 |
-| 13 | Lo que hoy se certifica | 47 | n1: 21 |  | 0:28 | 8:04 a 8:32 |
-| 14 | Reflexión final | 38 |  | 0:02 | 0:18 | 8:32 a 8:50 |
-| 15 | Es hora de que cumplan los suyos | 21 |  | 0:02 | 0:11 | 8:50 a 9:00 |
+| 03 | Lo que decide está debajo | 108 | n2: 19 |  | 0:53 | 0:23 a 1:15 |
+| 04 | El agente tenía permiso | 73 | n1: 19 | 0:03 | 0:41 | 1:15 a 1:56 |
+| 05 | La sensación no sirve para medir | 185 |  | 0:01 | 1:18 | 1:56 a 3:14 |
+| 06 | ¿Entonces la IA es el problema? | 75 |  | 0:02 | 0:33 | 3:14 a 3:47 |
+| 07 | El encargo es el trabajo | 74 |  |  | 0:31 | 3:47 a 4:18 |
+| 08 | Cómo se trabaja con agentes | 138 | n1: 22, n2: 7 | 0:01 | 1:10 | 4:18 a 5:28 |
+| 09 | No más vibe coding ni pérdida de tiempo | 86 | n2: 33, n3: 16 |  | 0:56 | 5:28 a 6:23 |
+| 10 | Lo que automaticé para estudiar | 93 |  | 0:01 | 0:39 | 6:23 a 7:03 |
+| 11 | Seis meses contra cinco semanas | 81 |  |  | 0:34 | 7:03 a 7:36 |
+| 12 | Ninguna capa borró la de abajo | 95 |  |  | 0:39 | 7:36 a 8:16 |
+| 13 | Lo que hoy se certifica | 47 | n1: 21 |  | 0:28 | 8:16 a 8:44 |
+| 14 | Reflexión final | 38 |  | 0:02 | 0:18 | 8:44 a 9:02 |
+| 15 | Es hora de que cumplan los suyos | 21 |  | 0:02 | 0:11 | 9:02 a 9:12 |
 | 16 | Contacto y referencias | | | | queda proyectada | |
 
-**Todo dicho, con los opcionales: 9:00.**
-Soltando hasta el nivel 1: 8:35.
-Soltando hasta el nivel 2: 8:10.
-Soltando hasta el nivel 3: 8:04.
+**Todo dicho, con los opcionales: 9:12.**
+Soltando hasta el nivel 1: 8:47.
+Soltando hasta el nivel 2: 8:22.
+Soltando hasta el nivel 3: 8:16.
 
 **Si se va tarde,** se sueltan los OPCIONAL en orden: primero todos los de nivel 1, después los de
 nivel 2, después los de nivel 3. El cronómetro de la barra (tecla R) se pone ámbar en el minuto 8

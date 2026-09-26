@@ -957,3 +957,21 @@
    solo el escudo, sin fondo, del alto del nombre y su giro. */
 .nv-logo { height: 92px; border-radius: 0; box-shadow: none; }
 .nv-caso { gap: 16px; }
+
+/* METR: la jerarquia al reves de antes. Lo que sintieron es una impresion,
+   asi que va tenue: cifra chica, barra en contorno punteado. Lo que se
+   midio es el dato real y manda: cifra grande, barra solida. Pedido el 25
+   de septiembre por la noche. Solo en la lamina de METR, la .enf de la de
+   BairesDev no se toca. */
+.met-grid .enf-arriba .enf-cifra { font-size: 40px; color: #5B8FD4; opacity: 0.85; }
+.met-grid .enf-arriba .enf-barra {
+  background: rgba(9, 105, 218, 0.07);
+  border: 3px dashed rgba(9, 105, 218, 0.45);
+  border-bottom: none;
+  box-sizing: border-box;
+}
+.met-grid .enf-arriba .enf-eti { color: var(--text-dim); font-size: 19px; }
+.met-grid .enf-abajo .enf-cifra { font-size: 84px; font-weight: 800; }
+.met-grid .enf-abajo .enf-eti { color: var(--text); font-size: 24px; font-weight: 700; }
+.met-grid .enf-abajo .enf-barra { box-shadow: 0 16px 32px -16px rgba(207, 34, 41, 0.55); }
+.met-grid .enf-abajo .enf-cifra { font-size: 74px; }

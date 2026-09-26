@@ -103,6 +103,7 @@ window.DECK.push(
   cinema: true,
   html: `
   <div class="pad">
+    ${window.FONDO_CODIGO('borra')}
     <div class="final">
       <p class="fin-frase anim" data-d="2">
         El que cree que ya sabe usar la IA<br>es el que peor la está usando.

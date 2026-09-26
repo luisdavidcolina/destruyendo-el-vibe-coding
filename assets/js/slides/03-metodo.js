@@ -28,6 +28,7 @@ window.DECK.push(
   cinema: true,
   html: `
   <div class="pad">
+    ${window.FONDO_CODIGO('agrega')}
     <div class="cine-hero giro">
 
       <!-- La unica pregunta de todo el deck. Se proyecta con su signo porque

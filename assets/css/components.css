@@ -900,3 +900,37 @@ table.t th { font-size: 12px; letter-spacing: 0.14em; }
 }
 
 .contacto .en .ev { font-size: 17.5px; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
+
+/* ── La columna de codigo de las laminas oscuras de texto ────────────────
+   A la derecha, casi transparente, subiendo muy despacio. Se disuelve por
+   la izquierda y por arriba y abajo, para que nunca toque el texto. En la 06
+   son lineas que se agregan, en verde. En la 14 lineas que se borran, en
+   rojo y tachadas. */
+.fondo-codigo {
+  position: absolute;
+  top: -40px; bottom: -40px; right: -40px;
+  width: 44%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 45%), linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+  -webkit-mask-composite: source-in;
+          mask-image: linear-gradient(90deg, transparent 0%, #000 45%), linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+          mask-composite: intersect;
+}
+.fc-cinta { display: flex; flex-direction: column; }
+.fc-l {
+  display: block;
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 17px;
+  line-height: 1.75;
+  white-space: pre;
+}
+.fondo-codigo.agrega .fc-l { color: rgba(126, 231, 135, 0.13); }
+.fondo-codigo.borra .fc-l { color: rgba(255, 161, 152, 0.13); text-decoration: line-through; text-decoration-color: rgba(255, 161, 152, 0.10); }
+@keyframes fcSube { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(0, -50%, 0); } }
+.slide.is-active .fc-cinta { animation: fcSube 70s linear infinite; }
+.cine-hero, .final { position: relative; z-index: 1; }
+@media (prefers-reduced-motion: reduce) { .slide.is-active .fc-cinta { animation: none; } }
+@media print { .fondo-codigo { display: none; } }
+.cine-hero ~ .fondo-codigo, .slide .fondo-codigo.agrega { width: 27%; }

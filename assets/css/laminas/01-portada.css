@@ -361,20 +361,20 @@
 .cover.portada .logos {
   display: inline-flex;
   align-items: center;
-  gap: 18px;
+  gap: 22px;
   flex: none;
   background: none;
   padding: 0;
 }
 
 .cover.portada .logos img {
-  height: 34px;
+  height: 52px;
   width: auto;
   display: block;
   opacity: 0.92;
 }
 
-.cover.portada .logos .sep { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.22); }
+.cover.portada .logos .sep { width: 1px; height: 34px; background: rgba(255, 255, 255, 0.22); }
 
 /* En papel no hay animacion: todo en su estado final */
 @media print {

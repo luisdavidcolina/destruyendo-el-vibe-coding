@@ -194,7 +194,7 @@ window.DECK.push(
           <!-- El nombre del caso es informacion principal, asi que va a
                cuerpo de informacion principal y no de pie de foto. -->
           <div class="nv-caso">
-            <img class="nv-logo" src="assets/logos/pocketos.png" alt="Logo de PocketOS">
+            <img class="nv-logo" src="assets/logos/pocketos-escudo.png" alt="Escudo de PocketOS">
             <span class="nv-caso-tx">
               <span class="nv-marca">PocketOS</span>
               <span class="nv-giro">Alquiler de vehículos</span>

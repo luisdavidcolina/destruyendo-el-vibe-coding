@@ -953,3 +953,7 @@
 .m26-l { white-space: nowrap; }
 .m26-t { max-width: 600px; text-align: left; }
 .met-marco { aspect-ratio: 2100 / 975; }
+/* El logo completo era un bloque negro que competia con el nombre. Queda
+   solo el escudo, sin fondo, del alto del nombre y su giro. */
+.nv-logo { height: 92px; border-radius: 0; box-shadow: none; }
+.nv-caso { gap: 16px; }

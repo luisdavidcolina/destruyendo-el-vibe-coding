@@ -102,10 +102,11 @@ diccionario Collins.
 
 ---
 
-## 04 | La sensación no sirve para medir | 1:13 a 2:05
+## 04 | La sensación no sirve para medir | 1:13 a 2:21
 
 **En pantalla.** La página real del estudio de METR, en inglés. Dos barras sobre un mismo eje: más
-20 por ciento lo que sintieron, menos 19 por ciento lo que se midió.
+20 por ciento lo que sintieron, menos 19 por ciento lo que se midió. Abajo entra la franja de 2026:
+18 por ciento más rápidos con herramientas nuevas, y que METR ya no puede medirlo bien.
 
 **Qué decir.**
 
@@ -119,17 +120,20 @@ la mitad de ahorro en tareas rutinarias, y menos del diez por ciento en las comp
 Y a todos nos ha pasado. ¿Cuánto tiempo hemos perdido peleando con la inteligencia artificial por
 un cambio que habríamos hecho más rápido nosotros mismos?
 
-**OPCIONAL, nivel 1.** En febrero de 2026 METR volvió a medir con modelos más nuevos y la
-estimación cambió. Pero la lección queda: la sensación de velocidad no sirve para medir.
+En febrero de 2026 METR volvió a medir con herramientas más nuevas: los mismos programadores salieron
+un 18 por ciento más rápidos. Pero la propia METR avisa que ya no lo puede medir bien, porque muchos
+ya no aceptan trabajar sin IA y otros trabajan con varios agentes a la vez. Y eso es justo de lo que
+trata la segunda mitad de esta charla.
 
 **Datos exactos.** METR, julio de 2025, ensayo controlado aleatorizado: 19 por ciento más lentos,
-estimaban 20 por ciento más rápidos. METR, 24 de febrero de 2026, datos nuevos con herramientas de
-finales de 2025. McKinsey, 4.500 desarrolladores en 150 empresas: 46 por ciento menos de tiempo en
+estimaban 20 por ciento más rápidos. METR, 24 de febrero de 2026: para los programadores del estudio
+original, 18 por ciento más rápidos (intervalo de menos 38 a más 9), y para los nuevos, 4 por ciento.
+METR lo llama evidencia muy débil por efectos de selección. McKinsey, 4.500 desarrolladores en 150 empresas: 46 por ciento menos de tiempo en
 tareas rutinarias, menos de 10 en las de alta complejidad.
 
 ---
 
-## 05 | El agente tenía permiso | 2:05 a 2:47
+## 05 | El agente tenía permiso | 2:21 a 3:02
 
 **En pantalla.** PocketOS, alquiler de vehículos. Un reloj que corre de verdad hasta nueve. Al lado,
 el titular de Hackread y la cadena de cuatro pasos. Al parar el reloj entran lo que costó y la
@@ -158,7 +162,7 @@ IBM, Cost of a Data Breach Report 2026: una filtración cuesta en promedio 4,99 
 
 ---
 
-## 06 | ¿Entonces la IA es el problema? | 2:47 a 3:20
+## 06 | ¿Entonces la IA es el problema? | 3:02 a 3:35
 
 **En pantalla.** Solo la pregunta, sobre fondo oscuro.
 
@@ -177,15 +181,16 @@ Todo lo que viene sirve para cualquier modelo y cualquier lenguaje.
 
 ---
 
-## 07 | El encargo es el trabajo | 3:20 a 3:44
+## 07 | El encargo es el trabajo | 3:35 a 4:06
 
-**En pantalla.** A la izquierda un chat que dice "arregla el login" y su resultado: doce archivos
-sin probar. A la derecha el archivo de instrucciones de Copilot con contexto, objetivo, límites y
+**En pantalla.** Arriba, "Ingeniería de prompts" entra y se tacha. A la izquierda un chat que se
+escribe solo, "arregla el login", y se prenden doce archivos en rojo: doce archivos sin probar. A la derecha el archivo de instrucciones de Copilot con contexto, objetivo, límites y
 verificación, y su resultado: un archivo, sesión corregida, esquema intacto, pruebas en verde.
 
 **Qué decir.**
 
-La primera corrección es la que más rinde. Un modelo no falla por falta de capacidad. Falla por
+Se habla mucho de ingeniería de prompts, como si hubiera una frase mágica. No la hay. La primera
+corrección es la que más rinde. Un modelo no falla por falta de capacidad. Falla por
 falta de encargo. Un buen encargo tiene cuatro cosas: contexto, objetivo, límites y cómo se
 verifica.
 
@@ -196,12 +201,12 @@ a todos los que trabajen ahí.
 
 ---
 
-## 08 | Cómo se trabaja con agentes | 3:44 a 4:49
+## 08 | Cómo se trabaja con agentes | 4:06 a 5:16
 
 **En pantalla.** La foto de un micrófono con el botón de grabar encendido: dictar el encargo. El
-flujo: del issue al pull request, aprobar desde el teléfono, modelo pequeño para lo rutinario. Las
-reglas del repositorio como interruptores que se encienden. Y el temario del examen de GitHub
-Copilot.
+flujo: del issue al PR, aprobar desde el teléfono, modelo según la tarea y skills reutilizables. Las
+reglas como interruptores que se encienden. Y lo que evalúan hoy tres certificaciones: GH-300,
+AI-103 y la de Claude.
 
 **Qué decir.**
 
@@ -219,19 +224,23 @@ El flujo es este: se asigna una tarea, el agente la trabaja y devuelve un pull r
 incluso desde el teléfono. Tres reglas no se negocian: permisos mínimos, revisión humana y piezas
 pequeñas.
 
-**OPCIONAL, nivel 2.** Las tareas que se repiten se guardan como skills, instrucciones que se
-escriben una vez. Y todo queda registrado en un servidor propio.
+Y lo que se repite no se vuelve a explicar: se guarda como skill, una instrucción que se escribe
+una vez y el agente reusa.
 
-**OPCIONAL, nivel 1.** Lo de la derecha es lo que evalúa hoy el examen de Copilot: modo agente,
-subagentes, MCP y la terminal.
+**OPCIONAL, nivel 2.** Todo queda registrado en un servidor propio.
+
+**OPCIONAL, nivel 1.** Lo de abajo a la derecha es lo que evalúan hoy las certificaciones: agentes,
+subagentes, multiagente, MCP. Todas hablan de lo mismo.
 
 **Datos exactos.** Guía oficial del examen GH-300, versión del 7 de agosto de 2026: modo agente,
 sesiones de agentes y subagentes, MCP, Copilot CLI, revisión de código y archivos de
-instrucciones. Foto del micrófono: Panos Sakalakis, CC BY 2.0.
+instrucciones. AI-103, guía oficial: RAG, soluciones multiagente orquestadas, guardrails y flujos de
+aprobación. Claude Certified Architect Foundations: Claude Code, Agent SDK, la API y MCP. Foto del
+micrófono: Panos Sakalakis, CC BY 2.0.
 
 ---
 
-## 09 | No más vibe coding ni pérdida de tiempo | 4:49 a 5:45
+## 09 | No más vibe coding ni pérdida de tiempo | 5:16 a 6:11
 
 **En pantalla.** Un tablero Kanban con la cara de GitHub Projects. Disponibles, en curso y hechas.
 Tres agentes de Copilot con identificador toman historias a la vez. Llega una cuarta con un
@@ -260,7 +269,7 @@ el uso de sistemas multiagente creció 327 por ciento en cuatro meses de 2025.
 
 ---
 
-## 10 | Lo que automaticé para estudiar | 5:45 a 6:24
+## 10 | Lo que automaticé para estudiar | 6:11 a 6:51
 
 **En pantalla.** Cinco piezas reales que entran una por una: el explorador de archivos recorriendo
 la carrera ordenada (semestres anteriores, un semestre, una materia por dentro), el plan de estudio
@@ -286,7 +295,7 @@ páginas.
 
 ---
 
-## 11 | Seis meses contra cinco semanas | 6:24 a 6:58
+## 11 | Seis meses contra cinco semanas | 6:51 a 7:24
 
 **En pantalla.** Dos proyectos con su captura: la portada original de la plataforma de empleo, con
 su buscador, y el escritorio del administrador del sistema de natación. Una plataforma de 2022:
@@ -311,7 +320,7 @@ expositor. Sistema de 2026: del 19 de agosto al 24 de septiembre, 1.148 commits,
 
 ---
 
-## 12 | Ninguna capa borró la de abajo | 6:58 a 7:37
+## 12 | Ninguna capa borró la de abajo | 7:24 a 8:04
 
 **En pantalla.** Una pila de capas que se construye de abajo hacia arriba, con los logos de cada
 época: tarjetas, ensamblador, alto nivel, bibliotecas, nube y agentes. Al lado, el titular de
@@ -338,7 +347,7 @@ IA. 85 por ciento de los junior dice que la herramienta mejoró su comprensión.
 
 ---
 
-## 13 | Lo que hoy se certifica | 7:37 a 8:05
+## 13 | Lo que hoy se certifica | 8:04 a 8:32
 
 **En pantalla.** Seis tarjetas con logo: GH-300 de GitHub Copilot, AI-103 de Microsoft, Claude
 Certified de Anthropic, AI Practitioner de Amazon, ML Engineer de Google Cloud y RAG y agentes de
@@ -361,7 +370,7 @@ profesional en Coursera. Foro Económico Mundial, Future of Jobs Report 2025, p�
 
 ---
 
-## 14 | Reflexión final | 8:05 a 8:23
+## 14 | Reflexión final | 8:32 a 8:50
 
 **En pantalla.** Sobre fondo oscuro: "El que cree que ya sabe usar la IA es el que peor la está
 usando". Debajo, la cita de Ken Thompson con quién fue.
@@ -379,7 +388,7 @@ más productivos fue tirar a la basura mil líneas de código".
 
 ---
 
-## 15 | Es hora de que cumplan los suyos | 8:23 a 8:34
+## 15 | Es hora de que cumplan los suyos | 8:50 a 9:00
 
 **En pantalla.** Las tres líneas, una por una, y el calendario de contribuciones que se enciende en
 verde en el último tramo.
@@ -412,24 +421,24 @@ de diez minutos.
 | 01 | Destruyendo el vibe coding | 5 |  | 0:02 | 0:04 | 0:00 a 0:04 |
 | 02 | Luisdavid Colina | 45 |  |  | 0:19 | 0:04 a 0:23 |
 | 03 | Lo que decide está debajo | 99 | n2: 19 | 0:01 | 0:50 | 0:23 a 1:13 |
-| 04 | La sensación no sirve para medir | 100 | n1: 28 |  | 0:53 | 1:13 a 2:05 |
-| 05 | El agente tenía permiso | 73 | n1: 19 | 0:03 | 0:41 | 2:05 a 2:47 |
-| 06 | ¿Entonces la IA es el problema? | 75 |  | 0:02 | 0:33 | 2:47 a 3:20 |
-| 07 | El encargo es el trabajo | 58 |  |  | 0:24 | 3:20 a 3:44 |
-| 08 | Cómo se trabaja con agentes | 113 | n1: 20, n2: 23 | 0:01 | 1:06 | 3:44 a 4:49 |
-| 09 | No más vibe coding ni pérdida de tiempo | 86 | n2: 33, n3: 16 |  | 0:56 | 4:49 a 5:45 |
-| 10 | Lo que automaticé para estudiar | 93 |  | 0:01 | 0:39 | 5:45 a 6:24 |
-| 11 | Seis meses contra cinco semanas | 81 |  |  | 0:34 | 6:24 a 6:58 |
-| 12 | Ninguna capa borró la de abajo | 95 |  |  | 0:39 | 6:58 a 7:37 |
-| 13 | Lo que hoy se certifica | 47 | n1: 21 |  | 0:28 | 7:37 a 8:05 |
-| 14 | Reflexión final | 38 |  | 0:02 | 0:18 | 8:05 a 8:23 |
-| 15 | Es hora de que cumplan los suyos | 21 |  | 0:02 | 0:11 | 8:23 a 8:34 |
+| 04 | La sensación no sirve para medir | 165 |  |  | 1:08 | 1:13 a 2:21 |
+| 05 | El agente tenía permiso | 73 | n1: 19 | 0:03 | 0:41 | 2:21 a 3:02 |
+| 06 | ¿Entonces la IA es el problema? | 75 |  | 0:02 | 0:33 | 3:02 a 3:35 |
+| 07 | El encargo es el trabajo | 74 |  |  | 0:31 | 3:35 a 4:06 |
+| 08 | Cómo se trabaja con agentes | 138 | n1: 22, n2: 7 | 0:01 | 1:10 | 4:06 a 5:16 |
+| 09 | No más vibe coding ni pérdida de tiempo | 86 | n2: 33, n3: 16 |  | 0:56 | 5:16 a 6:11 |
+| 10 | Lo que automaticé para estudiar | 93 |  | 0:01 | 0:39 | 6:11 a 6:51 |
+| 11 | Seis meses contra cinco semanas | 81 |  |  | 0:34 | 6:51 a 7:24 |
+| 12 | Ninguna capa borró la de abajo | 95 |  |  | 0:39 | 7:24 a 8:04 |
+| 13 | Lo que hoy se certifica | 47 | n1: 21 |  | 0:28 | 8:04 a 8:32 |
+| 14 | Reflexión final | 38 |  | 0:02 | 0:18 | 8:32 a 8:50 |
+| 15 | Es hora de que cumplan los suyos | 21 |  | 0:02 | 0:11 | 8:50 a 9:00 |
 | 16 | Contacto y referencias | | | | queda proyectada | |
 
-**Todo dicho, con los opcionales: 8:34.**
-Soltando hasta el nivel 1: 7:57.
-Soltando hasta el nivel 2: 7:26.
-Soltando hasta el nivel 3: 7:20.
+**Todo dicho, con los opcionales: 9:00.**
+Soltando hasta el nivel 1: 8:35.
+Soltando hasta el nivel 2: 8:10.
+Soltando hasta el nivel 3: 8:04.
 
 **Si se va tarde,** se sueltan los OPCIONAL en orden: primero todos los de nivel 1, después los de
 nivel 2, después los de nivel 3. El cronómetro de la barra (tecla R) se pone ámbar en el minuto 8

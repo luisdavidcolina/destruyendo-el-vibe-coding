@@ -673,3 +673,14 @@
 .of-examen .of-fila + .of-fila { margin-top: 10px; padding-top: 10px; }
 .of-flujo ul { gap: 12px; }
 .slide.is-active .of-flujo li:nth-child(4) { animation-delay: 6.2s; }
+/* 07 sin huecos: el contenido crece hasta llenar la lamina en vez de
+   quedar centrado con aire arriba y abajo. */
+.encargo { justify-content: flex-start; gap: 30px; padding-top: 6px; }
+.enc-tacha .tx { font-size: 60px; }
+.encargo .code .ln { font-size: 23px; padding: 13px 22px; }
+.encargo .code .et { font-size: 21px; width: 165px; }
+.enc-archivos { gap: 12px; padding: 10px 22px 22px; }
+.enc-archivos i { height: 50px; }
+.encargo .salida.mala .rs { font-size: 26px; }
+.encargo .salida .chip { font-size: 18px; padding: 9px 14px; }
+.encargo .salida .chip { font-size: 16.5px; padding: 9px 12px; }

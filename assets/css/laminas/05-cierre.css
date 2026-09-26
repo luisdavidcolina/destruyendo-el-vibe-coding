@@ -593,3 +593,26 @@
   .c2, .bs-nota, .bs-frase, .ct { animation: none !important; opacity: 1 !important; transform: none !important; }
   .bs-barra i { animation: none !important; transform: none !important; }
 }
+
+/* ── Contacto, 25 de septiembre por la noche ───────────────────────────
+   Cuatro enlaces y no tres: entra Instagram. Cada uno con el color de su
+   marca, que es lo que se reconoce desde el fondo, y la direccion al color
+   de texto, no al gris. Dieciseis fuentes a cuerpo de lectura. */
+.cierre-contacto .enl { padding: 10px 14px; }
+.cierre-contacto .enl-i, .cierre-contacto .enl-i svg { width: 24px; height: 24px; }
+.cierre-contacto .enl-u { font-size: 17px; color: var(--text); }
+.cierre-contacto .enl.gh .enl-i { color: #1F2328; }
+.cierre-contacto .enl.li .enl-i { color: #0A66C2; }
+.cierre-contacto .enl.ig .enl-i { color: #E4405F; }
+.cierre-contacto .enl.web .enl-i { color: var(--accent); }
+:root[data-theme="dark"] .cierre-contacto .enl.gh .enl-i { color: #E6EDF3; }
+
+.cierre-contacto .refs-h { color: var(--text); }
+.cierre-contacto .ref-col { gap: 9px; }
+.cierre-contacto .ref-t { font-size: 18px; line-height: 1.32; color: var(--text); }
+.cierre-contacto .ref-n { font-size: 16px; width: 26px; }
+.cierre-contacto .col-qr { gap: 12px; }
+.cierre-contacto .qr-marco { padding: 12px; display: flex; justify-content: center; }
+.cierre-contacto .qr-marco img { width: 232px; height: 232px; }
+.cierre-contacto .enlaces { gap: 7px; }
+.cierre-contacto .enl { padding: 8px 14px; }

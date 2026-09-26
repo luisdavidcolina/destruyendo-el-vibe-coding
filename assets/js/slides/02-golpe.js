@@ -36,7 +36,19 @@
    ========================================================================== */
 window.DECK.push(
 
-/* ───────────────────── 03 El reparto y la cita de Karpathy ───────────────── */
+/* ───────────────────── 03 El iceberg y la cita de Karpathy ───────────────── */
+/* Rehecha el 25 de septiembre por la noche con lo que pidio el expositor: un
+   iceberg de verdad, con lo de arriba y lo de abajo, todo en cajas ordenadas.
+   No un dibujo con una frase, y no un diagrama sin iceberg.
+
+   La escena es un SVG fijo de 1112 por 480: el agua, la punta y la masa
+   sumergida, en facetas de hielo. Encima van las cajas en HTML, para que el
+   texto sea texto. Arriba del agua una sola caja, la peticion. Abajo ocho.
+
+   La animacion es el argumento: primero se ve solo la punta, que es lo que
+   todos ven del vibe coding. Despues se aclara lo sumergido y las ocho cajas
+   aparecen una por una. Cincuenta palabras justas: se fueron los rotulos de
+   las dos zonas, que el agua ya dice. */
 {
   section: 'El golpe',
   title: 'Lo que decide está debajo',
@@ -47,30 +59,39 @@ window.DECK.push(
     <div class="rule"></div>
 
     <div class="body-area ice-area">
+      <div class="ice-escena">
+        <svg class="ice-svg" viewBox="0 0 1112 480" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="iceAgua" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#3D8FD6" stop-opacity="0.55"/>
+              <stop offset="0.35" stop-color="#1B5E9C" stop-opacity="0.82"/>
+              <stop offset="1" stop-color="#0B2F52" stop-opacity="0.96"/>
+            </linearGradient>
+          </defs>
+          <rect class="ice-mar" x="0" y="138" width="1112" height="342" rx="14" fill="url(#iceAgua)"/>
+          <g class="ice-masa">
+            <polygon points="236,140 630,140 760,168 952,206 1062,286 1080,392 1004,474 128,474 30,404 44,292 120,212" fill="#D6E9F8" fill-opacity="0.34" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2"/>
+            <polyline points="120,212 300,300 44,292" fill="none" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="2"/>
+            <polyline points="596,140 640,300 952,206" fill="none" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="2"/>
+            <polyline points="300,300 640,300 1062,286" fill="none" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2"/>
+            <polyline points="128,474 300,300 520,474 640,300 820,474" fill="none" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="2"/>
+          </g>
+          <g class="ice-punta">
+            <polygon points="236,140 296,64 380,4 444,44 492,24 596,104 630,140" fill="#EEF5FC" stroke="#5E97CF" stroke-width="2.5"/>
+            <polygon points="380,4 444,44 424,140 296,64" fill="#CFE2F4"/>
+            <polygon points="492,24 596,104 630,140 424,140 444,44" fill="#E1EDF9"/>
+          </g>
+          <line class="ice-linea" x1="0" y1="140" x2="1112" y2="140" stroke="#1B5E9C" stroke-width="3"/>
+        </svg>
 
-      <!-- Sobre la linea de flotacion: una sola caja, y al lado la cita de
-           quien bautizo el termino. La cita va aqui arriba, fuera del agua,
-           porque nombra justo lo unico que el metodo entero consiste en
-           escribir. -->
-      <div class="ice-sobre">
-        <div class="ice-arriba">
-          <span class="ice-eti">Lo que se escribe</span>
-          <div class="ice-caja">Escribir la petición</div>
-        </div>
+        <div class="ice-caja">Escribir la petición</div>
 
         <blockquote class="quote ice-cita">
           <b>vibe coding</b>
           &ldquo;Entregarse a las vibras y olvidar que el código existe&rdquo;
           <span class="who">Andrej Karpathy, 2025</span>
         </blockquote>
-      </div>
 
-      <div class="ice-agua"><span>Línea de flotación</span></div>
-
-      <!-- Debajo, las ocho. La rejilla llena lo que queda de lamina a
-           proposito: ese volumen es el argumento. -->
-      <div class="ice-bajo">
-        <span class="ice-eti">Lo que decide si el resultado sirve</span>
         <div class="ice-rej">
           <span>Contexto del proyecto</span>
           <span>Convenciones del repositorio</span>
@@ -78,11 +99,10 @@ window.DECK.push(
           <span>Permisos del agente</span>
           <span>Revisión humana</span>
           <span>Pruebas que corren</span>
-          <span>Qué modelo para qué tarea</span>
-          <span>Saber leer lo que devuelve</span>
+          <span>Elegir el modelo</span>
+          <span>Leer el resultado</span>
         </div>
       </div>
-
     </div>
   </div>`
 },

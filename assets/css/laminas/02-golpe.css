@@ -768,3 +768,142 @@
 
   .nv-paso code { background: #FFFFFF !important; }
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   03 El iceberg, rehecho el 25 de septiembre por la noche. Las reglas .ice-*
+   de arriba que ya no se usan (.ice-sobre, .ice-arriba, .ice-agua, .ice-bajo,
+   .ice-eti) quedan sin efecto y no se borran. Estas cuelgan de .ice-escena
+   para ganarles en especificidad.
+   ══════════════════════════════════════════════════════════════════════════ */
+.ice-area { justify-content: center; }
+
+.ice-escena {
+  position: relative;
+  flex: none;
+  width: 1112px;
+  height: 480px;
+}
+
+.ice-escena .ice-svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: visible; }
+
+/* La unica caja de arriba, apoyada en la punta */
+.ice-escena .ice-caja {
+  position: absolute;
+  left: 321px;
+  top: 76px;
+  width: 224px;
+  height: auto;
+  margin: 0;
+  padding: 11px 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 700;
+  color: #1F2328;
+  background: #FFFFFF;
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  box-shadow: 0 10px 22px -12px rgba(9, 50, 90, 0.5);
+}
+
+/* La cita, arriba a la derecha y fuera del agua */
+.ice-escena .ice-cita {
+  position: absolute;
+  left: 660px;
+  top: 0;
+  width: 452px;
+  margin: 0;
+  padding-left: 18px;
+  border-left: 3px solid var(--accent);
+  font-size: 22px;
+  line-height: 1.32;
+  color: var(--text);
+}
+
+.ice-escena .ice-cita b {
+  display: block;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.ice-escena .ice-cita .who {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-display);
+  font-size: 17px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text-dim);
+}
+
+/* Las ocho cajas, en rejilla dentro de la masa sumergida. Blancas sobre el
+   agua oscura: es el mayor contraste posible en un proyector. */
+.ice-escena .ice-rej {
+  position: absolute;
+  left: 118px;
+  top: 214px;
+  width: 876px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 88px;
+  gap: 18px 16px;
+}
+
+.ice-escena .ice-rej span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #1F2328;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  box-shadow: 0 8px 18px -12px rgba(0, 20, 40, 0.6);
+}
+
+/* ── La secuencia ────────────────────────────────────────────────────────
+   0,2 s   la punta, la linea del agua, la caja de arriba y la cita
+   1,2 s   se aclara lo sumergido
+   1,6 s   las ocho cajas, una cada 0,22 s, hasta los 3,2 s
+   Todo termina visible. */
+@keyframes iceNace  { from { opacity: 0; transform: translate3d(0, 10px, 0); } to { opacity: 1; transform: none; } }
+@keyframes iceAclara { from { opacity: 0.12; } to { opacity: 1; } }
+
+.slide.is-active .ice-escena .ice-punta,
+.slide.is-active .ice-escena .ice-caja   { animation: iceNace 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
+.slide.is-active .ice-escena .ice-cita   { animation: iceNace 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both; }
+.slide.is-active .ice-escena .ice-masa   { animation: iceAclara 0.9s ease-out 1.2s both; }
+.slide.is-active .ice-escena .ice-rej span { animation: iceNace 0.4s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.slide.is-active .ice-escena .ice-rej span:nth-child(1) { animation-delay: 1.60s; }
+.slide.is-active .ice-escena .ice-rej span:nth-child(2) { animation-delay: 1.82s; }
+.slide.is-active .ice-escena .ice-rej span:nth-child(3) { animation-delay: 2.04s; }
+.slide.is-active .ice-escena .ice-rej span:nth-child(4) { animation-delay: 2.26s; }
+.slide.is-active .ice-escena .ice-rej span:nth-child(5) { animation-delay: 2.48s; }
+.slide.is-active .ice-escena .ice-rej span:nth-child(6) { animation-delay: 2.70s; }
+.slide.is-active .ice-escena .ice-rej span:nth-child(7) { animation-delay: 2.92s; }
+.slide.is-active .ice-escena .ice-rej span:nth-child(8) { animation-delay: 3.14s; }
+
+:root[data-theme="dark"] .ice-escena .ice-rej span {
+  color: #1F2328;
+  background: rgba(255, 255, 255, 0.94);
+  border-color: #FFFFFF;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide.is-active .ice-escena .ice-punta, .slide.is-active .ice-escena .ice-caja,
+  .slide.is-active .ice-escena .ice-cita, .slide.is-active .ice-escena .ice-masa,
+  .slide.is-active .ice-escena .ice-rej span { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+@media print {
+  .ice-escena .ice-punta, .ice-escena .ice-caja, .ice-escena .ice-cita,
+  .ice-escena .ice-masa, .ice-escena .ice-rej span { animation: none !important; opacity: 1 !important; transform: none !important; }
+}

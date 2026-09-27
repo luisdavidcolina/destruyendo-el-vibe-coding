@@ -102,7 +102,7 @@ diccionario Collins.
 
 ---
 
-## 04 | El agente tenía permiso | 1:15 a 1:56
+## 04 | El agente tenía permiso | 1:15 a 2:09
 
 **En pantalla.** PocketOS, alquiler de vehículos. Un reloj que corre de verdad hasta nueve. Al lado,
 el titular de Hackread y la cadena de cuatro pasos. Al parar el reloj entran lo que costó y la
@@ -122,16 +122,22 @@ Nueve segundos para destruir lo que tomó años construir.
 **OPCIONAL, nivel 1.** Lo que iba a ser un ahorro de tiempo terminó costando mucho más que hacerlo
 bien desde el principio.
 
+**OPCIONAL, nivel 1.** Y no es un caso aislado. Veracode probó en julio de este año el código que
+escriben los modelos: en 44 de cada 100 tareas dejaron una vulnerabilidad de riesgo.
+
 **Frase proyectada.** La IA hace en segundos lo que no deberías haberle pedido.
 
 **Datos exactos.** 24 de abril de 2026. Un agente de Cursor con Claude Opus 4.6, una llave de
 Railway sin alcance limitado y una mutación, `volumeDelete`. 30 horas fuera de servicio y tres
 meses de reservas perdidas. Registrado en la base de incidentes de IA de la OCDE el 27 de abril.
 IBM, Cost of a Data Breach Report 2026: una filtración cuesta en promedio 4,99 millones de dólares.
+Veracode, 2026 GenAI Code Security Report, 28 de julio de 2026: cerca del 44 por ciento de las
+tareas de código generadas con IA introdujo una vulnerabilidad de riesgo, y la tasa promedio de
+aprobación en seguridad se quedó en 56 por ciento, casi igual que en 2025.
 
 ---
 
-## 05 | La sensación no sirve para medir | 1:56 a 3:14
+## 05 | La sensación no sirve para medir | 2:09 a 3:26
 
 **En pantalla.** La página real del estudio de METR, en inglés. Dos barras sobre un mismo eje: más
 20 por ciento lo que sintieron, menos 19 por ciento lo que se midió. Abajo entra la franja de 2026:
@@ -165,7 +171,7 @@ tareas rutinarias, menos de 10 en las de alta complejidad.
 
 ---
 
-## 06 | ¿Entonces la IA es el problema? | 3:14 a 3:47
+## 06 | ¿Entonces la IA es el problema? | 3:26 a 3:59
 
 **En pantalla.** Solo la pregunta, sobre fondo oscuro.
 
@@ -184,7 +190,7 @@ Todo lo que viene sirve para cualquier modelo y cualquier lenguaje.
 
 ---
 
-## 07 | Prompts vs. Encargos | 3:47 a 4:18
+## 07 | Prompts vs. Encargos | 3:59 a 4:30
 
 **En pantalla.** Arriba, chico, "¿Ingeniería de prompts?" entra y se tacha. A la izquierda un chat que se
 escribe solo, "arregla el login", y se prenden doce archivos en rojo: doce archivos sin probar. A la derecha el archivo de instrucciones de Copilot con contexto, objetivo, límites y
@@ -204,7 +210,7 @@ a todos los que trabajen ahí.
 
 ---
 
-## 08 | Cómo se trabaja con agentes | 4:18 a 5:28
+## 08 | Cómo se trabaja con agentes | 4:30 a 5:40
 
 **En pantalla.** La foto de un micrófono con el botón de grabar encendido: dictar el encargo.
 Workflows: del issue al PR, aprobar desde el teléfono, modelo según la tarea y skills reutilizables. Las
@@ -243,7 +249,7 @@ micrófono: Panos Sakalakis, CC BY 2.0.
 
 ---
 
-## 09 | No más vibe coding ni pérdida de tiempo | 5:28 a 6:23
+## 09 | No más vibe coding ni pérdida de tiempo | 5:40 a 6:36
 
 **En pantalla.** Un tablero Kanban con la cara de GitHub Projects. Disponibles, en curso y hechas.
 Tres agentes de Copilot con identificador toman historias a la vez. Llega una cuarta con un
@@ -272,7 +278,7 @@ el uso de sistemas multiagente creció 327 por ciento en cuatro meses de 2025.
 
 ---
 
-## 10 | Lo que automaticé para estudiar | 6:23 a 7:03
+## 10 | Lo que automaticé para estudiar | 6:36 a 7:15
 
 **En pantalla.** Cinco piezas reales que entran una por una: el explorador de archivos recorriendo
 la carrera ordenada (semestres anteriores, un semestre, una materia por dentro), el plan de estudio
@@ -298,7 +304,7 @@ páginas.
 
 ---
 
-## 11 | Seis meses contra cinco semanas | 7:03 a 7:36
+## 11 | Seis meses contra cinco semanas | 7:15 a 7:49
 
 **En pantalla.** Dos proyectos con su captura: la portada original de la plataforma de empleo, con
 su buscador, y el escritorio del administrador del sistema de natación. Una plataforma de 2022:
@@ -323,7 +329,7 @@ expositor. Sistema de 2026: del 19 de agosto al 24 de septiembre, 1.148 commits,
 
 ---
 
-## 12 | Ninguna capa borró la de abajo | 7:36 a 8:38
+## 12 | Ninguna capa borró la de abajo | 7:49 a 8:50
 
 **En pantalla.** Una pila de capas que se construye de abajo hacia arriba, con los logos de cada
 época: tarjetas, ensamblador, alto nivel, bibliotecas, nube y agentes. Al lado, el titular de
@@ -355,7 +361,7 @@ IA. 85 por ciento de los junior dice que la herramienta mejoró su comprensión.
 
 ---
 
-## 13 | Lo que hoy se certifica | 8:38 a 9:06
+## 13 | Lo que hoy se certifica | 8:50 a 9:18
 
 **En pantalla.** Seis tarjetas con logo: GH-300 de GitHub Copilot, AI-103 de Microsoft, Claude
 Certified de Anthropic, AI Practitioner de Amazon, ML Engineer de Google Cloud y RAG y agentes de
@@ -378,7 +384,7 @@ profesional en Coursera. Foro Económico Mundial, Future of Jobs Report 2025, p�
 
 ---
 
-## 14 | Reflexión final | 9:06 a 9:24
+## 14 | Reflexión final | 9:18 a 9:36
 
 **En pantalla.** Sobre fondo oscuro: "El que cree que ya sabe usar la IA es el que peor la está
 usando". Debajo, la cita de Ken Thompson con quién fue.
@@ -396,7 +402,7 @@ más productivos fue tirar a la basura mil líneas de código".
 
 ---
 
-## 15 | Es hora de que cumplan los suyos | 9:24 a 9:34
+## 15 | Es hora de que cumplan los suyos | 9:36 a 9:47
 
 **En pantalla.** Las tres líneas, una por una, y el calendario de contribuciones que se enciende en
 verde en el último tramo.
@@ -429,21 +435,21 @@ de diez minutos.
 | 01 | Destruyendo el vibe coding | 5 |  | 0:02 | 0:04 | 0:00 a 0:04 |
 | 02 | Luisdavid Colina | 45 |  |  | 0:19 | 0:04 a 0:23 |
 | 03 | Lo que importa está debajo | 108 | n2: 19 |  | 0:53 | 0:23 a 1:15 |
-| 04 | El agente tenía permiso | 73 | n1: 19 | 0:03 | 0:41 | 1:15 a 1:56 |
-| 05 | La sensación no sirve para medir | 185 |  | 0:01 | 1:18 | 1:56 a 3:14 |
-| 06 | ¿Entonces la IA es el problema? | 75 |  | 0:02 | 0:33 | 3:14 a 3:47 |
-| 07 | Prompts vs. Encargos | 74 |  |  | 0:31 | 3:47 a 4:18 |
-| 08 | Cómo se trabaja con agentes | 138 | n1: 22, n2: 7 | 0:01 | 1:10 | 4:18 a 5:28 |
-| 09 | No más vibe coding ni pérdida de tiempo | 86 | n2: 33, n3: 16 |  | 0:56 | 5:28 a 6:23 |
-| 10 | Lo que automaticé para estudiar | 93 |  | 0:01 | 0:39 | 6:23 a 7:03 |
-| 11 | Seis meses contra cinco semanas | 81 |  |  | 0:34 | 7:03 a 7:36 |
-| 12 | Ninguna capa borró la de abajo | 148 |  |  | 1:01 | 7:36 a 8:38 |
-| 13 | Lo que hoy se certifica | 47 | n1: 21 |  | 0:28 | 8:38 a 9:06 |
-| 14 | Reflexión final | 38 |  | 0:02 | 0:18 | 9:06 a 9:24 |
-| 15 | Es hora de que cumplan los suyos | 21 |  | 0:02 | 0:11 | 9:24 a 9:34 |
+| 04 | El agente tenía permiso | 73 | n1: 49 | 0:03 | 0:53 | 1:15 a 2:09 |
+| 05 | La sensación no sirve para medir | 185 |  | 0:01 | 1:18 | 2:09 a 3:26 |
+| 06 | ¿Entonces la IA es el problema? | 75 |  | 0:02 | 0:33 | 3:26 a 3:59 |
+| 07 | Prompts vs. Encargos | 74 |  |  | 0:31 | 3:59 a 4:30 |
+| 08 | Cómo se trabaja con agentes | 138 | n1: 22, n2: 7 | 0:01 | 1:10 | 4:30 a 5:40 |
+| 09 | No más vibe coding ni pérdida de tiempo | 86 | n2: 33, n3: 16 |  | 0:56 | 5:40 a 6:36 |
+| 10 | Lo que automaticé para estudiar | 93 |  | 0:01 | 0:39 | 6:36 a 7:15 |
+| 11 | Seis meses contra cinco semanas | 81 |  |  | 0:34 | 7:15 a 7:49 |
+| 12 | Ninguna capa borró la de abajo | 148 |  |  | 1:01 | 7:49 a 8:50 |
+| 13 | Lo que hoy se certifica | 47 | n1: 21 |  | 0:28 | 8:50 a 9:18 |
+| 14 | Reflexión final | 38 |  | 0:02 | 0:18 | 9:18 a 9:36 |
+| 15 | Es hora de que cumplan los suyos | 21 |  | 0:02 | 0:11 | 9:36 a 9:47 |
 | 16 | Contacto y referencias | | | | queda proyectada | |
 
-**Todo dicho, con los opcionales: 9:34.**
+**Todo dicho, con los opcionales: 9:47.**
 Soltando hasta el nivel 1: 9:09.
 Soltando hasta el nivel 2: 8:44.
 Soltando hasta el nivel 3: 8:38.

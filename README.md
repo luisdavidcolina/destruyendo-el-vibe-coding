@@ -98,8 +98,15 @@ La lámina 10 lleva tres videos cortos en `assets/video/`: el archivo de la carr
 de valores de verdad (`prepa-calculadora.webm`). Se reproducen mudos y en bucle al llegar a la
 lámina, y vuelven a empezar cada vez que se entra.
 
-Créditos de terceros: la foto del micrófono es de Panos Sakalakis, CC BY 2.0. Los íconos de
-lenguajes vienen de Simple Icons, CC0, y los de GitHub de Primer Octicons, MIT.
+Créditos de terceros. La foto del micrófono es "Shure MV7 microphone" de Panos Sakalakis
+([Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Shure_MV7_microphone.jpg),
+[CC BY 2.0](https://creativecommons.org/licenses/by/2.0/)), recortada para la lámina 08. El logo de
+PHP es de Colin Viebrock, [CC BY-SA 4.0](https://www.php.net/download-logos.php). Los íconos de
+Python y JavaScript vienen de Simple Icons, CC0, y los de GitHub, nube, paquete, chip y birrete, de
+Primer Octicons, MIT. La tarjeta perforada de la lámina 12 es un dibujo propio.
+
+Microsoft, AWS, Google Cloud, IBM, Anthropic, npm y React se nombran solo en texto. Sus guías de
+marca piden permiso escrito para usar el logo. GitHub y GitHub Copilot son marcas de GitHub, Inc.
 
 
 ---

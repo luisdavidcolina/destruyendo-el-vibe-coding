@@ -41,11 +41,11 @@ window.DECK.push(
 
         <div class="pila2">
           <div class="c2 c6 ahora"><span class="c2-a">ahora</span><span class="c2-n">Agentes</span><span class="c2-l"><svg class="cp-logo cop" viewBox="0 0 16 16" fill="#1F2328" aria-hidden="true"><path d="M7.998 15.035c-4.562 0-7.873-2.914-7.998-3.749V9.338c.085-.628.677-1.686 1.588-2.065.013-.07.024-.143.036-.218.029-.183.06-.384.126-.612-.201-.508-.254-1.084-.254-1.656 0-.87.128-1.769.693-2.484.579-.733 1.494-1.124 2.724-1.261 1.206-.134 2.262.034 2.944.765.05.053.096.108.139.165.044-.057.094-.112.143-.165.682-.731 1.738-.899 2.944-.765 1.23.137 2.145.528 2.724 1.261.566.715.693 1.614.693 2.484 0 .572-.053 1.148-.254 1.656.066.228.098.429.126.612.012.076.024.148.037.218.924.385 1.522 1.471 1.591 2.095v1.872c0 .766-3.351 3.795-8.002 3.795Zm0-1.485c2.28 0 4.584-1.11 5.002-1.433V7.862l-.023-.116c-.49.21-1.075.291-1.727.291-1.146 0-2.059-.327-2.71-.991A3.222 3.222 0 0 1 8 6.303a3.24 3.24 0 0 1-.544.743c-.65.664-1.563.991-2.71.991-.652 0-1.236-.081-1.727-.291l-.023.116v4.255c.419.323 2.722 1.433 5.002 1.433ZM6.762 2.83c-.193-.206-.637-.413-1.682-.297-1.019.113-1.479.404-1.713.7-.247.312-.369.789-.369 1.554 0 .793.129 1.171.308 1.371.162.181.519.379 1.442.379.853 0 1.339-.235 1.638-.54.315-.322.527-.827.617-1.553.117-.935-.037-1.395-.241-1.614Zm4.155-.297c-1.044-.116-1.488.091-1.681.297-.204.219-.359.679-.242 1.614.091.726.303 1.231.618 1.553.299.305.784.54 1.638.54.922 0 1.28-.198 1.442-.379.179-.2.308-.578.308-1.371 0-.765-.123-1.242-.37-1.554-.233-.296-.693-.587-1.713-.7Z"/><path d="M6.25 9.037a.75.75 0 0 1 .75.75v1.501a.75.75 0 0 1-1.5 0V9.787a.75.75 0 0 1 .75-.75Zm4.25.75v1.501a.75.75 0 0 1-1.5 0V9.787a.75.75 0 0 1 1.5 0Z"/></svg></span></div>
-          <div class="c2 c5"><span class="c2-a">2010</span><span class="c2-n">Nube</span><span class="c2-l"><img class="cp-logo ancho" src="assets/logos/aws.svg" alt=""><img class="cp-logo" src="assets/logos/google-cloud.svg" alt=""><img class="cp-logo" src="assets/logos/microsoft.svg" alt=""></span></div>
-          <div class="c2 c4"><span class="c2-a">1990</span><span class="c2-n">Bibliotecas</span><span class="c2-l"><img class="cp-logo" src="assets/logos/si-react.svg" alt=""><img class="cp-logo" src="assets/logos/si-npm.svg" alt=""></span></div>
+          <div class="c2 c5"><span class="c2-a">2010</span><span class="c2-n">Nube</span><span class="c2-l"><svg class="cp-logo cop" viewBox="0 0 16 16" fill="#1F2328" aria-hidden="true"><path d="M2 7.25A5.225 5.225 0 0 1 7.25 2a5.222 5.222 0 0 1 4.767 3.029A4.472 4.472 0 0 1 16 9.5c0 2.505-1.995 4.5-4.5 4.5h-8A3.474 3.474 0 0 1 0 10.5c0-1.41.809-2.614 2.001-3.17Zm1.54.482a.75.75 0 0 1-.556.832c-.86.22-1.484.987-1.484 1.936 0 1.124.876 2 2 2h8c1.676 0 3-1.324 3-3s-1.324-3-3-3a.75.75 0 0 1-.709-.504A3.72 3.72 0 0 0 7.25 3.5C5.16 3.5 3.5 5.16 3.5 7.25c.002.146.014.292.035.436l.004.036.001.008Z"/></svg></span></div>
+          <div class="c2 c4"><span class="c2-a">1990</span><span class="c2-n">Bibliotecas</span><span class="c2-l"><svg class="cp-logo cop" viewBox="0 0 16 16" fill="#1F2328" aria-hidden="true"><path d="m8.878.392 5.25 3.045c.54.314.872.89.872 1.514v6.098a1.75 1.75 0 0 1-.872 1.514l-5.25 3.045a1.75 1.75 0 0 1-1.756 0l-5.25-3.045A1.75 1.75 0 0 1 1 11.049V4.951c0-.624.332-1.201.872-1.514L7.122.392a1.75 1.75 0 0 1 1.756 0ZM7.875 1.69l-4.63 2.685L8 7.133l4.755-2.758-4.63-2.685a.248.248 0 0 0-.25 0ZM2.5 5.677v5.372c0 .09.047.171.125.216l4.625 2.683V8.432Zm6.25 8.271 4.625-2.683a.25.25 0 0 0 .125-.216V5.677L8.75 8.432Z"/></svg></span></div>
           <div class="c2 c3"><span class="c2-a">1957</span><span class="c2-n">Alto nivel</span><span class="c2-l"><img class="cp-logo" src="assets/logos/si-python.svg" alt=""><img class="cp-logo" src="assets/logos/si-javascript.svg" alt=""><img class="cp-logo" src="assets/logos/si-php.svg" alt=""></span></div>
           <div class="c2 c2b"><span class="c2-a">1950</span><span class="c2-n">Ensamblador</span><span class="c2-l"><svg class="cp-logo cop" viewBox="0 0 16 16" fill="#1F2328" aria-hidden="true"><path d="M6.5.75V2h3V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75V5h1.25a.75.75 0 0 1 0 1.5H14v3h1.25a.75.75 0 0 1 0 1.5H14v1.25A1.75 1.75 0 0 1 12.25 14H11v1.25a.75.75 0 0 1-1.5 0V14h-3v1.25a.75.75 0 0 1-1.5 0V14H3.75A1.75 1.75 0 0 1 2 12.25V11H.75a.75.75 0 0 1 0-1.5H2v-3H.75a.75.75 0 0 1 0-1.5H2V3.75C2 2.784 2.784 2 3.75 2H5V.75a.75.75 0 0 1 1.5 0Zm5.75 11.75a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25ZM5.75 5h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-4.5A.75.75 0 0 1 5.75 5Zm.75 4.5h3v-3h-3Z"/></svg></span></div>
-          <div class="c2 c1"><span class="c2-a">1940</span><span class="c2-n">Tarjetas</span><span class="c2-l"><img class="cp-logo ancho" src="assets/logos/ibm.svg" alt=""></span></div>
+          <div class="c2 c1"><span class="c2-a">1940</span><span class="c2-n">Tarjetas</span><span class="c2-l"><svg class="cp-logo cop" viewBox="0 0 16 16" fill="#1F2328" fill-rule="evenodd" aria-hidden="true"><path d="M4.2 2h10.3A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5V6.2ZM4.8 3.5 1.5 6.8v5.7h13v-9ZM4 7h1.2v2.2H4ZM6.6 9h1.2v2.2H6.6ZM9.2 6.5h1.2v2.2H9.2ZM11.8 8.5H13v2.2h-1.2Z"/></svg></span></div>
         </div>
 
         <!-- El dato de BairesDev con su titular real en ingles, que es la
@@ -71,7 +71,11 @@ window.DECK.push(
    septiembre de 2026. Precio solo donde la pagina lo publica en texto: AWS
    100 USD y Google 200 USD. Las de Microsoft y GitHub dependen del pais. Las
    de Anthropic son para organizaciones del Claude Partner Network. Un solo
-   resalte, el GH-300, que es la de la casa en un evento de GitHub. */
+   resalte, el GH-300, que es la de la casa en un evento de GitHub.
+   Sin logos de Microsoft, Anthropic, AWS, Google ni IBM: sus guias de marca
+   piden permiso escrito para usar el logo y solo dejan nombrarlas en texto
+   (revisado el 28 de septiembre de 2026, detalle en DERECHOS.md). El de
+   GitHub si se puede usar para hablar de GitHub. */
 {
   section: 'Las bases',
   title: 'Certificaciones de IA en 2026',
@@ -83,12 +87,12 @@ window.DECK.push(
 
     <div class="body-area certs">
       <div class="ct-grid">
-        <article class="ct lit"><img class="ct-logo" src="assets/logos/github-mark.svg" alt=""><b>GH-300</b><span>GitHub Copilot</span><i>GitHub, intermedio</i></article>
-        <article class="ct"><img class="ct-logo" src="assets/logos/microsoft.svg" alt=""><b>AI-103</b><span>Agentes en Azure</span><i>Microsoft, intermedio</i></article>
-        <article class="ct"><img class="ct-logo" src="assets/logos/anthropic.svg" alt=""><b>Claude Certified</b><span>Cuatro exámenes</span><i>Anthropic, empresas socias</i></article>
-        <article class="ct"><img class="ct-logo ancho" src="assets/logos/aws.svg" alt=""><b>AI Practitioner</b><span>Fundamentos de IA</span><i>Amazon, 100 USD</i></article>
-        <article class="ct"><img class="ct-logo" src="assets/logos/google-cloud.svg" alt=""><b>ML Engineer</b><span>Aprendizaje automático</span><i>Google Cloud, 200 USD</i></article>
-        <article class="ct"><img class="ct-logo ancho" src="assets/logos/ibm.svg" alt=""><b>RAG y agentes</b><span>Certificado profesional</span><i>IBM en Coursera</i></article>
+        <article class="ct lit"><p class="ct-marca"><img src="assets/logos/github-mark.svg" alt="">GitHub</p><b>GH-300</b><span>GitHub Copilot</span><i>intermedio</i></article>
+        <article class="ct"><p class="ct-marca">Microsoft</p><b>AI-103</b><span>Agentes en Azure</span><i>intermedio</i></article>
+        <article class="ct"><p class="ct-marca">Anthropic</p><b>Claude Certified</b><span>Cuatro exámenes</span><i>empresas socias</i></article>
+        <article class="ct"><p class="ct-marca">AWS</p><b>AI Practitioner</b><span>Fundamentos de IA</span><i>100 USD</i></article>
+        <article class="ct"><p class="ct-marca">Google Cloud</p><b>ML Engineer</b><span>Aprendizaje automático</span><i>200 USD</i></article>
+        <article class="ct"><p class="ct-marca">IBM</p><b>RAG y agentes</b><span>Certificado profesional</span><i>en Coursera</i></article>
       </div>
     </div>
   </div>`
@@ -243,17 +247,18 @@ window.DECK.push(
             <div class="ref-r"><span class="ref-n">06</span><span class="ref-t">Databricks, State of AI Agents 2026</span></div>
             <div class="ref-r"><span class="ref-n">07</span><span class="ref-t">BairesDev, Dev Barometer, junio de 2026</span></div>
             <div class="ref-r"><span class="ref-n">08</span><span class="ref-t">Foro Económico Mundial, Future of Jobs Report 2025</span></div>
+            <div class="ref-r"><span class="ref-n">09</span><span class="ref-t">Microsoft Learn, guía del GH-300, agosto de 2026</span></div>
           </div>
 
           <div class="ref-col">
-            <div class="ref-r"><span class="ref-n">09</span><span class="ref-t">Microsoft Learn, guía del GH-300, agosto de 2026</span></div>
             <div class="ref-r"><span class="ref-n">10</span><span class="ref-t">Microsoft Learn, certificación AI-103</span></div>
             <div class="ref-r"><span class="ref-n">11</span><span class="ref-t">Pearson VUE, certificaciones de Anthropic</span></div>
             <div class="ref-r"><span class="ref-n">12</span><span class="ref-t">AWS y Google Cloud, páginas oficiales de certificación</span></div>
             <div class="ref-r"><span class="ref-n">13</span><span class="ref-t">Andrej Karpathy, publicación del 2 de febrero de 2025</span></div>
             <div class="ref-r"><span class="ref-n">14</span><span class="ref-t">Collins English Dictionary, palabra del año 2025</span></div>
             <div class="ref-r"><span class="ref-n">15</span><span class="ref-t">Ken Thompson, folclore documentado de Bell Labs</span></div>
-            <div class="ref-r"><span class="ref-n">16</span><span class="ref-t">Foto del micrófono, Panos Sakalakis, CC BY 2.0</span></div>
+            <div class="ref-r"><span class="ref-n">16</span><span class="ref-t">Foto del micrófono, Panos Sakalakis, <span style="white-space:nowrap">CC BY 2.0</span>, recortada</span></div>
+            <div class="ref-r"><span class="ref-n">17</span><span class="ref-t">Logo de PHP, Colin Viebrock, <span style="white-space:nowrap">CC BY-SA 4.0</span></span></div>
           </div>
         </div>
       </div>

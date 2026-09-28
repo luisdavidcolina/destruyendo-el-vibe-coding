@@ -484,7 +484,7 @@ table.t td.hi-cell {
 @keyframes auPaneo { from { transform: scale(1.0); } to { transform: scale(1.08); } }
 .slide.is-active .au-img img { animation: auPaneo 12s ease-out 0.5s both; transform-origin: top center; }
 
-/* ── 11 Seis meses contra cinco semanas ──────────────────────────────── */
+/* ── 11 Un proyecto de 2022 y uno de 2026 ──────────────────────────────── */
 .compara { gap: 16px; justify-content: flex-start; }
 .cm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
 

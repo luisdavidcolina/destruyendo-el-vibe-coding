@@ -15,7 +15,7 @@
    decision de base.css, asi que aqui tampoco se escribe. */
 window.DECK.push(
 
-/* ─────────────── 11 Ninguna capa borro la de abajo ───────────────
+/* ─────────────── 11 Las capas de la programacion ───────────────
    Rehecha el 25 de septiembre por la noche. El expositor sentia que la 11 y
    la 12 aportaban poca informacion cada una por su lado. Quedan asi:
 
@@ -29,11 +29,11 @@ window.DECK.push(
    El de Copilot es de Primer Octicons. */
 {
   section: 'Las bases',
-  title: 'Ninguna capa borró la de abajo',
+  title: 'Las capas de la programación',
   min: '8:05 a 8:45',
   html: `
   <div class="pad">
-    <h1 class="title">Ninguna capa borró la de abajo</h1>
+    <h1 class="title">Las capas de la programación</h1>
     <div class="rule"></div>
 
     <div class="body-area bases">
@@ -66,7 +66,7 @@ window.DECK.push(
   </div>`
 },
 
-/* ─────────────── 12 Lo que hoy se certifica ───────────────
+/* ─────────────── 12 Certificaciones de IA en 2026 ───────────────
    Seis tarjetas, verificadas en la pagina oficial de cada una el 25 de
    septiembre de 2026. Precio solo donde la pagina lo publica en texto: AWS
    100 USD y Google 200 USD. Las de Microsoft y GitHub dependen del pais. Las
@@ -74,11 +74,11 @@ window.DECK.push(
    resalte, el GH-300, que es la de la casa en un evento de GitHub. */
 {
   section: 'Las bases',
-  title: 'Lo que hoy se certifica',
+  title: 'Certificaciones de IA en 2026',
   min: '8:45 a 9:15',
   html: `
   <div class="pad">
-    <h1 class="title">Lo que hoy se certifica</h1>
+    <h1 class="title">Certificaciones de IA en 2026</h1>
     <div class="rule"></div>
 
     <div class="body-area certs">

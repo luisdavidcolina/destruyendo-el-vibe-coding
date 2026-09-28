@@ -72,17 +72,17 @@ durante las preguntas. Las de corte van en fondo oscuro a propósito: la 01, la 
 |---|---|---|
 | 01 | Apertura | Destruyendo el vibe coding |
 | 02 | Apertura | Luisdavid Colina |
-| 03 | El golpe | Lo que importa está debajo |
-| 04 | El golpe | El agente tenía permiso |
-| 05 | El golpe | La sensación no sirve para medir |
+| 03 | El golpe | Qué es el vibe coding |
+| 04 | El golpe | El caso de PocketOS |
+| 05 | El golpe | El estudio de METR |
 | 06 | La resolución | ¿Entonces la IA es el problema? |
 | 07 | La resolución | Prompts vs. Encargos |
 | 08 | La resolución | Cómo se trabaja con agentes |
 | 09 | Orquestación | No más vibe coding ni pérdida de tiempo |
-| 10 | Lo construido | Lo que automaticé para estudiar |
-| 11 | Lo construido | Seis meses contra cinco semanas |
-| 12 | Las bases | Ninguna capa borró la de abajo |
-| 13 | Las bases | Lo que hoy se certifica |
+| 10 | Lo construido | Herramientas que hice para estudiar |
+| 11 | Lo construido | Un proyecto de 2022 y uno de 2026 |
+| 12 | Las bases | Las capas de la programación |
+| 13 | Las bases | Certificaciones de IA en 2026 |
 | 14 | Cierre | Reflexión final |
 | 15 | Cierre | Es hora de que cumplan los suyos |
 | 16 | Contacto | Contacto y referencias |
@@ -93,32 +93,14 @@ portafolio y un código QR, generado dentro de la carpeta, que abre `luisdavidco
 El cronómetro de la barra (tecla `R`) va verde hasta el minuto 8, ámbar hasta el 10 y rojo desde
 el 10, que es el tope del evento.
 
-La lámina 10 lleva un video corto, `assets/video/prepa-calculadora.webm`, que se reproduce mudo y
-en bucle al llegar a la lámina y vuelve a empezar cada vez que se entra.
+La lámina 10 lleva tres videos cortos en `assets/video/`: el archivo de la carrera
+(`semestre.webm`), el bot respondiendo (`bot-chat.webm`) y la clase interactiva con la calculadora
+de valores de verdad (`prepa-calculadora.webm`). Se reproducen mudos y en bucle al llegar a la
+lámina, y vuelven a empezar cada vez que se entra.
 
 Créditos de terceros: la foto del micrófono es de Panos Sakalakis, CC BY 2.0. Los íconos de
 lenguajes vienen de Simple Icons, CC0, y los de GitHub de Primer Octicons, MIT.
 
----|---|---|
-| 01 | Apertura | Destruyendo el vibe coding |
-| 02 | Apertura | Luisdavid Colina |
-| 03 | El golpe | Lo que importa está debajo |
-| 04 | El golpe | El agente tenía permiso |
-| 05 | El golpe | La sensación no sirve para medir |
-| 06 | La resolución | ¿Entonces la IA es el problema? |
-| 07 | La resolución | Prompts vs. Encargos |
-| 08 | La resolución | Cuatro reglas, y la primera manda |
-| 09 | Orquestación | No más vibe coding ni pérdida de tiempo |
-| 10 | Lo construido | Seis meses contra cinco semanas |
-| 11 | Las capas y sus modas | Ninguna capa borró la de abajo |
-| 12 | Las bases | Creen que entienden, y no |
-| 13 | Cierre | Reflexión final |
-| 14 | Contacto | Contacto y referencias |
-
-Los tres enlaces, `luisdavidcolina.com`, `github.com/luisdavidcolina` y
-`linkedin.com/in/luisdavidcolina`, van en la portada y en la última lámina, que es la que queda
-proyectada durante las preguntas. Esa lámina lleva además un código QR generado dentro de la
-carpeta, sin pedirle nada a ningún servicio.
 
 ---
 

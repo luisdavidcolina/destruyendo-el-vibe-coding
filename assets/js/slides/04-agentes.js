@@ -98,11 +98,11 @@ window.DECK.push(
    expositor. El detalle de cada pieza se dice hablando, y rapido. */
 {
   section: 'Lo construido',
-  title: 'Lo que automaticé para estudiar',
+  title: 'Herramientas que hice para estudiar',
   min: '7:05 a 7:45',
   html: `
   <div class="pad">
-    <h1 class="title">Lo que automaticé para estudiar</h1>
+    <h1 class="title">Herramientas que hice para estudiar</h1>
     <div class="rule"></div>
 
     <div class="body-area auto">
@@ -121,7 +121,7 @@ window.DECK.push(
   </div>`
 },
 
-/* ─────────────── 11 Seis meses contra cinco semanas ────────────────────
+/* ─────────────── 11 Un proyecto de 2022 y uno de 2026 ────────────────────
    Los dos proyectos, cada uno con su captura en funcionamiento y sus tres
    numeros. El de 2026 se describe por lo que hace, sin nombrar a la empresa,
    por decision del expositor. La captura es la tabla de alumnos con datos de
@@ -132,11 +132,11 @@ window.DECK.push(
    humana antes de cambiar un registro. */
 {
   section: 'Lo construido',
-  title: 'Seis meses contra cinco semanas',
+  title: 'Un proyecto de 2022 y uno de 2026',
   min: '7:45 a 8:25',
   html: `
   <div class="pad">
-    <h1 class="title">Seis meses contra cinco semanas</h1>
+    <h1 class="title">Un proyecto de 2022 y uno de 2026</h1>
     <div class="rule"></div>
 
     <div class="body-area compara">

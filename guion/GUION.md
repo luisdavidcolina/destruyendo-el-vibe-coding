@@ -77,7 +77,7 @@ desde 2019, con IntelliPOS en Perú.
 
 ---
 
-## 03 | Lo que importa está debajo | 0:23 a 1:15
+## 03 | Qué es el vibe coding | 0:23 a 1:15
 
 **En pantalla.** Un iceberg. En la punta, sobre el agua, una sola caja: escribir la petición. En la
 masa sumergida, ocho cajas que aparecen una por una. Arriba a la derecha, la cita de Karpathy.
@@ -102,7 +102,7 @@ diccionario Collins.
 
 ---
 
-## 04 | El agente tenía permiso | 1:15 a 2:09
+## 04 | El caso de PocketOS | 1:15 a 2:09
 
 **En pantalla.** PocketOS, alquiler de vehículos. Un reloj que corre de verdad hasta nueve. Al lado,
 el titular de Hackread y la cadena de cuatro pasos. Al parar el reloj entran lo que costó y la
@@ -137,7 +137,7 @@ aprobación en seguridad se quedó en 56 por ciento, casi igual que en 2025.
 
 ---
 
-## 05 | La sensación no sirve para medir | 2:09 a 3:26
+## 05 | El estudio de METR | 2:09 a 3:26
 
 **En pantalla.** La página real del estudio de METR, en inglés. Dos barras sobre un mismo eje: más
 20 por ciento lo que sintieron, menos 19 por ciento lo que se midió. Abajo entra la franja de 2026:
@@ -278,7 +278,7 @@ el uso de sistemas multiagente creció 327 por ciento en cuatro meses de 2025.
 
 ---
 
-## 10 | Lo que automaticé para estudiar | 6:36 a 7:15
+## 10 | Herramientas que hice para estudiar | 6:36 a 7:15
 
 **En pantalla.** Cinco piezas reales que entran una por una: el explorador de archivos recorriendo
 la carrera ordenada (semestres anteriores, un semestre, una materia por dentro), el plan de estudio
@@ -304,7 +304,7 @@ páginas.
 
 ---
 
-## 11 | Seis meses contra cinco semanas | 7:15 a 7:49
+## 11 | Un proyecto de 2022 y uno de 2026 | 7:15 a 7:49
 
 **En pantalla.** Dos proyectos con su captura: la portada original de la plataforma de empleo, con
 su buscador, y el escritorio del administrador del sistema de natación. Una plataforma de 2022:
@@ -329,7 +329,7 @@ expositor. Sistema de 2026: del 19 de agosto al 24 de septiembre, 1.148 commits,
 
 ---
 
-## 12 | Ninguna capa borró la de abajo | 7:49 a 8:50
+## 12 | Las capas de la programación | 7:49 a 8:50
 
 **En pantalla.** Una pila de capas que se construye de abajo hacia arriba, con los logos de cada
 época: tarjetas, ensamblador, alto nivel, bibliotecas, nube y agentes. Al lado, el titular de
@@ -361,7 +361,7 @@ IA. 85 por ciento de los junior dice que la herramienta mejoró su comprensión.
 
 ---
 
-## 13 | Lo que hoy se certifica | 8:50 a 9:18
+## 13 | Certificaciones de IA en 2026 | 8:50 a 9:18
 
 **En pantalla.** Seis tarjetas con logo: GH-300 de GitHub Copilot, AI-103 de Microsoft, Claude
 Certified de Anthropic, AI Practitioner de Amazon, ML Engineer de Google Cloud y RAG y agentes de
@@ -434,17 +434,17 @@ de diez minutos.
 |---|---|---|---|---|---|---|
 | 01 | Destruyendo el vibe coding | 5 |  | 0:02 | 0:04 | 0:00 a 0:04 |
 | 02 | Luisdavid Colina | 45 |  |  | 0:19 | 0:04 a 0:23 |
-| 03 | Lo que importa está debajo | 108 | n2: 19 |  | 0:53 | 0:23 a 1:15 |
-| 04 | El agente tenía permiso | 73 | n1: 49 | 0:03 | 0:53 | 1:15 a 2:09 |
-| 05 | La sensación no sirve para medir | 185 |  | 0:01 | 1:18 | 2:09 a 3:26 |
+| 03 | Qué es el vibe coding | 108 | n2: 19 |  | 0:53 | 0:23 a 1:15 |
+| 04 | El caso de PocketOS | 73 | n1: 49 | 0:03 | 0:53 | 1:15 a 2:09 |
+| 05 | El estudio de METR | 185 |  | 0:01 | 1:18 | 2:09 a 3:26 |
 | 06 | ¿Entonces la IA es el problema? | 75 |  | 0:02 | 0:33 | 3:26 a 3:59 |
 | 07 | Prompts vs. Encargos | 74 |  |  | 0:31 | 3:59 a 4:30 |
 | 08 | Cómo se trabaja con agentes | 138 | n1: 22, n2: 7 | 0:01 | 1:10 | 4:30 a 5:40 |
 | 09 | No más vibe coding ni pérdida de tiempo | 86 | n2: 33, n3: 16 |  | 0:56 | 5:40 a 6:36 |
-| 10 | Lo que automaticé para estudiar | 93 |  | 0:01 | 0:39 | 6:36 a 7:15 |
-| 11 | Seis meses contra cinco semanas | 81 |  |  | 0:34 | 7:15 a 7:49 |
-| 12 | Ninguna capa borró la de abajo | 148 |  |  | 1:01 | 7:49 a 8:50 |
-| 13 | Lo que hoy se certifica | 47 | n1: 21 |  | 0:28 | 8:50 a 9:18 |
+| 10 | Herramientas que hice para estudiar | 93 |  | 0:01 | 0:39 | 6:36 a 7:15 |
+| 11 | Un proyecto de 2022 y uno de 2026 | 81 |  |  | 0:34 | 7:15 a 7:49 |
+| 12 | Las capas de la programación | 148 |  |  | 1:01 | 7:49 a 8:50 |
+| 13 | Certificaciones de IA en 2026 | 47 | n1: 21 |  | 0:28 | 8:50 a 9:18 |
 | 14 | Reflexión final | 38 |  | 0:02 | 0:18 | 9:18 a 9:36 |
 | 15 | Es hora de que cumplan los suyos | 21 |  | 0:02 | 0:11 | 9:36 a 9:47 |
 | 16 | Contacto y referencias | | | | queda proyectada | |

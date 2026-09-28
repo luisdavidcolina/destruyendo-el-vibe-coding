@@ -10,7 +10,7 @@
        sin leer una sola palabra. Antes esto era un dibujo de iceberg con una
        frase encima, que no decia nada. La cita de Karpathy se queda, pero
        arriba y fuera del agua, porque el termino lo bautizo el.
-   04  El experimento de METR. Dos barras enfrentadas sobre un mismo eje. Mas
+   04  El estudio de METR. Dos barras enfrentadas sobre un mismo eje. Mas
        20 y menos 19 son magnitudes casi iguales: las dos barras salen casi
        identicas y lo unico que las separa es la direccion, que es justo el
        punto. Al flanco izquierdo, que estaba vacio, entra la captura de la
@@ -51,11 +51,11 @@ window.DECK.push(
    las dos zonas, que el agua ya dice. */
 {
   section: 'El golpe',
-  title: 'Lo que importa está debajo',
+  title: 'Qué es el vibe coding',
   min: '0:40 a 1:20',
   html: `
   <div class="pad">
-    <h1 class="title">Lo que importa está debajo</h1>
+    <h1 class="title">Qué es el vibe coding</h1>
     <div class="rule"></div>
 
     <div class="body-area ice-area">
@@ -110,11 +110,11 @@ window.DECK.push(
 /* ───────────────────────────── 05 Nueve segundos ─────────────────────────── */
 {
   section: 'El golpe',
-  title: 'Nueve segundos',
+  title: 'El caso de PocketOS',
   min: '2:20 a 3:10',
   html: `
   <div class="pad">
-    <h1 class="title">El agente tenía permiso</h1>
+    <h1 class="title">El caso de PocketOS</h1>
     <div class="rule"></div>
 
     <div class="body-area nueve">
@@ -189,14 +189,14 @@ window.DECK.push(
   </div>`
 },
 
-/* ────────────────────────── 04 El experimento de METR ────────────────────── */
+/* ────────────────────────── 04 El estudio de METR ────────────────────── */
 {
   section: 'El golpe',
-  title: 'El experimento de METR',
+  title: 'El estudio de METR',
   min: '2:05 a 3:00',
   html: `
   <div class="pad">
-    <h1 class="title">La sensación no sirve para medir</h1>
+    <h1 class="title">El estudio de METR</h1>
     <div class="rule"></div>
 
     <div class="body-area met-area">

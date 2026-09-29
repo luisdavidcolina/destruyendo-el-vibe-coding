@@ -30,8 +30,8 @@ dinero.
 
 El título hace creer que la ponencia está en contra de la inteligencia artificial. Las láminas 3, 4
 y 5 empujan hacia ahí con datos ciertos. La 6 da la vuelta: el problema no es la herramienta, es
-cómo se le pide el trabajo. De la 7 a la 11 se demuestra en primera persona. La 12 y la 13 dicen
-por qué hay que seguir estudiando. La 14 y la 15 cierran.
+cómo se le pide el trabajo. De la 7 a la 10 se demuestra en primera persona. De la 11 a la 13 se dice
+por qué hay que seguir estudiando y cómo lo hago yo. La 14 y la 15 cierran.
 
 El círculo lo cierran dos citas: Karpathy en la 3 dice que hay que olvidar que el código existe, y
 Thompson en la 14 cuenta que su mejor día fue borrar mil líneas.
@@ -278,33 +278,7 @@ el uso de sistemas multiagente creció 327 por ciento en cuatro meses de 2025.
 
 ---
 
-## 10 | Herramientas que hice para estudiar | 6:36 a 7:15
-
-**En pantalla.** Cinco piezas reales que entran una por una: el explorador de archivos recorriendo
-la carrera ordenada (semestres anteriores, un semestre, una materia por dentro), el plan de estudio
-del día, la clase interactiva de Discreta en video y una guía propia en LaTeX. A la
-derecha, en toda la columna, el bot respondiendo en vivo: se le pide la nota informativa de
-Seguridad en Redes y lo que queda pendiente hasta el 21 de octubre.
-
-**Qué decir.**
-
-Esto es lo que hago para estudiar, rapidísimo. La misma herramienta lee los archivos de la
-computadora y los ordena: casi dos mil archivos de la carrera, buscables. De ahí sale el plan de
-estudio del día, las clases interactivas de la preparaduría y las guías en LaTeX. Y a la derecha,
-mi bot, el mismo que me responde por WhatsApp: le pido la nota de una materia y me la busca, le
-pregunto qué tengo pendiente y lo saca de mi calendario.
-
-[silencio 1 s] Y esta ponencia es un archivo HTML. No hay PowerPoint.
-
-**Datos exactos.** 1.936 archivos indexados en el archivo del diario. El bot, grabado el 25 de
-septiembre de 2026, respondió con un enlace temporal a la nota y con el Parcial 4 de Discretas y
-esta ponencia como pendientes. Clase de Lógica de
-Predicados, 77 láminas, con simulador de valores de verdad. Guía "Introducción a la ciencia", 63
-páginas.
-
----
-
-## 11 | Un proyecto de 2022 y uno de 2026 | 7:15 a 7:49
+## 10 | Un proyecto de 2022 y uno de 2026 | 6:36 a 7:09
 
 **En pantalla.** Dos proyectos con su captura: la portada original de la plataforma de empleo, con
 su buscador, y el escritorio del administrador del sistema de natación. Una plataforma de 2022:
@@ -329,10 +303,10 @@ expositor. Sistema de 2026: del 19 de agosto al 24 de septiembre, 1.148 commits,
 
 ---
 
-## 12 | Las capas de la programación | 7:49 a 8:50
+## 11 | Las capas de la programación | 7:09 a 8:11
 
-**En pantalla.** Una pila de capas que se construye de abajo hacia arriba, con los logos de cada
-época: tarjetas, ensamblador, alto nivel, bibliotecas, nube y agentes. Al lado, el titular de
+**En pantalla.** Una pila de capas que se construye de abajo hacia arriba, con un ícono por época
+y los logos de Python, JavaScript y PHP en alto nivel: tarjetas, ensamblador, alto nivel, bibliotecas, nube y agentes. Al lado, el titular de
 BairesDev: 85 por ciento de los junior dice entender mejor, 16 por ciento de los senior lo
 confirma. Abajo, la frase.
 
@@ -361,9 +335,35 @@ IA. 85 por ciento de los junior dice que la herramienta mejoró su comprensión.
 
 ---
 
+## 12 | Herramientas que hice para estudiar | 8:11 a 8:50
+
+**En pantalla.** Cinco piezas reales que entran una por una: el explorador de archivos recorriendo
+la carrera ordenada (semestres anteriores, un semestre, una materia por dentro), el plan de estudio
+del día, la clase interactiva de Discreta en video y una guía propia en LaTeX. A la
+derecha, en toda la columna, el bot respondiendo en vivo: se le pide la nota informativa de
+Seguridad en Redes y lo que queda pendiente hasta el 21 de octubre.
+
+**Qué decir.**
+
+Esto es lo que hago para estudiar, rapidísimo. La misma herramienta lee los archivos de la
+computadora y los ordena: casi dos mil archivos de la carrera, buscables. De ahí sale el plan de
+estudio del día, las clases interactivas de la preparaduría y las guías en LaTeX. Y a la derecha,
+mi bot, el mismo que me responde por WhatsApp: le pido la nota de una materia y me la busca, le
+pregunto qué tengo pendiente y lo saca de mi calendario.
+
+[silencio 1 s] Y esta ponencia es un archivo HTML. No hay PowerPoint.
+
+**Datos exactos.** 1.936 archivos indexados en el archivo del diario. El bot, grabado el 25 de
+septiembre de 2026, respondió con un enlace temporal a la nota y con el Parcial 4 de Discretas y
+esta ponencia como pendientes. Clase de Lógica de
+Predicados, 77 láminas, con simulador de valores de verdad. Guía "Introducción a la ciencia", 63
+páginas.
+
+---
+
 ## 13 | Certificaciones de IA en 2026 | 8:50 a 9:18
 
-**En pantalla.** Seis tarjetas con logo: GH-300 de GitHub Copilot, AI-103 de Microsoft, Claude
+**En pantalla.** Seis tarjetas: GH-300 de GitHub Copilot, AI-103 de Microsoft, Claude
 Certified de Anthropic, AI Practitioner de Amazon, ML Engineer de Google Cloud y RAG y agentes de
 IBM.
 
@@ -441,9 +441,9 @@ de diez minutos.
 | 07 | Prompts vs. Encargos | 74 |  |  | 0:31 | 3:59 a 4:30 |
 | 08 | Cómo se trabaja con agentes | 138 | n1: 22, n2: 7 | 0:01 | 1:10 | 4:30 a 5:40 |
 | 09 | No más vibe coding ni pérdida de tiempo | 86 | n2: 33, n3: 16 |  | 0:56 | 5:40 a 6:36 |
-| 10 | Herramientas que hice para estudiar | 93 |  | 0:01 | 0:39 | 6:36 a 7:15 |
-| 11 | Un proyecto de 2022 y uno de 2026 | 81 |  |  | 0:34 | 7:15 a 7:49 |
-| 12 | Las capas de la programación | 148 |  |  | 1:01 | 7:49 a 8:50 |
+| 10 | Un proyecto de 2022 y uno de 2026 | 81 |  |  | 0:34 | 6:36 a 7:09 |
+| 11 | Las capas de la programación | 148 |  |  | 1:01 | 7:09 a 8:11 |
+| 12 | Herramientas que hice para estudiar | 93 |  | 0:01 | 0:39 | 8:11 a 8:50 |
 | 13 | Certificaciones de IA en 2026 | 47 | n1: 21 |  | 0:28 | 8:50 a 9:18 |
 | 14 | Reflexión final | 38 |  | 0:02 | 0:18 | 9:18 a 9:36 |
 | 15 | Es hora de que cumplan los suyos | 21 |  | 0:02 | 0:11 | 9:36 a 9:47 |

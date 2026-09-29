@@ -66,7 +66,48 @@ window.DECK.push(
   </div>`
 },
 
-/* ─────────────── 12 Certificaciones de IA en 2026 ───────────────
+/* ─────────────── 12 Herramientas que hice para estudiar ─────────────────────
+   La 10 anterior se dividio en dos el 25 de septiembre por la noche, por
+   decision del expositor y en el orden de su resumen del evento: primero las
+   automatizaciones de estudio y trabajo, despues la comparacion de proyectos.
+   El 29 de septiembre el expositor la paso despues de la de capas: primero
+   por que hay que seguir estudiando, despues con que estudia el.
+
+   Seis piezas reales, cada una con su captura:
+   1. El archivo de su diario: 1.936 archivos de la carrera indexados
+   2. El plan de estudio del dia, en el calendario del diario
+   3. La clase interactiva de Matematica Discreta I, grabada en uso: se
+      asignan valores de verdad hasta encontrar el contraejemplo
+   4. Una guia propia en LaTeX, portada y pagina interior
+   5. Su bot respondiendo en vivo, grabado: ocupa la columna entera
+   Que esta ponencia es un archivo HTML se dice hablando, por decision del
+   expositor. El detalle de cada pieza se dice hablando, y rapido. */
+{
+  section: 'Las bases',
+  title: 'Herramientas que hice para estudiar',
+  min: '7:05 a 7:45',
+  html: `
+  <div class="pad">
+    <h1 class="title">Herramientas que hice para estudiar</h1>
+    <div class="rule"></div>
+
+    <div class="body-area auto">
+      <div class="au-grid">
+        <figure class="au"><div class="au-img"><video poster="assets/video/semestre.jpg" muted loop playsinline preload="none" data-src="assets/video/semestre.webm"></video></div><figcaption><b>La carrera</b> ordenada con IA</figcaption></figure>
+        <figure class="au"><div class="au-img"><img src="assets/img/auto-plan.jpg" alt="Plan de estudio del día en el calendario"></div><figcaption><b>Plan de estudio</b> del día</figcaption></figure>
+        <!-- El bot ocupa la columna entera: es la unica pieza que se ve
+             trabajando en tiempo real. Se le pide la nota informativa de una
+             materia y lo que queda pendiente, y responde con datos del propio
+             diario. Grabado el 25 de septiembre de 2026. -->
+        <figure class="au bot lit"><div class="au-img"><video poster="assets/video/bot-chat.jpg" muted loop playsinline preload="none" data-src="assets/video/bot-chat.webm"></video></div><figcaption><b>Mi bot</b>, el mismo de WhatsApp</figcaption></figure>
+        <figure class="au"><div class="au-img"><video poster="assets/video/prepa-calculadora.jpg" muted loop playsinline preload="none" data-src="assets/video/prepa-calculadora.webm"></video></div><figcaption><b>Clase interactiva</b> de Discreta</figcaption></figure>
+        <figure class="au"><div class="au-img"><img src="assets/img/auto-latex.jpg" alt="Guía propia en LaTeX"></div><figcaption><b>Guías propias</b> en LaTeX</figcaption></figure>
+      </div>
+    </div>
+  </div>`
+},
+
+/* ─────────────── 13 Certificaciones de IA en 2026 ───────────────
    Seis tarjetas, verificadas en la pagina oficial de cada una el 25 de
    septiembre de 2026. Precio solo donde la pagina lo publica en texto: AWS
    100 USD y Google 200 USD. Las de Microsoft y GitHub dependen del pais. Las
@@ -74,8 +115,9 @@ window.DECK.push(
    resalte, el GH-300, que es la de la casa en un evento de GitHub.
    Sin logos de Microsoft, Anthropic, AWS, Google ni IBM: sus guias de marca
    piden permiso escrito para usar el logo y solo dejan nombrarlas en texto
-   (revisado el 28 de septiembre de 2026, detalle en DERECHOS.md). El de
-   GitHub si se puede usar para hablar de GitHub. */
+   (revisado el 28 de septiembre de 2026, detalle en DERECHOS.md). Tampoco
+   rotulo en mayusculas sobre cada tarjeta, que es una senal de diseno hecho
+   por IA: quien da la certificacion va en la ultima linea, en texto. */
 {
   section: 'Las bases',
   title: 'Certificaciones de IA en 2026',
@@ -87,12 +129,12 @@ window.DECK.push(
 
     <div class="body-area certs">
       <div class="ct-grid">
-        <article class="ct lit"><p class="ct-marca"><img src="assets/logos/github-mark.svg" alt="">GitHub</p><b>GH-300</b><span>GitHub Copilot</span><i>intermedio</i></article>
-        <article class="ct"><p class="ct-marca">Microsoft</p><b>AI-103</b><span>Agentes en Azure</span><i>intermedio</i></article>
-        <article class="ct"><p class="ct-marca">Anthropic</p><b>Claude Certified</b><span>Cuatro exámenes</span><i>empresas socias</i></article>
-        <article class="ct"><p class="ct-marca">AWS</p><b>AI Practitioner</b><span>Fundamentos de IA</span><i>100 USD</i></article>
-        <article class="ct"><p class="ct-marca">Google Cloud</p><b>ML Engineer</b><span>Aprendizaje automático</span><i>200 USD</i></article>
-        <article class="ct"><p class="ct-marca">IBM</p><b>RAG y agentes</b><span>Certificado profesional</span><i>en Coursera</i></article>
+        <article class="ct lit"><b>GH-300</b><span>GitHub Copilot</span><i>GitHub, intermedio</i></article>
+        <article class="ct"><b>AI-103</b><span>Agentes en Azure</span><i>Microsoft, intermedio</i></article>
+        <article class="ct"><b>Claude Certified</b><span>Cuatro exámenes</span><i>Anthropic, empresas socias</i></article>
+        <article class="ct"><b>AI Practitioner</b><span>Fundamentos de IA</span><i>AWS, 100 USD</i></article>
+        <article class="ct"><b>ML Engineer</b><span>Aprendizaje automático</span><i>Google Cloud, 200 USD</i></article>
+        <article class="ct"><b>RAG y agentes</b><span>Certificado profesional</span><i>IBM en Coursera</i></article>
       </div>
     </div>
   </div>`

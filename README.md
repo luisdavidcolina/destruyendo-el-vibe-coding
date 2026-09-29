@@ -47,7 +47,7 @@ assets/css/laminas/       una hoja por bloque de láminas
 assets/js/deck.js         navegación, cronómetro, índice y exportación a PDF
 assets/js/slides/         el contenido, un archivo por bloque (cinco en total)
 assets/img/               capturas de fuentes y sistemas, la foto y el código QR
-assets/video/             el video corto de la lámina 10
+assets/video/             los videos cortos de la lámina 12
 assets/logos/             GitHub, UCV, Ciencias, Computación y las marcas de las certificaciones
 assets/fonts/             Mona Sans, y Source Sans 3 como respaldo
 guion/GUION.md            la teoría de cada lámina, con datos y fuentes
@@ -79,9 +79,9 @@ durante las preguntas. Las de corte van en fondo oscuro a propósito: la 01, la 
 | 07 | La resolución | Prompts vs. Encargos |
 | 08 | La resolución | Cómo se trabaja con agentes |
 | 09 | Orquestación | No más vibe coding ni pérdida de tiempo |
-| 10 | Lo construido | Herramientas que hice para estudiar |
-| 11 | Lo construido | Un proyecto de 2022 y uno de 2026 |
-| 12 | Las bases | Las capas de la programación |
+| 10 | Lo construido | Un proyecto de 2022 y uno de 2026 |
+| 11 | Las bases | Las capas de la programación |
+| 12 | Las bases | Herramientas que hice para estudiar |
 | 13 | Las bases | Certificaciones de IA en 2026 |
 | 14 | Cierre | Reflexión final |
 | 15 | Cierre | Es hora de que cumplan los suyos |
@@ -93,7 +93,7 @@ portafolio y un código QR, generado dentro de la carpeta, que abre `luisdavidco
 El cronómetro de la barra (tecla `R`) va verde hasta el minuto 8, ámbar hasta el 10 y rojo desde
 el 10, que es el tope del evento.
 
-La lámina 10 lleva tres videos cortos en `assets/video/`: el archivo de la carrera
+La lámina 12 lleva tres videos cortos en `assets/video/`: el archivo de la carrera
 (`semestre.webm`), el bot respondiendo (`bot-chat.webm`) y la clase interactiva con la calculadora
 de valores de verdad (`prepa-calculadora.webm`). Se reproducen mudos y en bucle al llegar a la
 lámina, y vuelven a empezar cada vez que se entra.
@@ -103,7 +103,7 @@ Créditos de terceros. La foto del micrófono es "Shure MV7 microphone" de Panos
 [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/)), recortada para la lámina 08. El logo de
 PHP es de Colin Viebrock, [CC BY-SA 4.0](https://www.php.net/download-logos.php). Los íconos de
 Python y JavaScript vienen de Simple Icons, CC0, y los de GitHub, nube, paquete, chip y birrete, de
-Primer Octicons, MIT. La tarjeta perforada de la lámina 12 es un dibujo propio.
+Primer Octicons, MIT. La tarjeta perforada de la lámina 11 es un dibujo propio.
 
 Microsoft, AWS, Google Cloud, IBM, Anthropic, npm y React se nombran solo en texto. Sus guías de
 marca piden permiso escrito para usar el logo. GitHub y GitHub Copilot son marcas de GitHub, Inc.

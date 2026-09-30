@@ -1,6 +1,6 @@
 # Destruyendo el vibe coding · Guion
 
-Dev Days 2026. Viernes 2 de octubre de 2026, 11:00 AM. Auditorio Manuel Bemporad, Escuela de
+Dev Days Caracas. Viernes 2 de octubre de 2026, 11:00 AM. Auditorio Manuel Bemporad, Escuela de
 Computación, Facultad de Ciencias, UCV. **Tope de diez minutos.**
 
 Esto no es un libreto para leer. Es lo que hay que decir en cada lámina, en el orden en que la

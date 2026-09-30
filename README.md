@@ -1,6 +1,6 @@
 # Destruyendo el vibe coding
 
-Ponencia de Luisdavid Colina en Dev Days 2026. **Viernes 2 de octubre de 2026, 11:00 AM**,
+Ponencia de Luisdavid Colina en Dev Days Caracas. **Viernes 2 de octubre de 2026, 11:00 AM**,
 Auditorio Manuel Bemporad, Escuela de Computación, Facultad de Ciencias, UCV. Entrada libre con
 registro previo y cupos limitados, solo para estudiantes de la UCV.
 

@@ -4,6 +4,8 @@ Ponencia de Luisdavid Colina en Dev Days Caracas. **Viernes 2 de octubre de 2026
 Auditorio Manuel Bemporad, Escuela de Computación, Facultad de Ciencias, UCV. Entrada libre con
 registro previo y cupos limitados, solo para estudiantes de la UCV.
 
+**La grabación completa, con subtítulos: [youtu.be/DF-iZ9BB5EY](https://youtu.be/DF-iZ9BB5EY)**
+
 Organiza David Jaimes (`djhenrz`), GitHub Campus Expert. Aliados: 4Geeks Academy Latam, Escuela
 de Computación UCV (`escompucv`) y Cluster (`ucvcluster`).
 
